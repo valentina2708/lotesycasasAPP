@@ -1,4 +1,4 @@
-import React from "react";
+
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 const ScrollHandler = (props) => {
@@ -15,7 +15,7 @@ const ScrollHandler = (props) => {
 };
 
 const ScrollToColor = props => {
-  return <ScrollHandler {...props}>{props.children}</ScrollHandler>;
+  return <ScrollHandler {...props}>{props.ScrollHandler}</ScrollHandler>;
 };
 
 export default ScrollToColor;
