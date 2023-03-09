@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import casasylotes from '../../assets/logocasasylotes.png';
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -28,40 +29,27 @@ const Appbar = () => {
 	const SearchBox = styled(Box)({
 		display: 'flex',
 		gap: 5,
+		
+	
 	});
 	const MenuItems = [
 		{ Name: 'Home', Link: '/' },
 		{ Name: 'Nosotros', Link: '#' },
-		{ Name: 'Productos', Link: '#' },
+		{ Name: 'Proyectos', Link: '#' },
 		{ Name: 'Contacto', Link: '#' },
 	];
 	const [open, SetOpen] = useState(false);
 	return (
 		<AppBar
-			sx={{ background: 'black', heigth: 900, fontWeight: 900 }}
+			sx={{ background: '#FE6B1D', heigth: 900, fontWeight: 900 }}
 			elevation={0}
 		>
 			<StyledToolbar>
 				<IconBox>
-					<MapsHomeWorkIcon
-						sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-					/>
-					<Typography
-						variant='h6'
-						noWrap
-						component='a'
-						href='/'
-						sx={{
-							mr: 2,
-							display: { xs: 'none', md: 'flex' },
-							fontWeight: 900,
-							letterSpacing: '.2rem',
-							textDecoration: 'none',
-							color: 'white',
-						}}
-					>
-						Casas & Lotes
-					</Typography>
+				
+				<div style={{display: 'flex',height:'70px', padding:'5px', borderRadius:'50' }}><img src={casasylotes}  /> </div>	
+					
+					
 				</IconBox>
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
@@ -78,7 +66,7 @@ const Appbar = () => {
 				</MenuBox>
 
 				<SearchBox>
-					<InputBase placeholder='Search ...' sx={{ color: 'white' }} />
+					<InputBase placeholder='Buscar...' sx={{ color: 'white' }} />
 					<MenuIcon
 						sx={{
 							color: 'white',
