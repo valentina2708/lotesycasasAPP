@@ -69,7 +69,7 @@ export default function BlendModeSlider() {
 			</Overlay>
 			<Slide
 				shouldRenderMask
-				label=''
+				label='Casa en Condominio'
 				background={{
 					backgroundImageBlendMode: 'luminosity',
 					maskBackgroundBlendMode: 'luminosity',
@@ -79,7 +79,7 @@ export default function BlendModeSlider() {
 
 			<Slide
 				shouldRenderMask
-				label=''
+				label='Lujosa Casa'
 				background={{
 					backgroundImageBlendMode: 'luminosity',
 					backgroundImageSrc: home2,
@@ -89,7 +89,7 @@ export default function BlendModeSlider() {
 
 			<Slide
 				shouldRenderMask
-				label=''
+				label='Lote finalizado'
 				background={{
 					backgroundImageBlendMode: 'luminosity',
 					backgroundImageSrc: home3,
@@ -99,7 +99,7 @@ export default function BlendModeSlider() {
 
 			<Slide
 				shouldRenderMask
-				label=''
+				label='Casa'
 				background={{
 					backgroundImageSrc: home4,
 					backgroundImageBlendMode: 'luminosity',

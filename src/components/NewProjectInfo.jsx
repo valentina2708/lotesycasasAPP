@@ -2,7 +2,6 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import { Grid, Container } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
-//import ReactPlayer from 'react-player';
 import logo5 from '../assets/logoRincondelLago.jpg';
 import { Button } from '@mui/material';
 
