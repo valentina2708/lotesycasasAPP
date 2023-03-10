@@ -8,10 +8,11 @@ import {
 	styled,
 	Toolbar,
 	Typography,
+	Button,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
-
+import { Colors } from '/src/config/themeConfig.js';
+import logo from '/src/assets/logoColor.jpg';
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
 		display: 'flex',
@@ -30,22 +31,21 @@ const Appbar = () => {
 		gap: 5,
 	});
 	const MenuItems = [
-		{ Name: 'Home', Link: '/' },
+		{ Name: 'Inicio', Link: '/' },
 		{ Name: 'Nosotros', Link: '#' },
-		{ Name: 'Productos', Link: '#' },
+		{ Name: 'Proyectos', Link: '#' },
 		{ Name: 'Contacto', Link: '#' },
 	];
 	const [open, SetOpen] = useState(false);
 	return (
-		<AppBar
-			sx={{ background: 'black', heigth: 900, fontWeight: 900 }}
-			elevation={0}
-		>
+		<AppBar sx={{ background: '#A15600', fontWeight: 900 }} elevation={0}>
 			<StyledToolbar>
-				<IconBox>
-					<MapsHomeWorkIcon
-						sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-					/>
+				<IconBox sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+				<img
+								src={logo}
+								alt='logo'
+								style={{ width: 100, height:70 }}
+							/>
 					<Typography
 						variant='h6'
 						noWrap
@@ -54,26 +54,53 @@ const Appbar = () => {
 						sx={{
 							mr: 2,
 							display: { xs: 'none', md: 'flex' },
+							alignItems: 'center',
 							fontWeight: 900,
-							letterSpacing: '.2rem',
+							letterSpacing: '.1rem',
 							textDecoration: 'none',
 							color: 'white',
 						}}
 					>
+				
 						Casas & Lotes
 					</Typography>
 				</IconBox>
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
 					{MenuItems.map(item => (
-						<Typography
+						<Button
+							variant='text'
 							sx={{
-								cursor: 'pointer',
-								fontSize: '14px',
+								color: Colors.body_bg,
+								backgroundColor: Colors.info,
+								borderRadius: 0,
+								boxShadow: 'none',
+								padding: '6px 12px',
+								lineHeight: 1.5,
+								fontSize: 16,
+								'&:hover': {
+									backgroundColor: Colors.info3,
+									opacity: [0.9, 0.8, 0.9],
+									boxShadow: 'none',
+									
+								},
+								'&:active': {
+									boxShadow: 'none',
+									backgroundColor: Colors.info3,
+								},
+								'&:focus': {
+									boxShadow: '0 0 0 0.1rem',
+								},
 							}}
 						>
-							{item.Name}
-						</Typography>
+							<Typography
+								sx={{
+									cursor: 'pointer',
+								}}
+							>
+								{item.Name}
+							</Typography>
+						</Button>
 					))}
 				</MenuBox>
 

@@ -1,15 +1,23 @@
+import { Typography } from '@mui/material';
+import { Stack } from '@mui/system';
+import Box from '@mui/material/Box';
+import HeroSlider, { Slide, ButtonsNav, SideNav, Overlay } from 'hero-slider';
+import home1 from '../assets/casaCarru3.jpg';
+import home2 from '../assets/casas.jpg';
+import home3 from '../assets/casaCarru2.jpg';
+import home4 from '../assets/casaCarru.jpg';
 
-import HeroSlider, { Slide, Nav } from 'hero-slider';
-import lote from '../assets/casas.jpg';
-import casa from '../assets/ground.jpg';
-import home from '../assets/home_1.jpg';
-import home2 from '../assets/lotes.jpeg';
+import { Colors } from '/src/config/themeConfig.js';
 
-export default function BasicSlider() {
+export default function BlendModeSlider() {
 	return (
 		<HeroSlider
-			height='90vh'
+		elevation='static'
+			height='100vh'
 			autoplay
+			animations={{
+				slidingAnimation: 'fade',
+			}}
 			controller={{
 				initialSlide: 1,
 				slidingDuration: 500,
@@ -26,36 +34,79 @@ export default function BasicSlider() {
 					console.debug('onAfterSliding(nextSlide): ', nextSlide),
 			}}
 		>
-    <Slide
-				label='Bogliasco - Italy'
+			<Overlay>
+				<Stack
+					sx={{
+						display: 'flex',
+						flexFlow: 'column',
+						alignItems: 'center',
+						justifyContent: 'center',
+						width: '100%',
+						height: '100%',
+						margin: '0 auto',
+					}}
+				>
+					<Box
+						sx={{
+							backgroundColor: Colors.body_bg,
+							textAlign: 'center',
+							border: 'none',
+							opacity: [0.6, 0.7, 0.6],
+						}}
+					>
+						<Typography
+							variant='h2'
+							sx={{ margin: '0 36px', fontWeight: 'bold' }}
+						>
+							Constructura Inmobiliaria-Bienes Raices
+						</Typography>
+						<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+							Realizamos grandes proyectos en Colombia y Estados Unidos, con una
+							alta valorización en el mercado
+						</Typography>
+					</Box>
+				</Stack>
+			</Overlay>
+			<Slide
+				shouldRenderMask
+				label=''
 				background={{
-					backgroundImageSrc: lote,
+					backgroundImageBlendMode: 'luminosity',
+					maskBackgroundBlendMode: 'luminosity',
+					backgroundImageSrc: home1,
 				}}
 			/>
-      
 
 			<Slide
-				label='Bogliasco - Italy'
+				shouldRenderMask
+				label=''
 				background={{
-					backgroundImageSrc: casa,
-				}}
-			/>
-
-			<Slide
-				label='County Clare - Ireland'
-				background={{
-					backgroundImageSrc: home,
-				}}
-			/>
-
-			<Slide
-				label='Crater Rock, OR - United States'
-				background={{
+					backgroundImageBlendMode: 'luminosity',
 					backgroundImageSrc: home2,
+					maskBackgroundBlendMode: 'luminosity',
 				}}
 			/>
 
-			<Nav />
+			<Slide
+				shouldRenderMask
+				label=''
+				background={{
+					backgroundImageBlendMode: 'luminosity',
+					backgroundImageSrc: home3,
+					maskBackgroundBlendMode: 'luminosity',
+				}}
+			/>
+
+			<Slide
+				shouldRenderMask
+				label=''
+				background={{
+					backgroundImageSrc: home4,
+					backgroundImageBlendMode: 'luminosity',
+					maskBackgroundBlendMode: 'luminosity',
+				}}
+			/>
+			<ButtonsNav />
 		</HeroSlider>
 	);
 }

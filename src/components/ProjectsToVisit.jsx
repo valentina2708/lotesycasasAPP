@@ -12,23 +12,21 @@ const Companies = () => {
 			flexDirection: 'column',
 			alignItems: 'center',
 			textAlign: 'center',
-			marginBottom: theme.spacing(2),
+		
 		},
 	}));
 
 	const CustomBox = styled(Box)(({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			marginBottom: theme.spacing(2),
+			marginBottom: theme.spacing(4),
 		},
 	}));
 
 	return (
-		<Box sx={{ flexGrow: 1 }}>
-			
-
-			<Grid container spacing={1} minHeight={150}>
+		<Box sx={{ flexGrow: 1,	p: '30px 0px' }}>
+			<Grid container spacing={0.5} minHeight={100}>
 				<CustomContainer>
-					<Grid display='flex' justifyContent='center' alignItems='center'>
+					<Grid >
 						<CustomBox>
 							<img
 								src={logoImgCD}
@@ -42,7 +40,7 @@ const Companies = () => {
 							<img
 								src={logoImgCB}
 								alt='logoCañaBrava'
-								style={{ width: 390, height: 240 }}
+								style={{ width: 400, height: 240 }}
 							/>
 						</CustomBox>
 					</Grid>
@@ -51,7 +49,7 @@ const Companies = () => {
 							<img
 								src={logoImgP}
 								alt='logoPalmeras'
-								style={{ width: 210, height: 170 }}
+								style={{ width: 250, height: 170 }}
 							/>
 						</CustomBox>
 					</Grid>
@@ -60,7 +58,7 @@ const Companies = () => {
 							<img
 								src={logoImgPS}
 								alt='logoPalmeras'
-								style={{ width: 170, height: 200 }}
+								style={{ width: 190, height: 210 }}
 							/>
 						</CustomBox>
 					</Grid>
