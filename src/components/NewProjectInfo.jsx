@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import { Grid, Container } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
-import ReactPlayer from 'react-player';
-import video1 from '../assets/rincondelLago.mp4';
+//import ReactPlayer from 'react-player';
+import logo5 from '../assets/logoRincondelLago.jpg';
 import { Button } from '@mui/material';
 
 export default function BasicStack() {
@@ -21,7 +21,7 @@ export default function BasicStack() {
 						sx={{
 							color: Colors.inverse,
 							fontWeight: 'bold',
-							mt: 3,
+							mt: '20%',
 							p: '40px',
 							textAlign: 'center',
 						}}
@@ -29,27 +29,18 @@ export default function BasicStack() {
 						CONOCE NUESTRO NUEVO PROYECTO RINCÓN DEL LAGO
 					</Typography>
 					<Button
-					variant="contained"
+						variant='contained'
 						sx={{
 							position: 'relative',
 							left: '43%',
 							backgroundColor: 'Colors.info2',
-							
 						}}
 					>
 						Ver Más
 					</Button>
 				</Grid>
 				<Grid item xs={8}>
-					<Container className='player-wrapper'>
-						<ReactPlayer
-							url={video1}
-							controls={true}
-							playing={true}
-							width='90%'
-							height='90%'
-						/>
-					</Container>
+					<img src={logo5} alt='logo' style={{ width: '100%', height: '100%' }} />
 				</Grid>
 			</Grid>
 		</Box>
