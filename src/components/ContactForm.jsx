@@ -1,109 +1,122 @@
 import { Box, TextField } from '@mui/material'
 import React from 'react'
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import { alpha, styled } from '@mui/material/styles';
-
-import FilledInput from '@mui/material/FilledInput';
 import fotoformulario from '../assets/lotes.jpeg';
-import FormHelperText from '@mui/material/FormHelperText';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
-import { blue } from '@mui/material/colors';
-import { borderRadius } from '@mui/system';
-import { Block } from '@mui/icons-material';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import SendIcon from '@mui/icons-material/Send';
+import { textAlign } from '@mui/system';
 
 
 const CssTextField = styled(TextField)({
-    width: '85%',
-    borderRadius: '30',
+    width: '98%',
+    borderRadius: 60,
 
     backgroundColor: 'white',
     display: 'flex',
     float: 'right',
     '& label.Mui-focused': {
-        color: 'green',
+        color: 'green', borderRadius: 60,
     },
     '& .MuiInput-underline:after': {
-        borderBottomColor: 'green',
+        borderBottomColor: 'green', borderRadius: 60,
     },
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: 'gray',
+            borderColor: 'gray', borderRadius: 60,
         },
         '&:hover fieldset': {
-            borderColor: 'yellow',
+            borderColor: 'yellow', borderRadius: 60,
         },
         '&.Mui-focused fieldset': {
-            borderColor: 'green',
+            borderColor: 'green', borderRadius: 60,
         },
     },
 });
 
 
+
+
 export default function ContactForm() {
+    
+
+
+    
+   
     return (
         
-      
-      
-        <Box component="form" sx={{
            
-           display:'flex',
-          
-           
-            backgroundColor: '#F0F0EB',
-            borderRadius: 2,
-            margin: 3 ,
-           // border: 1,
-           
-            padding:3,
-            borderColor: 'black',
-            "& .MuiTextField-root": { m: 1 },
-            
-          }}>
-            
-            <Box component="form" sx={{
-                 
-                
-                display: 'flex',
-                height:'350px',
-                padding:'10px',
-                borderRadius:'5', 
-                width:'50%',
-                margin:'10px', 
-                "& .MuiTextField-root": { m: 1 },
-                
-            }}>
-                <img src={fotoformulario}  /> 
-            
-            </Box>
+                <Grid container
+                    sx={{
+                        display: 'flex',
+                        border: 2,
+                        margin: '5px',
+                        padding: '5px',
+                        backgroundColor: '#FDEEEB',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        alignItems: 'center'
+                    }}>
+                    <Grid item xs={12} sm={6} md={6} lg={6}>
 
-            
-            <Box component="form" sx={{
-              display:'flex',
-              flexDirection:'column',
-              width:'50%',
-              margin:'10px',
-              padding:'10px',
-              
-                 
-                "& .MuiTextField-root": { m: 1 },
-                
-            }}>
-            <CssTextField label="Nombre" id="custom-css-outlined-input"  required />
-            <CssTextField label="Apellido" id="custom-css-outlined-input2" required />
-            <CssTextField label="Email" id="custom-css-outlined-input3" required />
-            <CssTextField label="Cedula" id="custom-css-outlined-input4" required/>
-            <CssTextField label="Celular" id="custom-css-outlined-input5"  required/>
-            
-            </Box>
-            
-            
-          
+                        <Box sx={{
+                            display: 'flex',
+                            height: '95%',
+                            padding: '5px',
+                            borderRadius: '5',
+                            width: '95%',
+                            margin: '5px',
+                            "& .MuiTextField-root": { m: 1 },
+                        }}>
+                            <img width={'100%'} height={'100%'} src={fotoformulario} />
 
-        </Box>
+                        </Box>
 
-      
+                    </Grid>
+
+                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                        <Box component="form" sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            width: '95%',
+                            margin: '5px',
+                            padding: '5px',
+                            // border:2,
+                            //maxHeight:'360px',
+                            height: '95%',
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            "& .MuiTextField-root": { m: 1 },
+
+                        }}>
+                            <CssTextField 
+                                type='text'
+                                label="Nombre" 
+                                id="custom-css-outlined-input" 
+                                required
+                            />
+                            <CssTextField label="Apellido"  type='text' id="custom-css-outlined-input" required />
+                            <CssTextField label="Email"   type='email' id="custom-css-outlined-input" required />
+                            <CssTextField label="Cedula"  type='Number' id="custom-css-outlined-input" required />
+                            <CssTextField label="Celular" type='Number' id="custom-css-outlined-input"  required />
+                            
+                            <Button
+                                sx={{ 
+                                    width: '98%',
+                                    margin: '5px',
+                                    height: '40px',
+                                    backgroundColor: '#FE6B1D',
+                                    borderRadius: 60 
+                                    }} 
+                                    variant="contained" id='btnEnviar'   endIcon={<SendIcon />}> Enviar
+                            </Button>
+                        </Box>
+                    </Grid>
+                </Grid>
+            
+
+
 
     )
 }
