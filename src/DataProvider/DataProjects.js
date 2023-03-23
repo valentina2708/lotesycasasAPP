@@ -5,7 +5,7 @@ export const  DataProjects=[
     nombre: 'Rincón Del Lago',
     tipo: 'Urbanización',
     descripcionCorta: 'Inicio de construcción con inversion de alta rentabilidad',
-    descripcion: 'Proyecto nuevo de la contructora inmobiliaria Casas & Lotes en Jamundí con financiación de hasta 60 meses, 173 lotes de vivienda, 8 lotes comerciales, 64 lotes vendidos con una alta valorización ',
+    descripcion: 'Proyecto nuevo de la contructora inmobiliaria Casas & Lotes en Jamundí con financiación de hasta 60 meses, 173 lotes de vivienda, 8 lotes comerciales, 64 lotes vendidos con una alta valorización.',
     ubicacion:'Jamundí',
     areaDelLote:'mts²',
     estado: 'Lanzamiento',

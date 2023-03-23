@@ -3,8 +3,6 @@ import { Typography } from '@mui/material';
 import { Grid, Paper, Stack, CardMedia, Card } from '@mui/material';
 import { Button } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
-
-import publicidad from '../assets/rincondelLago.jpg';
 import logo from '../assets/logoRincondelLago.jpg';
 
 export default function BasicStack() {
