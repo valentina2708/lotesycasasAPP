@@ -11,13 +11,11 @@ import {
 	Typography,
 	Button,
 	InputBase,
+	
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
 import { Colors } from '/src/config/themeConfig.js';
 import logo from '/src/assets/logoColor.jpg';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -43,6 +41,7 @@ const Appbar = () => {
 		{ Name: 'Contacto', Link: '#' },
 	];
 	const [open, SetOpen] = useState(false);
+	
 	return (
 		<AppBar sx={{ background: Colors.body_bg }} elevation={0}>
 			<StyledToolbar>
@@ -67,22 +66,17 @@ const Appbar = () => {
 				</IconBox>
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-				
-      
 					{MenuItems.map(item => (
-		
 						<Button
-							variant="text"
+							variant='text'
 							sx={{
-								
 								color: Colors.info2,
 								borderRadius: 2,
 								padding: '10px',
-							
+
 								fontWeight: 600,
-								
+
 								'&:hover': {
-									
 									opacity: [0.7, 0.6, 0.7],
 									boxShadow: 'none',
 								},
@@ -108,13 +102,14 @@ const Appbar = () => {
 
 				<SearchBox>
 					<InputBase
-					placeholder='Buscar ...' 
-					 icon={<SearchIcon/>}
-					 sx={{ color: Colors.info2 }} />
-					
+						placeholder='Buscar ...'
+						icon={<SearchIcon />}
+						sx={{ color: Colors.info2 }}
+					/>
+
 					<MenuIcon
 						sx={{
-							color: Colors.info2 ,
+							color: Colors.info2,
 							display: { xs: 'block', sm: 'block', md: 'none' },
 						}}
 						onClick={() => SetOpen(!open)}
