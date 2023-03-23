@@ -16,7 +16,7 @@ export default function BasicStack() {
 			sx={{
 				justifyContent: 'center',
 				alignItems: 'center',
-				p: '40px',
+				p: '20px 0px',
 				bgcolor: Colors.info,
 			}}
 		>

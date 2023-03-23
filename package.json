@@ -16,7 +16,9 @@
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@mui/styled-engine-sc": "^5.11.9",
+    "@react-spring/web": "^9.7.1",
     "bootstrap": "^5.2.3",
+    "gsap": "^3.11.5",
     "hero-slider": "^3.1.0",
     "ng-overlay-container": "^15.0.0",
     "react": "^18.2.0",
@@ -28,6 +30,7 @@
     "styled-components": "^5.3.8",
     "theme-ui": "^0.15.5",
     "title": "^3.5.3",
+    "tss-react": "^4.8.2",
     "wrapper": "^0.1.0"
   },
   "devDependencies": {

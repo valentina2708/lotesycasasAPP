@@ -1,47 +1,102 @@
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import { Grid, Container } from '@mui/material';
-import { Colors } from '/src/config/themeConfig.js';
-import logo5 from '../assets/logoRincondelLago.jpg';
+import { Grid, Paper, Stack, CardMedia, Card } from '@mui/material';
 import { Button } from '@mui/material';
+import { Colors } from '/src/config/themeConfig.js';
+
+import publicidad from '../assets/rincondelLago.jpg';
+import logo from '../assets/logoRincondelLago.jpg';
 
 export default function BasicStack() {
 	return (
 		<Box
 			sx={{
 				p: '50px 0px',
-				flexGrow: 1,
 			}}
 		>
-			<Grid container spacing={2} columns={16}>
-				<Grid item xs={8}>
-					<Typography
-						variant='h4'
+			{/* elemento 1 */}
+			<Grid container rowSpacing={3} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>
+				<Grid item xs={6}>
+					<Stack
 						sx={{
-							color: Colors.inverse,
-							fontWeight: 'bold',
-							mt: '20%',
-							p: '40px',
-							textAlign: 'center',
-						}}
-					>
-						CONOCE NUESTRO NUEVO PROYECTO RINCÓN DEL LAGO
-					</Typography>
-					<Button
-						variant='contained'
-						sx={{
+							p: '60px 0px',
+							backgroundColor: Colors.info2,
 							position: 'relative',
-							left: '43%',
-							backgroundColor: 'Colors.info2',
+							top: 290,
+							left: '20%',
+							height: '30%',
 						}}
-					>
-						Ver Más
-					</Button>
+					></Stack>
 				</Grid>
-				<Grid item xs={8}>
-					<img src={logo5} alt='logo' style={{ width: '100%', height: '100%' }} />
+				<Grid item xs={6}>
+					<Stack
+						sx={{
+							p: '60px 0px',
+							height: '60%',
+							backgroundColor: Colors.info2,
+							position: 'relative',
+							top: 50,
+							right: '20%',
+						}}
+					></Stack>
 				</Grid>
 			</Grid>
+
+			{/* elemento 2*/}
+			<Card
+				elevation={12}
+				sx={{
+					width: '70%',
+					height: 520,
+					position: 'relative',
+					top: '-150px',
+					left: '15%',
+					borderRadius: 3,
+				}}
+			>
+				<Grid container rowSpacing={1} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>
+					<Grid item xs={6}>
+						<CardMedia
+							sx={{
+								height: '120%',
+								width: '100%',
+								borderRadius: 3,
+								position: 'relative',
+								bottom: '5px',
+							}}
+							image='/src/assets/rincondelLago.jpg'
+							title='publicidad'
+						/>
+					</Grid>
+					<Grid item xs={6}>
+						<Stack
+							sx={{
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								p: '20px',
+							}}
+						>
+							<Typography
+								variant='h4'
+								sx={{
+									fontWeight: 'bold',
+									mt: 2,
+									
+								}}
+							>
+								Conoce Nuestro Nuevo Proyecto Rincón del Lago
+							</Typography>
+							<Typography variant='body1'>
+								Estamos en construccion de nuestra nueva urbanizacón, un lugar
+								pensado para tu comodidad y confort.
+							</Typography>
+							<img src={logo} alt='logo' style={{ width: 320, height: 230 }} />
+							<Button variant='contained' >Ver Más</Button>
+						</Stack>
+					</Grid>
+				</Grid>
+			</Card>
 		</Box>
 	);
 }

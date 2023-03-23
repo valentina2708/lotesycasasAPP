@@ -1,71 +1,83 @@
-import { Box, Container, styled } from '@mui/material';
+import { Box, Container, styled, Button } from '@mui/material';
 import logoImgCB from '../assets/LogoCañaBrava.png';
 import Grid from '@mui/material/Unstable_Grid2';
 import logoImgCD from '../assets/logoCañaDulce.png';
 import logoImgP from '../assets/logoPalmeras.png';
 import logoImgPS from '../assets/logopuertasdelsol.png';
+import { Colors } from '/src/config/themeConfig.js';
 
-const Companies = () => {
+const ProjectsVisit = () => {
 	const CustomContainer = styled(Container)(({ theme }) => ({
 		display: 'flex',
 		[theme.breakpoints.down('md')]: {
 			flexDirection: 'column',
+			justifyContent: 'center',
 			alignItems: 'center',
-			textAlign: 'center',
+		},
+	}));
+
+	const CustomButton = styled(Button)(({ theme }) => ({
+		marginBottom: theme.spacing(3),
+		cursor: 'pointer',
+		boxShadow: 'none',
+		textTransform: 'none',
+		'&:hover': {
+			backgroundColor: Colors.border,
+			opacity: [0.7],
+		},
 		
-		},
 	}));
-
-	const CustomBox = styled(Box)(({ theme }) => ({
-		[theme.breakpoints.down('md')]: {
-			marginBottom: theme.spacing(4),
-		},
-	}));
-
 	return (
-		<Box sx={{ flexGrow: 1,	p: '30px 0px' }}>
-			<Grid container spacing={0.5} minHeight={100}>
+		<Box
+			sx={{
+				flexGrow: 1,
+				p: '20px 0px',
+			}}
+		>
+			<Grid container spacing={2} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>
 				<CustomContainer>
-					<Grid >
-						<CustomBox>
+					<Grid xs={3}>
+						<CustomButton>
 							<img
 								src={logoImgCD}
 								alt='logoCañaDulce'
 								style={{ width: 210, height: 200 }}
 							/>
-						</CustomBox>
+						</CustomButton>
 					</Grid>
-					<Grid display='flex' justifyContent='center' alignItems='center'>
-						<CustomBox>
+					<Grid xs={3}>
+						<CustomButton>
 							<img
 								src={logoImgCB}
 								alt='logoCañaBrava'
-								style={{ width: 400, height: 240 }}
+								style={{ width: 200, height: 190 }}
 							/>
-						</CustomBox>
+						</CustomButton>
 					</Grid>
-					<Grid display='flex' justifyContent='center' alignItems='center'>
-						<CustomBox>
-							<img
-								src={logoImgP}
-								alt='logoPalmeras'
-								style={{ width: 250, height: 170 }}
-							/>
-						</CustomBox>
-					</Grid>
-					<Grid xs display='flex' justifyContent='center' alignItems='center'>
-						<CustomBox>
+					<Grid xs={3}>
+						<CustomButton>
 							<img
 								src={logoImgPS}
 								alt='logoPalmeras'
-								style={{ width: 190, height: 210 }}
+								style={{ width: 170, height: 210 }}
 							/>
-						</CustomBox>
+						</CustomButton>
 					</Grid>
+
+					<Grid xs={3}>
+						<CustomButton>
+							<img
+								src={logoImgP}
+								alt='logoPalmeras'
+								style={{ width: 250, height: 180 }}
+							/>
+						</CustomButton>
+					</Grid>
+					
 				</CustomContainer>
 			</Grid>
 		</Box>
 	);
 };
 
-export default Companies;
+export default ProjectsVisit;

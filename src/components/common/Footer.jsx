@@ -45,15 +45,6 @@ export default function FooterBar() {
 						<Fab sx={{ color: 'gray' }} size='small'>
 							<InstagramIcon />
 						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<TwitterIcon />
-						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<YouTubeIcon />
-						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<LinkedInIcon />
-						</Fab>
 					</Stack>
 				</Stack>
 			</Grid>

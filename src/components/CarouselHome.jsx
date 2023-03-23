@@ -1,37 +1,34 @@
 import { Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import Box from '@mui/material/Box';
-import HeroSlider, { Slide, ButtonsNav, SideNav, Overlay } from 'hero-slider';
+import HeroSlider, { Slide, ButtonsNav, Overlay, Nav } from 'hero-slider';
 import home1 from '../assets/casaCarru3.jpg';
-import home2 from '../assets/casas.jpg';
-import home3 from '../assets/casaCarru2.jpg';
-import home4 from '../assets/casaCarru.jpg';
+import home2 from '../assets/rincondelLago3.jpg';
+import home3 from '../assets/casas.jpg';
+import home4 from '../assets/rincondelLago2.jpg';
+
+
 
 import { Colors } from '/src/config/themeConfig.js';
 
 export default function BlendModeSlider() {
 	return (
 		<HeroSlider
-		elevation='static'
+			orientation='horizontal'
+			initialSlide={1}
+			settings={{
+				slidingDuration: 500,
+				slidingDelay: 100,
+				shouldAutoplay: true,
+				shouldDisplayButtons: true,
+				autoplayDuration: 5000,
+				height: '90vmin',
+			}}
+			elevation='static'
 			height='100vh'
 			autoplay
 			animations={{
 				slidingAnimation: 'fade',
-			}}
-			controller={{
-				initialSlide: 1,
-				slidingDuration: 500,
-				slidingDelay: 100,
-				onSliding: nextSlide =>
-					console.debug('onSliding(nextSlide): ', nextSlide),
-				onBeforeSliding: (previousSlide, nextSlide) =>
-					console.debug(
-						'onBeforeSliding(previousSlide, nextSlide): ',
-						previousSlide,
-						nextSlide
-					),
-				onAfterSliding: nextSlide =>
-					console.debug('onAfterSliding(nextSlide): ', nextSlide),
 			}}
 		>
 			<Overlay>
@@ -61,52 +58,41 @@ export default function BlendModeSlider() {
 							Constructura Inmobiliaria-Bienes Raices
 						</Typography>
 						<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-							Realizamos grandes proyectos en Colombia y Estados Unidos, con una
+							Realizamos grandes proyectos en Colombia, con una
 							alta valorización en el mercado
 						</Typography>
 					</Box>
 				</Stack>
 			</Overlay>
 			<Slide
-				shouldRenderMask
-				label='Casa en Condominio'
 				background={{
-					backgroundImageBlendMode: 'luminosity',
-					maskBackgroundBlendMode: 'luminosity',
 					backgroundImageSrc: home1,
+					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
-				shouldRenderMask
-				label='Lujosa Casa'
 				background={{
-					backgroundImageBlendMode: 'luminosity',
 					backgroundImageSrc: home2,
-					maskBackgroundBlendMode: 'luminosity',
+					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
-				shouldRenderMask
-				label='Lote finalizado'
 				background={{
-					backgroundImageBlendMode: 'luminosity',
 					backgroundImageSrc: home3,
-					maskBackgroundBlendMode: 'luminosity',
+					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
-				shouldRenderMask
-				label='Casa'
 				background={{
 					backgroundImageSrc: home4,
-					backgroundImageBlendMode: 'luminosity',
-					maskBackgroundBlendMode: 'luminosity',
+					backgroundAnimation: 'zoom',
 				}}
 			/>
-			<ButtonsNav />
+
+			<Nav />
 		</HeroSlider>
 	);
 }

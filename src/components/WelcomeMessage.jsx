@@ -14,7 +14,7 @@ export default function BasicStack() {
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				p: '40px 0px',
+				p: '70px 0px',
 				overflow: 'hidden',
 			}}
 		>
@@ -24,7 +24,7 @@ export default function BasicStack() {
                   TransitionProps={{ timeout: 600 }}
 					variant='h2'
 					sx={{
-						color: Colors.info2,
+						color: Colors.primary,
 						fontWeight: 'bold',
 						mt: 2,
 					}}

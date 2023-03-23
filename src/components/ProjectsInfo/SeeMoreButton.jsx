@@ -1,6 +1,6 @@
 import { Colors } from '/src/config/themeConfig.js';
 import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function FabIntegrationSnackbar() {
 	return (
@@ -8,9 +8,8 @@ export default function FabIntegrationSnackbar() {
 			color='secondary'
 			sx={{
 				position: 'relative',
-				top: '1.em',
-				left: '100px',
-				bottom: '1.em',
+				top: '250px',
+				rigth: '70px',
 				size: 'small',
 				backgroundColor: Colors.info2,
 				'&:hover': {
@@ -19,7 +18,7 @@ export default function FabIntegrationSnackbar() {
 				},
 			}}
 		>
-			<AddIcon />
+			<ArrowForwardIcon  />
 		</Fab>
 	);
 }

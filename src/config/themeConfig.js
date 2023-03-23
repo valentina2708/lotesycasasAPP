@@ -1,14 +1,14 @@
 import { createTheme } from '@mui/material/styles';
 
 export const Colors = {
-	primary: '#3949ab',
+	primary: '#813315',
 	secondary: '#F0EEED',
-	success: '#4CAF50',
+	success: '#A16553',
 	info: '#A15600',
 	info2:'#E9601C',
 	info3:'#eb7033',
 	danger: '#FF5722',
-	dark: '#0e1b20',
+	dark: '#0e1b20', 
 	light: '#aaa',
 	muted: '#abafb3',
 	border: '#DDDFE1',
