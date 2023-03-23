@@ -78,6 +78,7 @@ export default function BasicStack() {
 							<Typography
 								variant='h4'
 								sx={{
+									color: Colors.primary,
 									fontWeight: 'bold',
 									mt: 2,
 									
@@ -85,11 +86,12 @@ export default function BasicStack() {
 							>
 								Conoce Nuestro Nuevo Proyecto Rincón del Lago
 							</Typography>
-							<Typography variant='body1'>
+							<Typography variant='body1' 
+							sx={{mt: 3}}>
 								Estamos en construccion de nuestra nueva urbanizacón, un lugar
 								pensado para tu comodidad y confort.
 							</Typography>
-							<img src={logo} alt='logo' style={{ width: 320, height: 230 }} />
+							<img src={logo} alt='logo' style={{ width: 320, height: 220 }} />
 							<Button variant='contained' >Ver Más</Button>
 						</Stack>
 					</Grid>

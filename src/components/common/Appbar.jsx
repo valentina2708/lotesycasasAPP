@@ -72,23 +72,22 @@ const Appbar = () => {
 					{MenuItems.map(item => (
 		
 						<Button
-							variant='h4'
+							variant="text"
 							sx={{
+								
 								color: Colors.info2,
 								borderRadius: 2,
-								boxShadow: 'none',
-								padding: '8px 12px',
-								width: '30%',
-								height: '10%',
+								padding: '10px',
+							
 								fontWeight: 600,
+								
 								'&:hover': {
-									underline:'hover',
+									
 									opacity: [0.7, 0.6, 0.7],
 									boxShadow: 'none',
 								},
 								'&:active': {
 									boxShadow: 'none',
-								
 									opacity: [0.7, 0.6, 0.7],
 								},
 								'&:focus': {
