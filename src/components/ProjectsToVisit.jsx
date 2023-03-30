@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import logoImgCD from '../assets/logoCañaDulce.png';
 import logoImgP from '../assets/logoPalmeras.png';
 import logoImgPS from '../assets/logopuertasdelsol.png';
-import { Colors } from '/src/config/themeConfig.js';
+import { Colors } from '../config/themeConfig.js';
 
 const ProjectsVisit = () => {
 	const CustomContainer = styled(Container)(({ theme }) => ({

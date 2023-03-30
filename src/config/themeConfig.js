@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material';
 
 export const Colors = {
 	primary: '#813315',
@@ -14,16 +14,16 @@ export const Colors = {
 	border: '#DDDFE1',
 	'@mui/material': '#2F3D4A',
 	
-	///////////////
+	/// ////////////
 	// Grays
-	///////////////
+	/// ////////////
 	dim_grey: '#696969',
 	dove_gray: '#d5d5d5',
 	body_bg: '#f3f6f9',
 	light_gray: 'rgb(230,230,230)',
-	///////////////
+	/// ////////////
 	// Solid Color
-	///////////////
+	/// ////////////
 	white: '#fff',
 	black: '#000',
 };
