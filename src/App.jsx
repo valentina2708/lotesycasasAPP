@@ -5,9 +5,7 @@ import theme from './config/themeConfig';
 import Appbar from './components/common/Appbar';
 import Footer from './components/common/Footer';
 import './App.css';
-
 import HomeLayout from './components/layout/HomeLayout';
-import './App.css';
 
 function App() {
 	return (

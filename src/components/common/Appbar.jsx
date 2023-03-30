@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+
 import {
 	AppBar,
 	Box,
-	InputBase,
 	Menu,
 	MenuItem,
 	styled,
 	Toolbar,
 	Typography,
+	Button,
+	InputBase,
+	
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
-import casasylotes from '../../assets/logocasasylotes.png';
+import { Colors } from '../../config/themeConfig';
+import logo from '../../assets/logoColor.jpg';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -33,43 +40,81 @@ const Appbar = () => {
 	
 	});
 	const MenuItems = [
-		{ Name: 'Home', Link: '/' },
+		{ Name: 'Inicio', Link: '/' },
 		{ Name: 'Nosotros', Link: '#' },
 		{ Name: 'Proyectos', Link: '#' },
 		{ Name: 'Contacto', Link: '#' },
 	];
 	const [open, SetOpen] = useState(false);
+	
 	return (
-		<AppBar
-			sx={{ background: '#FE6B1D', heigth: 900, fontWeight: 900 }}
-			elevation={0}
-		>
+		<AppBar sx={{ background: Colors.body_bg }} elevation={0}>
 			<StyledToolbar>
-				<IconBox>
-				
-				<div style={{display: 'flex',height:'70px', padding:'5px', borderRadius:'50' }}><img src={casasylotes}  /> </div>	
-					
-					
+				<IconBox sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+					<img src={logo} alt='logo' style={{ width: 150, height: 95 }} />
+					<Typography
+						variant='h4'
+						component='a'
+						href='/'
+						sx={{
+							mr: 2,
+							display: { xs: 'none', md: 'flex' },
+							alignItems: 'center',
+							fontWeight: 800,
+							letterSpacing: '.1rem',
+							textDecoration: 'none',
+							color: Colors.info2,
+						}}
+					>
+						Casas & Lotes
+					</Typography>
 				</IconBox>
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
 					{MenuItems.map(item => (
-						<Typography
+						<Button
+							variant='text'
 							sx={{
-								cursor: 'pointer',
-								fontSize: '14px',
+								color: Colors.info2,
+								borderRadius: 2,
+								padding: '10px',
+
+								fontWeight: 600,
+
+								'&:hover': {
+									opacity: [0.7, 0.6, 0.7],
+									boxShadow: 'none',
+								},
+								'&:active': {
+									boxShadow: 'none',
+									opacity: [0.7, 0.6, 0.7],
+								},
+								'&:focus': {
+									boxShadow: '0 0 0 0.1rem',
+								},
 							}}
 						>
-							{item.Name}
-						</Typography>
+							<Typography
+								sx={{
+									cursor: 'pointer',
+								}}
+							>
+								{item.Name}
+							</Typography>
+						</Button>
 					))}
 				</MenuBox>
 
 				<SearchBox>
-					<InputBase placeholder='Buscar...' sx={{ color: 'white' }} />
+					<InputBase
+						placeholder='Buscar ...'
+						icon={<SearchIcon />}
+						sx={{ color: Colors.info2 }}
+					/>
+
 					<MenuIcon
 						sx={{
-							color: 'white',
+							color: Colors.info2,
 							display: { xs: 'block', sm: 'block', md: 'none' },
 						}}
 						onClick={() => SetOpen(!open)}

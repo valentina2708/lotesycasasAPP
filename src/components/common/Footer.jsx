@@ -1,9 +1,7 @@
 import { Stack, Typography, Fab, Grid } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 export default function FooterBar() {
 	return (
@@ -15,6 +13,7 @@ export default function FooterBar() {
 			columns={{ xs: 12, md: 12 }}
 			spacing={{ xs: 2, md: 1 }}
 			sx={{ height: 200, background: '#FE6B1D', fontWeight: 900 }}
+			//sx={{ height: 200, background: '#A15600', fontWeight: 900 }}
 		>
 			<Grid item xs={12} md={6}>
 				<Stack
@@ -44,15 +43,6 @@ export default function FooterBar() {
 						</Fab>
 						<Fab sx={{ color: 'gray' }} size='small'>
 							<InstagramIcon />
-						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<TwitterIcon />
-						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<YouTubeIcon />
-						</Fab>
-						<Fab sx={{ color: 'gray' }} size='small'>
-							<LinkedInIcon />
 						</Fab>
 					</Stack>
 				</Stack>

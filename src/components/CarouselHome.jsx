@@ -1,57 +1,94 @@
+import { Typography } from '@mui/material';
+import { Stack } from '@mui/system';
+import Box from '@mui/material/Box';
+import HeroSlider, { Slide, ButtonsNav, Overlay, Nav } from 'hero-slider';
+import home1 from '../assets/casaCarru3.jpg';
+import home2 from '../assets/rincondelLago3.jpg';
+import home3 from '../assets/casas.jpg';
+import home4 from '../assets/rincondelLago2.jpg';
 
-import HeroSlider, { Slide, Nav } from 'hero-slider';
-import lote from '../assets/casas.jpg';
-import casa from '../assets/ground.jpg';
-import home from '../assets/home_1.jpg';
-import home2 from '../assets/lotes.jpeg';
 
-export default function BasicSlider() {
+
+import { Colors } from '/src/config/themeConfig.js';
+
+export default function BlendModeSlider() {
 	return (
 		<HeroSlider
-			height='90vh'
-			autoplay
-			controller={{
-				initialSlide: 1,
+			orientation='horizontal'
+			initialSlide={1}
+			settings={{
 				slidingDuration: 500,
 				slidingDelay: 100,
-				onSliding: nextSlide =>
-					console.debug('onSliding(nextSlide): ', nextSlide),
-				onBeforeSliding: (previousSlide, nextSlide) =>
-					console.debug(
-						'onBeforeSliding(previousSlide, nextSlide): ',
-						previousSlide,
-						nextSlide
-					),
-				onAfterSliding: nextSlide =>
-					console.debug('onAfterSliding(nextSlide): ', nextSlide),
+				shouldAutoplay: true,
+				shouldDisplayButtons: true,
+				autoplayDuration: 5000,
+				height: '90vmin',
+			}}
+			elevation='static'
+			height='100vh'
+			autoplay
+			animations={{
+				slidingAnimation: 'fade',
 			}}
 		>
-    <Slide
-				label='Bogliasco - Italy'
+			<Overlay>
+				<Stack
+					sx={{
+						display: 'flex',
+						flexFlow: 'column',
+						alignItems: 'center',
+						justifyContent: 'center',
+						width: '100%',
+						height: '100%',
+						margin: '0 auto',
+					}}
+				>
+					<Box
+						sx={{
+							backgroundColor: Colors.body_bg,
+							textAlign: 'center',
+							border: 'none',
+							opacity: [0.6, 0.7, 0.6],
+						}}
+					>
+						<Typography
+							variant='h2'
+							sx={{ margin: '0 36px', fontWeight: 'bold' }}
+						>
+							Constructura Inmobiliaria-Bienes Raices
+						</Typography>
+						<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+							Realizamos grandes proyectos en Colombia, con una
+							alta valorización en el mercado
+						</Typography>
+					</Box>
+				</Stack>
+			</Overlay>
+			<Slide
 				background={{
-					backgroundImageSrc: lote,
+					backgroundImageSrc: home1,
+					backgroundAnimation: 'zoom',
 				}}
 			/>
-      
 
 			<Slide
-				label='Bogliasco - Italy'
-				background={{
-					backgroundImageSrc: casa,
-				}}
-			/>
-
-			<Slide
-				label='County Clare - Ireland'
-				background={{
-					backgroundImageSrc: home,
-				}}
-			/>
-
-			<Slide
-				label='Crater Rock, OR - United States'
 				background={{
 					backgroundImageSrc: home2,
+					backgroundAnimation: 'zoom',
+				}}
+			/>
+
+			<Slide
+				background={{
+					backgroundImageSrc: home3,
+					backgroundAnimation: 'zoom',
+				}}
+			/>
+
+			<Slide
+				background={{
+					backgroundImageSrc: home4,
+					backgroundAnimation: 'zoom',
 				}}
 			/>
 
