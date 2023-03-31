@@ -6,7 +6,8 @@ import MainProjects from '/src/components/ProjectsInfo/MainProjects';
 import NewProjectInfo from '/src/components/NewProjectInfo';
 import HomeInfo from '/src/components/HomeInfo';
 import InfoPaymentMethods from '/src/components/InfoPaymentMethods';
-
+import ContactForm from './../ContactForm';
+import AboutUs from './../AboutUs';
 export default function HomeLayout() {
 	return (
 		<div>
@@ -17,7 +18,8 @@ export default function HomeLayout() {
 			<MainProjects />
 			<InfoPaymentMethods/>
 			<HomeInfo />
-			
+			<ContactForm/>
+			<AboutUs/>
 		</div>
 	);
 }

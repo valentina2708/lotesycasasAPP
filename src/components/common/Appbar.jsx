@@ -18,7 +18,8 @@ import { Colors } from '../../config/themeConfig';
 import logo from '../../assets/logoColor.jpg';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-
+//import Link from 'react-router-dom';
+import ContactForm from './../AboutUs';
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -40,7 +41,8 @@ const Appbar = () => {
 	
 	});
 	const MenuItems = [
-		{ Name: 'Inicio', Link: '/' },
+		//<Link to="../AboutUs" >home</Link>,
+		{ Name: 'Inicio', Link:'/' },
 		{ Name: 'Nosotros', Link: '#' },
 		{ Name: 'Proyectos', Link: '#' },
 		{ Name: 'Contacto', Link: '#' },

@@ -1,8 +1,9 @@
-import { Box, TextField } from '@mui/material'
+import { Box, TextField,Stack, getOffsetLeft,Hidden } from '@mui/material'
 import React from 'react'
 import { alpha, styled } from '@mui/material/styles';
 import fotoformulario from '../assets/lotes.jpeg';
 import Grid from '@mui/material/Grid';
+//import Grid from '@mui/material/Unstable_Grid2'; 
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import SendIcon from '@mui/icons-material/Send';
@@ -46,20 +47,28 @@ export default function ContactForm() {
    
     return (
         
-           
+      
+             
                 <Grid container
+                
                     sx={{
                         display: 'flex',
-                        border: 2,
-                        margin: '5px',
+                        boxShadow: 5,
+                       
+                        border: 0,
+                        margin: '10px',
                         padding: '5px',
                         backgroundColor: '#FDEEEB',
                         justifyContent: 'center',
                         textAlign: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        width:'100%',
+                         height:'100%'
                     }}>
-                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                    <Grid item xs={12} sm={12} md={6} lg={6}>
 
+
+                  
                         <Box sx={{
                             display: 'flex',
                             height: '95%',
@@ -69,13 +78,13 @@ export default function ContactForm() {
                             margin: '5px',
                             "& .MuiTextField-root": { m: 1 },
                         }}>
-                            <img width={'100%'} height={'100%'} src={fotoformulario} />
+                           <Hidden mdDown>   <img width={'100%'} height={'100%'} src={fotoformulario} /> </Hidden>
 
                         </Box>
-
+                       
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                    <Grid item xs={12} sm={12} md={6} lg={6}>
                         <Box component="form" sx={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -113,8 +122,10 @@ export default function ContactForm() {
                             </Button>
                         </Box>
                     </Grid>
+                   
                 </Grid>
-            
+              
+           
 
 
 
