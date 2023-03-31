@@ -6,12 +6,11 @@ import MainProjects from '/src/components/ProjectsInfo/MainProjects';
 import NewProjectInfo from '/src/components/NewProjectInfo';
 import HomeInfo from '/src/components/HomeInfo';
 import InfoPaymentMethods from '/src/components/InfoPaymentMethods';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export default function HomeLayout() {
 	return (
-
-		   <motion.div initial="hidden" animate="show">
+		<motion.div initial='hidden' animate='show'>
 			<CarouselHome />
 			<WelcomeMessage />
 			<NewProjectInfo />
@@ -19,6 +18,6 @@ export default function HomeLayout() {
 			<MainProjects />
 			<InfoPaymentMethods />
 			<HomeInfo />
-			</motion.div>
+		</motion.div>
 	);
 }
