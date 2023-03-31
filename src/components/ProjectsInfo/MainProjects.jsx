@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Chip, Stack, Avatar } from '@mui/material';
+import { Box, Typography, Chip, Stack, Avatar } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import {
 	CardMedia,
@@ -19,33 +19,51 @@ import {
 	GarageOutlined,
 	BathtubOutlined,
 } from '@mui/icons-material/';
-
+import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
+import { motion } from "framer-motion";
+import { useScroll } from "../useScroll";
+import {servicesAnimations } from "../../animation";
 
 export default function MediaCard() {
+	const [element, controls] = useScroll();
 	return (
-		<Box sx={{ flexGrow: 1, p: '25px 0px' }}>
+
+		<Box ref={element}
+		 sx={{ flexGrow: 1, p: '40px 0px' }}>
+
+		
 			<Container
 				sx={{
-					direction: 'row',
-
+					direction: 'column',
 					justifyContent: 'center',
-
 					alignItems: 'center',
+					gap:'15px'
 				}}
 			>
 				<Grid
+					item
+					xs
 					container
-					spacing={{ xs: 3, md: 4 }}
-					columns={{ xs: 6, sm: 4, md: 2 }}
+					columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+					direction='column'
+					rowSpacing={6}
 				>
-					<Grid item xs container direction='column' spacing={2}></Grid>
 					{DataProjects.map(project => (
 						<Grid item xs={12}>
+						<motion.div className="home"
+		     variants={servicesAnimations}
+              animate={controls}
+              transition={{
+                delay: 0.02,
+                type: "tween",
+                duration: 0.2,
+              }}
+			  >
 							<Card
-							elevation={8}
+								elevation={4}
 								sx={{
-									width: '95%',
+									width: '94%',
 									height: 360,
 									borderRadius: 4,
 									display: 'flex',
@@ -57,6 +75,7 @@ export default function MediaCard() {
 										width: 350,
 										height: 360,
 										margin: '0 auto 1.5em',
+										cursor: 'pointer',
 
 										'&:hover': {
 											backgroundColor: Colors.muted,
@@ -66,9 +85,11 @@ export default function MediaCard() {
 									image={project.imagen}
 									alt='imagen'
 								/>
-								<Grid item xs container direction='column' spacing={2}>
+								<Grid item xs container direction='column'>
 									<Grid item xs>
-										<CardContent sx={{ flex: '1 0 auto' }}>
+										<CardContent
+											sx={{ flex: '1 0 auto', p: ' 15px 40px 0 40px' }}
+										>
 											<Typography
 												variant='h5'
 												component='div'
@@ -85,7 +106,6 @@ export default function MediaCard() {
 													<Avatar
 														sx={{ bgcolor: Colors.info3 }}
 														variant='rounded'
-														elevation={6}
 													>
 														<HolidayVillage />
 													</Avatar>
@@ -102,7 +122,7 @@ export default function MediaCard() {
 												{project.descripcion}
 											</Typography>
 
-											<Divider variant='middle' />
+											<Divider />
 
 											<Box sx={{ m: 2, color: Colors.info3 }}>
 												{project.tipo === 'Urbanización' ? (
@@ -153,28 +173,32 @@ export default function MediaCard() {
 								</Grid>
 
 								<Grid item>
-									<Typography variant='subtitle1' component='div'>
+									<Typography>
 										<Chip
 											sx={{
+												fontSize: '12px',
 												display: 'flex',
 												color: Colors.body_bg,
 												position: 'relative',
 												top: '20px',
-                                                right:'15px',
+												right: '30px',
+
 												bgcolor: Colors.primary,
 											}}
 											label={project.estado}
 										/>
 									</Typography>
-									<Stack><SeeMoreButton /></Stack>
-								
+									<Stack>
+										<SeeMoreButton />
+									</Stack>
 								</Grid>
-									
 							</Card>
+							</motion.div>
 						</Grid>
 					))}
 				</Grid>
 			</Container>
+			
 		</Box>
 	);
 }

@@ -60,7 +60,7 @@ export const  DataProjects=[
      tipo: 'Urbanización',
      areaDelLote:'252 mts²',
      descripcionCorta: 'Vendido al 100%, inversionistas nacionales',
-     descripcion: 'proyecto ejecutado y vendido al 100% en tiempo record. Total satisfacción para sus propietarios en inversionistas nacionales como extranjeros.',
+     descripcion: 'Proyecto ejecutado y vendido al 100% en tiempo record. Total satisfacción para sus propietarios en inversionistas nacionales como extranjeros.',
      ubicacion: 'Corregimiento San José, a 15 minutos de Tuluá',
      caracteristicas: 'Total satisfacción para sus propietarios en inversionistas nacionales como extranjeros.',
      imagen: '/src/assets/urbanizacionCañaBrava.jpg'
@@ -93,7 +93,7 @@ export const  DataProjects=[
   tipo: 'Condominio',
   descripcionCorta: 'Un paraíso a pocos minutos de la ciudad de Cali',
   descripcion: 'Casa para estrenar con todas las comodidades, tranquilidad y aire puro en medio de amplios jardines para descansar, meditar o trabajar. Encuentre todo el confort en todos sus espacios, vista a los farallones. Sistema inteligente para activar dispositivos de hogar mediante comandos de voz y App móvil.',
-  ubicacion: 'Condominio de Alfaguara. Municipio de Jamundí, Valle del Cauca, Colombia',
+  ubicacion: 'Condominio de Alfaguara. Municipio de Jamundí, Valle del Cauca',
   condominio: 'Valle Verde',
   plantas:'Dos (2), Habitación principal en el segundo piso.',
   habitaciones: '(4) alcobas',
