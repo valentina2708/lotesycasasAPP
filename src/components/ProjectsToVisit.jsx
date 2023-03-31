@@ -43,9 +43,9 @@ const ProjectsVisit = () => {
             variants={milestonesAnimations}
             animate={controls}
             transition={{
-              delay: 0.02,
+              delay: 0.05,
               type: "tween",
-              duration: 0.3,
+              duration: 1,
             }}
             >
 			<Grid container spacing={2} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>

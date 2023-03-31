@@ -1,14 +1,12 @@
 import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
-import { Paper, Stack, CardMedia, Card } from '@mui/material';
-import { Button } from '@mui/material';
-import { Colors } from '/src/config/themeConfig.js';
+import { Stack, CardMedia, Card, Typography, Button } from '@mui/material';
+import { Colors } from '../config/themeConfig.js';
 import logo from '../assets/logoRincondelLago.jpg';
 import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
-import UrbanizationsData from '/src/components/ProjectsInfo/UrbanizationsData';
+import UrbanizationsData from '../components/ProjectsInfo/UrbanizationsData';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -57,7 +55,7 @@ export default function BasicStack() {
 					</Grid>
 				</Grid>
 
-				{/* elemento 2*/}
+				{/* elemento 2 */}
 				<Card
 					elevation={12}
 					sx={{

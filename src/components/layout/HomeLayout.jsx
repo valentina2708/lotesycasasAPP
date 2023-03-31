@@ -1,11 +1,10 @@
-import React from 'react';
-import ProjectsToVisit from '/src/components/ProjectsToVisit';
-import CarouselHome from '/src/components/CarouselHome';
-import WelcomeMessage from '/src/components/WelcomeMessage';
-import MainProjects from '/src/components/ProjectsInfo/MainProjects';
-import NewProjectInfo from '/src/components/NewProjectInfo';
-import HomeInfo from '/src/components/HomeInfo';
-import InfoPaymentMethods from '/src/components/InfoPaymentMethods';
+import ProjectsToVisit from '../../components/ProjectsToVisit';
+import CarouselHome from '../../components/CarouselHome';
+import WelcomeMessage from '../../components/WelcomeMessage';
+import MainProjects from '../../components/ProjectsInfo/MainProjects';
+import NewProjectInfo from '../../components/NewProjectInfo';
+import HomeInfo from '../..//components/HomeInfo';
+import InfoPaymentMethods from '../../components/InfoPaymentMethods';
 import { motion } from 'framer-motion';
 
 export default function HomeLayout() {

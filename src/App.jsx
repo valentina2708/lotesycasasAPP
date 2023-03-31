@@ -6,7 +6,7 @@ import Appbar from './components/common/Appbar';
 import Footer from './components/common/Footer';
 import './App.css';
 import HomeLayout from './components/layout/HomeLayout';
-import { motion } from "framer-motion";
+import AboutLayout from './components/layout/AboutLayout';
 
 function App() {
 	return (
@@ -19,6 +19,8 @@ function App() {
 					</Grid>
 					<Routes>
 						<Route exact path='/' element={<HomeLayout />} />
+						<Route path='/about' element={<AboutLayout />} />
+						
 					</Routes>
 					<Grid mt={38} sx={{ alignSelf: 'flex-end', width: '100%' }}>
 						<Footer />
