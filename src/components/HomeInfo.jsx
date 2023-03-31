@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+// import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { Typography } from '@mui/material';
-import { Colors } from '/src/config/themeConfig.js';
-import { Button, Card, CardMedia, CardContent, Avatar} from '@mui/material';
+import { Colors } from '../config/themeConfig';
+import { Button, Card, CardMedia, CardContent, Avatar, Typography} from '@mui/material';
 import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
 import { milestonesAnimations } from "../animation";

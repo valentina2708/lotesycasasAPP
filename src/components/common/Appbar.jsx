@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 import {
@@ -11,14 +11,11 @@ import {
 	Typography,
 	Button,
 	InputBase,
-	
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
 import { Colors } from '../../config/themeConfig';
 import logo from '../../assets/logoColor.jpg';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-
+import { Link } from 'react-router-dom';
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -39,12 +36,12 @@ const Appbar = () => {
 	});
 	const MenuItems = [
 		{ Name: 'Inicio', Link: '/' },
-		{ Name: 'Nosotros', Link: '#' },
+		{ Name: 'Nosotros', Link: '/about' },
 		{ Name: 'Proyectos', Link: '#' },
 		{ Name: 'Contacto', Link: '#' },
 	];
 	const [open, SetOpen] = useState(false);
-	
+
 	return (
 		<AppBar sx={{ background: Colors.body_bg }} elevation={0}>
 			<StyledToolbar>
@@ -70,36 +67,38 @@ const Appbar = () => {
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
 					{MenuItems.map(item => (
-						<Button
-							variant='text'
-							sx={{
-								color: Colors.info2,
-								borderRadius: 2,
-								padding: '10px',
-
-								fontWeight: 600,
-
-								'&:hover': {
-									opacity: [0.7, 0.6, 0.7],
-									boxShadow: 'none',
-								},
-								'&:active': {
-									boxShadow: 'none',
-									opacity: [0.7, 0.6, 0.7],
-								},
-								'&:focus': {
-									boxShadow: '0 0 0 0.1rem',
-								},
-							}}
-						>
-							<Typography
+						<Link to={item.Link} key={item.Name} className="nav-link">
+							<Button
+								variant='text'
 								sx={{
-									cursor: 'pointer',
+									color: Colors.info2,
+									borderRadius: 2,
+									padding: '10px',
+
+									fontWeight: 600,
+
+									'&:hover': {
+										opacity: [0.7, 0.6, 0.7],
+										boxShadow: 'none',
+									},
+									'&:active': {
+										boxShadow: 'none',
+										opacity: [0.7, 0.6, 0.7],
+									},
+									'&:focus': {
+										boxShadow: '0 0 0 0.1rem',
+									},
 								}}
 							>
-								{item.Name}
-							</Typography>
-						</Button>
+								<Typography
+									sx={{
+										cursor: 'pointer',
+									}}
+								>
+									{item.Name}
+								</Typography>
+							</Button>
+						</Link>
 					))}
 				</MenuBox>
 
@@ -136,6 +135,7 @@ const Appbar = () => {
 				<Box sx={{ width: 350, height: '30vh' }}>
 					{MenuItems.map(item => (
 						<MenuItem
+							key={item.Name}
 							sx={{
 								cursor: 'pointer',
 								fontSize: '14px',
