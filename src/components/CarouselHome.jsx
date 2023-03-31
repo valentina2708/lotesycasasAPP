@@ -6,9 +6,8 @@ import home1 from '../assets/casaCarru3.jpg';
 import home2 from '../assets/rincondelLago3.jpg';
 import home3 from '../assets/casas.jpg';
 import home4 from '../assets/rincondelLago2.jpg';
-
-
-
+import { motion } from 'framer-motion';
+import { homeInfoAnimation } from '../animation';
 import { Colors } from '/src/config/themeConfig.js';
 
 export default function BlendModeSlider() {
@@ -43,25 +42,31 @@ export default function BlendModeSlider() {
 						margin: '0 auto',
 					}}
 				>
-					<Box
-						sx={{
-							backgroundColor: Colors.body_bg,
-							textAlign: 'center',
-							border: 'none',
-							opacity: [0.6, 0.7, 0.6],
-						}}
+					<motion.div
+						className='home'
+						variants={homeInfoAnimation}
+						transition={{ delay: 0.3, duration: 0.6, type: 'tween' }}
 					>
-						<Typography
-							variant='h2'
-							sx={{ margin: '0 36px', fontWeight: 'bold' }}
+						<Box
+							sx={{
+								backgroundColor: Colors.body_bg,
+								textAlign: 'center',
+								border: 'none',
+								opacity: [0.6, 0.7, 0.6],
+							}}
 						>
-							Constructura Inmobiliaria-Bienes Raices
-						</Typography>
-						<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-							Realizamos grandes proyectos en Colombia, con una
-							alta valorización en el mercado
-						</Typography>
-					</Box>
+							<Typography
+								variant='h2'
+								sx={{ margin: '0 36px', fontWeight: 'bold' }}
+							>
+								Constructura Inmobiliaria-Bienes Raices
+							</Typography>
+							<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+								Realizamos grandes proyectos en Colombia, con una alta
+								valorización en el mercado
+							</Typography>
+						</Box>
+					</motion.div>
 				</Stack>
 			</Overlay>
 			<Slide

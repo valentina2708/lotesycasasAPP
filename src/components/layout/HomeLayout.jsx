@@ -6,20 +6,18 @@ import MainProjects from '/src/components/ProjectsInfo/MainProjects';
 import NewProjectInfo from '/src/components/NewProjectInfo';
 import HomeInfo from '/src/components/HomeInfo';
 import InfoPaymentMethods from '/src/components/InfoPaymentMethods';
-import ContactForm from './../ContactForm';
-import AboutUs from './../AboutUs';
+import { motion } from 'framer-motion';
+
 export default function HomeLayout() {
 	return (
-		<div>
+		<motion.div initial='hidden' animate='show'>
 			<CarouselHome />
 			<WelcomeMessage />
 			<NewProjectInfo />
 			<ProjectsToVisit />
 			<MainProjects />
-			<InfoPaymentMethods/>
+			<InfoPaymentMethods />
 			<HomeInfo />
-			<ContactForm/>
-			<AboutUs/>
-		</div>
+		</motion.div>
 	);
 }

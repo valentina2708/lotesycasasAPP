@@ -1,11 +1,16 @@
 import Box from '@mui/material/Box';
-import { Typography, Card, Avatar, Grid, CardContent } from '@mui/material';
+import { Typography, Card, Avatar, CardContent } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import { makeStyles } from 'tss-react/mui';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import Grid from '@mui/material/Grid'; 
+import { motion } from 'framer-motion';
+import { useScroll } from '../components/useScroll';
+import { servicesAnimations } from '../animation.js';
 
 const useStyles = makeStyles()(theme => {
+	
 	return {
 		InfoImage: {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/fondoCredito.jpg')`,
@@ -30,8 +35,20 @@ const useStyles = makeStyles()(theme => {
 
 export default function BasicStack() {
 	const { classes } = useStyles();
+	const [element, controls] = useScroll();
 	return (
+		<motion.div
+				className='home'
+				variants={servicesAnimations}
+				animate={controls}
+				transition={{
+					delay: 0.03,
+					type: 'tween',
+					duration: 0.9,
+				}}
+			>
 		<Box
+		ref={element}
 			className={classes.InfoImage}
 			sx={{
 				justifyContent: 'center',
@@ -39,6 +56,7 @@ export default function BasicStack() {
 				p: '30px 0px',
 			}}
 		>
+
 			<Card
 				elevation={12}
 				sx={{
@@ -117,5 +135,6 @@ export default function BasicStack() {
 				</Grid>
 			</Card>
 		</Box>
+		</motion.div>
 	);
 }

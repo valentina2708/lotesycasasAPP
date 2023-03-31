@@ -6,9 +6,11 @@ import Appbar from './components/common/Appbar';
 import Footer from './components/common/Footer';
 import './App.css';
 import HomeLayout from './components/layout/HomeLayout';
+import { motion } from "framer-motion";
 
 function App() {
 	return (
+	
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
 				<Grid style={theme.container}>
@@ -24,6 +26,8 @@ function App() {
 				</Grid>
 			</BrowserRouter>
 		</ThemeProvider>
+	
+		
 	);
 }
 
