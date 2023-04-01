@@ -53,11 +53,12 @@ export default function BlendModeSlider() {
 								textAlign: 'center',
 								border: 'none',
 								opacity: [0.6, 0.7, 0.6],
+								borderRadius:'15px',
 							}}
 						>
 							<Typography
 								variant='h2'
-								sx={{ margin: '0 36px', fontWeight: 'bold' }}
+								sx={{  margin: '0 36px', fontWeight: 'bold' }}
 							>
 								Constructura Inmobiliaria-Bienes Raices
 							</Typography>

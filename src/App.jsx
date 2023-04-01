@@ -7,6 +7,7 @@ import Footer from './components/common/Footer';
 import './App.css';
 import HomeLayout from './components/layout/HomeLayout';
 import AboutLayout from './components/layout/AboutLayout';
+import ContactLayout from './components/layout/ContactLayout';
 
 function App() {
 	return (
@@ -20,7 +21,8 @@ function App() {
 					<Routes>
 						<Route exact path='/' element={<HomeLayout />} />
 						<Route path='/about' element={<AboutLayout />} />
-						
+						<Route path='/contact' element={<ContactLayout />} />
+
 					</Routes>
 					<Grid mt={38} sx={{ alignSelf: 'flex-end', width: '100%' }}>
 						<Footer />

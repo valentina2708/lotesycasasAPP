@@ -15,7 +15,9 @@ import Vision from '../assets/vision.png';
 import Filosofia from '../assets/filosofia.png';
 
 import {Paper,Stack} from '@mui/material';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -28,7 +30,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 export default function AboutUs() {
-    
+    useEffect(() => {
+        AOS.init({ offset: 200, duration: 1000 });
+      }, []);
+
    
     return (
       
@@ -36,17 +41,24 @@ export default function AboutUs() {
         
        
          }}>  
-         <Grid Container sx={{
+
+
+         <Card sx={{  
+            margin:'10px',
+            boxShadow:10,    
+                
+                }}>
+      <CardContent>
+      <Grid Container sx={{
            // border:2,
             display:'flex',
             height: 'auto',
 			width: 'auto',
-            
-           
-       
         }}> 
         <Grid item xs={12} sm={12} md={12} lg={8}>
-                    <Card sx={{ 
+        
+                    <Card data-aos="fade-down" sx={{ 
+                        
                          display:'flex',
                          color: '#A15600',
                           fontWeight: 'bold',
@@ -56,6 +68,8 @@ export default function AboutUs() {
                           minHeight:'300px',
                         // top:-295,
                          //left:'0%',
+                         border:0,
+                         boxShadow:0,
                          margin:'10px',
                          padding:'10px'
                        }}  >
@@ -91,22 +105,22 @@ export default function AboutUs() {
         </Grid> <Hidden mdDown> 
         
         <Grid item xs={12} sm={12} md={12} lg={4}>                        
-        <Card  sx={{
+        <Card  data-aos="fade-left"  sx={{
                        display:'flex',
                        color: '#A15600',
                         fontWeight: 'bold',
                         mt: 2, 
-                        height: 'auto',
-                        width: 'auto',
+                        height: '70%',
+                        width: '70%',
                         textAlign:'center',
                        verticalAlign:'center',
-						maxHeight:'400px',
-                        maxWidth:'300px',
+						
                         padding:'50px',
                         position:'relative',
                         margin:'10px',
-                        top:20,
-                        left:'-10%',
+                        boxShadow:10,
+                        //top:20,
+                        //left:'-10%',
                         }}>
         
            
@@ -132,40 +146,51 @@ export default function AboutUs() {
           
                 </Card>
             </Grid>
-        </Hidden>                  
+        </Hidden> 
+        
+                         
         </Grid>          
+       
+        <Typography variant="body2">
+         
+        </Typography>
+      </CardContent>
+     
+    </Card>
+        
                 
          <br />               
-         <Grid Container sx={{
+         <Card sx={{  
+            margin:'10px',
+            boxShadow:10,    
+                
+                }}>
+      <CardContent>
+      <Grid Container sx={{
            // border:2,
             display:'flex',
-            alignItems:'center',
             height: 'auto',
 			width: 'auto',
-            
-           
-       
         }}> 
-
-<Hidden mdDown> 
+        <Hidden mdDown> 
         
         <Grid item xs={12} sm={12} md={12} lg={4}>                        
-        <Card  sx={{
-                       display:'flow',
+        <Card  data-aos="fade-right"sx={{
+                       display:'flex',
                        color: '#A15600',
                         fontWeight: 'bold',
                         mt: 2, 
-                        height: 'auto',
-                        width: 'auto',
+                        height: '70%',
+                        width: '70%',
                         textAlign:'center',
                        verticalAlign:'center',
-						maxHeight:'400px',
-                        maxWidth:'300px',
+						
                         padding:'50px',
                         position:'relative',
                         margin:'10px',
-                       
-                        left:'30%',
+                        boxShadow:10,
+                        //top:20,
+                        //left:'-10%',
                         }}>
         
            
@@ -191,22 +216,21 @@ export default function AboutUs() {
           
                 </Card>
             </Grid>
-        </Hidden>   
-
-
+        </Hidden> 
         <Grid item xs={12} sm={12} md={12} lg={8}>
-                    <Card sx={{ 
+        
+                    <Card data-aos="fade-left" sx={{ 
                          display:'flex',
                          color: '#A15600',
                           fontWeight: 'bold',
                           mt: 2, 
                           textAlign:'center',
                           position:'relative',
-                          height: 'auto',
-                          width: 'auto',
                           minHeight:'300px',
-                          //top:35,
-                          //left:'-15%',
+                        // top:-295,
+                         //left:'0%',
+                         border:0,
+                         boxShadow:0,
                          margin:'10px',
                          padding:'10px'
                        }}  >
@@ -221,7 +245,7 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'20px',
                                 }}>
-                                Mision
+                                Misión
                             </Typography>
                             <Typography
                             variant='h5'
@@ -232,40 +256,52 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'20px'
                                 }}>
-                                Construimos para vivir con total calidad, seguridad, 
-                                confort en los mejores ambientes del Valle del Cauca.
+                               Construimos para vivir con total calidad, seguridad,
+                               Construimos para vivir con total calidad, seguridad, confort en los mejores ambientes del Valle del Cauca. confort en los mejores ambientes del Valle del Cauca.
                             </Typography>
 
                         </CardContent>
                         </Card>
-        </Grid> 
-                     
-        </Grid> 
+        </Grid>
+        
+        
+                         
+        </Grid>          
+       
+        <Typography variant="body2">
+         
+        </Typography>
+      </CardContent>
+     
+    </Card>           
+        <br />
 
-
-
-
-        <br />                                    
-            <Grid Container sx={{
+         <Card sx={{  
+            margin:'10px',
+            boxShadow:10,    
+                
+                }}>
+      <CardContent>
+      <Grid Container sx={{
            // border:2,
             display:'flex',
             height: 'auto',
 			width: 'auto',
-            
-           
-       
         }}> 
         <Grid item xs={12} sm={12} md={12} lg={8}>
-                    <Card sx={{ 
+        
+                    <Card  data-aos="fade-right" sx={{ 
                          display:'flex',
                          color: '#A15600',
                           fontWeight: 'bold',
                           mt: 2, 
                           textAlign:'center',
                           position:'relative',
-                          minHeight:'350px',
+                          minHeight:'300px',
                         // top:-295,
                          //left:'0%',
+                         border:0,
+                         boxShadow:0,
                          margin:'10px',
                          padding:'10px'
                        }}  >
@@ -280,7 +316,7 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'20px',
                                 }}>
-                                Vision
+                                Visión
                             </Typography>
                             <Typography
                             variant='h5'
@@ -288,35 +324,35 @@ export default function AboutUs() {
                                 color: 'black',
                                 fontWeight: 'bold',
                                 mt: 2, 
-                               
-                                padding:'20px',
-                                textAlign:'justify'
+                                textAlign:'center',
+                                padding:'20px'
                                 }}>
-                               Para el 2022 seremos la constructora preferida de 
-                               las familias vallecaucanas y por los inversionistas 
-                               que busquen la mejor rentabilidad en sus proyectos inmobiliarios.
+                                Para el 2022 seremos la constructora preferida de 
+                                las familias vallecaucanas y por los inversionistas 
+                                que busquen la mejor rentabilidad en sus proyectos inmobiliarios.
                             </Typography>
 
                         </CardContent>
                         </Card>
-                    </Grid> <Hidden mdDown> 
-             <Grid item xs={12} sm={12} md={12} lg={4}>                        
-       <Card  sx={{
-                       display:'flow',
+        </Grid> <Hidden mdDown> 
+        
+        <Grid item xs={12} sm={12} md={12} lg={4}>                        
+        <Card data-aos="fade-left" sx={{
+                       display:'flex',
                        color: '#A15600',
                         fontWeight: 'bold',
                         mt: 2, 
-                        height: 'auto',
-                        width: 'auto',
+                        height: '70%',
+                        width: '70%',
                         textAlign:'center',
                        verticalAlign:'center',
-						maxHeight:'400px',
-                        maxWidth:'300px',
+						
                         padding:'50px',
                         position:'relative',
                         margin:'10px',
-                        top:15,
-                        left:'-10%',
+                        boxShadow:10,
+                        //top:20,
+                        //left:'-10%',
                         }}>
         
            
@@ -340,43 +376,53 @@ export default function AboutUs() {
                
            
           
-        </Card>
-        </Grid>
-        </Hidden>        
+                </Card>
+            </Grid>
+        </Hidden> 
+        
+                         
+        </Grid>          
        
-         <br />            
-                 
-            </Grid>                    
-                    
-            <Grid Container sx={{
-            //border:2,
+        <Typography variant="body2">
+         
+        </Typography>
+      </CardContent>
+     
+    </Card>
+
+
+
+       <Card sx={{  
+            margin:'10px',
+            boxShadow:10,    
+                
+                }}>
+      <CardContent>
+      <Grid Container sx={{
+           // border:2,
             display:'flex',
             height: 'auto',
 			width: 'auto',
-            alignItems:'center'
-           
-       
         }}> 
-
-
-<Hidden mdDown> 
-             <Grid item xs={12} sm={12} md={12} lg={4}>                        
-       <Card  sx={{
+        <Hidden mdDown> 
+        
+        <Grid item xs={12} sm={12} md={12} lg={4}>                        
+        <Card data-aos="fade-up-right" sx={{
                        display:'flex',
                        color: '#A15600',
                         fontWeight: 'bold',
                         mt: 2, 
-                        height: 'auto',
-                        width: 'auto',
+                        height: '70%',
+                        width: '70%',
                         textAlign:'center',
                        verticalAlign:'center',
-						maxHeight:'400px',
-                        maxWidth:'300px',
+						
                         padding:'50px',
                         position:'relative',
                         margin:'10px',
-                        top:0,
-                        left:'30%',
+                        boxShadow:10,
+                        //top:20,
+                        //left:'-10%',
                         }}>
         
            
@@ -400,23 +446,23 @@ export default function AboutUs() {
                
            
           
-        </Card>
-        </Grid>
-        </Hidden>        
-       
-
-
+                </Card>
+            </Grid>
+        </Hidden> 
         <Grid item xs={12} sm={12} md={12} lg={8}>
-                    <Card sx={{ 
+        
+                    <Card data-aos="fade-up-left" sx={{ 
                          display:'flex',
                          color: '#A15600',
                           fontWeight: 'bold',
                           mt: 2, 
                           textAlign:'center',
                           position:'relative',
-                         
+                          minHeight:'300px',
                         // top:-295,
                          //left:'0%',
+                         border:0,
+                         boxShadow:0,
                          margin:'10px',
                          padding:'10px'
                        }}  >
@@ -442,17 +488,25 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'20px'
                                 }}>
-                               Ofrecemos proyectos de vivienda concebidos para vivir con
-                            nuestra propia familia, entregando asi el máximo compromiso en la ejecución de cada obra, cuidando cada detalle milimetro a milimetro para que nuestrso encuentren total satisfacción.
+                                Ofrecemos proyectos de vivienda concebidos para vivir con nuestra propia familia,
+                                entregando asi el máximo compromiso en la ejecución de cada obra,
+                                 cuidando cada detalle milimetro a milimetro para que nuestrso encuentren total satisfacción.
                             </Typography>
 
                         </CardContent>
                         </Card>
-                    </Grid>
-                     
-                   
-                    </Grid>             
-            
+        </Grid>
+        
+        
+                         
+        </Grid>          
+       
+        <Typography variant="body2">
+         
+        </Typography>
+      </CardContent>
+     
+    </Card>      
 
        
 

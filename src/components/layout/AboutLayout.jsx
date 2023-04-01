@@ -1,9 +1,10 @@
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import AboutUs from '../AboutUs'
 
 export default function AboutLayout() {
   return (
-    <div>
-        <Typography mt="8rem">AboutLayout</Typography>
-    </div>
+    <Box sx={{marginTop:'10rem'}}>
+        <AboutUs/>
+    </Box>
   )
 }

@@ -40,7 +40,7 @@ const Appbar = () => {
 		{ Name: 'Inicio', Link: '/' },
 		{ Name: 'Nosotros', Link: '/about' },
 		{ Name: 'Proyectos', Link: '#' },
-		{ Name: 'Contacto', Link: '#' },
+		{ Name: 'Contacto', Link: '/contact' },
 	];
 	const [open, SetOpen] = useState(false);
 
