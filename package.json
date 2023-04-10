@@ -29,6 +29,7 @@
     "react-icons": "^4.8.0",
     "react-intersection-observer": "^9.4.3",
     "react-overlay-container": "^0.2.0",
+    "react-parallax": "^3.5.1",
     "react-player": "^2.12.0",
     "react-router-dom": "^6.8.2",
     "react-simple-image-slider": "^2.4.1",

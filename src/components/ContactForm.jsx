@@ -5,7 +5,7 @@ import { alpha, styled } from '@mui/material/styles';
 import fotoformulario from '../assets/lotes.jpeg';
 import Contacto1 from '../assets/contacto1.jpg';
 import Grid from '@mui/material/Grid';
-
+import parallax, { Parallax } from 'react-parallax';
 import Button from '@mui/material/Button';
 
 import SendIcon from '@mui/icons-material/Send';
@@ -89,6 +89,8 @@ export default function ContactForm() {
                     sx={{
                         display: 'inline',  
                     }}> 
+
+                   
                     <Box data-aos="fade-left" sx={{
                        
                         margin:'0px',
