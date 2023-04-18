@@ -22,7 +22,7 @@ const CssTextField = styled(TextField)({
    // width: 'auto',
     borderRadius: 60,
     textAlign:'center',
-    margin:'10px',
+    margin:'20px',
    // backgroundColor: 'white',
     display: 'flex',
     
@@ -44,35 +44,6 @@ const CssTextField = styled(TextField)({
         },
     },
 });
-const CssTextField2 = styled(TextField)({
-     width: 'auto',
-     borderRadius: 60,
-     textAlign:'center',
-     margin:'10px',
-    // backgroundColor: 'white',
-     display: 'flex',
-     
-     '& label.Mui-focused': {
-         color: 'green', borderRadius: 60,
-     },
-     '& .MuiInput-underline:after': {
-         borderBottomColor: 'green', borderRadius: 60,
-     },
-     '& .MuiOutlinedInput-root': {
-         '& fieldset': {
-             borderColor: '#FE6B1D', borderRadius: 60,
-         },
-         '&:hover fieldset': {
-             borderColor: 'yellow', borderRadius: 60,
-         },
-         '&.Mui-focused fieldset': {
-             borderColor: 'green', borderRadius: 60,
-         },
-     },
- });
-
-
-
 
 export default function ContactForm() {
     
@@ -88,28 +59,76 @@ export default function ContactForm() {
                 <Grid container
                     sx={{
                         display: 'inline',  
-                    }}> 
-
-                   
-                    <Box data-aos="fade-left" sx={{
+                        marginTop:'40px',
                        
-                        margin:'0px',
-                        width:'100%',
-                        height:'100%',
-                        borderRadius: 10,
-                        backgroundColor:'#F0F0F0',
-                        padding:'0px',
-                        display: 'flex',
-                       justifyContent:'center',
-                       alignItems:'center'
-                        //minHeight:'550px',
-                        //maxWidth:'600px'    
-                            }}>
-                         <img width={'100%'} height={'100%'}  objectFit={'cover'} src={Contacto1} />         
-                            
-                    </Box>
-                    <br /> 
-                    <Grid container sx={{position:'relative',  display: 'flex',
+                    }}> 
+                    
+                    <Box  sx={{
+                                    display:'grid',
+                                    //border:2, 
+                                    width:'100%',
+                                    marginTop:'20px',
+                                    marginBottom:'20px',
+                                    verticalAlign:'center', 
+                                    textAlign:'center' 
+                                                }}>
+                                            <Typography 
+                                                variant='h2'
+                                                sx={{
+                                                
+                                                    opacity: [90],
+                                                    color: '#A15600',
+                                                    fontWeight: 'bold',
+                                                    mt: 2, 
+                                                    textAlign:'center',
+                                                    paddingTop:'10px',
+                                                    margin:'20px'
+                                                    }}>
+                                                    CONTÁCTENOS
+                                            </Typography>
+
+                                            
+                                    </Box> 
+                    <Parallax style={{ 
+                            width:'100%',
+                            height:'100%',
+                                }}
+                       
+                        bgImage={Contacto1} 
+                        strength={400}
+                        
+                       >
+                        
+                                       
+                        <Box container data-aos="zoom-in-down"  sx={{
+                                    display:'flex',
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    width:'auto',
+                                    height:'95vh',
+                                    //border:2
+                                   
+                                       
+                                }}>
+                            <Box  sx={{
+                               // backgroundColor:'#f3f6f9',
+                                
+                                borderRadius:'20px',
+                               
+                                marginLeft:'60px',
+                                marginRight:'60px',
+                               // opacity:[.7],
+                                //border:2,
+                               
+                                
+                                    }}>
+                                           
+                                    
+                                                  
+                                </Box> 
+
+
+                                <Grid container sx={{position:'relative',  display: 'flex',
                                             justifyContent:'center',
                                             alignItems:'center',}}>
                     <Box   data-aos="fade-right" sx={{  
@@ -132,7 +151,7 @@ export default function ContactForm() {
                                             margin: '5px',
                                             height: '150px',
                                             top:250,
-                                            left:'1080px',
+                                            left:'960px',
                                             backgroundColor:'#FE6B1D',
                                             borderRadius: 6,
                                             boxShadow:20,
@@ -177,8 +196,8 @@ export default function ContactForm() {
                                     
                                     <CssTextField label="Apellido"  type='text' id="custom-css-outlined-input" required  />
                                     <CssTextField label="Email"   type='email' id="custom-css-outlined-input" required />
-                                    <CssTextField label="Cedula"  type='Number' id="custom-css-outlined-input" required />
-                                    <CssTextField label="Celular" type='Number' id="custom-css-outlined-input"  required />
+                                    <CssTextField label="No.Documento"  type='text' pattern='[0-9]*' id="custom-css-outlined-input" required />
+                                    <CssTextField label="Celular" type='text' pattern='[0-9]*' id="custom-css-outlined-input"  required />
                                     
                                     <Button
                                         sx={{ 
@@ -200,7 +219,26 @@ export default function ContactForm() {
                         </Grid>
                        
                         
-                        </Grid> 
+                        </Grid>
+                                  
+                        </Box>
+                          
+
+                </Parallax>
+
+
+
+
+
+
+
+
+                    <br /> 
+                    
+
+
+
+
                     <Box sx={{display:'flex'}}>
                    
 
@@ -388,7 +426,13 @@ export default function ContactForm() {
                          
                     </Box>  
             
-           
+                    <Box  sx={{border:2}}>
+                        
+                        
+                        
+                        
+                        
+                    </Box>                    
 
                        
                    
