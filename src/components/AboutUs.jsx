@@ -25,6 +25,7 @@ import Nosotros2 from '../assets/nosotros2.jpg';
 import { Colors } from '/src/config/themeConfig.js';
 import { Brightness1, Filter } from '@mui/icons-material';
 import { rgba } from '@react-spring/shared';
+import NewProjectInfo from '../components/NewProjectInfo';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -73,19 +74,19 @@ export default function AboutUs() {
                                     justifyContent:'center',
                                     alignItems:'center',
                                     width:'auto',
-                                    height:'100vh',
+                                    height:'95vh',
                                     //border:2
                                    
                                        
                                 }}>
                             <Box  sx={{
-                                backgroundColor:'#f3f6f9',
+                               // backgroundColor:'#f3f6f9',
                                 
                                 borderRadius:'20px',
                                
                                 marginLeft:'60px',
                                 marginRight:'60px',
-                                opacity:[.7],
+                               // opacity:[.7],
                                 //border:2,
                                
                                 
@@ -100,7 +101,7 @@ export default function AboutUs() {
                                            // textAlign:'center' 
                                                 }}>
                                             <Typography 
-                                                variant='h3'
+                                                variant='h2'
                                                 sx={{
                                                 
                                                     opacity: [90],
@@ -109,34 +110,12 @@ export default function AboutUs() {
                                                     mt: 2, 
                                                     textAlign:'center',
                                                     paddingTop:'10px',
-                                                
+                                                    margin:'20px'
                                                     }}>
                                                     Nuestra empresa 
                                             </Typography>
                                     </Box> 
-                                    <Box sx={{
-                                           //border:2,  
-                                            padding:'0px'
-
-                                            }}>
-
-                                    <Typography
-                                    variant='h5'
-                                    sx={{
-                                        color: 'black',
-                                        fontWeight: 'bold',
-                                        mt: 2, 
-                                    
-                                        textAlign:'center',
-                                        //paddingTop:'0px',
-                                        padding:'10px'
-                                        }}>
-                                        Somos constructores con 15 años de experiencia en el Valle del Cauca,
-                                        tiempo en el cual desarrollamos proyectos habitacionales para vivir 
-                                        al máximo en familia, asegurando un patrimonio de alta valorización para
-                                        el presente y el futuro.
-                                    </Typography>    
-                                    </Box>               
+                                                  
                                 </Box> 
                                   
                         </Box>
@@ -160,7 +139,7 @@ export default function AboutUs() {
         <Grid container data-aos="fade-up"
                 data-aos-duration="1000"item xs={12} sm={12} md={12} lg={12}>
         
-                    <Box  sx={{ 
+        <Box  sx={{ 
                          display:'flow',
                          color: '#A15600',
                         fontWeight: 'bold',
@@ -179,7 +158,7 @@ export default function AboutUs() {
                     
                         
                             <Typography
-                            variant='h3'
+                            variant='h4'
                             sx={{
                                 color: '#A15600',
                                 fontWeight: 'bold',
@@ -187,10 +166,10 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'10px',
                                 }}>
-                                Constructura Inmobiliaria-Bienes Raices
+                                Casas & Lotes
                             </Typography>
                             <Typography
-                            variant='h5'
+                            variant='h6'
                             sx={{
                                 color: 'black',
                                 fontWeight: 'bold',
@@ -198,11 +177,18 @@ export default function AboutUs() {
                                 textAlign:'center',
                                 padding:'10px'
                                 }}>
-                               Realizamos grandes proyectos en Colombia, con una alta valorización en el mercado
+                               Somos constructores con 15 años de experiencia en el Valle del Cauca,
+                                        tiempo en el cual desarrollamos proyectos habitacionales para vivir 
+                                        al máximo en familia, asegurando un patrimonio de alta valorización para
+                                        el presente y el futuro.
                             </Typography>
 
                         
                         </Box>
+                    
+                    
+
+                        
         </Grid>
         
         
@@ -475,7 +461,13 @@ export default function AboutUs() {
                         </Grid >                        
 
                 </Parallax>   
- 
+              <Box sx={{marginTop:'60px'}}>
+              <NewProjectInfo />
+                </Box> 
+			
+			
+			
+		                          
        
     </Grid>  
 
