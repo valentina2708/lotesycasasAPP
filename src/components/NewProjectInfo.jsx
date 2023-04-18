@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
 import UrbanizationsData from '../components/ProjectsInfo/UrbanizationsData';
+import ReactPlayer from 'react-player';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -73,16 +74,17 @@ export default function BasicStack() {
 						columnSpacing={{ xs: 12, sm: 6, md: 4 }}
 					>
 						<Grid item xs={6}>
-							<CardMedia
-								sx={{
-									height: '120%',
-									width: '100%',
-									borderRadius: 3,
-									position: 'relative',
-									bottom: '5px',
-								}}
-								image='/src/assets/rincondelLago.jpg'
-								title='publicidad'
+							<ReactPlayer
+								borderRadius='3'
+								position='relative'
+								bottom='5px'
+								url='https://youtu.be/N3GwlQdjhjU'
+								className='react-player'
+								playing
+								controls
+								loop
+								width='105%'
+								height='120%'
 							/>
 						</Grid>
 						<Grid item xs={6}>
@@ -115,7 +117,7 @@ export default function BasicStack() {
 								/>
 								<Button
 									onClick={() => {
-										return <UrbanizationsData/>;
+										return <UrbanizationsData />;
 									}}
 									variant='contained'
 								>
