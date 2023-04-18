@@ -9,7 +9,7 @@ export const  DataProjects=[
     ubicacion:'Jamundí',
     areaDelLote:'mts²',
     estado: 'Lanzamiento',
-    imagen: '/src/assets/rincondelLago.jpg'
+    imagen: '/src/assets/casasylotes5.jpeg'
    
    },
    {

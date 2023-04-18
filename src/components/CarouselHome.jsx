@@ -2,10 +2,10 @@ import { Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import Box from '@mui/material/Box';
 import HeroSlider, { Slide, ButtonsNav, Overlay, Nav } from 'hero-slider';
-import home1 from '../assets/casaCarru3.jpg';
-import home2 from '../assets/rincondelLago3.jpg';
-import home3 from '../assets/casas.jpg';
-import home4 from '../assets/rincondelLago2.jpg';
+import home1 from '../assets/casasylotes3.jpeg';
+import home2 from '../assets/rincondelLago.jpg';
+import home3 from '../assets/casasylotes6.jpeg';
+import home4 from '../assets/casasylotes1.jpeg';
 import { motion } from 'framer-motion';
 import { homeInfoAnimation } from '../animation';
 import { Colors } from '/src/config/themeConfig.js';
@@ -52,13 +52,13 @@ export default function BlendModeSlider() {
 								backgroundColor: Colors.body_bg,
 								textAlign: 'center',
 								border: 'none',
-								opacity: [0.6, 0.7, 0.6],
-								borderRadius:'15px',
+								p: '10px',
+								opacity: [0.8, 0.7, 0.8],
 							}}
 						>
 							<Typography
 								variant='h2'
-								sx={{  margin: '0 36px', fontWeight: 'bold' }}
+								sx={{ margin: '0 36px',   fontWeight: 'bold' }}
 							>
 								Constructura Inmobiliaria-Bienes Raices
 							</Typography>
