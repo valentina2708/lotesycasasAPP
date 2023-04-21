@@ -8,6 +8,7 @@ export default function FabIntegrationSnackbar() {
 			color='secondary'
 			sx={{
 				position: 'relative',
+				zIndex:0,
 				top: '250px',
 				rigth: '30px',
 				size: 'small',
