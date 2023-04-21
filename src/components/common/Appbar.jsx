@@ -39,7 +39,7 @@ const Appbar = () => {
 	const MenuItems = [
 		{ Name: 'Inicio', Link: '/' },
 		{ Name: 'Nosotros', Link: '/about' },
-		{ Name: 'Proyectos', Link: '#' },
+		{ Name: 'Proyectos', Link: '/projects' },
 		{ Name: 'Contacto', Link: '/contact' },
 	];
 	const [open, SetOpen] = useState(false);

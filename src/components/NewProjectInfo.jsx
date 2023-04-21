@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
 import UrbanizationsData from '../components/ProjectsInfo/UrbanizationsData';
-
+import { Link } from 'react-router-dom';
+ 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
 	return (
@@ -113,14 +114,18 @@ export default function BasicStack() {
 									alt='logo'
 									style={{ width: 320, height: 220 }}
 								/>
+								
+								<Link to='/projects' className="nav-link">
 								<Button
 									onClick={() => {
-										return <UrbanizationsData/>;
+										
 									}}
 									variant='contained'
 								>
 									Ver Más
 								</Button>
+								</Link>	
+
 							</Stack>
 						</Grid>
 					</Grid>

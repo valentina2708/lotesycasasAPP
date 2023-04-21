@@ -8,6 +8,7 @@ import './App.css';
 import HomeLayout from './components/layout/HomeLayout';
 import AboutLayout from './components/layout/AboutLayout';
 import ContactLayout from './components/layout/ContactLayout';
+import ProjectLayout from './components/layout/ProjectLayout';
 
 function App() {
 	return (
@@ -22,7 +23,7 @@ function App() {
 						<Route exact path='/' element={<HomeLayout />} />
 						<Route path='/about' element={<AboutLayout />} />
 						<Route path='/contact' element={<ContactLayout />} />
-
+						<Route path='/projects' element={<ProjectLayout />} />
 					</Routes>
 					<Grid mt={38} sx={{ alignSelf: 'flex-end', width: '100%' }}>
 						<Footer />
