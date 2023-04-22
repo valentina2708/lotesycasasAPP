@@ -8,6 +8,7 @@ import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
 import UrbanizationsData from '../components/ProjectsInfo/UrbanizationsData';
 import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -115,6 +116,7 @@ export default function BasicStack() {
 									alt='logo'
 									style={{ width: 320, height: 220 }}
 								/>
+								<Link to='/projects' className="nav-link">
 								<Button
 									onClick={() => {
 										return <UrbanizationsData />;
@@ -123,6 +125,7 @@ export default function BasicStack() {
 								>
 									Ver Más
 								</Button>
+								</Link>
 							</Stack>
 						</Grid>
 					</Grid>
