@@ -16,6 +16,7 @@ const useStyles = makeStyles()(theme => {
 			alignItems: 'center',
 			color: '#fff',
 			fontSize: '4rem',
+			
 			[theme.breakpoints.down('sm')]: {
 				height: 300,
 				fontSize: '3em',
