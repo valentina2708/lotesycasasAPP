@@ -26,6 +26,7 @@ import { Colors } from '/src/config/themeConfig.js';
 import { Brightness1, Filter } from '@mui/icons-material';
 import { rgba } from '@react-spring/shared';
 import NewProjectInfo from '../components/NewProjectInfo';
+
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
