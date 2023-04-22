@@ -20,6 +20,7 @@
     "@react-google-maps/api": "^2.18.1",
     "@react-spring/web": "^9.7.1",
     "aos": "^2.3.4",
+    "better-react-carousel": "^1.1.1",
     "bootstrap": "^5.2.3",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.9.2",

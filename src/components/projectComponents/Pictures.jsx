@@ -6,7 +6,9 @@ import LogoRinconDelLago from '../../assets/logoRincondelLago.jpg'
 import Grid from '@mui/material/Grid';
 import { TextField, CardMedia, CardContent, Card, Typography, Hidden } from '@mui/material'
 import Mapap from '../projectComponents/Map';
+import Carousel from 'better-react-carousel'
 //import NewProjectInfo from '../components/NewProjectInfo';
+
 export default function Pictures() {
   return (
 
@@ -179,40 +181,42 @@ export default function Pictures() {
 
 
       </Box>
-      <Grid item="true" xs={12} sm={12} md={12} lg={6}>
-        <Box item="true" sx={{
-          width: 500,
-          height: 450,
-          overflowY: 'scroll',
-          marginTop: '70px',
-          marginLeft: '10px'
-        }}>
-          <ImageList variant="masonry" cols={2} gap={8}>
-            {itemData.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </Box>
-      </Grid>
+     
+     <Box>
+
+     <Carousel cols={4} rows={1} gap={10} loop>
+      <Carousel.Item>
+        <img width="100%" src={LogoRinconDelLago} />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=2" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+      <Carousel.Item>
+        {/* anything you want to show in the grid */}
+      </Carousel.Item>
+      {/* ... */}
+    </Carousel>
+
+     </Box>
     </Grid>
 
   )
+
+  const MyDot = ({ isActive }) => (
+    <span
+      style={{
+        display: 'inline-block',
+        height: isActive ? '8px' : '5px',
+        width: isActive ? '8px' : '5px',
+        background: '#1890ff'
+      }}
+    ></span>
+  )
+  
+  // set custom dot
+ /*  <Carousel dot={MyDot} /> */
 }
 
-const itemData = [
-  {
-    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
-    title: 'Bed',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-    title: 'Books',
-  },
-];
