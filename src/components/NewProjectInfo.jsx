@@ -81,7 +81,7 @@ export default function BasicStack() {
 								bottom='5px'
 								url='https://youtu.be/N3GwlQdjhjU'
 								className='react-player'
-								playing
+								//playing
 								controls
 								loop
 								width='105%'
