@@ -1,20 +1,15 @@
-
-import Pictures from '../projectComponents/Pictures'
-import { Box } from '@mui/material'
-import React from 'react'
+import Urbanization from '../projectComponents/Urbanization';
+import Houses from '../projectComponents/Houses';
+import { Box } from '@mui/material';
+import React from 'react';
 
 export default function ProjectLayout() {
-  return (
-    <Box sx={{marginTop:'5rem'}}>
-      
-            <Pictures/>
-      
+	return (
+		<Box sx={{ marginTop: '5rem' }}>
+			{/*<Pictures/>*/}
 
-
-    </Box>
-
-
-
-
-  )
+		<Urbanization />
+      	{/*<Houses/>*/}
+		</Box>
+	);
 }

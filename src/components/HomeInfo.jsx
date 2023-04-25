@@ -5,7 +5,7 @@ import { Colors } from '../config/themeConfig';
 import { Button, Card, CardMedia, CardContent, Avatar, Typography} from '@mui/material';
 import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
-import { milestonesAnimations } from "../animation";
+import { mensajebox } from "../animation";
 import PointOfSaleRoundedIcon from '@mui/icons-material/PointOfSaleRounded';
 
 export default function BasicStack() {
@@ -18,7 +18,7 @@ export default function BasicStack() {
 			}}
 		>
 		 <motion.div className="milestone"
-            variants={milestonesAnimations}
+            variants={mensajebox }
             animate={controls}
             transition={{
               delay: 0.03,
