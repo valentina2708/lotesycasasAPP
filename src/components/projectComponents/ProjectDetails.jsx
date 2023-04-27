@@ -133,7 +133,7 @@ export default function PaginaProyectos(props) {
 
                   {/*  ######### logo ########### */}
 
-                    <img src={project.imagen1}  width={'100%'} height={'100%'} />
+                    <img src={project.imagencard}  width={'100%'} height={'100%'} />
                   
 
                   </Box>

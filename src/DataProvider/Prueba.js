@@ -6,7 +6,7 @@ export const Prueba=[
         id:'1',
         nombre: 'Rincón Del Lago',
         subtitulo:' Condominio Campestre y Plaza Comercial',
-        imagencard:'dd',
+        imagencard:'/src/assets/logoRincondelLago.jpg',
         tipo: 'Urbanización',
         descripcion: 'A pocos minutos de Cali por las avenidas Panamericana, Cañas Gordas y Sachamate. Cerca'+
         'de los mejores colegios y universidades del sur'+
