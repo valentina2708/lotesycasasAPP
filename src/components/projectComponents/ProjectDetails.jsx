@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
-
+import * as miArray from '../../DataProvider/Prueba';
+import ReactPlayer from 'react-player';
 
 import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api'
 
@@ -22,6 +22,8 @@ export default function PaginaProyectos(props) {
 
  //const id=props.id;
  const { id } = useParams();
+
+ 
  
 
   const{isLoaded}=useLoadScript({
@@ -31,14 +33,17 @@ export default function PaginaProyectos(props) {
     if(!isLoaded) return <Box>Cargando...</Box>
   return (
    
-    <Box sx={{ margin: '20vh' }} >
+    <Box sx={{marginTop:'15vh'  }} >
 
 
-      
-      {Prueba.map(project => (
-
-        <Grid>
-
+       <h1>{miArray.Prueba[id].nombre}</h1> 
+    {/*   {Prueba.map(project => ( */}
+       
+       
+    
+    
+      <Grid  >
+         
           <Grid container='true'  >
             <Grid item='true' xs={12} sm={12} md={12} lg={12}>
 
@@ -59,8 +64,8 @@ export default function PaginaProyectos(props) {
                   }}>
 
                    {/*  ######### Nombre proyecto ########### */}
-
-                  {project.nombre}
+                   {miArray.Prueba[id].nombre}
+                 
 
                 </Typography>
                 <Typography
@@ -77,7 +82,7 @@ export default function PaginaProyectos(props) {
                    {/*  ######### Subtitulo proyecto ########### */}
 
 
-                  {project.subtitulo}
+                  {miArray.Prueba[id].subtitulo}
                 </Typography>
               </Box>
 
@@ -133,7 +138,7 @@ export default function PaginaProyectos(props) {
 
                   {/*  ######### logo ########### */}
 
-                    <img src={project.imagencard}  width={'100%'} height={'100%'} />
+                    <img src={miArray.Prueba[id].imagencard}  width={'100%'} height={'100%'} />
                   
 
                   </Box>
@@ -175,7 +180,7 @@ export default function PaginaProyectos(props) {
 
                       {/*  ######### Descripcion ########### */}
 
-                      {project.descripcion}
+                      {miArray.Prueba[id].descripcion}
 
 
                     </Typography>
@@ -208,15 +213,15 @@ export default function PaginaProyectos(props) {
            
         <GoogleMap
        // lat2={latt}
-        zoom={14}
-        center={{ lat:project.lat,
-            lng:project.lng}}
+        zoom={16}
+        center={{ lat:miArray.Prueba[id].lat,
+            lng:miArray.Prueba[id].lng}}
         mapContainerStyle={{height:'60vh', width:'100%'}}
         >
         
         <MarkerF position={{ 
-            lat: 3.2499367481968666,
-            lng: -76.56676798926843
+            lat:miArray.Prueba[id].lat,
+            lng:miArray.Prueba[id].lng
             }}/>
 
         </GoogleMap>
@@ -258,25 +263,48 @@ export default function PaginaProyectos(props) {
 
                     
                     <Carousel.Item>
-                        <img width="100%" src={project.imagen1} />
+                        <img width="100%" src={miArray.Prueba[id].imagen1} />
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img width="100%" src={project.imagen2} />
+                        <img width="100%" src={miArray.Prueba[id].imagen2} />
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img width="100%" src={project.imagen3} />
+                        <img width="100%" src={miArray.Prueba[id].imagen3} />
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img width="100%" src={project.imagen4} />
+                        <img width="100%" src={miArray.Prueba[id].imagen4} />
                     </Carousel.Item>
 
                    
 
                 </Carousel>
 
+               
+
+            </Box>
+            <Box sx={{
+              margin:'auto',
+              height:'400px',
+              maxHeight:'800px',
+
+              maxWidth:'800px'
+            }}>
+
+            <ReactPlayer
+								borderRadius='3'
+								position='relative'
+								bottom='5px'
+								url='https://youtu.be/N3GwlQdjhjU'
+								className='react-player'
+								//playing
+								controls
+								loop
+								width='105%'
+								height='120%'
+							/>
             </Box>
 
 
@@ -287,7 +315,7 @@ export default function PaginaProyectos(props) {
 
          <Box sx={{
         textAlign: 'center',
-        marginTop: '10vh',
+        margin: '10vh',
         height: '5rem'
       }}>
         <Link to='https://api.whatsapp.com/send?phone=3147456473' >
@@ -295,6 +323,7 @@ export default function PaginaProyectos(props) {
             height: '100%',
             width: '30rem',
             padding: '10px',
+            margin: '10vh',
           }}
             variant='contained'
             endIcon={<WhatsAppIcon  />}
@@ -306,8 +335,10 @@ export default function PaginaProyectos(props) {
 
       </Box>
         </Grid>
+      
 
-      ))}
+
+      {/*  ))}  */}
 
 
 

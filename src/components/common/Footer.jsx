@@ -9,10 +9,15 @@ export default function FooterBar() {
 			container
 			alignItems='center'
 			display='flex'
-		
+			
 			columns={{ xs: 12, md: 12 }}
 			spacing={{ xs: 2, md: 1 }}
-			sx={{ height: 200, background: '#FE6B1D', fontWeight: 900 }}
+			sx={{ height: 200, 
+					background: '#FE6B1D', 
+					fontWeight: 900,
+					marginTop:'90vh',
+					border:2
+				}}
 			//sx={{ height: 200, background: '#A15600', fontWeight: 900 }}
 		>
 			<Grid item xs={12} md={6}>
