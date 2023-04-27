@@ -6,7 +6,7 @@ import { Colors } from '/src/config/themeConfig.js';
 import Fade from '@mui/material/Fade';
 import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
-import { milestonesAnimations } from "../animation";
+import { mensajebox  } from "../animation";
 
 
 export default function BasicStack() {
@@ -24,7 +24,7 @@ export default function BasicStack() {
 			}}
 		>
 		 <motion.div className="milestone"
-            variants={milestonesAnimations}
+            variants={mensajebox }
             animate={controls}
             transition={{
               delay: 0.03,

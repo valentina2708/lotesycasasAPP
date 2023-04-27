@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
-import UrbanizationsData from '../components/ProjectsInfo/UrbanizationsData';
+
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 
@@ -84,6 +84,7 @@ export default function BasicStack() {
 								//playing
 								controls
 								loop
+								muted
 								width='105%'
 								height='120%'
 							/>
@@ -117,16 +118,12 @@ export default function BasicStack() {
 									style={{ width: 320, height: 220 }}
 								/>
 								<Link to='/projects' className="nav-link">
-									<Button sx={{
-										height: '100%',
-										width: '100%',
-										padding: '10px',
-									}}
-										variant='contained'
-										
-									>
-										Ver mas
-									</Button>
+								<Button
+									
+									variant='contained'
+								>
+									Ver Más
+								</Button>
 								</Link>
 							</Stack>
 						</Grid>

@@ -9,7 +9,7 @@ export const servicesAnimations = {
 };
 
 
-export const milestonesAnimations = {
+export const mensajebox = {
     hidden: { scale: 0, opacity: 0 },
     show: { scale: 1, opacity: 1 },
 };
