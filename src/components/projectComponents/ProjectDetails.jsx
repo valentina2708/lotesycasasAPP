@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Typography, Card,Button} from '@mui/material';
+import { Box, Typography, Card, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Prueba } from '/src/DataProvider/Prueba.js';
 import LogoRinconDelLago from '../../assets/logoRincondelLago.jpg'
@@ -8,7 +8,7 @@ import Mapap from './Map';
 import Carousel from 'better-react-carousel'
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as miArray from '../../DataProvider/Prueba';
 import ReactPlayer from 'react-player';
@@ -20,322 +20,351 @@ import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api'
 
 export default function PaginaProyectos(props) {
 
- //const id=props.id;
- const { id } = useParams();
+  //const id=props.id;
+  const { id } = useParams();
 
- 
- 
 
-  const{isLoaded}=useLoadScript({
-    googleMapsApiKey:"AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU"})
 
-    
-    if(!isLoaded) return <Box>Cargando...</Box>
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU"
+  })
+
+
+  if (!isLoaded) return <Box>Cargando...</Box>
   return (
-   
-    <Box sx={{marginTop:'15vh'  }} >
+
+    <Box sx={{ marginTop: '15vh' }} >
 
 
-       <h1>{miArray.Prueba[id].nombre}</h1> 
-    {/*   {Prueba.map(project => ( */}
-       
-       
-    
-    
+      <h1>{miArray.Prueba[id].nombre}</h1>
+      {/*   {Prueba.map(project => ( */}
+
+
+
+
       <Grid  >
-         
-          <Grid container='true'  >
-            <Grid item='true' xs={12} sm={12} md={12} lg={12}>
 
-              <Box sx={{
+        <Grid container='true'  >
+          <Grid item='true' xs={12} sm={12} md={12} lg={12}>
 
-
-              }} >
-
-                <Typography
-                  variant='h2'
-                  sx={{
-                    color: 'Black',
-                    fontWeight: 'bold',
-                    mt: 2,
-                    textAlign: 'center',
-                    paddingTop: '10px',
-                    margin: '20px'
-                  }}>
-
-                   {/*  ######### Nombre proyecto ########### */}
-                   {miArray.Prueba[id].nombre}
-                 
-
-                </Typography>
-                <Typography
-                  variant='h4'
-                  sx={{
-                    color: '#A15600',
-                    fontWeight: 'bold',
-                    mt: 2,
-                    textAlign: 'center',
-                    paddingTop: '10px',
-                    margin: '20px'
-                  }}>
-
-                   {/*  ######### Subtitulo proyecto ########### */}
+            <Box sx={{
 
 
-                  {miArray.Prueba[id].subtitulo}
-                </Typography>
-              </Box>
+            }} >
 
-            </Grid>
-
-            <Card sx={{
-              //border: 2,
-              width: '130vh',
-              height: '60vh',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '15vh',
-              marginTop: '15vh',
-              borderRadius: 10
-            }}>
-
-              <Grid container='true'
+              <Typography
+                variant='h2'
                 sx={{
-
-                  //border: 2,
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-
+                  color: 'Black',
+                  fontWeight: 'bold',
+                  mt: 2,
+                  textAlign: 'center',
+                  paddingTop: '10px',
+                  margin: '20px'
                 }}>
-                <Grid item="true" xs={12} sm={12} md={12} lg={5}
-                  sx={{
-                    marginBottom: '20px',
-                    marginTop: '20px',
-                    //border: 2,
-                    padding: '10px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '70%'
-                  }}
 
-                >
+                {/*  ######### Nombre proyecto ########### */}
+                {miArray.Prueba[id].nombre}
 
 
-                  <Box sx={{
-                    //marginLeft:'10rem'
-                    //border: 2,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '90%',
-                    height: '100%'
-                  }}>
+              </Typography>
+              <Typography
+                variant='h4'
+                sx={{
+                  color: '#A15600',
+                  fontWeight: 'bold',
+                  mt: 2,
+                  textAlign: 'center',
+                  paddingTop: '10px',
+                  margin: '20px'
+                }}>
 
-                  {/*  ######### logo ########### */}
-
-                    <img src={miArray.Prueba[id].imagencard}  width={'100%'} height={'100%'} />
-                  
-
-                  </Box>
+                {/*  ######### Subtitulo proyecto ########### */}
 
 
-                </Grid>
-                <Grid item="true" xs={12} sm={12} md={12} lg={7}
-                  sx={{
-                    // border:2
-                    display: 'flex',
-                    justifyContent: 'left',
-                    alignItems: 'center',
-                  }}>
-
-                  <Box sx={{
-                    display: 'flex',
-                    justifyContent: 'center'
-
-
-                  }}>
-
-
-                    <Typography
-                      variant='body1'
-                      sx={{
-                        width: '450px',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        //border: 2,
-
-                        color: 'Black',
-                        //fontWeight: 'bold',
-                        textAlign: 'justify',
-                        padding: '20px',
-                        fontSize: 20
-                      }}>
-
-                      {/*  ######### Descripcion ########### */}
-
-                      {miArray.Prueba[id].descripcion}
-
-
-                    </Typography>
-
-
-                  </Box>
-
-                </Grid>
-
-              </Grid>
-            </Card>
+                {miArray.Prueba[id].subtitulo}
+              </Typography>
+            </Box>
 
           </Grid>
 
-          <Typography
-                    variant='h2'
-                    sx={{
-                        color: '#A15600',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        paddingTop: '10px',
-                        margin: '20px',
-                    }}
-                >
-                    Ubicación
-                </Typography>
-            
-        <Box sx={{border:2, height:'100%', width:'100%' }}>
-           
-           
-        <GoogleMap
-       // lat2={latt}
-        zoom={16}
-        center={{ lat:miArray.Prueba[id].lat,
-            lng:miArray.Prueba[id].lng}}
-        mapContainerStyle={{height:'60vh', width:'100%'}}
-        >
-        
-        <MarkerF position={{ 
-            lat:miArray.Prueba[id].lat,
-            lng:miArray.Prueba[id].lng
-            }}/>
+          <Card sx={{
+            //border: 2,
+            width: '130vh',
+            height: '60vh',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '15vh',
+            marginTop: '15vh',
+            borderRadius: 10
+          }}>
 
-        </GoogleMap>
+            <Grid container='true'
+              sx={{
 
-        </Box>
-      
+                //border: 2,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
 
-            <Box> <Box>          
-            <Box
+              }}>
+              <Grid item="true" xs={12} sm={12} md={12} lg={5}
                 sx={{
+                  marginBottom: '20px',
+                  marginTop: '20px',
+                  //border: 2,
+                  padding: '10px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: '100%',
+                  height: '70%'
+                }}
+
+              >
 
 
-                    width: '100%',
-                    marginTop: '20px',
-                    marginBottom: '20px',
+                <Box sx={{
+                  //marginLeft:'10rem'
+                  //border: 2,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: '90%',
+                  height: '100%'
+                }}>
+
+                  {/*  ######### logo ########### */}
+
+                  <img src={miArray.Prueba[id].imagencard} width={'100%'} height={'100%'} />
+
+
+                </Box>
+
+
+              </Grid>
+              <Grid item="true" xs={12} sm={12} md={12} lg={7}
+                sx={{
+                  // border:2
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'center',
+                }}>
+
+                <Box sx={{
+                  display: 'flex',
+                  justifyContent: 'center'
+
 
                 }}>
-                <Typography
-                    variant='h2'
+
+
+                  <Typography
+                    variant='body1'
                     sx={{
-                        color: '#A15600',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        paddingTop: '10px',
-                        margin: '20px',
-                    }}
-                >
-                    Galeria
-                </Typography>
-            </Box>
+                      width: '450px',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      //border: 2,
 
-            <Box sx={{
-                marginTop: '10vh',
-                marginBottom: '10vh'
+                      color: 'Black',
+                      //fontWeight: 'bold',
+                      textAlign: 'justify',
+                      padding: '20px',
+                      fontSize: 20
+                    }}>
+
+                    {/*  ######### Descripcion ########### */}
+
+                    {miArray.Prueba[id].descripcion}
+
+
+                  </Typography>
+
+
+                </Box>
+
+              </Grid>
+
+            </Grid>
+          </Card>
+
+        </Grid>
+
+        <Grid container sx={{
+
+
+        }}>
+          {miArray.Prueba[id].estado=='n' ? 
+          (<Typography
+            variant='body'
+            sx={{
+              color: 'back',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              paddingTop: '10px',
+              margin: '20px',
+            }}
+          >
+            Plaza comercial con 30 lotes de
+            108 m2 a 362 m2 y 117 parqueaderos
+          </Typography>
+            
+            ) : (<h1></h1>) }
+          
+
+
+
+        </Grid>
+
+        <Typography
+          variant='h2'
+          sx={{
+            color: '#A15600',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            paddingTop: '10px',
+            margin: '20px',
+          }}
+        >
+          Ubicación
+        </Typography>
+
+        <Box sx={{ border: 2, height: '100%', width: '100%' }}>
+
+
+          <GoogleMap
+            // lat2={latt}
+            zoom={16}
+            center={{
+              lat: miArray.Prueba[id].lat,
+              lng: miArray.Prueba[id].lng
+            }}
+            mapContainerStyle={{ height: '60vh', width: '100%' }}
+          >
+
+            <MarkerF position={{
+              lat: miArray.Prueba[id].lat,
+              lng: miArray.Prueba[id].lng
+            }} />
+
+          </GoogleMap>
+
+        </Box>
+
+
+        <Box> <Box>
+          <Box
+            sx={{
+
+
+              width: '100%',
+              marginTop: '20px',
+              marginBottom: '20px',
+
             }}>
-               
-               
-                <Carousel  cols={2} rows={2} gap={10} loop>
+            <Typography
+              variant='h2'
+              sx={{
+                color: '#A15600',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                paddingTop: '10px',
+                margin: '20px',
+              }}
+            >
+              Galeria
+            </Typography>
+          </Box>
 
-                    
-                    <Carousel.Item>
-                        <img width="100%" src={miArray.Prueba[id].imagen1} />
-                    </Carousel.Item>
+          <Box sx={{
+            marginTop: '10vh',
+            marginBottom: '10vh'
+          }}>
 
-                    <Carousel.Item>
-                        <img width="100%" src={miArray.Prueba[id].imagen2} />
-                    </Carousel.Item>
 
-                    <Carousel.Item>
-                        <img width="100%" src={miArray.Prueba[id].imagen3} />
-                    </Carousel.Item>
+            <Carousel cols={2} rows={2} gap={10} loop>
 
-                    <Carousel.Item>
-                        <img width="100%" src={miArray.Prueba[id].imagen4} />
-                    </Carousel.Item>
 
-                   
+              <Carousel.Item>
+                <img width="100%" src={miArray.Prueba[id].imagen1} />
+              </Carousel.Item>
 
-                </Carousel>
+              <Carousel.Item>
+                <img width="100%" src={miArray.Prueba[id].imagen2} />
+              </Carousel.Item>
 
-               
+              <Carousel.Item>
+                <img width="100%" src={miArray.Prueba[id].imagen3} />
+              </Carousel.Item>
 
-            </Box>
-            <Box sx={{
-              margin:'auto',
-              height:'400px',
-              maxHeight:'800px',
+              <Carousel.Item>
+                <img width="100%" src={miArray.Prueba[id].imagen4} />
+              </Carousel.Item>
 
-              maxWidth:'800px'
-            }}>
 
-            <ReactPlayer
-								borderRadius='3'
-								position='relative'
-								bottom='5px'
-								url='https://youtu.be/N3GwlQdjhjU'
-								className='react-player'
-								//playing
-								controls
-								loop
-								width='105%'
-								height='120%'
-							/>
-            </Box>
+
+            </Carousel>
 
 
 
           </Box>
+          <Box sx={{
+            margin: 'auto',
+            height: '400px',
+            maxHeight: '800px',
+
+            maxWidth: '800px'
+          }}>
+
+            <ReactPlayer
+              borderRadius='3'
+              position='relative'
+              bottom='5px'
+              url='https://youtu.be/N3GwlQdjhjU'
+              className='react-player'
+              //playing
+              controls
+              loop
+              width='105%'
+              height='120%'
+            />
+          </Box>
+
+
+
         </Box>
-         {/*  <img src={project.imagen} alt="imagen" /> */}
+        </Box>
+        {/*  <img src={project.imagen} alt="imagen" /> */}
 
-         <Box sx={{
-        textAlign: 'center',
-        margin: '10vh',
-        height: '5rem'
-      }}>
-        <Link to='https://api.whatsapp.com/send?phone=3147456473' >
-          <Button sx={{
-            height: '100%',
-            width: '30rem',
-            padding: '10px',
-            margin: '10vh',
-          }}
-            variant='contained'
-            endIcon={<WhatsAppIcon  />}
-          >
-            Comunícate con un asesor
-          </Button>
-        </Link>
+        <Box sx={{
+          textAlign: 'center',
+          margin: '10vh',
+          height: '5rem'
+        }}>
+          <Link to='https://api.whatsapp.com/send?phone=3147456473' >
+            <Button sx={{
+              height: '100%',
+              width: '30rem',
+              padding: '10px',
+              margin: '10vh',
+            }}
+              variant='contained'
+              endIcon={<WhatsAppIcon />}
+            >
+              Comunícate con un asesor
+            </Button>
+          </Link>
 
 
-      </Box>
-        </Grid>
-      
+        </Box>
+      </Grid>
+
 
 
       {/*  ))}  */}
@@ -345,6 +374,6 @@ export default function PaginaProyectos(props) {
 
 
     </Box>
-    
+
   )
 }

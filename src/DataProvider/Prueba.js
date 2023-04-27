@@ -4,6 +4,7 @@ export const Prueba=[
   
     {
         id:'0',
+        estado:'n',
         nombre: '000000000000',
         subtitulo:' 00000000000000',
         imagencard:'/src/assets/logoRincondelLago.jpg',
@@ -23,7 +24,7 @@ export const Prueba=[
         imagen4: '/src/assets/TERRAZA3.jpg',
         descripcion2: 'Proyecto nuevo de la contructora inmobiliaria Casas & Lotes en Jamundí con financiación de hasta 60 meses, 173 lotes de vivienda, 8 lotes comerciales, 64 lotes vendidos con una alta valorización.',
         ubicacion:'Jamundí',
-        areaDelLote:'mts²',
+        areaDelLote:'150 m2 - 346 mts²',
         estado: 'Lanzamiento',
         imagen: '/src/assets/casasylotes5.jpeg',
         imgproyectos: 'RinconDelLago',
@@ -35,6 +36,7 @@ export const Prueba=[
 
     {
         id:'1',
+        estado:'v',
         nombre: 'Rincón Del Lago',
         subtitulo:' Condominio Campestre y Plaza Comercial',
         imagencard:'/src/assets/logoRincondelLago.jpg',
@@ -65,6 +67,7 @@ export const Prueba=[
 
        {
         id:'2',
+        estado:'v',
         nombre: 'ahahahahahahha',
         subtitulo:' ksksksksksksk',
         imagencard:'/src/assets/logoRincondelLago.jpg',
