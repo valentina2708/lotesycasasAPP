@@ -9,8 +9,11 @@ import HomeLayout from './components/layout/HomeLayout';
 import AboutLayout from './components/layout/AboutLayout';
 import ContactLayout from './components/layout/ContactLayout';
 import ProjectLayout from './components/layout/ProjectLayout';
-
+import ProjectDetailsLayout from './components/layout/ProjectDetailsLayout';
 function App() {
+	
+	
+
 	return (
 	
 		<ThemeProvider theme={theme}>
@@ -24,8 +27,9 @@ function App() {
 						<Route path='/about' element={<AboutLayout />} />
 						<Route path='/contact' element={<ContactLayout />} />
 						<Route path='/projects' element={<ProjectLayout />} />
+						<Route path="/projectDetails/:id" element={<ProjectDetailsLayout/> } />
 					</Routes>
-					<Grid mt={38} sx={{ alignSelf: 'flex-end', width: '100%' }}>
+					<Grid mt={0} sx={{ alignSelf: 'flex-end', width: '100%' }}>
 						<Footer />
 					</Grid>
 				</Grid>

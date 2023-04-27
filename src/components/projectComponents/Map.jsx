@@ -3,8 +3,11 @@ import { GoogleMap, Marker, MarkerF, useLoadScript } from '@react-google-maps/ap
 import React from 'react'
 import Box  from '@mui/material/Box'
 
-export default function map() {
+export default function Mapaa(latt,lngg) {
   
+    const price= lngg;
+   
+
     const{isLoaded}=useLoadScript({
         googleMapsApiKey:"AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU"})
   
@@ -12,18 +15,16 @@ export default function map() {
         if(!isLoaded) return <Box>Cargando...</Box>
     return (
 
-    <Box sx={{padding:'1vh'}}><Mapaa/></Box>
-  )
-}
-
-function Mapaa(){
-
-    return(
-
+   
+        <Box>
+            {
+               
+            }
+           
         <GoogleMap
-        
+       // lat2={latt}
         zoom={14}
-        center={{ lat: 3.2499367481968666,
+        center={{ lat:3.2499367481968666,
             lng: -76.56676798926843}}
         mapContainerStyle={{height:'50vh', width:'100%'}}
         >
@@ -34,5 +35,10 @@ function Mapaa(){
             }}/>
 
         </GoogleMap>
-    )
+
+        </Box>
+
+
+  )
 }
+

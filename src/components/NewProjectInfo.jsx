@@ -117,14 +117,16 @@ export default function BasicStack() {
 									style={{ width: 320, height: 220 }}
 								/>
 								<Link to='/projects' className="nav-link">
-								<Button
-									onClick={() => {
-										return <UrbanizationsData />;
+									<Button sx={{
+										height: '100%',
+										width: '100%',
+										padding: '10px',
 									}}
-									variant='contained'
-								>
-									Ver Más
-								</Button>
+										variant='contained'
+										
+									>
+										Ver mas
+									</Button>
 								</Link>
 							</Stack>
 						</Grid>

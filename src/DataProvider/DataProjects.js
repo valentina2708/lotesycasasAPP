@@ -12,7 +12,7 @@ export const  DataProjects=[
     imagen: '/src/assets/casasylotes5.jpeg',
     imgproyectos: 'RinconDelLago',
     pisina: '/src/assets/pisina1.png', 
-    imgzonaSocial:'/src/assets/TERRAZA2.jpg'
+    imgzonaSocial:'/src/assets/TERRAZA2.jpg',
    
    },
    {

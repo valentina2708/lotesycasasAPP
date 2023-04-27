@@ -1,4 +1,4 @@
-import { Box, Typography, Chip, Stack, Avatar } from '@mui/material';
+import { Box, Typography, Chip, Stack, Avatar, Button } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import {
 	CardMedia,
@@ -26,8 +26,11 @@ import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
 import Modal from '../ProjectsInfo/Modal';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ProjectDetails from '../projectComponents/ProjectDetails'
+import App from '../../App'
+import ProyectDetailsLayout from '../layout/ProjectDetailsLayout';
 
 const Contenido = styled.div`
 	display: flex;
@@ -49,6 +52,14 @@ export default function MediaCard() {
 	const [estadoModal2, cambiarEstadoModal2] = useState(false);
 	const [estadoModal3, cambiarEstadoModal3] = useState(false);
 	const [estadoModal4, cambiarEstadoModal4] = useState(false);
+
+	const [id, setId] = useState(null);
+
+	/* const handleClick = (id) => {
+		id = project.id;
+		setId(id);
+	} */
+
 
 	return (
 		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px' }}>
@@ -278,16 +289,47 @@ export default function MediaCard() {
 												label={project.estado}
 											/>
 										</Typography>
+										
+     
 										<Stack>
-											<SeeMoreButton />
+
+
+											
+
+											
+
+													
+
+
+
+{/* 
+										<SeeMoreButton onClick={() => handleClick(1)}>
+										 {id && <ProjectDetails/>}	 
+										
+										</SeeMoreButton>  */}
+
+									
+											<Link to={`/ProjectDetails/${project.id}`}>
+											<SeeMoreButton></SeeMoreButton>
+											
+											</Link> 
+											<h1>{project.id}</h1>
+
 										</Stack>
 									</Grid>
 								</Card>
 							</motion.div>
+							
 						</Grid>
+						
 					))}
+					
 				</Grid>
+				
+				
 			</Container>
+			
 		</Box>
+		
 	);
 }
