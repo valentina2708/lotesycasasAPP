@@ -75,7 +75,7 @@ export default function MediaCard() {
 					rowSpacing={6}
 				>
 					{DataProjects.map(project => (
-						<Grid item xs={12}>
+						<Grid item xs={12} key={project.id}>
 							<motion.div
 								className='home'
 								variants={servicesAnimations}
