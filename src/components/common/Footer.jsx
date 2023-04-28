@@ -15,8 +15,8 @@ export default function FooterBar() {
 			sx={{ height: 200, 
 					background: '#FE6B1D', 
 					fontWeight: 900,
-					marginTop:'90vh',
-					border:2
+					marginTop:'150vh',
+					border:0
 				}}
 			//sx={{ height: 200, background: '#A15600', fontWeight: 900 }}
 		>

@@ -29,7 +29,7 @@ function App() {
 						<Route path='/projects' element={<ProjectLayout />} />
 						<Route path="/projectDetails/:id" element={<ProjectDetailsLayout/> } />
 					</Routes>
-					<Grid mt={0} sx={{ alignSelf: 'flex-end', width: '100%' }}>
+					<Grid mt={0} sx={{ alignSelf: 'flex-end', width: '100%',marginTop:'40vh' }}>
 						<Footer />
 					</Grid>
 				</Grid>

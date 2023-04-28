@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import SeeMoreButton from '/src/components/ProjectsInfo/SeeMoreButton';
 import { DataProjects } from '/src/DataProvider/DataProjects.js';
+import { Link } from 'react-router-dom';
 import {
 	HolidayVillage,
 	Pool,
@@ -26,7 +27,7 @@ import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
 import Modal from '../ProjectsInfo/Modal';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import ProjectDetails from '../projectComponents/ProjectDetails'
 import App from '../../App'
@@ -54,12 +55,6 @@ export default function MediaCard() {
 	const [estadoModal4, cambiarEstadoModal4] = useState(false);
 
 	const [id, setId] = useState(null);
-
-	/* const handleClick = (id) => {
-		id = project.id;
-		setId(id);
-	} */
-
 
 	return (
 		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px' }}>
@@ -293,27 +288,11 @@ export default function MediaCard() {
      
 										<Stack>
 
-
-											
-
-											
-
-													
-
-
-
-{/* 
-										<SeeMoreButton onClick={() => handleClick(1)}>
-										 {id && <ProjectDetails/>}	 
-										
-										</SeeMoreButton>  */}
-
-									
 											<Link to={`/ProjectDetails/${project.id}`}>
 											<SeeMoreButton></SeeMoreButton>
 											
 											</Link> 
-											<h1>{project.id}</h1>
+											
 
 										</Stack>
 									</Grid>
@@ -321,7 +300,7 @@ export default function MediaCard() {
 							</motion.div>
 							
 						</Grid>
-						
+				
 					))}
 					
 				</Grid>

@@ -103,6 +103,7 @@ const Appbar = () => {
 						</Link>
 					))}
 				</MenuBox>
+				
 
 				<SearchBox>
 					<InputBase

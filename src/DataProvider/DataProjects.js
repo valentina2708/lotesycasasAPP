@@ -17,10 +17,10 @@ export const  DataProjects=[
     id:2,
     nombre: 'Puertas Del Sol',
     estado: 'Finalizado',
-    tipo: 'Proyecto Urbanización',
+    tipo: 'Urbanización',
     descripcion: 'Proyecto de la constructora inmobiliaria Casas & Lotes en Jamundí, 188 lotes para vivienda y 20 lotes comerciales con fachada unificada, Servicios públicos, zardinel, vías pavimentadas, andenes, zonas verdes, parqueaderos, zonas comerciales y estación de servicio.',
     ubicacion: 'Jamundí, a 15 minutos de la ciudad de Cali',
-    areaDelLote: '120 a 262 mts²- 80 a 140 mts²',
+    areaDelLote: ' 120 a 262 mts²- 80 a 140 mts²',
     imagen: '/src/assets/urbanizacionPuertadelSol.jpg',
   },
 

@@ -32,6 +32,7 @@ export default function AboutUs() {
 	useEffect(() => {
 		AOS.init({ offset: 200, duration: 1000 });
 	}, []);
+
 	return (
 		<Grid sx={{}}>
 			<Parallax
@@ -195,7 +196,7 @@ export default function AboutUs() {
 								}}
 							>
 								<Box
-									data-aos='fade-left'
+									data-aos='fade-right'
 									sx={{
 										width: '300px',
 										height: '200px',
@@ -206,7 +207,7 @@ export default function AboutUs() {
 								>
 									<img width={'100%'} height={'100%'} src={Mision} />
 								</Box>
-								<Box data-aos='fade-left'>
+								<Box data-aos='fade-right'>
 									<Box
 									>
 										<Typography
@@ -267,7 +268,7 @@ export default function AboutUs() {
 								}}
 							>
 								<Box
-									data-aos='fade-left'
+									data-aos='fade-up'
 									sx={{
 										width: '300px',
 										height: '200px',
@@ -278,7 +279,7 @@ export default function AboutUs() {
 								>
 									<img width={'90%'} height={'90%'} src={Vision} />
 								</Box>
-								<Box data-aos='fade-left'>
+								<Box data-aos='fade-up'>
 									<Box
 									>
 										<Typography

@@ -5,7 +5,10 @@ import { makeStyles } from 'tss-react/mui';
 import { motion } from 'framer-motion';
 import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
-
+import { Prueba } from '/src/DataProvider/Prueba.js';
+import { DataProjects } from '/src/DataProvider/DataProjects.js';
+import { Link } from 'react-router-dom';
+import * as Array from '../../DataProvider/DataProjects';
 const useStyles = makeStyles()(theme => {
 	return {
 		InfoImage: {
@@ -43,6 +46,8 @@ export default function BasicStack() {
 				duration: 0.9,
 			}}
 		>
+		{/* {DataProjects.map(project => ( */}			
+				
 			<Box
 				ref={element}
 				className={classes.InfoImage}
@@ -92,7 +97,9 @@ export default function BasicStack() {
 							encontraras el hogar de tus sueños, ven, conocelo y haz parte de
 							nuestra familia.
 						</Typography>
-                        <Button sx={{
+						{/*  <Link to={`/ProjectDetails/${project.id}`}> */}
+											
+						<Button sx={{
 									position: 'relative',
                                     mt:2,
                                     left:'41%',
@@ -100,10 +107,16 @@ export default function BasicStack() {
                                     background: Colors.info3
 								}} 
                                 variant='contained'
-                                >Ver Más</Button>
+                                >Ver Más</Button>		
+											{/* </Link>   */}
+					 
+
+
+
 					</CardContent>
 				</Card>
 			</Box>
+			 	{/* ))}  */}
 		</motion.div>
 	);
 }

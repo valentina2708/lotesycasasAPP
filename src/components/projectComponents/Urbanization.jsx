@@ -25,6 +25,8 @@ import { DataUrbanizations } from '../../DataProvider/DataProjects.js';
 import { Villa } from '@mui/icons-material/';
 import InfoUrbanization from "../projectComponents/InfoUrbanization.jsx"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { DataProjects } from '/src/DataProvider/DataProjects.js';
+import { Link } from 'react-router-dom';
 
 export default function ProjectsUrbanization() {
 	const [element, controls] = useScroll();
@@ -179,7 +181,14 @@ export default function ProjectsUrbanization() {
 										</Typography>
 									</CardContent>
                                     <CardActions>
-										<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
+									
+									<Link to={`/ProjectDetails/${urbanization.id}`}>
+									<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
+											
+											</Link> 
+										
+									
+									
 									</CardActions>
                       
 								</Card>
