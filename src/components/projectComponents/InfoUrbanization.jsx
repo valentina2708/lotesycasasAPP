@@ -109,9 +109,10 @@ export default function BasicStack() {
                                 variant='contained'
                                 >Ver Más</Button>		
 											{/* </Link>   */}
-					 
-
-
+										{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
+											 (código si es cerdadero) : (código si es falso) } */}
+											
+            
 
 					</CardContent>
 				</Card>

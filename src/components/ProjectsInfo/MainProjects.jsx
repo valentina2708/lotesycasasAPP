@@ -288,10 +288,20 @@ export default function MediaCard() {
      
 										<Stack>
 
-											<Link to={`/ProjectDetails/${project.id}`}>
-											<SeeMoreButton></SeeMoreButton>
+										{ project.act==='v'?
+											 ( 	<Link to={`/ProjectDetails/${project.id}`}>
+											 <SeeMoreButton ></SeeMoreButton>
+											 
+											 </Link>  ) : (	
 											
-											</Link> 
+											
+												<h1></h1>
+											
+											
+											
+											 
+											) }
+
 											
 
 										</Stack>

@@ -3,6 +3,7 @@ export const  DataProjects=[
   {
     id:1,
     nombre: 'Rincón Del Lago',
+    act:'v',
     tipo: 'Urbanización',
     descripcion: 'Proyecto nuevo de la contructora inmobiliaria Casas & Lotes en Jamundí con financiación de hasta 60 meses, 173 lotes de vivienda, 8 lotes comerciales, 64 lotes vendidos con una alta valorización.',
     ubicacion:'Jamundí',
@@ -16,6 +17,7 @@ export const  DataProjects=[
    {
     id:2,
     nombre: 'Puertas Del Sol',
+    act:'v',
     estado: 'Finalizado',
     tipo: 'Urbanización',
     descripcion: 'Proyecto de la constructora inmobiliaria Casas & Lotes en Jamundí, 188 lotes para vivienda y 20 lotes comerciales con fachada unificada, Servicios públicos, zardinel, vías pavimentadas, andenes, zonas verdes, parqueaderos, zonas comerciales y estación de servicio.',

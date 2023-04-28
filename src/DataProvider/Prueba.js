@@ -6,6 +6,7 @@ export const Prueba=[
     {
         id:'1',
         adicional:'v',
+        act:'v',
         nombre: 'Rincón Del Lago',
         subtitulo:' Condominio Campestre y Plaza Comercial',
         imagencard:'/src/assets/logoRincondelLago.jpg',
@@ -54,6 +55,7 @@ export const Prueba=[
        {
         id:2,
         nombre: 'Puertas Del Sol',
+        act:'v',
         imagencard:'/src/assets/logopuertasdelsol.png',
         subtitulo:'Ubicado en Jamundí, a 15 minutos de la ciudad de Cali',
         estado: 'Finalizado',
