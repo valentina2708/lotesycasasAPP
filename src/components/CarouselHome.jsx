@@ -37,7 +37,7 @@ export default function BlendModeSlider() {
 						flexFlow: 'column',
 						alignItems: 'center',
 						justifyContent: 'center',
-						width: '100%',
+						// width: '100%',
 						height: '100%',
 						margin: '0 auto',
 					}}
@@ -52,13 +52,13 @@ export default function BlendModeSlider() {
 								backgroundColor: Colors.body_bg,
 								textAlign: 'center',
 								border: 'none',
-								p: '10px',
+								p: '2rem',
 								opacity: [0.8, 0.7, 0.8],
 							}}
 						>
 							<Typography
-								variant='h2'
-								sx={{ margin: '0 36px',   fontWeight: 'bold' }}
+								variant='h3'
+								sx={{ fontWeight: 'bold' }}
 							>
 								Constructura Inmobiliaria-Bienes Raices
 							</Typography>

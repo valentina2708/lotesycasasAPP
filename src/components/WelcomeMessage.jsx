@@ -32,10 +32,10 @@ export default function BasicStack() {
               duration: 0.8,
             }}
             >
-			<Stack spacing={2}>
+			<Stack ml={{xs:2, md:0}}>
 				<Typography
-				  TransitionComponent={Fade}
-                  TransitionProps={{ timeout: 600 }}
+				  // TransitionComponent={Fade}
+          //         TransitionProps={{ timeout: 600 }}
 					variant='h2'
 					sx={{
 						color: Colors.primary,

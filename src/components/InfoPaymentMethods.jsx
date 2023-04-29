@@ -25,10 +25,10 @@ const useStyles = makeStyles()(theme => {
 			alignItems: 'center',
 			color: '#fff',
 			fontSize: '4rem',
-			[theme.breakpoints.down('sm')]: {
-				height: 300,
-				fontSize: '3em',
-			},
+			// [theme.breakpoints.down('sm')]: {
+			// 	height: 300,
+			// 	fontSize: '3em',
+			// },
 		},
 	};
 });
@@ -63,11 +63,12 @@ export default function BasicStack() {
 					color: Colors.dove_gray,
 					opacity: [0.7, 0.6, 0.7],
 					position: 'relative',
-					bottom: '5px',
-					width: '55%',
-					height: 220,
+					marginInline: {xs:'0', sm:'10rem'},
+					// bottom: '5px',
+					// width: '55%',
+					// height: 220,
 					borderRadius: 3,
-					left: '30px',
+					// left: '30px',
 					p:'20px'
 				
 				}}
@@ -75,11 +76,10 @@ export default function BasicStack() {
 				<Grid
 					container
 					rowSpacing={1}
-					columnSpacing={{ xs: 12, sm: 6, md: 4 }}
+					columns={{ xs: 6, md: 12}}
 					
 				>
 					<Grid item xs={6} sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
-						
 						<Avatar
 							sx={{
 								width: 85,
@@ -92,7 +92,7 @@ export default function BasicStack() {
 						</Avatar>
 						<CardContent>
 							<Typography
-								variant='h5'
+								variant='h6'
 								sx={{
 									color: Colors.primary,
 									fontWeight: 400,
@@ -119,7 +119,7 @@ export default function BasicStack() {
 						</Avatar>
 						<CardContent>
 							<Typography
-								variant='h5'
+								variant='h6'
 								sx={{
 									color: Colors.primary,
 									fontWeight: 400,

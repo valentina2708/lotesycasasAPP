@@ -61,32 +61,34 @@ export default function BasicStack() {
 				<Card
 					elevation={12}
 					sx={{
-						width: '70%',
-						height: 520,
+						width: {xs: '90%',sm:'70%'},
 						position: 'relative',
 						top: '-150px',
-						left: '15%',
+						left: {xs: '1rem', sm: '15%', md:'15%'},
 						borderRadius: 3,
+						justifyContent: 'center',
+						alignItems: 'center'
 					}}
 				>
 					<Grid
 						container
 						rowSpacing={1}
-						columnSpacing={{ xs: 12, sm: 6, md: 4 }}
+						columns={{ xs: 6, md: 12 }}
+						// columnSpacing={{ xs: 12, sm: 6, md: 4 }}
 					>
 						<Grid item xs={6}>
 							<ReactPlayer
-								borderRadius='3'
+								// borderradius='3'
 								position='relative'
 								bottom='5px'
 								url='https://youtu.be/N3GwlQdjhjU'
 								className='react-player'
-								//playing
+								// playing
 								controls
 								loop
 								muted
-								width='105%'
-								height='120%'
+								width='100%'
+								height='100%'
 							/>
 						</Grid>
 						<Grid item xs={6}>
@@ -115,15 +117,10 @@ export default function BasicStack() {
 								<img
 									src={logo}
 									alt='logo'
-									style={{ width: 320, height: 220 }}
+									style={{ width: 260, height: 180 }}
 								/>
-								<Link to='/projects' className="nav-link">
-								<Button
-									
-									variant='contained'
-								>
-									Ver Más
-								</Button>
+								<Link to='/projects' className='nav-link'>
+									<Button variant='contained'>Ver Más</Button>
 								</Link>
 							</Stack>
 						</Grid>
