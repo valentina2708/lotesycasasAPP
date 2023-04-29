@@ -11,13 +11,13 @@ import terraza3 from '../../assets/TERRAZA3.jpg'
 
 
 
-export default function Gallery(img1,img2,img3,img4) {
+export default function Gallery() {
     
     return (
        
         
          <Box>          
-            <Box
+            {/* <Box
                 sx={{
 
 
@@ -71,7 +71,7 @@ export default function Gallery(img1,img2,img3,img4) {
 
             </Box>
 
-
+ */}
 
         </Box>
     )

@@ -123,8 +123,8 @@ export default function ProjectsHouses() {
 					</Stack>
 				</motion.div>
 			</Box>
-			<Box>
-				<Container
+			<Box
+				container ='true'
 					sx={{
 						justifyContent: 'center',
 						alignItems: 'center',
@@ -185,8 +185,8 @@ export default function ProjectsHouses() {
 							</Grid>
 						))}
 					</Grid>
-				</Container>
-			</Box>
+				</Box>
+		
 		</>
 	);
 }

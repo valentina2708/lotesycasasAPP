@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import { Prueba } from '/src/DataProvider/Prueba.js';
 import LogoRinconDelLago from '../../assets/logoRincondelLago.jpg'
 import Mapap from './Map';
-import Carousel from 'better-react-carousel'
+//import Carousel from 'better-react-carousel'
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState, useEffect } from 'react';
@@ -20,16 +20,11 @@ import { Parallax } from 'react-parallax';
 
 export default function PaginaProyectos(props) {
 
-  //const id=props.id;
-
   useEffect(() => {
     AOS.init({ offset: 200, duration: 1000 });
   }, []);
 
   const { id } = useParams();
-
-
-
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU"
@@ -364,7 +359,7 @@ export default function PaginaProyectos(props) {
                               //border:2
                             }}>
 
-                              <Link to='https://api.whatsapp.com/send?phone=3147456473' >
+                              <Link to='https://api.whatsapp.com/send?phone=3204210000' >
                                 <Button sx={{
 
                                   width: '100%',
@@ -846,7 +841,7 @@ export default function PaginaProyectos(props) {
             }}>
 
 
-            <Carousel cols={2} rows={2} gap={10} loop>
+          {/*   <Carousel cols={2} rows={2} gap={10} loop>
 
 
               <Carousel.Item>
@@ -883,7 +878,8 @@ export default function PaginaProyectos(props) {
 
 
 
-            </Carousel>
+            </Carousel> */}
+
 
 
 
