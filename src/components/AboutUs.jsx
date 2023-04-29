@@ -27,7 +27,7 @@ export default function AboutUs() {
 				sx={{
 					width: '100%',
 					height: '100%',
-					display: { xs: 'none', sm: 'none', md: 'block', xl: 'block' },
+					display: { xs: 'none', sm: 'block', md: 'block', xl: 'block' },
 				}}
 			>
 				<Parallax
@@ -47,18 +47,19 @@ export default function AboutUs() {
 							justifyContent: 'center',
 							alignItems: 'center',
 							width: '100%',
-							height: '83vh',
+							height: '85vh',
 						}}
 					>
 						<Box
 							sx={{
-								marginLeft: '60px',
-								marginRight: '60px',
+							
 							}}
 						>
 							<Box
 								sx={{
 									width: '100%',
+									marginLeft: '60px',
+									marginRight: '60px',
 								}}
 							>
 								<Typography
@@ -100,32 +101,32 @@ export default function AboutUs() {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
-							width: '100%',
-							height: '40vh',
+							width: '44vh',
+							height: '45vh',
 						}}
 					>
 						<Box
 							sx={{
-								paddingLeft: '9rem',
+								
 							}}
 						>
 							<Box
 								sx={{
-									display: 'flow',
-									padding: '0px',
-									width: '100%',
+									display: 'flex',
+									justifyContent: 'center',
+							alignItems: 'center',
+									
 								}}
 							>
 								<Typography
 									variant='h4'
 									sx={{
-										opacity: [90],
+										
 										color: Colors.info3,
 										fontWeight: 'bold',
 										mt: 2,
-										textAlign: 'center',
-										paddingTop: '10px',
-										margin: '20px',
+										
+										
 									}}
 								>
 									Nosotros

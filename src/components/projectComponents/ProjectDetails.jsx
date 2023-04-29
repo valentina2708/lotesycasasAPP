@@ -44,7 +44,8 @@ export default function PaginaProyectos(props) {
       <Grid  >
 
         <Grid container='true'  >
-          <Grid sx={{//border:2
+          <Grid sx={{
+          
           }} item='true' xs={12} sm={12} md={12} lg={12}>
 
             <Box data-aos='fade-down'
@@ -92,120 +93,184 @@ export default function PaginaProyectos(props) {
 
           </Grid>
 
-          <Card
-            sx={{
-              //border: 2,
-              width: '100%',
-              height: '100%',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '5vh',
-              marginTop: '10vh',
-              borderRadius: 10
-            }}>
+          <Box sx={{ marginBottom: '15vh', display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' } }}>
+            <Box
 
-            <Grid container='true'
               sx={{
 
-                // border: 2,
+
+                borderRadius: 10
+              }}>
+
+              <Grid container='true'
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'grid',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginTop: '10vh'
+                }}>
+                <Grid item="true" xs={12} sm={12} md={12} lg={6}
+                  sx={{
+                    display: 'flex',
+                    width: '100%',
+                    height: '100%'
+                  }}>
+                  <Box data-aos="fade-up" data-aos-duration='1000' sx={{
+
+                  }}>
+
+                    {/*  ######### imagen 1 logo ########### */}
+                    <img src={miArray.Prueba[id - 1].imagencard} width={'100%'} height={'100%'} />
+                  </Box>
+                </Grid>
+                <Grid item="true" xs={12} sm={12} md={12} lg={6}
+                  sx={{
+
+                    display: 'grid',
+                    justifyContent: 'center',
+
+                  }}>
+
+                  <Box data-aos="fade-up" data-aos-duration='1000' sx={{
+
+
+                    margin: 'auto',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    paddingLeft: '2rem',
+                    paddingRight: '2rem'
+                  }}>
+
+
+                    <Typography
+                      variant='body1'
+                      sx={{
+                        align: 'justifyContent',
+                        width: '100%',
+                        height: '100%',
+                        color: 'Black',
+                        fontSize: 25
+                      }}>
+
+                      {/*  ######### Descripcion 1 ########### */}
+
+                      {miArray.Prueba[id - 1].descripcion}
+
+
+                    </Typography>
+
+
+                  </Box>
+
+                </Grid>
+
+              </Grid>
+            </Box>
+
+          </Box>
+
+          <Box sx={{ marginBottom: '15vh', display: { xs: 'none', sm: 'none', md: 'block', xl: 'block' } }}>
+            <Card
+
+              sx={{
+
                 width: '100%',
                 height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginBottom: '5vh',
+                marginTop: '10vh',
+                borderRadius: 10
               }}>
-              <Grid item="true" xs={12} sm={12} md={12} lg={6}
+
+              <Grid container='true'
                 sx={{
-                  marginBottom: '20px',
-                  marginTop: '20px',
-                  border: 2,
-                  padding: '10px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+
+                  // border: 2,
                   width: '100%',
-                  height: '70%'
-                }}
-
-              >
-
-
-                <Box data-aos="fade-up" data-aos-duration='1000' sx={{
-                  //marginLeft:'10rem'
-                  border: 2,
-                  display: 'flex',
-                  justifyContent: 'right',
-                  alignItems: 'center',
-                  width: '80%',
                   height: '100%',
-
-                }}>
-
-                  {/*  ######### imagen 1 logo ########### */}
-
-                  <img src={miArray.Prueba[id - 1].imagencard} width={'80%'} height={'100%'}
-
-                  />
-
-
-                </Box>
-
-
-              </Grid>
-              <Grid item="true" xs={12} sm={12} md={12} lg={6}
-                sx={{
-                  //border:2,
-                  //display: 'flex',
+                  display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  marginTop: '4vh',
-                  marginBottom: '4vh'
-                }}>
-
-                <Box data-aos="fade-up" data-aos-duration='1000' sx={{
-                  border:6,
-                  
-                  justifyContent: 'left',
-                  padding:'10px'
 
                 }}>
+                <Grid item="true" xs={6} sm={12} md={12} lg={6}
+                  sx={{
+                    marginBottom: '20px',
+                    marginTop: '20px',
+                    // border: 2,
+                    padding: '10px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '100%',
+                    height: '70%'
+                  }}>
+                  <Box data-aos="fade-up" data-aos-duration='1000' sx={{
+                    //marginLeft:'10rem'
+                    //border: 2,
+                    display: 'flex',
+                    justifyContent: 'right',
+                    alignItems: 'center',
+                    width: '80%',
+                    height: '100%',
+
+                  }}>
+
+                    {/*  ######### imagen 1 logo ########### */}
+                    <img src={miArray.Prueba[id - 1].imagencard} width={'100%'} height={'100%'} />
+                  </Box>
+                </Grid>
+                <Grid item="true" xs={12} sm={12} md={12} lg={6}
+                  sx={{
+
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    marginTop: '4vh',
+                    marginBottom: '4vh'
+                  }}>
+
+                  <Box data-aos="fade-up" data-aos-duration='1000' sx={{
 
 
-                  <Typography
-                    variant='body1'
-                    sx={{
-                      width: '450px',
-                      height: '100%',
-                    
+                    justifyContent: 'left',
+                    padding: '10px'
 
-                      color: 'Black',
-                      //fontWeight: 'bold',
-                      textAlign: 'justify',
-                      padding: '20px',
-                      fontSize: 25
-                    }}>
-
-                    {/*  ######### Descripcion 1 ########### */}
-
-                    {miArray.Prueba[id - 1].descripcion}
-                    {/*  <br /><br />Area:<br />
-                    {miArray.Prueba[id - 1].areaDelLote} */}
+                  }}>
 
 
-                  </Typography>
+                    <Typography
+                      variant='body1'
+                      sx={{
+                        width: '450px',
+                        height: '100%',
+                        color: 'Black',
+                        fontSize: 25
+                      }}>
+
+                      {/*  ######### Descripcion 1 ########### */}
+
+                      {miArray.Prueba[id - 1].descripcion}
 
 
-                </Box>
+                    </Typography>
+
+
+                  </Box>
+
+                </Grid>
 
               </Grid>
+            </Card>
+          </Box>
 
-            </Grid>
-          </Card>
 
-      //  </Grid>
+        </Grid>
 
         <Grid container sx={{
 
@@ -218,7 +283,7 @@ export default function PaginaProyectos(props) {
 
 
               <Grid container='true'  >
-                <Grid item="true" xs={6} sm={12} md={12} lg={12}>
+                <Grid item="true" xs={12} sm={12} md={12} lg={12}>
                   <Parallax
                     style={{
                       width: '100%',
@@ -315,18 +380,73 @@ export default function PaginaProyectos(props) {
 
                             </Box>
 
-
-
-
-
                           </CardContent>
                         </Card>
                       </Box>
                     </Box>
                   </Parallax>
                 </Grid>
+                <Grid item="true" xs={12} sm={12} md={12} lg={12}
+                sx={{marginBottom:'5vh',marginTop:'5vh'}}
+                >
 
-                <Grid item="true" xs={6} sm={12} md={12} lg={12}>
+
+                 
+                    <Grid container sx={{birderTop:'10vh'}}>
+
+                      <Box data-aos="fade-up" data-aos-duration='1000' sx={{ margin: 'auto', whith: '50%' }}>
+
+
+                        <Typography
+
+                          variant='h4'
+                          sx={{
+                            color: '#A15600',
+                            fontWeight: 'bold',
+                            mt: 2,
+                            textAlign: 'center',
+                            paddingTop: '10px',
+                            margin: '20px'
+                          }}>
+                          {/*  ######### Subtitulo 2 proyecto ########### */}
+                          Ubicado en el corazón de Alfaguara, Jamundí. Sector las Mercedes
+
+                        </Typography>
+                      </Box>
+                      <Box data-aos="fade-up" data-aos-duration='1000'
+                      
+                      sx={{ margin: 'auto' ,padding:'20px'}}>
+
+
+                        <Typography
+                          variant='body1'
+                          sx={{
+                            width: '100%',
+                            height: '100%',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            textAlign: 'justify',
+
+                            fontSize: 25
+                          }}>
+
+                          {/*  ######### Descripcion 2 ########### */}
+
+                          {miArray.Prueba[id - 1].descripcionad}
+
+
+                        </Typography>
+                      </Box>
+
+
+                    </Grid>
+
+
+                  
+
+
+                </Grid>
+                <Grid item="true" xs={12} sm={12} md={12} lg={12}>
                   <Card sx={{
 
 
@@ -337,6 +457,7 @@ export default function PaginaProyectos(props) {
                     marginTop: '5vh',
                     borderRadius: 10
                   }}>
+
                     <Grid container='true'
                       sx={{
 
@@ -347,61 +468,7 @@ export default function PaginaProyectos(props) {
                         alignItems: 'center',
 
                       }}>
-                      <Grid item="true" xs={6} sm={12} md={12} lg={12}>
-                        <Box sx={{}}>
 
-                          <Box data-aos="fade-up" data-aos-duration='1000' sx={{ margin: 'auto', whith: '50%' }}>
-
-
-                            <Typography
-
-                              variant='h4'
-                              sx={{
-                                color: '#A15600',
-                                fontWeight: 'bold',
-                                mt: 2,
-                                textAlign: 'center',
-                                paddingTop: '10px',
-                                margin: '20px'
-                              }}>
-                              {/*  ######### Subtitulo 2 proyecto ########### */}
-                              Ubicado en el corazón de Alfaguara, Jamundí. Sector las Mercedes
-
-                            </Typography>
-                          </Box>
-                          <Box data-aos="fade-up" data-aos-duration='1000' sx={{ margin: 'auto' }}>
-
-
-                            <Typography
-                              variant='body1'
-                              sx={{
-                                width: '600px',
-                                height: '100%',
-
-
-
-                                marginLeft: 'auto',
-                                marginRight: 'auto',
-
-                                textAlign: 'justify',
-                                paddingTop: '0',
-                                paddingBottom: '0',
-                                fontSize: 25
-                              }}>
-
-                              {/*  ######### Descripcion 2 ########### */}
-
-                              {miArray.Prueba[id - 1].descripcionad}
-
-
-                            </Typography>
-                          </Box>
-
-
-                        </Box>
-
-
-                      </Grid>
                       <Grid item="true" xs={12} sm={12} md={12} lg={6}
                         sx={{
 
@@ -435,7 +502,7 @@ export default function PaginaProyectos(props) {
 
                         <Box sx={{
 
-                          display: 'flex',
+                          display:{lg:'flex' } ,
                           justifyContent: 'center',
                           alignItems: 'center',
                           marginLeft: 'auto',
@@ -487,14 +554,9 @@ export default function PaginaProyectos(props) {
 
                           </Box>
 
-                          <Box data-aos="fade-up" data-aos-duration='1000' sx={{ display: 'grid', width: '100%', justifyContent: 'left', alignItems: 'left', }}>
+                          <Box data-aos="fade-up" data-aos-duration='1000' sx={{ display:'grid', width: '100%', justifyContent: 'left', alignItems: 'left', }}>
 
-                            <Box sx={{ display: 'flex', justifyContent: 'center', margin: '10px', }}><Box>
-                              <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
-                                <img src={miArray.Prueba[id - 1].mini} width={'100%'} /></Box>
-                            </Box><Typography variant='h4'
-                              sx={{ fontWeight: 'bold', marginTop: 'auto', marginBottom: 'auto' }}>
-                                Mall comercial</Typography></Box>
+                            
 
                             <Box sx={{ display: 'flex', justifyContent: 'left', margin: '10px' }}><Box>
                               <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
@@ -594,10 +656,10 @@ export default function PaginaProyectos(props) {
                 <Card sx={{
                   //border: 2,
                   width: '100%',
-                  height: '50vh',
+                  height: '100%',
                   marginLeft: 'auto',
                   marginRight: 'auto',
-                  marginBottom: '10vh',
+                  marginBottom: '20vh',
                   marginTop: '15vh',
                   borderRadius: 10
                 }}>
@@ -636,7 +698,7 @@ export default function PaginaProyectos(props) {
                         //border: 2,
                         display: 'flex',
                         justifyContent: 'left',
-                       // alignItems: 'center',
+                        // alignItems: 'center',
                         width: '90%',
                         height: '100%'
                       }}>
@@ -652,48 +714,39 @@ export default function PaginaProyectos(props) {
                     </Grid>
                     <Grid item="true" xs={12} sm={12} md={12} lg={6}
                       sx={{
-                        // border:2,
-                        //display: 'flex',
-                        justifyContent: 'left',
+                        //border: 2,
+                        display: 'flex',
+                        justifyContent: 'center',
                         alignItems: 'center',
                         marginLeft: 'auto',
-                        marginRight: 'auto'
+                        marginRight: 'auto',
+                        marginBottom: '5rem',
+
                       }}>
 
                       <Box data-aos="fade-zoom-in"
                         data-aos-easing="ease-in-back"
                         data-aos-delay="300"
                         data-aos-offset="0" sx={{
-                          //border:2,
+
                           display: 'flex',
                           justifyContent: 'right',
-                          width:'500px',
-                          margin:'auto'
+                          width: '500px',
+
                         }}>
-
-
-
-
-                       
-
                         <Typography
 
-                          variant='h4'
+                          variant='h5'
                           sx={{
                             color: '#A15600',
                             fontWeight: 'bold',
-                            mt: 2,
                             textAlign: 'center',
-                            paddingTop: '10px',
-                            margin: '20px'
+
                           }}>
-
                           {/*  ######### Subtitulo 2 proyecto ########### */}
-
                           Plaza comercial con:
-                           <br />30 lotes de
+                          <br />30 lotes de
                           108 m2 a 362 m2 y 117 parqueaderos
-
                         </Typography>
                       </Box>
 
@@ -702,7 +755,7 @@ export default function PaginaProyectos(props) {
                   </Grid>
                 </Card>
 
-      //  </Grid>
+              </Grid>
 
 
 
@@ -725,7 +778,7 @@ export default function PaginaProyectos(props) {
             color: '#A15600',
             fontWeight: 'bold',
             textAlign: 'center',
-            paddingTop: '10px',
+            paddingTop: '15rem',
             margin: '20px',
           }}
         >
@@ -842,9 +895,10 @@ export default function PaginaProyectos(props) {
             data-aos-offset="0" sx={{
               margin: 'auto',
               height: '400px',
-              maxHeight: '800px',
 
-              maxWidth: '800px'
+              maxHeight: '800px',
+              maxWidth: '800px',
+
             }}>
 
             <ReactPlayer
@@ -856,8 +910,8 @@ export default function PaginaProyectos(props) {
               //playing
               controls
               loop
-              width='105%'
-              height='120%'
+              width='100%'
+              height='100%'
             />
           </Box>
 
@@ -867,35 +921,34 @@ export default function PaginaProyectos(props) {
         </Box>
 
 
-        <Box data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0" sx={{
-            textAlign: 'center',
-            margin: '10vh',
-            height: '5rem'
-          }}>
-          <Link to='https://api.whatsapp.com/send?phone=3147456473' >
-            <Button sx={{
-              height: '100%',
-              width: '30rem',
-              padding: '10px',
-              margin: '10vh',
-            }}
-              variant='contained'
-              endIcon={<WhatsAppIcon />}
-            >
-              Comunícate con un asesor
-            </Button>
-          </Link>
-
-
-        </Box>
       </Grid>
 
 
 
-      {/*  ))}  */}
+
+      <Box data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0" sx={{
+          marginTop: '10rem',
+          marginLeft: '3rem',
+          marginRight: '3rem'
+        }}>
+        <Link to='https://api.whatsapp.com/send?phone=3147456473' >
+          <Button sx={{
+            height: '4rem',
+            width: '100%',
+
+          }}
+            variant='contained'
+            endIcon={<WhatsAppIcon />}
+          >
+            Comunícate con un asesor
+          </Button>
+        </Link>
+
+
+      </Box>
 
 
 
