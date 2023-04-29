@@ -347,7 +347,7 @@ export default function ContactForm() {
 									/>
 
 									<Button
-										sx={{
+										disabled sx={{
 											width: '98%',
 											margin: '5px',
 											height: '45px',

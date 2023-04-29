@@ -119,9 +119,10 @@ export default function BasicStack() {
 									alt='logo'
 									style={{ width: 260, height: 180 }}
 								/>
-								<Link to='/projects' className='nav-link'>
+								<Link to={`/ProjectDetails/${1}`} className='nav-link'>
 									<Button variant='contained'>Ver Más</Button>
 								</Link>
+								
 							</Stack>
 						</Grid>
 					</Grid>

@@ -693,7 +693,8 @@ export default function PaginaProyectos(props) {
                     >
 
 
-                      <Box sx={{
+                      <Box data-aos='fade-down'
+              data-aos-duration='1000'sx={{
                         //marginLeft:'10rem'
                         //border: 2,
                         display: 'flex',
@@ -724,10 +725,8 @@ export default function PaginaProyectos(props) {
 
                       }}>
 
-                      <Box data-aos="fade-zoom-in"
-                        data-aos-easing="ease-in-back"
-                        data-aos-delay="300"
-                        data-aos-offset="0" sx={{
+                      <Box data-aos='fade-down'
+              data-aos-duration='1000' sx={{
 
                           display: 'flex',
                           justifyContent: 'right',

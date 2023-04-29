@@ -175,7 +175,11 @@ export default function ProjectsHouses() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
+										
+										
+										
+										
+										<Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
 									</CardActions>
 								</Card>
 							</Grid>
