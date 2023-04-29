@@ -256,7 +256,7 @@ export default function ContactForm() {
 								margin: '5px',
 								height: '150px',
 								top: 90,
-								left: '280px',
+								left: {md:'280px'},
 								backgroundColor: '#FE6B1D',
 								borderRadius: 6,
 								boxShadow: 20,
@@ -270,7 +270,7 @@ export default function ContactForm() {
 								margin: '5px',
 								height: '150px',
 								top: 250,
-								left: '960px',
+								left: {md:'980px'},
 								backgroundColor: '#FE6B1D',
 								borderRadius: 6,
 								boxShadow: 20,
@@ -582,6 +582,7 @@ export default function ContactForm() {
 														mt: 3,
 														textAlign: 'center',
 														margin: '30px',
+														paddingBottom: '5rem',
 													}}
 												>
 													info@casaylotes.co
