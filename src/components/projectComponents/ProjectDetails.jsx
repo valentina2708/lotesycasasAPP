@@ -119,10 +119,10 @@ export default function PaginaProyectos(props) {
                 sx={{
                   marginBottom: '20px',
                   marginTop: '20px',
-                  //border: 2,
+                  border: 2,
                   padding: '10px',
                   display: 'flex',
-                  justifyContent: 'right',
+                  justifyContent: 'center',
                   alignItems: 'center',
                   width: '100%',
                   height: '70%'
@@ -133,7 +133,7 @@ export default function PaginaProyectos(props) {
 
                 <Box data-aos="fade-up" data-aos-duration='1000' sx={{
                   //marginLeft:'10rem'
-                  //border: 2,
+                  border: 2,
                   display: 'flex',
                   justifyContent: 'right',
                   alignItems: 'center',
@@ -155,9 +155,9 @@ export default function PaginaProyectos(props) {
               </Grid>
               <Grid item="true" xs={12} sm={12} md={12} lg={6}
                 sx={{
-                  // border:2,
+                  //border:2,
                   //display: 'flex',
-                  justifyContent: 'left',
+                  justifyContent: 'center',
                   alignItems: 'center',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -166,10 +166,10 @@ export default function PaginaProyectos(props) {
                 }}>
 
                 <Box data-aos="fade-up" data-aos-duration='1000' sx={{
-                  //border:2,
-                  display: 'flex',
-                  justifyContent: 'left'
-
+                  border:6,
+                  
+                  justifyContent: 'left',
+                  padding:'10px'
 
                 }}>
 
@@ -179,10 +179,7 @@ export default function PaginaProyectos(props) {
                     sx={{
                       width: '450px',
                       height: '100%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      //border: 2,
+                    
 
                       color: 'Black',
                       //fontWeight: 'bold',

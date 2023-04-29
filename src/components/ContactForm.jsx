@@ -72,41 +72,150 @@ export default function ContactForm() {
 				marginTop: '40px',
 			}}
 		>
-			<Box
-				sx={{
-					display: 'grid',
-					//border:2,
-					width: '100%',
-					marginTop: '20px',
-					marginBottom: '20px',
-					verticalAlign: 'center',
-					textAlign: 'center',
-				}}
-			>
-				<Typography
-					variant='h2'
-					sx={{
-						opacity: [90],
-						color: '#A15600',
-						fontWeight: 'bold',
-						mt: 2,
-						textAlign: 'center',
-						paddingTop: '10px',
-						margin: '20px',
+			<Box sx={{ display: { xs: 'block', sm: 'block', md: 'none', xl: 'none' } }}>
+
+				<Parallax
+					style={{
+						width: '100%',
+						height: '100%',
+						opacity: [10],
 					}}
+					bgImage={Contacto1}
+					strength={100}
 				>
-					CONTÁCTENOS
-				</Typography>
-			</Box>
-			<Parallax
-				style={{
-					width: '100%',
-					height: '100%',
-				}}
-				bgImage={Contacto1}
-				strength={400}
-			>
-				<Box
+					<Box
+						container
+						data-aos='zoom-in-down'
+						sx={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+							height: '35vh',
+
+						}}>
+						<Box
+							sx={{
+							
+								marginLeft: '60px',
+								marginRight: '60px',
+							}}
+						>
+							<Box
+								sx={{
+									display: 'flow',
+									padding: '0px',
+									width: '100%',
+								}}
+							>
+								
+
+								<Box sx={{ display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' } }}>
+								<Typography
+									variant='h3'
+									sx={{
+										opacity: [90],
+										color: '#A15600',
+										fontWeight: 'bold',
+										mt: 2,
+										textAlign: 'center',
+										paddingTop: '10px',
+										//margin: '20px',
+									}}
+								>
+									Contáctanos
+								</Typography>
+
+							</Box>
+							<Box sx={{ display: { xs: 'none', sm: 'block', md: 'block', xl: 'block' } }}>
+								<Typography
+									variant='h2'
+									sx={{
+										opacity: [90],
+										color: '#A15600',
+										fontWeight: 'bold',
+										mt: 2,
+										textAlign: 'center',
+										paddingTop: '10px',
+										//margin: '20px',
+									}}
+								>
+									Contáctanos
+								</Typography>
+
+							</Box>
+
+
+							</Box>
+						</Box>
+					</Box>
+				</Parallax>
+
+				
+
+			</Box>	
+			
+
+			<Box sx={{ display: { xs: 'none', sm: 'none', md: 'block', xl: 'block' } }}>
+
+				<Parallax
+					style={{
+						width: '100%',
+						height: '100%',
+						opacity: [10],
+					}}
+					bgImage={Contacto1}
+					strength={100}
+				>
+					<Box
+						container
+						data-aos='zoom-in-down'
+						sx={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+							height: '80vh',
+
+						}}>
+						<Box
+							sx={{
+							
+								marginLeft: '60px',
+								marginRight: '60px',
+							}}
+						>
+							<Box
+								sx={{
+									display: 'flow',
+									padding: '0px',
+									width: '100%',
+								}}
+							>
+								<Typography
+									variant='h2'
+									sx={{
+										opacity: [90],
+										color: '#A15600',
+										fontWeight: 'bold',
+										
+										textAlign: 'center',
+										paddingTop: '10px',
+										//margin: '20px',
+									}}
+								>
+									Contáctanos
+								</Typography>
+							</Box>
+						</Box>
+					</Box>
+				</Parallax>
+
+				
+
+			</Box>	
+			
+			<Grid
 					container
 					data-aos='zoom-in-down'
 					sx={{
@@ -115,19 +224,17 @@ export default function ContactForm() {
 						alignItems: 'center',
 						width: 'auto',
 						height: '95vh',
-						//border:2
+						
 					}}
 				>
 					<Box
 						sx={{
-							// backgroundColor:'#f3f6f9',
-
-							borderRadius: '20px',
-
-							marginLeft: '60px',
-							marginRight: '60px',
-							// opacity:[.7],
-							//border:2,
+							
+							display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						borderRadius: '20px',
+							
 						}}
 					></Box>
 
@@ -138,6 +245,7 @@ export default function ContactForm() {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
+							
 						}}
 					>
 						<Box
@@ -147,8 +255,8 @@ export default function ContactForm() {
 								width: '150px',
 								margin: '5px',
 								height: '150px',
-								top: 50,
-								left: '300px',
+								top: 90,
+								left: '280px',
 								backgroundColor: '#FE6B1D',
 								borderRadius: 6,
 								boxShadow: 20,
@@ -169,7 +277,15 @@ export default function ContactForm() {
 							}}
 						></Box>
 
-						<Grid item xs={12} sm={12} md={6} lg={6}>
+						<Grid item xs={12} sm={12} md={6} lg={6}
+							sx={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+							
+							
+							}}
+						>
 							<Card
 								data-aos='fade-down'
 								sx={{
@@ -182,9 +298,7 @@ export default function ContactForm() {
 									display: 'flex',
 									justifyContent: 'center',
 									alignItems: 'center',
-									// border:2
-									//minHeight:'550px',
-									//maxWidth:'600px'
+								
 								}}
 							>
 								<CardContent
@@ -251,21 +365,21 @@ export default function ContactForm() {
 							</Card>
 						</Grid>
 					</Grid>
-				</Box>
-			</Parallax>
+				</Grid>
 
 			<br />
 
+			
 			<Box sx={{ display: 'flex' }}>
 				<Grid item xs={12} sm={12} md={12} lg={12}>
 					<Card
 						sx={{
-							boxShadow: 0,
+							
 							width: '99%',
 							margin: '10px',
 							height: '95%',
 							borderRadius: 10,
-							//minHeight:'300px'
+							
 						}}
 					>
 						<CardContent>
@@ -274,9 +388,29 @@ export default function ContactForm() {
 									textAlign: 'center',
 								}}
 							>
+							
+							<Box sx={{ display: { xs: 'none', sm: 'block', md: 'block', xl: 'block' } }}>
 								<Typography
+										data-aos='fade-down'
+										variant='h4'
+										sx={{
+											color: '#A15600',
+											fontWeight: 'bold',
+											mt: 2,
+											textAlign: 'center',
+											padding: '10px',
+											margin: '10px',
+										}}
+									>
+										Ponte en contacto con nosotros
+									</Typography>
+
+							</Box>
+							
+							<Box sx={{ display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' } }}>
+							<Typography
 									data-aos='fade-down'
-									variant='h4'
+									variant='h5'
 									sx={{
 										color: '#A15600',
 										fontWeight: 'bold',
@@ -288,9 +422,13 @@ export default function ContactForm() {
 								>
 									Ponte en contacto con nosotros
 								</Typography>
+
+							</Box>
+							
+								
 								<Stack>
 									<Grid container>
-										<Grid item xs={4} sm={4} md={4} lg={4}>
+										<Grid item xs={12} sm={4} md={4} lg={4}>
 											<Box
 												data-aos='fade-down'
 												sx={{
@@ -307,9 +445,9 @@ export default function ContactForm() {
 												<Fab
 													sx={{
 														color: 'gray',
-														width: '30%',
+														width: '60px',
 														margin: '10px',
-														height: '90%',
+														height: '60px',
 													}}
 													Size='large'
 												>
@@ -343,14 +481,14 @@ export default function ContactForm() {
 												</Typography>
 											</Box>
 										</Grid>
-										<Grid item xs={4} sm={4} md={4} lg={4}>
+										<Grid item xs={12} sm={4} md={4} lg={4}>
 											<Box
 												data-aos='fade-down'
 												sx={{
 													//border:2,
 													width: '99%',
 
-													margin: '0px',
+													margin: '10px',
 													height: '150px',
 													display: 'flex',
 													justifyContent: 'center',
@@ -360,9 +498,9 @@ export default function ContactForm() {
 												<Fab
 													sx={{
 														color: 'gray',
-														width: '30%',
+														width: '60px',
 														margin: '10px',
-														height: '90%',
+														height: '60px',
 													}}
 													Size='large'
 												>
@@ -392,11 +530,13 @@ export default function ContactForm() {
 													}}
 												>
 													3204210000
+
+
 												</Typography>
 											</Box>
 										</Grid>
 
-										<Grid item xs={4} sm={4} md={4} lg={4}>
+										<Grid item xs={12} sm={4} md={4} lg={4}>
 											<Box
 												data-aos='fade-down'
 												sx={{
@@ -413,9 +553,9 @@ export default function ContactForm() {
 												<Fab
 													sx={{
 														color: 'gray',
-														width: '30%',
+														width: '60px',
 														margin: '10px',
-														height: '90%',
+														height: '60px',
 													}}
 													Size='large'
 												>
@@ -455,8 +595,14 @@ export default function ContactForm() {
 					</Card>
 				</Grid>
 			</Box>
+			
+			
 
-			<Box sx={{ border: 2 }}></Box>
+
+
+		
+
+			
 		</Grid>
 	);
 }
