@@ -14,6 +14,7 @@ import { useScroll } from './useScroll';
 import { motion } from 'framer-motion';
 import { mensajebox } from '../animation';
 import PointOfSaleRoundedIcon from '@mui/icons-material/PointOfSaleRounded';
+import vendeconNosotros from '../assets/vendeconNosotros.jpg';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -68,7 +69,7 @@ export default function BasicStack() {
 								opacity: [0.9],
 							},
 						}}
-						image='../../src/assets/vendeconNosotros.jpg'
+						image={vendeconNosotros}
 						title='visitanos'
 					/>
 				</Card>
@@ -76,7 +77,7 @@ export default function BasicStack() {
 					elevation={4}
 					sx={{
 						width: { xs: '350px', sm: '460px' },
-						height: { xs: '450px', sm: '370px' },
+						height: { xs: '490px', sm: '420px' },
 						bgcolor: Colors.white,
 						position: 'relative',
 						left: { xs: '0%', sm: '25%', md: '47%' },

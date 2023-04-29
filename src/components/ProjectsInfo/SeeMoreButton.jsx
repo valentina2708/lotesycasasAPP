@@ -1,4 +1,4 @@
-import { Colors } from '/src/config/themeConfig.js';
+import { Colors } from '../../config/themeConfig.js';
 import Fab from '@mui/material/Fab';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 

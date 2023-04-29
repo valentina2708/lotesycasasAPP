@@ -1,5 +1,14 @@
-
-
+import parque from '../assets/parque.jpg';
+import puertadelsol from '../assets/puertadelsolurbanizacion.jpg';
+import palmerasurbanizacion from '../assets/palmerasurbanizacion1.jpeg';
+import cañaDulceurbanizacion from '../assets/cañaDulceurbanizacion.jpg';
+import urbanizacionCañaBrava from '../assets/urbanizacionCañaBrava.jpg';
+import casa170g from '../assets/casa17OG.jpg';
+import casas from '../assets/casas.jpg';
+import casa93 from '../assets/casa93.jpg';
+import casaAnturios2 from '../assets/casaAnturios2.jpg';
+import casaAnturios1 from '../assets/casaAnturios1.jpg';
+import casaCarru3 from '../assets/casaCarru3.jpg';
 
 export const  DataProjects=[
 
@@ -14,7 +23,7 @@ export const  DataProjects=[
     estado: 'Lanzamiento',
     imagen: '/src/assets/casasylotes5.jpeg',
     imgproyectos: 'RinconDelLago',
-    imgUrbanizacion:'/src/assets/casasylotes5.jpeg'
+    imgUrbanizacion:'../../assets/casasylotes5.jpeg'
    
    },
    {
@@ -166,7 +175,7 @@ export const  DataUrbanizations=[
     descripcionCorta: 'Inicio de construcción con inversion de alta rentabilidad.',
     ubicacion:'Jamundí',
     estado: 'Lanzamiento',
-    imgUrbanizacion:'/src/assets/parque.jpg'
+    imgUrbanizacion:`../${parque}`
    },
    {
     id:2,
@@ -176,7 +185,7 @@ export const  DataUrbanizations=[
     tipo: 'Urbanización',
     descripcionCorta: 'Proyecto finalizado con alta valorización en el Valle del Cauca.',
     ubicacion: 'Jamundí',
-    imgUrbanizacion:'/src/assets/puertadelsolurbanizacion.jpg',
+    imgUrbanizacion:`../${puertadelsol}`,
     caracteristicas: 'Servicios públicos, zardinel, vías pavimentadas, andenes, zonas verdes, parqueaderos zonas comerciales, Estación de servicio, super mercado. Consulte facilidades de pago directas con nuestra constructora. Puntos de venta: Oficina 202, estación de servicios Las Mercedes Petromil, Alfaguara Jamundí',
   },
   {
@@ -189,7 +198,7 @@ export const  DataUrbanizations=[
     descripcion:'Condominio campestre de 159 lotes, portería de diseño contemporáneo con lobby de espera; amplia sede social en dos pisos con piscina; circuito para ciclopaseo; cancha deportiva múltiple; 50 parqueaderos de visitantes y zonas verdes. ',
     ubicacion:'El Paso de la Bolsa',
     caracteristicas: 'El proyecto se desarrollará en dos sectores, en un lote de más de 10 hectáreas, tenemos una reserva de más de 3.500 metros cuadrados para futuro desarrollo comercial una vez se encuentren consolidadas las dos primeros sectores de vivienda. En total serán 333 lotes para el desarrollo de vivienda unifamiliar. más de 12.300 metros cuadrados de espacio público, Todo esto enmarcado por el espectacular paisaje del Valle del Cauca, entre frondosos árboles y guaduales',
-    imgUrbanizacion:'/src/assets/palmerasurbanizacion1.jpeg'
+    imgUrbanizacion:`../${palmerasurbanizacion}`
   
   },
   
@@ -203,7 +212,7 @@ export const  DataUrbanizations=[
     descripcion: 'Proyecto desarrollado en la segunda urbanización campestre de las constructoras W Valle Verde y Casas & Lotes. Caña dulce cuenta con 46 lotes a ejecutarse entre Julio 2020 y octubre de 2021 (15 meses desde su inicio de obras).',
     ubicacion: 'Corregimiento San José, a 15 minutos de Tuluá',
     caracteristicas: 'El conjunto será entregado con todas las obras civiles contempladas en la normatividad vigente de urbanismo en lo que respecta a servicios públicos y vías internas. Dos zonas sociales comunes con piscina para adultos y niños, jacuzzy, asoleadores, zona de bronceo, sauna, salón de eventos completamente equipado, parque con juegos infantiles.',
-    imgUrbanizacion:'/src/assets/cañaDulceurbanizacion.jpg'
+    imgUrbanizacion:`../${cañaDulceurbanizacion}`
   },
   
   {
@@ -216,7 +225,7 @@ export const  DataUrbanizations=[
      descripcion: 'Proyecto ejecutado y vendido al 100% en tiempo record. Total satisfacción para sus propietarios en inversionistas nacionales como extranjeros.',
      ubicacion: 'Corregimiento San José, a 15 minutos de Tuluá',
      caracteristicas: 'Total satisfacción para sus propietarios en inversionistas nacionales como extranjeros.',
-     imgUrbanizacion:'/src/assets/urbanizacionCañaBrava.jpg'
+     imgUrbanizacion:`../${urbanizacionCañaBrava}`
   },
 
 ]
@@ -240,7 +249,7 @@ export const  DataHouses=[
     areaDelLote: '120 mts²',
     areaConstruida: '250 mts²',
     características: '	Cocinas integrales, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas',
-    imagen: '/src/assets/casa17OG.jpg'
+    imagen:`../${casa170g}`
   },
   
 {
@@ -260,7 +269,7 @@ export const  DataHouses=[
   areaDelLote: '1000 mts²',
   areaConstruida:'850 mts²',
   caracteristicas: 'Encuentre todo el confort en sus cuatro habitaciones, cada una con baño privado y vestier, la principal en segunda planta con hidromasaje, amplios balcones, vista a los farallones, dotada con oficina-estudio, salón para gimnasio, piscina, jacuzzy, estacionamiento para seis vehiculos, cuarto de servicio y más. Sistema inteligente para activar dispositivos de hogar mediante comandos de voz y App móvil.',
-  imagen: '/src/assets/casas.jpg'
+  imagen: `../${casas}`
 },
 
 {
@@ -280,7 +289,7 @@ export const  DataHouses=[
   areaDelLote: '600 mts²',
   areaConstruida: '800 mts²',
   caracteristicas: 'Todas sus habitaciones con baño privado y vestier, la principal con bañera e hidromasaje. Estudio-oficina, amplias zonas sociales, piscina, bar, sala de cine, gimnasio, estacionamiento para seis vehículos.',
-  imagen: '/src/assets/casa93.jpg'
+  imagen: `../${casa93}`
 },
 
 {
@@ -300,7 +309,7 @@ export const  DataHouses=[
  areaDelLote: '120 mts²',
  areaConstruida: '340 mts²',
  caracteristicas: 'Cocinas integrales, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas.',
- imagen: '/src/assets/casaAnturios2.jpg'
+ imagen: `../${casaAnturios2}`
 },
 
 
@@ -320,7 +329,7 @@ export const  DataHouses=[
   otros: 'Patio primer piso, lavandería en terraza dos con baño privado. La principal con vestier, hidromasaje y balcón. Zonas sociales: sala, comedor, sala de tv o estudio, terraza cubierta BBQ',
   areaDelLote: '120 mts²',
   areaConstruida: '340 mts²',
-  imagen: '/src/assets/casaAnturios1.jpg'
+  imagen: `../${casaAnturios1}` 
 },
 
 {
@@ -337,10 +346,8 @@ export const  DataHouses=[
   garaje: '(4) vehículos',
   areaDelLote: '100 mts²',
   areaConstruida: '800 mts²',
-  imagen: '/src/assets/casaCarru3.jpg'
+  imagen: `../${casaCarru3}` 
 },
-
-
 ]
 
    

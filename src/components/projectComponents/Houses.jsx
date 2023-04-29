@@ -11,8 +11,8 @@ import {
 	Container,
 	Avatar,
 	CardContent,
-    CardActions,
-    Button
+	CardActions,
+	Button,
 } from '@mui/material';
 import house from '../../assets/house.jpg';
 import AOS from 'aos';
@@ -43,7 +43,6 @@ export default function ProjectsHouses() {
 				strength={200}
 			>
 				<Box
-					container
 					data-aos='zoom-in-down'
 					sx={{
 						display: 'flex',
@@ -141,7 +140,7 @@ export default function ProjectsHouses() {
 								<Card
 									elevation={4}
 									sx={{
-										maxWidth: {xs:'none', sm:320, md: 350},
+										maxWidth: { xs: 'none', sm: 320, md: 350 },
 										height: '100%',
 										borderRadius: 4,
 									}}
@@ -175,11 +174,7 @@ export default function ProjectsHouses() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										
-										
-										
-										
-										<Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
+										{/* <Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button> */}
 									</CardActions>
 								</Card>
 							</Grid>

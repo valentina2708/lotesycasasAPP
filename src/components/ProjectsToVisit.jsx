@@ -13,11 +13,11 @@ const ProjectsVisit = () => {
 	const [element, controls] = useScroll();
 	const CustomContainer = styled(Container)(({ theme }) => ({
 		display: 'flex',
-		[theme.breakpoints.down('md')]: {
-			flexDirection: 'column',
-			justifyContent: 'center',
-			alignItems: 'center',
-		},
+		// [theme.breakpoints.down('md')]: {
+		// 	flexDirection: 'column',
+		// 	justifyContent: 'center',
+		// 	alignItems: 'center',
+		// },
 	}));
 
 	const CustomButton = styled(Button)(({ theme }) => ({

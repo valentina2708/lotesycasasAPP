@@ -1,34 +1,32 @@
-import React from 'react'
-
-import { Box, Typography, Avatar, CardContent, Card, Button } from '@mui/material';
+import {
+	Box,
+	Typography,
+	Avatar,
+	CardContent,
+	Card,
+	Button,
+} from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { Prueba } from '/src/DataProvider/Prueba.js';
-import LogoRinconDelLago from '../../assets/logoRincondelLago.jpg'
-import Mapap from './Map';
-//import Carousel from 'better-react-carousel'
-import { Link } from 'react-router-dom';
+import Carousel from 'better-react-carousel';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import * as miArray from '../../DataProvider/Prueba';
 import ReactPlayer from 'react-player';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api'
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api';
 import AOS from 'aos';
 import { Parallax } from 'react-parallax';
 
 export default function PaginaProyectos(props) {
+	useEffect(() => {
+		AOS.init({ offset: 200, duration: 1000 });
+	}, []);
 
-  useEffect(() => {
-    AOS.init({ offset: 200, duration: 1000 });
-  }, []);
+	const { id } = useParams();
 
-  const { id } = useParams();
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU"
-  })
+	const { isLoaded } = useLoadScript({
+		googleMapsApiKey: 'AIzaSyDdwssQ5RRzvav2ZhmAykKzj2-jH1qhcGU',
+	});
 
 
   if (!isLoaded) return <Box>Cargando...</Box>
@@ -316,41 +314,41 @@ export default function PaginaProyectos(props) {
                             color: 'gray',
                             opacity: [0.8, 0.6, 0.8],
 
-                            bottom: '5px',
-                            width: '80%',
-                            height: '10%',
-                            borderRadius: 3,
-                            marginTop: '50px'
-                          }}
-                        >
-                          <Avatar
-                            alt='logo rincon del lago'
-                            src='/src/assets/logoRincon.png'
-                            sx={{
-                              width: 190,
-                              height: 130,
-                              bgcolor: 'gray',
-                              position: 'relative',
-                              marginLeft: 'auto',
-                              marginRight: 'auto',
-                            }}
-                          />
+													bottom: '5px',
+													width: '80%',
+													height: '10%',
+													borderRadius: 3,
+													marginTop: '50px',
+												}}
+											>
+												<Avatar
+													alt='logo rincon del lago'
+													src='/src/assets/logoRincon.png'
+													sx={{
+														width: 190,
+														height: 130,
+														bgcolor: 'gray',
+														position: 'relative',
+														marginLeft: 'auto',
+														marginRight: 'auto',
+													}}
+												/>
 
-                          <CardContent sx={{}}>
-                            <Typography
-                              variant='h5'
-                              sx={{
-                                color: 'black',
-                                fontWeight: 500,
-                                mt: 0.5,
+												<CardContent sx={{}}>
+													<Typography
+														variant='h5'
+														sx={{
+															color: 'black',
+															fontWeight: 500,
+															mt: 0.5,
 
-                                textAlign: 'center',
-                              }}
-                            >
-                              Separa tu lote:
-                              <br />
-                              Inicial 10% plazo hasta 5 años
-                            </Typography >
+															textAlign: 'center',
+														}}
+													>
+														Separa tu lote:
+														<br />
+														Inicial 10% plazo hasta 5 años
+													</Typography>
 
                             <Box sx={{
 
@@ -505,49 +503,181 @@ export default function PaginaProyectos(props) {
                           padding: '0px'
                         }}>
 
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Club House
+														</Typography>
+													</Box>
 
-                          <Box data-aos="fade-up" data-aos-duration='1000'
-                            sx={{
-                              display: 'grid', width: '100%', justifyContent: 'left', alignItems: 'left',
-                            }}>
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Vóley playa
+														</Typography>
+													</Box>
 
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Zona BBQ
+														</Typography>
+													</Box>
+												</Box>
 
+												<Box
+													data-aos='fade-up'
+													data-aos-duration='1000'
+													sx={{
+														display: 'grid',
+														width: '100%',
+														justifyContent: 'left',
+														alignItems: 'left',
+													}}
+												>
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'center',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Mall comercial
+														</Typography>
+													</Box>
 
-
-
-                            <Box sx={{ display: 'flex', justifyContent: 'center', margin: '10px', }}><Box>
-                              <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
-                                <img src={miArray.Prueba[id - 1].mini} width={'100%'} /></Box>
-                            </Box><Typography variant='h4'
-                              sx={{ fontWeight: 'bold', marginTop: 'auto', marginBottom: 'auto' }}>
-                                Mall comercial</Typography></Box>
-
-                            <Box sx={{ display: 'flex', justifyContent: 'left', margin: '10px' }}><Box>
-                              <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
-                                <img src={miArray.Prueba[id - 1].mini} width={'100%'} /></Box>
-                            </Box><Typography variant='h4'
-                              sx={{ fontWeight: 'bold', marginTop: 'auto', marginBottom: 'auto' }}>
-                                Club House</Typography></Box>
-
-                            <Box sx={{ display: 'flex', justifyContent: 'left', margin: '10px' }}><Box>
-                              <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
-                                <img src={miArray.Prueba[id - 1].mini} width={'100%'} /></Box>
-                            </Box><Typography variant='h4'
-                              sx={{ fontWeight: 'bold', marginTop: 'auto', marginBottom: 'auto' }}>
-                                Vóley playa</Typography></Box>
-
-
-
-                            <Box sx={{ display: 'flex', justifyContent: 'left', margin: '10px' }}><Box>
-                              <Box sx={{ width: '30px', display: 'flex', marginRight: '20px' }}>
-                                <img src={miArray.Prueba[id - 1].mini} width={'100%'} /></Box>
-                            </Box><Typography variant='h4'
-                              sx={{ fontWeight: 'bold', marginTop: 'auto', marginBottom: 'auto' }}>
-                                Zona BBQ</Typography></Box>
-
-
-
-                          </Box>
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Club House
+														</Typography>
+													</Box>
 
                           <Box data-aos="fade-up" data-aos-duration='1000' sx={{ display:'grid', width: '100%', justifyContent: 'left', alignItems: 'left', }}>
 
@@ -581,63 +711,84 @@ export default function PaginaProyectos(props) {
                           </Box>
                         </Box>
 
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box>
+															<Box
+																sx={{
+																	width: '30px',
+																	display: 'flex',
+																	marginRight: '20px',
+																}}
+															>
+																<img
+																	src={miArray.Prueba[id - 1].mini}
+																	width={'100%'}
+																/>
+															</Box>
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Zona BBQ
+														</Typography>
+													</Box>
+												</Box>
+											</Box>
+										</Grid>
 
+										<Grid
+											item='true'
+											xs={12}
+											sm={12}
+											md={12}
+											lg={6}
+											sx={{
+												marginBottom: '20px',
+												marginTop: '20px',
 
+												padding: '10px',
+												display: 'flex',
+												justifyContent: 'center',
+												alignItems: 'center',
+											}}
+										>
+											<Box
+												data-aos='fade-up'
+												data-aos-duration='1000'
+												sx={{
+													display: 'flex',
+													justifyContent: 'left',
+													alignItems: 'center',
 
+													widthMax: '200px',
+													heightMax: '200px',
+												}}
+											>
+												{/*  ######### imagen 2 ad ########### */}
 
-
-
-
-                      </Grid>
-
-
-                      <Grid item="true" xs={12} sm={12} md={12} lg={6}
-                        sx={{
-                          marginBottom: '20px',
-                          marginTop: '20px',
-
-                          padding: '10px',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-
-                        }}
-
-                      >
-
-
-                        <Box data-aos="fade-up" data-aos-duration='1000' sx={{
-                          //marginLeft:'10rem'
-                          //border: 2,
-                          display: 'flex',
-                          justifyContent: 'left',
-                          alignItems: 'center',
-
-                          widthMax: '200px',
-                          heightMax: '200px'
-                        }}>
-
-                          {/*  ######### imagen 2 ad ########### */}
-
-                          <img src={miArray.Prueba[id - 1].imagenad} width={'100%'} height={'100%'} />
-
-
-                        </Box>
-
-
-                      </Grid>
-
-                    </Grid>
-                  </Card>
-                </Grid>
-
-      //  </Grid>
-
-
-
-              ////////////////////////////////////////////
-            ) : (<Box></Box>
-            )}
+												<img
+													src={miArray.Prueba[id - 1].imagenad}
+													width={'100%'}
+													height={'100%'}
+												/>
+											</Box>
+										</Grid>
+									</Grid>
+								</Card>
+							</Grid>
+						</Grid>
+					)}
 
 
 
@@ -779,98 +930,96 @@ export default function PaginaProyectos(props) {
           Ubicación
         </Typography>
 
-        <Box data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0" sx={{ height: '100%', width: '100%' }}>
+				<Box
+					data-aos='fade-zoom-in'
+					data-aos-easing='ease-in-back'
+					data-aos-delay='300'
+					data-aos-offset='0'
+					sx={{ height: '100%', width: '100%' }}
+				>
+					<GoogleMap
+						zoom={16}
+						center={{
+							lat: miArray.Prueba[id - 1].lat,
+							lng: miArray.Prueba[id - 1].lng,
+						}}
+						mapContainerStyle={{ height: '60vh', width: '100%' }}
+					>
+						<MarkerF
+							position={{
+								lat: miArray.Prueba[id - 1].lat,
+								lng: miArray.Prueba[id - 1].lng,
+							}}
+						/>
+					</GoogleMap>
+				</Box>
 
+				<Box>
+					{' '}
+					<Box>
+						<Box
+							data-aos='fade-zoom-in'
+							data-aos-easing='ease-in-back'
+							data-aos-delay='300'
+							data-aos-offset='0'
+							sx={{
+								width: '100%',
+								marginTop: '20px',
+								marginBottom: '20px',
+							}}
+						>
+							<Typography
+								variant='h2'
+								sx={{
+									color: '#A15600',
+									fontWeight: 'bold',
+									textAlign: 'center',
+									paddingTop: '10px',
+									margin: '20px',
+								}}
+							>
+								Galeria
+							</Typography>
+						</Box>
 
-          <GoogleMap
-            // lat2={latt}
-            zoom={16}
-            center={{
-              lat: miArray.Prueba[id - 1].lat,
-              lng: miArray.Prueba[id - 1].lng
-            }}
-            mapContainerStyle={{ height: '60vh', width: '100%' }}
-          >
+						<Box
+							data-aos='fade-zoom-in'
+							data-aos-easing='ease-in-back'
+							data-aos-delay='300'
+							data-aos-offset='0'
+							sx={{
+								marginTop: '10vh',
+								marginBottom: '10vh',
+							}}
+						>
+							<Carousel cols={2} rows={2} gap={10} loop>
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen1} />
+								</Carousel.Item>
 
-            <MarkerF position={{
-              lat: miArray.Prueba[id - 1].lat,
-              lng: miArray.Prueba[id - 1].lng
-            }} />
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen2} />
+								</Carousel.Item>
 
-          </GoogleMap>
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen3} />
+								</Carousel.Item>
 
-        </Box>
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen4} />
+								</Carousel.Item>
 
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen5} />
+								</Carousel.Item>
 
-        <Box> <Box>
-          <Box data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="300"
-            data-aos-offset="0"
-            sx={{
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen6} />
+								</Carousel.Item>
 
-
-              width: '100%',
-              marginTop: '20px',
-              marginBottom: '20px',
-
-            }}>
-            <Typography
-              variant='h2'
-              sx={{
-                color: '#A15600',
-                fontWeight: 'bold',
-                textAlign: 'center',
-                paddingTop: '10px',
-                margin: '20px',
-              }}
-            >
-              Galeria
-            </Typography>
-          </Box>
-
-          <Box data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="300"
-            data-aos-offset="0" sx={{
-              marginTop: '10vh',
-              marginBottom: '10vh'
-            }}>
-
-
-          {/*   <Carousel cols={2} rows={2} gap={10} loop>
-
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen1} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen2} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen3} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen4} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen5} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen6} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen7} />
-              </Carousel.Item>
+								<Carousel.Item>
+									<img width='100%' src={miArray.Prueba[id - 1].imagen7} />
+								</Carousel.Item>
 
               <Carousel.Item>
                 <img width="100%" src={miArray.Prueba[id - 1].imagen8} />

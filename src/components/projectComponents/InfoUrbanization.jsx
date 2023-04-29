@@ -1,18 +1,17 @@
 import Box from '@mui/material/Box';
 import { Typography, Card, Avatar, CardContent, Button, Stack } from '@mui/material';
-import { Colors } from '/src/config/themeConfig.js';
+import { Colors } from '../../config/themeConfig.js';
 import { makeStyles } from 'tss-react/mui';
 import { motion } from 'framer-motion';
 import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
-import { Prueba } from '/src/DataProvider/Prueba.js';
-import { DataProjects } from '/src/DataProvider/DataProjects.js';
-import { Link } from 'react-router-dom';
-import * as Array from '../../DataProvider/DataProjects';
+import logoRincon from '../../assets/logoRincon.png';
+import infoUrbanizacion from '../../assets/infourbanizacion.jpg';
+
 const useStyles = makeStyles()(theme => {
 	return {
 		InfoImage: {
-			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/infourbanizacion.jpg')`,
+			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${infoUrbanizacion})`,
 			height: '550px',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
@@ -24,15 +23,15 @@ const useStyles = makeStyles()(theme => {
 			alignItems: 'center',
 			color: '#fff',
 			fontSize: '4rem',
-			// [theme.breakpoints.down('sm')]: {
-			// 	height: 300,
-			// 	fontSize: '3em',
-			// },
+			[theme.breakpoints.down('sm')]: {
+				height: 300,
+				fontSize: '3em',
+			},
 		},
 	};
 });
 
-export default function BasicStack() {
+export default function InfoUrbanization() {
 	const { classes } = useStyles();
 	const [element, controls] = useScroll();
 	return (
@@ -74,7 +73,7 @@ export default function BasicStack() {
 					<Stack sx={{justifyContent: 'center', alignItems: 'center'}}>
 					<Avatar
 						alt='logo rincon del lago'
-						src='/src/assets/logoRincon.png'
+						src={logoRincon}
 						sx={{
 							width: 190,
 							height: 130,
@@ -115,13 +114,9 @@ export default function BasicStack() {
 								Ver Más
 							</Button>
 						</Stack>
-						{/* </Link>   */}
-						{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
-											 (código si es cerdadero) : (código si es falso) } */}
 					</CardContent>
 				</Card>
 			</Box>
-			{/* ))}  */}
 		</motion.div>
 	);
 }

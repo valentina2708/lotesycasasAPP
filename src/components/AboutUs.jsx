@@ -1,18 +1,16 @@
 import { Box, Typography } from '@mui/material';
-import React from 'react';
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Mision from '../assets/mision.png';
 import Vision from '../assets/vision.png';
 import Filosofia from '../assets/filosofia.png';
 import { Colors } from '../config/themeConfig.js';
-import { Paper } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { Parallax } from 'react-parallax';
 import Nosotros1 from '../assets/nosotros1.jpg';
-import Nosotros1sx from '../assets/nosotros1sx.jpg';
+// import Nosotros1sx from '../assets/nosotros1sx.jpg';
 import Nosotros2 from '../assets/nosotros2.jpg';
 import NewProjectInfo from '../components/NewProjectInfo';
 
@@ -40,7 +38,6 @@ export default function AboutUs() {
 					strength={0}
 				>
 					<Box
-						container
 						data-aos='zoom-in-down'
 						sx={{
 							display: 'flex',
@@ -95,7 +92,6 @@ export default function AboutUs() {
 					strength={100}
 				>
 					<Box
-						container
 						data-aos='zoom-in-down'
 						sx={{
 							display: 'flex',
@@ -138,7 +134,7 @@ export default function AboutUs() {
 			</Box>
 
 			<Grid
-				Container
+				container
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',
@@ -148,7 +144,7 @@ export default function AboutUs() {
 				}}
 			>
 				<Grid
-					container
+					item
 					data-aos='fade-up'
 					data-aos-duration='1000'
 					xs={12}
@@ -396,7 +392,6 @@ export default function AboutUs() {
 							>
 								<Box
 									sx={{
-										//border:2,
 										textAlign: 'center',
 										backgroundColor: '#f3f6f9',
 										opacity: [0.7],
