@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { Typography, Card, Avatar, CardContent, Button } from '@mui/material';
+import { Typography, Card, Avatar, CardContent, Button, Stack } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import { makeStyles } from 'tss-react/mui';
 import { motion } from 'framer-motion';
@@ -24,10 +24,10 @@ const useStyles = makeStyles()(theme => {
 			alignItems: 'center',
 			color: '#fff',
 			fontSize: '4rem',
-			[theme.breakpoints.down('sm')]: {
-				height: 300,
-				fontSize: '3em',
-			},
+			// [theme.breakpoints.down('sm')]: {
+			// 	height: 300,
+			// 	fontSize: '3em',
+			// },
 		},
 	};
 });
@@ -46,8 +46,8 @@ export default function BasicStack() {
 				duration: 0.9,
 			}}
 		>
-		{/* {DataProjects.map(project => ( */}			
-				
+			{/* {DataProjects.map(project => ( */}
+
 			<Box
 				ref={element}
 				className={classes.InfoImage}
@@ -63,14 +63,15 @@ export default function BasicStack() {
 						color: Colors.dove_gray,
 						opacity: [0.7, 0.6, 0.7],
 						position: 'relative',
-						bottom: '5px',
-						width: '40%',
-						height: 350,
-						borderRadius: 3,
-						left: '30px',
+						top: { xs: '1rem', sm: 0 },
+						width: { sm: '60%' },
+						// height: 350,
+						borderRadius: { xs: 0, sm: 3 },
+						// left: '30px',
 						p: '20px',
 					}}
 				>
+					<Stack sx={{justifyContent: 'center', alignItems: 'center'}}>
 					<Avatar
 						alt='logo rincon del lago'
 						src='/src/assets/logoRincon.png'
@@ -79,13 +80,14 @@ export default function BasicStack() {
 							height: 130,
 							bgcolor: Colors.info3,
 							position: 'relative',
-							left: '35%',
+							// left: '35%',
 						}}
 					/>
+					</Stack>
 
 					<CardContent>
 						<Typography
-							variant='h5'
+							variant='h6'
 							sx={{
 								color: Colors.primary,
 								fontWeight: 500,
@@ -98,26 +100,28 @@ export default function BasicStack() {
 							nuestra familia.
 						</Typography>
 						{/*  <Link to={`/ProjectDetails/${project.id}`}> */}
-											
-						<Button sx={{
-									position: 'relative',
-                                    mt:2,
-                                    left:'41%',
-									p: '10px',
-                                    background: Colors.info3
-								}} 
-                                variant='contained'
-                                >Ver Más</Button>		
-											{/* </Link>   */}
-										{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
-											 (código si es cerdadero) : (código si es falso) } */}
-											
-            
 
+						<Stack sx={{justifyContent: 'center', alignItems: 'center'}}>
+							<Button
+								sx={{
+									position: 'relative',
+									mt: 2,
+									// left: '50%',
+									p: '10px',
+									background: Colors.info3,
+								}}
+								variant='contained'
+							>
+								Ver Más
+							</Button>
+						</Stack>
+						{/* </Link>   */}
+						{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
+											 (código si es cerdadero) : (código si es falso) } */}
 					</CardContent>
 				</Card>
 			</Box>
-			 	{/* ))}  */}
+			{/* ))}  */}
 		</motion.div>
 	);
 }

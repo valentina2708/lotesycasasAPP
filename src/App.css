@@ -13,4 +13,10 @@ body {
 
 .nav-link {
   text-decoration: none;
+  color: black;
+}
+
+.content {
+  min-height: calc(100vh - 35rem);
+  margin-block: 2rem;
 }

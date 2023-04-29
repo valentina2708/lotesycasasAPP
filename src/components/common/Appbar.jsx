@@ -107,7 +107,7 @@ const Appbar = () => {
 
 				<SearchBox>
 					<InputBase
-						placeholder='Buscar ...'
+						placeholder='Buscar'
 						icon={<SearchIcon />}
 						sx={{ color: Colors.info2 }}
 					/>
@@ -123,7 +123,6 @@ const Appbar = () => {
 			</StyledToolbar>
 			<Menu
 				id='demo-positioned-menu'
-				aria-labelledby='demo-positioned-button'
 				open={open}
 				onClose={() => SetOpen(!open)}
 				anchorOrigin={{
@@ -137,6 +136,7 @@ const Appbar = () => {
 			>
 				<Box sx={{ width: 350, height: '30vh' }}>
 					{MenuItems.map(item => (
+						<Link to={item.Link} key={item.Name} className="nav-link">
 						<MenuItem
 							key={item.Name}
 							sx={{
@@ -146,6 +146,7 @@ const Appbar = () => {
 						>
 							{item.Name}
 						</MenuItem>
+						</Link>
 					))}
 				</Box>
 			</Menu>

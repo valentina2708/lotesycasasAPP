@@ -29,8 +29,8 @@ import Modal from '../ProjectsInfo/Modal';
 import { useState } from 'react';
 
 import styled from 'styled-components';
-import ProjectDetails from '../projectComponents/ProjectDetails'
-import App from '../../App'
+import ProjectDetails from '../projectComponents/ProjectDetails';
+import App from '../../App';
 import ProyectDetailsLayout from '../layout/ProjectDetailsLayout';
 
 const Contenido = styled.div`
@@ -67,17 +67,15 @@ export default function MediaCard() {
 				}}
 			>
 				<Grid
-					item
-					xs
 					container
-					columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-					direction='column'
+					// columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+					// columns={{xs: 6, sm: 12}}
 					rowSpacing={6}
 				>
 					{DataProjects.map(project => (
 						<Grid item xs={12} key={project.id}>
 							<motion.div
-								className='home'
+								// className='home'
 								variants={servicesAnimations}
 								animate={controls}
 								transition={{
@@ -90,16 +88,16 @@ export default function MediaCard() {
 									elevation={4}
 									sx={{
 										width: '100%',
-										height: 360,
+										// height: '100%',
 										borderRadius: 4,
 										display: 'flex',
 									}}
 								>
-									<CardMedia
+									{/* <CardMedia
 										component='img'
 										sx={{
-											width: 350,
-											height: 360,
+											width: 300,
+											height: 320,
 											margin: '0 auto 1.5em',
 											cursor: 'pointer',
 
@@ -110,24 +108,49 @@ export default function MediaCard() {
 										}}
 										image={project.imagen}
 										alt='imagen'
-									/>
-
-									<Grid item xs container direction='column'>
-										<Grid item xs>
+									/> */}
+									<Grid container>
+										{/* <Grid item xs={4}>
+										<Box>
+													<img src={project.imagen} width={'100%'} height={'100%'}/>
+												</Box>
+										</Grid> */}
+										<Grid item>
 											<CardContent
-												sx={{ flex: '1 0 auto', p: ' 15px 40px 0 40px' }}
+												sx={{ 
+												// flex: '1 0 auto', 
+												p: ' 15px 40px 0 40px' 
+												}}
 											>
-												<Typography
-													variant='h5'
-													component='div'
-													sx={{
-														fontWeight: 700,
-														color: Colors.primary,
-														textAlign: 'center',
-													}}
+												<Stack
+													direction={'row'}
+													sx={{ justifyContent: 'space-between' }}
 												>
-													{project.nombre}
-												</Typography>
+													<Typography
+														variant='h5'
+														component='div'
+														sx={{
+															fontWeight: 700,
+															color: Colors.primary,
+															textAlign: 'center',
+														}}
+													>
+														{project.nombre}
+													</Typography>
+													<Chip
+														sx={{
+															fontSize: '12px',
+															display: 'flex',
+															color: Colors.body_bg,
+															position: 'relative',
+															// top: '20px',
+															// right: '30px',
+
+															bgcolor: Colors.primary,
+														}}
+														label={project.estado}
+													/>
+												</Stack>
 												<CardHeader
 													avatar={
 														<Avatar
@@ -170,49 +193,78 @@ export default function MediaCard() {
 													)}
 												</Box>
 
-												{project.tipo === 'Urbanización' ? (
-													<Stack direction='row' spacing={2}>
-														<Chip
-															icon={<Pool />}
-															label='Piscina'
-															onClick={() => cambiarEstadoModal1(!estadoModal1)}
-														/>
-														<Chip
-															icon={<Diversity3 />}
-															label='Zonas Sociales'
-															onClick={() => cambiarEstadoModal2(!estadoModal2)}
-														/>
-														<Chip
-															icon={<TimeToLeave />}
-															label='Porteria'
-															onClick={() => cambiarEstadoModal3(!estadoModal3)}
-														/>
-														<Chip
-															icon={<Forest />}
-															label='Zonas Verdes'
-															onClick={() => cambiarEstadoModal4(!estadoModal4)}
-														/>
-													</Stack>
-												) : (
-													<Stack direction='row' spacing={2}>
-														<Chip
-															icon={<BedroomParentOutlined />}
-															label={project.habitaciones}
-														/>
-														<Chip
-															icon={<GarageOutlined />}
-															label={project.garaje}
-														/>
-														<Chip
-															icon={<BathtubOutlined />}
-															label={project.baños}
-														/>
-														<Chip
-															icon={<Diversity3 />}
-															label='Zonas Sociales'
-														/>
-													</Stack>
-												)}
+												<Stack
+													direction={{ xs: 'column', sm: 'row' }}
+													sx={{
+														alignItems: 'center',
+														justifyContent: 'space-between',
+													}}
+												>
+													{project.tipo === 'Urbanización' ? (
+														<Stack
+															direction={{ xs: 'column', sm: 'row' }}
+															spacing={2}
+														>
+															<Chip
+																icon={<Pool />}
+																label='Piscina'
+																onClick={() =>
+																	cambiarEstadoModal1(!estadoModal1)
+																}
+															/>
+															<Chip
+																icon={<Diversity3 />}
+																label='Zonas Sociales'
+																onClick={() =>
+																	cambiarEstadoModal2(!estadoModal2)
+																}
+															/>
+															<Chip
+																icon={<TimeToLeave />}
+																label='Porteria'
+																onClick={() =>
+																	cambiarEstadoModal3(!estadoModal3)
+																}
+															/>
+															<Chip
+																icon={<Forest />}
+																label='Zonas Verdes'
+																onClick={() =>
+																	cambiarEstadoModal4(!estadoModal4)
+																}
+															/>
+														</Stack>
+													) : (
+														//
+
+														<Stack
+															direction={{ xs: 'column', sm: 'row' }}
+															spacing={2}
+														>
+															<Chip
+																icon={<BedroomParentOutlined />}
+																label={project.habitaciones}
+															/>
+															<Chip
+																icon={<GarageOutlined />}
+																label={project.garaje}
+															/>
+															<Chip
+																icon={<BathtubOutlined />}
+																label={project.baños}
+															/>
+															<Chip
+																icon={<Diversity3 />}
+																label='Zonas Sociales'
+															/>
+														</Stack>
+													)}
+													{project.act === 'v' && (
+														<Link to={`/ProjectDetails/${project.id}`}>
+															<SeeMoreButton />
+														</Link>
+													)}
+												</Stack>
 
 												<Modal
 													estado={estadoModal1}
@@ -267,58 +319,12 @@ export default function MediaCard() {
 											</CardContent>
 										</Grid>
 									</Grid>
-
-									<Grid item>
-										<Typography>
-											<Chip
-												sx={{
-													fontSize: '12px',
-													display: 'flex',
-													color: Colors.body_bg,
-													position: 'relative',
-													top: '20px',
-													right: '30px',
-
-													bgcolor: Colors.primary,
-												}}
-												label={project.estado}
-											/>
-										</Typography>
-										
-     
-										<Stack>
-
-										{ project.act==='v'?
-											 ( 	<Link to={`/ProjectDetails/${project.id}`}>
-											 <SeeMoreButton ></SeeMoreButton>
-											 
-											 </Link>  ) : (	
-											
-											
-												<h1></h1>
-											
-											
-											
-											 
-											) }
-
-											
-
-										</Stack>
-									</Grid>
 								</Card>
 							</motion.div>
-							
 						</Grid>
-				
 					))}
-					
 				</Grid>
-				
-				
 			</Container>
-			
 		</Box>
-		
 	);
 }

@@ -50,7 +50,7 @@ const ProjectsVisit = () => {
 			>
 				<Grid container spacing={2} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>
 					<CustomContainer>
-						<Grid xs={3}>
+						<Grid item xs={3}>
 							<CustomButton>
 								<img
 									src={logoImgCD}
@@ -59,7 +59,7 @@ const ProjectsVisit = () => {
 								/>
 							</CustomButton>
 						</Grid>
-						<Grid xs={3}>
+						<Grid item xs={3}>
 							<CustomButton>
 								<img
 									src={logoImgCB}
@@ -68,7 +68,7 @@ const ProjectsVisit = () => {
 								/>
 							</CustomButton>
 						</Grid>
-						<Grid xs={3}>
+						<Grid item xs={3}>
 							<CustomButton>
 								<img
 									src={logoImgP}
@@ -78,7 +78,7 @@ const ProjectsVisit = () => {
 							</CustomButton>
 						</Grid>
 
-						<Grid xs={3}>
+						<Grid item xs={3}>
 							<CustomButton>
 								<img
 									src={logoImgPS}

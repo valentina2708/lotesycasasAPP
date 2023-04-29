@@ -11,8 +11,8 @@ import {
 	Container,
 	Avatar,
 	CardContent,
-    CardActions,
-    Button
+	CardActions,
+	Button,
 } from '@mui/material';
 import urbanizacion from '../../assets/urbanizacion.jpg';
 import AOS from 'aos';
@@ -23,7 +23,7 @@ import { mensajebox } from '../../animation';
 import Grid from '@mui/material/Grid';
 import { DataUrbanizations } from '../../DataProvider/DataProjects.js';
 import { Villa } from '@mui/icons-material/';
-import InfoUrbanization from "../projectComponents/InfoUrbanization.jsx"
+import InfoUrbanization from '../projectComponents/InfoUrbanization.jsx';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
@@ -41,7 +41,7 @@ export default function ProjectsUrbanization() {
 				style={{
 					width: '100%',
 					height: '100%',
-                    opacity:[10],
+					opacity: [10],
 				}}
 				bgImage={urbanizacion}
 				strength={300}
@@ -55,7 +55,8 @@ export default function ProjectsUrbanization() {
 						alignItems: 'center',
 						width: 'auto',
 						height: '95vh',
-					}}>
+					}}
+				>
 					<Box
 						sx={{
 							borderRadius: '20px',
@@ -65,13 +66,13 @@ export default function ProjectsUrbanization() {
 					>
 						<Box
 							sx={{
-								display: 'flow',
+								display: 'flex',
 								padding: '0px',
 								width: '100%',
 							}}
 						>
 							<Typography
-								variant='h2'
+								variant='h4'
 								sx={{
 									opacity: [90],
 									color: Colors.info3,
@@ -110,9 +111,9 @@ export default function ProjectsUrbanization() {
 						duration: 0.8,
 					}}
 				>
-					<Stack spacing={2}>
+					<Stack spacing={2} ml={{ xs: '1rem', sm: '2rem', md: '0' }}>
 						<Typography
-							variant='h2'
+							variant='h3'
 							sx={{
 								color: Colors.primary,
 								fontWeight: 'bold',
@@ -140,14 +141,15 @@ export default function ProjectsUrbanization() {
 						rowSpacing={4}
 					>
 						{DataUrbanizations.map(urbanization => (
-							<Grid item xs={4}>
+							<Grid item xs={12} sm={6} md={4} key={urbanization.id}>
 								<Card
 									elevation={4}
 									sx={{
-										maxWidth: 345,
-                                       
+										// maxWidth: 345,
 										borderRadius: 4,
+										height: '100%'
 									}}
+									
 								>
 									<CardHeader
 										avatar={
@@ -171,44 +173,37 @@ export default function ProjectsUrbanization() {
 										image={urbanization.imgUrbanizacion}
 										alt='imagen'
 									/>
-                    
+
 									<CardContent>
-										<Typography
-											variant='subtitle1'
-											fontWeight='40px'
-										>
+										<Typography variant='subtitle1' fontWeight='40px'>
 											{urbanization.descripcionCorta}
 										</Typography>
 									</CardContent>
-                                    <CardActions>
-									
-									{/* <Link to={`/ProjectDetails/${urbanization.id}`}>
+									<CardActions>
+										{/* <Link to={`/ProjectDetails/${urbanization.id}`}>
 									<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
 									</Button>
 									</Link>  */}
-									
-											{ urbanization.id ===1?
-											 (	<Link to={`/ProjectDetails/${urbanization.id}`}>
-											 <Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
-											 </Button>
-											 </Link>  ) : (	
-											
-											 <Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
-											 </Button>
-											 
-											) }
-									
+
+										{urbanization.id === 1 ? (
+											<Link to={`/ProjectDetails/${urbanization.id}`}>
+												<Button size='small'>
+													Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
+												</Button>
+											</Link>
+										) : (
+											<Button disabled size='small'>
+												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
+											</Button>
+										)}
 									</CardActions>
-                      
 								</Card>
 							</Grid>
 						))}
 					</Grid>
 				</Container>
 			</Box>
-            <InfoUrbanization/> 
-
-            
+			<InfoUrbanization />
 		</>
 	);
 }

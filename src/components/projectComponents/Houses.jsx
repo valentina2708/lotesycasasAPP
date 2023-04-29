@@ -123,7 +123,7 @@ export default function ProjectsHouses() {
 					</Stack>
 				</motion.div>
 			</Box>
-			<Box sx={{ flexGrow: 1, padding: '6% ' }}>
+			<Box>
 				<Container
 					sx={{
 						justifyContent: 'center',
@@ -131,19 +131,18 @@ export default function ProjectsHouses() {
 					}}
 				>
 					<Grid
-						item
-						xs
 						container
-						columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+						columns={{ xs: 6, sm: 8, md: 12 }}
 						direction='row'
 						rowSpacing={4}
 					>
 						{DataHouses.map(house => (
-							<Grid item xs={4}>
+							<Grid item xs={6} sm={4} key={house.id}>
 								<Card
 									elevation={4}
 									sx={{
-										maxWidth: 345,
+										maxWidth: {xs:'none', sm:320, md: 350},
+										height: '100%',
 										borderRadius: 4,
 									}}
 								>
@@ -159,9 +158,8 @@ export default function ProjectsHouses() {
 									<CardMedia
 										component='img'
 										sx={{
-											height: 194,
+											// height: 194,
 											cursor: 'pointer',
-
 											'&:hover': {
 												backgroundColor: Colors.muted,
 												opacity: [0.7],

@@ -7,10 +7,11 @@ export default function FabIntegrationSnackbar() {
 		<Fab
 			color='secondary'
 			sx={{
-				position: 'relative',
+				// position: 'relative',
 				zIndex:0,
-				top: '250px',
-				rigth: '30px',
+				// top: '250px',
+				// rigth: '30px',
+				marginTop: '1rem',
 				size: 'small',
 				backgroundColor: Colors.info2,
 				'&:hover': {
