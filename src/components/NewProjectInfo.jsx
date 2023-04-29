@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { Stack, CardMedia, Card, Typography, Button } from '@mui/material';
+import { Stack,  Card, Typography, Button } from '@mui/material';
 import { Colors } from '../config/themeConfig.js';
 import logo from '../assets/logoRincondelLago.jpg';
 import Grid from '@mui/material/Grid';

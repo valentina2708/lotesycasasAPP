@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import ContactForm from '../ContactForm'
 
 export default function ContactLayout() {

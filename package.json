@@ -13,6 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@googlemaps/js-api-loader": "^1.15.1",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.15",
@@ -22,7 +24,7 @@
     "aos": "^2.3.4",
     "better-react-carousel": "^1.1.1",
     "bootstrap": "^5.2.3",
-    "emailjs-com": "^3.2.0",
+    "buffer": "^6.0.3",
     "framer-motion": "^10.9.2",
     "gsap": "^3.11.5",
     "hero-slider": "^3.1.0",
@@ -38,11 +40,15 @@
     "react-scroll-parallax": "^3.4.2",
     "react-simple-image-slider": "^2.4.1",
     "react-viewer": "^3.2.2",
+    "rollup-plugin-node-polyfills": "^0.2.1",
     "styled-components": "^5.3.8",
     "theme-ui": "^0.15.5",
     "title": "^3.5.3",
     "tss-react": "^4.8.2",
     "wrapper": "^0.1.0"
+  },
+  "resolutions": {
+    "ansi-styles": "^3.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

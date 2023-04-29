@@ -1,5 +1,3 @@
-import Urbanization from '../projectComponents/Urbanization';
-import Houses from '../projectComponents/Houses';
 import { Box } from '@mui/material';
 import ProjectsSelector from '../ProjectsSelector';
 import urbanizacion from '../../assets/urbanizacion.jpg';
@@ -8,8 +6,6 @@ import { Parallax } from 'react-parallax';
 export default function ProjectLayout() {
 	return (
 		<Box sx={{ marginTop: '5rem' }} className='content'>
-			{/*<Pictures/>*/}
-			{/* <Urbanization /> */}
 			<Parallax
 				style={{
 					width: '100%',
@@ -21,7 +17,6 @@ export default function ProjectLayout() {
 			>
 				<ProjectsSelector />
 			</Parallax>
-			{/*<Houses/>*/}
 		</Box>
 	);
 }
