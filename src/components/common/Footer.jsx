@@ -18,6 +18,7 @@ export default function FooterBar() {
 					marginTop:'150vh',
 					border:0
 				}}
+			//sx={{ height: 200, background: '#A15600', fontWeight: 900 }}
 		>
 			<Grid item xs={12} md={6}>
 				<Stack

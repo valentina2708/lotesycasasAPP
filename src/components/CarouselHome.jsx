@@ -1,14 +1,14 @@
 import { Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import Box from '@mui/material/Box';
-import HeroSlider, { Slide, Overlay, Nav } from 'hero-slider';
+import HeroSlider, { Slide, ButtonsNav, Overlay, Nav } from 'hero-slider';
 import home1 from '../assets/casasylotes3.jpeg';
 import home2 from '../assets/rincondelLago.jpg';
 import home3 from '../assets/casasylotes6.jpeg';
 import home4 from '../assets/casasylotes1.jpeg';
 import { motion } from 'framer-motion';
 import { homeInfoAnimation } from '../animation';
-import { Colors } from '../config/themeConfig.js';
+import { Colors } from '/src/config/themeConfig.js';
 
 export default function BlendModeSlider() {
 	return (

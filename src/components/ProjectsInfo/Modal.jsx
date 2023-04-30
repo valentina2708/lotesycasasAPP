@@ -1,5 +1,7 @@
-import styled from 'styled-components/macro';
+import React from 'react';
+import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
+import { Colors } from '/src/config/themeConfig.js';
 
 const Modal = ({
 	children,
@@ -17,7 +19,8 @@ const Modal = ({
 						<BotonCerrar onClick={() => cambiarEstado(false)}>
 							<CloseIcon />
 						</BotonCerrar>
-						<Contenido>{children}</Contenido>
+
+						{children}
 					</ContenedorModal>
 				</Overlay>
 			)}
@@ -34,11 +37,11 @@ const Overlay = styled.div`
 	top: 0;
 	left: 0;
 	background: ${props =>
-		props.mostrarOverlay ? 'rgba(5,0,0,.1)' : 'rgba(0,0,0,0)'};
+	props.mostrarOverlay ? 'rgba(5,0,0,.1)' : 'rgba(0,0,0,0)'};
 	padding: 40px;
 	display: flex;
 	align-items: ${props =>
-		props.posicionModal ? props.posicionModal : 'center'};
+	props.posicionModal ? props.posicionModal : 'center'};
 	justify-content: center;
 	zindex: 1;
 `;
@@ -64,17 +67,4 @@ const BotonCerrar = styled.button`
 	transition: 0.3s ease all;
 	border-radius: 3px;
 	color: #e9601c;
-`;
-
-const Contenido = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	img {
-		width: 800px;
-		min-height: 500px;
-		vertical-align: top;
-		border-radius: 3px;
-	}
 `;

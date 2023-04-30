@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, MenuItem } from '@mui/material';
 
-const subMenu = () => {
+const Menu = () => {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
 	const handleClick = event => {
@@ -27,4 +27,4 @@ const subMenu = () => {
 	);
 };
 
-export default subMenu;
+export default Menu;

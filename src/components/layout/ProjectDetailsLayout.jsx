@@ -1,8 +1,11 @@
-import ProjectDetails from '../projectComponents/ProjectDetails';
-import { Box } from '@mui/material';
+import ProjectDetails from '../projectComponents/ProjectDetails'
+import { Box } from '@mui/material'
+import React from 'react'
+import { useState,useEffect } from 'react';
 
 export default function ProyectDetailsLayout() {
-	/* const idf=props.id
+ 
+ /* const idf=props.id
  const idd=idf
 
  const [id, setId] = useState(null);
@@ -13,9 +16,13 @@ export default function ProyectDetailsLayout() {
  }
  */
 
-	return (
-		<Box sx={{ margin: '0vh' }}>
-			{/*  <button onClick={() => handleClick(1)}>Mostrar componente 1</button>
+ 
+  return (
+    
+    
+    <Box sx={{margin:'0vh'}}>
+     
+    {/*  <button onClick={() => handleClick(1)}>Mostrar componente 1</button>
       <button onClick={() => handleClick(2)}>Mostrar componente 2</button>
       {id && <ProjectDetails id={id} />}
      
@@ -24,7 +31,8 @@ export default function ProyectDetailsLayout() {
      
      
      <h1>layout2:{idd}</h1> */}
-			<ProjectDetails />
-		</Box>
-	);
+        <ProjectDetails />
+
+    </Box>
+  )
 }

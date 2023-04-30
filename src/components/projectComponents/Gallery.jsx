@@ -1,3 +1,4 @@
+import React from 'react'
 import Box from '@mui/material/Box';
 
 
@@ -39,24 +40,26 @@ export default function Gallery() {
                 </Typography>
             </Box>
 
-			<Box
-				sx={{
-					marginTop: '10vh',
-					marginBottom: '10vh',
-				}}
-			>
-				<Carousel cols={2} rows={2} gap={10} loop>
-					<Carousel.Item>
-						<img width='100%' src={parque2} />
-					</Carousel.Item>
+            <Box sx={{
+                marginTop: '10vh',
+                marginBottom: '10vh'
+            }}>
+               
+               
+                <Carousel  cols={2} rows={2} gap={10} loop>
 
-					<Carousel.Item>
-						<img width='100%' src={parque3} />
-					</Carousel.Item>
+                    
+                    <Carousel.Item>
+                        <img width="100%" src={parque2} />
+                    </Carousel.Item>
 
-					<Carousel.Item>
-						<img width='100%' src={terraza1} />
-					</Carousel.Item>
+                    <Carousel.Item>
+                        <img width="100%" src={parque3} />
+                    </Carousel.Item>
+
+                    <Carousel.Item>
+                        <img width="100%" src={terraza1} />
+                    </Carousel.Item>
 
                     <Carousel.Item>
                         <img width="100%" src={terraza3} />

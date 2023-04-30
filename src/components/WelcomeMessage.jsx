@@ -1,7 +1,9 @@
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
-import { Colors } from '../config/themeConfig.js';
+import { Colors } from '/src/config/themeConfig.js';
+import Fade from '@mui/material/Fade';
 import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
 import { mensajebox  } from "../animation";
@@ -9,7 +11,6 @@ import { mensajebox  } from "../animation";
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
-	
 	return (
 		<Box  ref={element}
 			sx={{

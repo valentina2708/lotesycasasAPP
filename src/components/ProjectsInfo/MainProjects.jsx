@@ -1,17 +1,14 @@
-import { Colors } from '../../config/themeConfig.js';
+import { Box, Typography, Chip, Stack, Avatar, Button } from '@mui/material';
+import { Colors } from '/src/config/themeConfig.js';
 import {
+	CardMedia,
 	CardContent,
 	CardHeader,
 	Container,
 	Card,
-	Box,
-	Typography,
-	Chip,
-	Stack,
-	Avatar,
 } from '@mui/material';
-import SeeMoreButton from '../ProjectsInfo/SeeMoreButton';
-import { DataProjects } from '../../DataProvider/DataProjects.js';
+import SeeMoreButton from '/src/components/ProjectsInfo/SeeMoreButton';
+import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
 import {
 	HolidayVillage,
@@ -30,10 +27,24 @@ import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
 import Modal from '../ProjectsInfo/Modal';
 import { useState } from 'react';
-import piscina from '../../assets/pisina1.png';
-import terraza2 from '../../assets/terraza2_1.jpg';
-import porteria from '../../assets/porteria.jpg';
-import parque from '../../assets/parque.jpg';
+
+import styled from 'styled-components';
+import ProjectDetails from '../projectComponents/ProjectDetails';
+import App from '../../App';
+import ProyectDetailsLayout from '../layout/ProjectDetailsLayout';
+
+const Contenido = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img {
+		width: 800px;
+		min-height: 500px;
+		vertical-align: top;
+		border-radius: 3px;
+	}
+`;
 
 export default function MediaCard() {
 	const [element, controls] = useScroll();
@@ -42,6 +53,8 @@ export default function MediaCard() {
 	const [estadoModal2, cambiarEstadoModal2] = useState(false);
 	const [estadoModal3, cambiarEstadoModal3] = useState(false);
 	const [estadoModal4, cambiarEstadoModal4] = useState(false);
+
+	const [id, setId] = useState(null);
 
 	return (
 		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px' }}>
@@ -104,9 +117,9 @@ export default function MediaCard() {
 										</Grid> */}
 										<Grid item>
 											<CardContent
-												sx={{
-													// flex: '1 0 auto',
-													p: ' 15px 40px 0 40px',
+												sx={{ 
+												// flex: '1 0 auto', 
+												p: ' 15px 40px 0 40px' 
 												}}
 											>
 												<Stack
@@ -260,9 +273,9 @@ export default function MediaCard() {
 													posicionModal={'center'}
 													padding={'0px'}
 												>
-													
-														<img src={piscina} alt='piscina' width='800px' />
-													
+													<Contenido>
+														<img src='/src/assets/pisina1.png' alt='pisina' />
+													</Contenido>
 												</Modal>
 												<Modal
 													estado={estadoModal2}
@@ -271,13 +284,12 @@ export default function MediaCard() {
 													posicionModal={'center'}
 													padding={'0px'}
 												>
-													
+													<Contenido>
 														<img
-															src={terraza2}
+															src='/src/assets/terraza2_1.jpg'
 															alt='zonaSocial'
-															width='800px'
 														/>
-													
+													</Contenido>
 												</Modal>
 												<Modal
 													estado={estadoModal3}
@@ -286,9 +298,12 @@ export default function MediaCard() {
 													posicionModal={'center'}
 													padding={'0px'}
 												>
-													
-														<img src={porteria} alt='porteria' width='800px' />
-													
+													<Contenido>
+														<img
+															src='/src/assets/porteria.jpg'
+															alt='porteria'
+														/>
+													</Contenido>
 												</Modal>
 												<Modal
 													estado={estadoModal4}
@@ -297,9 +312,9 @@ export default function MediaCard() {
 													posicionModal={'center'}
 													padding={'0px'}
 												>
-													
-														<img src={parque} alt='parque' width='800px' />
-													
+													<Contenido>
+														<img src='/src/assets/parque.jpg' alt='parque' />
+													</Contenido>
 												</Modal>
 											</CardContent>
 										</Grid>

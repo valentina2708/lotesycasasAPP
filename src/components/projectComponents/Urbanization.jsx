@@ -25,8 +25,9 @@ import { DataUrbanizations } from '../../DataProvider/DataProjects.js';
 import { Villa } from '@mui/icons-material/';
 import InfoUrbanization from '../projectComponents/InfoUrbanization.jsx';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
-
+import * as miArray from '../../DataProvider/DataProjects';
 export default function ProjectsUrbanization() {
 	const [element, controls] = useScroll();
 
@@ -46,6 +47,7 @@ export default function ProjectsUrbanization() {
 				strength={300}
 			>
 				<Box
+					container
 					data-aos='zoom-in-down'
 					sx={{
 						display: 'flex',
@@ -131,6 +133,8 @@ export default function ProjectsUrbanization() {
 					}}
 				>
 					<Grid
+						item
+						xs
 						container
 						columnSpacing={{ xs: 1, sm: 2, md: 3 }}
 						direction='row'

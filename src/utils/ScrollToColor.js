@@ -1,4 +1,4 @@
-import React from "react";
+
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 const ScrollHandler = (props) => {
