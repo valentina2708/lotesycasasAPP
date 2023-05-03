@@ -184,18 +184,11 @@ export default function ProjectsUrbanization() {
 									<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
 									</Button>
 									</Link>  */}
-
-										{urbanization.id === 1 ? (
-											<Link to={`/ProjectDetails/${urbanization.id}`}>
-												<Button size='small'>
-													Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
-												</Button>
-											</Link>
-										) : (
-											<Button disabled size='small'>
+									<Link to={`/ProjectDetails/${urbanization.id}`}>
+											<Button size='small'>
 												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
 											</Button>
-										)}
+										</Link>
 									</CardActions>
 								</Card>
 							</Grid>

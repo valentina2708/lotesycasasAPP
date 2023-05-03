@@ -108,5 +108,38 @@ export const Prueba=[
        },
 
 
+
+
+
+
+
+
+    
+
+      {
+        id:6,
+        adicional:'v',
+     
+        subtitulo: 'Casa en obra gris',
+        imagencard: '/src/assets/casa17OG.jpg',
+        estado: 'En venta',
+        tipo: 'Condominio',
+        lat:3.2499367481968666,
+        lng:-76.56676798926843,
+        descripcion: ' Casa de lujo en condominio cerrado, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas. Casa en obra gris: Tres apartamentos independientes, cada uno con dos amplias habitaciones, la principal con baño privado, closets espaciosos en fina madera. Cocinas integrales, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas.',
+        ubicacion: 'Jamundí, Valle del Cauca',
+        condominio: 'Senderos de Las Mercedes',
+        plantas: 'Tres (3)',
+        habitaciones: '(4) alcobas',
+        baños: '(4) baños',
+        garaje: '(3) vehículos',
+        otros: 'Baños: Cuatro (4). Zonas sociales: sala, comedor, estudio, jardin exterior. Zonas comunes condominio: parque infantil, cancha multiple, piscina, salón de eventos',
+        areaDelLote: '120 mts²',
+        areaConstruida: '250 mts²',
+        características: '	Cocinas integrales, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas',
+        imagen: '/src/assets/casa17OG.jpg'
+      },
+
+
   
 ]

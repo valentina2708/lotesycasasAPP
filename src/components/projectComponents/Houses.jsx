@@ -24,6 +24,7 @@ import Grid from '@mui/material/Grid';
 import { DataHouses } from '../../DataProvider/DataProjects.js';
 import GiteIcon from '@mui/icons-material/Gite';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Link } from 'react-router-dom';
 
 export default function ProjectsHouses() {
 	const [element, controls] = useScroll();
@@ -126,6 +127,7 @@ export default function ProjectsHouses() {
 			<Box
 				container ='true'
 					sx={{
+						display:'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}
@@ -177,9 +179,16 @@ export default function ProjectsHouses() {
 									<CardActions>
 										
 										
-										
-										
+									{house.id === 6 ? (
+										<Link to={`/ProjectDetails/${house.id}`}>
 										<Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
+											</Link>
+										) : (
+											<Button disabled size='small'>
+												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
+											</Button>
+										)}
+									
 									</CardActions>
 								</Card>
 							</Grid>
