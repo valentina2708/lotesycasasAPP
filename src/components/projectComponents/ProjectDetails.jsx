@@ -7,6 +7,7 @@ import {
 	CardContent,
 	Card,
 	Button,
+	Divider,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Prueba } from '/src/DataProvider/Prueba.js';
@@ -19,16 +20,18 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as miArray from '../../DataProvider/Prueba.js';
 import ReactPlayer from 'react-player';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import AOS from 'aos';
 import { Parallax } from 'react-parallax';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
 
 export default function PaginaProyectos(props) {
 	useEffect(() => {
 		AOS.init({ offset: 200, duration: 1000 });
 	}, []);
+
+	
 
 	const { id } = useParams();
 
@@ -37,6 +40,7 @@ export default function PaginaProyectos(props) {
 	});
 
 	if (!isLoaded) return <Box>Cargando...</Box>;
+
 	return (
 		<Box sx={{ marginTop: '15vh' }}>
 			<Grid>
@@ -119,11 +123,6 @@ export default function PaginaProyectos(props) {
 									</Box>
 								</Grid>
 								<Grid
-									item='true'
-									xs={12}
-									sm={12}
-									md={12}
-									lg={6}
 									sx={{
 										display: 'grid',
 										justifyContent: 'center',
@@ -164,14 +163,16 @@ export default function PaginaProyectos(props) {
 						sx={{
 							marginBottom: '15vh',
 							display: { xs: 'none', sm: 'none', md: 'block', xl: 'block' },
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+							marginInline: '5rem',
 						}}
 					>
 						<Card
 							sx={{
-								width: '100%',
+								//width: '80vw',
 								height: '100%',
-								marginLeft: 'auto',
-								marginRight: 'auto',
 								marginBottom: '5vh',
 								marginTop: '10vh',
 								borderRadius: 10,
@@ -272,7 +273,7 @@ export default function PaginaProyectos(props) {
 				</Grid>
 
 				<Grid container sx={{}}>
-					{miArray.Prueba[id - 1].adicional === 'v' ? (
+					{miArray.Prueba[id - 1].adicional === 'rinconlago' ? (
 						//////////////////////////////////
 
 						<Grid container='true'>
@@ -400,8 +401,7 @@ export default function PaginaProyectos(props) {
 											}}
 										>
 											{/*  ######### Subtitulo 2 proyecto ########### */}
-											Ubicado en el corazón de Alfaguara, Jamundí. Sector las
-											Mercedes
+											{miArray.Prueba[id - 1].ubicacion}
 										</Typography>
 									</Box>
 									<Box
@@ -797,7 +797,7 @@ export default function PaginaProyectos(props) {
 						<Box></Box>
 					)}
 
-					{miArray.Prueba[id - 1].adicional === 'v' ? (
+					{miArray.Prueba[id - 1].adicional === 'u' ? (
 						//////////////////////////////////
 
 						<Grid container='true'>
@@ -895,14 +895,18 @@ export default function PaginaProyectos(props) {
 												variant='h5'
 												sx={{
 													color: '#A15600',
-													fontWeight: 'bold',
+
 													textAlign: 'center',
 												}}
 											>
 												{/*  ######### Subtitulo 2 proyecto ########### */}
-												Plaza comercial con:
-												<br />
-												30 lotes de 108 m2 a 362 m2 y 117 parqueaderos
+
+												{miArray.Prueba[id - 1].descripcionad}
+												<Divider sx={{ my: '2rem' }} />
+
+												<Typography variant='h6'>
+													{miArray.Prueba[id - 1].areaDelLote}
+												</Typography>
 											</Typography>
 										</Box>
 									</Grid>
@@ -1033,33 +1037,51 @@ export default function PaginaProyectos(props) {
 
 
             </Carousel> */}
+							<ImageList
+								sx={{ width: 500, height: 450 }}
+								cols={3}
+								rowHeight={164}
+							>
+								{miArray.Prueba[id - 1].images.map(item => (
+									<ImageListItem key={item.title}>
+										<img
+											src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+											srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+											alt={item.title}
+											loading='lazy'
+										/>
+									</ImageListItem>
+								))}
+							</ImageList>
 						</Box>
-						{miArray.Prueba[id - 1].id === 1 && <Box
-							data-aos='fade-zoom-in'
-							data-aos-easing='ease-in-back'
-							data-aos-delay='300'
-							data-aos-offset='0'
-							sx={{
-								margin: 'auto',
-								height: '400px',
+						{miArray.Prueba[id - 1].id === 1 && (
+							<Box
+								data-aos='fade-zoom-in'
+								data-aos-easing='ease-in-back'
+								data-aos-delay='300'
+								data-aos-offset='0'
+								sx={{
+									margin: 'auto',
+									height: '400px',
 
-								maxHeight: '800px',
-								maxWidth: '800px',
-							}}
-						>
-							<ReactPlayer
-								borderRadius='3'
-								position='relative'
-								bottom='5px'
-								url='https://youtu.be/N3GwlQdjhjU'
-								className='react-player'
-								//playing
-								controls
-								loop
-								width='100%'
-								height='100%'
-							/>
-						</Box>}
+									maxHeight: '800px',
+									maxWidth: '800px',
+								}}
+							>
+								<ReactPlayer
+									borderRadius='3'
+									position='relative'
+									bottom='5px'
+									url='https://youtu.be/N3GwlQdjhjU'
+									className='react-player'
+									//playing
+									controls
+									loop
+									width='100%'
+									height='100%'
+								/>
+							</Box>
+						)}
 					</Box>
 				</Box>
 			</Grid>

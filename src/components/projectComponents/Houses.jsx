@@ -178,16 +178,10 @@ export default function ProjectsHouses() {
 									</CardContent>
 									<CardActions>
 										
-										
-									{house.id === 6 ? (
+								
 										<Link to={`/ProjectDetails/${house.id}`}>
 										<Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
 											</Link>
-										) : (
-											<Button disabled size='small'>
-												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
-											</Button>
-										)}
 									
 									</CardActions>
 								</Card>
