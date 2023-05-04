@@ -50,11 +50,7 @@ export default function AboutUs() {
 							height: '85vh',
 						}}
 					>
-						<Box
-							sx={{
-							
-							}}
-						>
+						<Box sx={{}}>
 							<Box
 								sx={{
 									width: '100%',
@@ -105,28 +101,20 @@ export default function AboutUs() {
 							height: '45vh',
 						}}
 					>
-						<Box
-							sx={{
-								
-							}}
-						>
+						<Box sx={{}}>
 							<Box
 								sx={{
 									display: 'flex',
 									justifyContent: 'center',
-							alignItems: 'center',
-									
+									alignItems: 'center',
 								}}
 							>
 								<Typography
 									variant='h4'
 									sx={{
-										
 										color: Colors.info3,
 										fontWeight: 'bold',
 										mt: 2,
-										
-										
 									}}
 								>
 									Nosotros
@@ -185,13 +173,13 @@ export default function AboutUs() {
 							Casas & Lotes
 						</Typography>
 						<Typography
-							variant='h6'
+							variant='body1'
 							sx={{
 								color: 'black',
-								fontWeight: 'bold',
+								// fontWeight: 'bold',
 								mt: 2,
 								textAlign: 'center',
-								padding: '10px',
+								paddingInline: '15rem',
 							}}
 						>
 							Somos constructores con 15 años de experiencia en el Valle del

@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import theme from './config/themeConfig';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
 import Appbar from './components/common/Appbar';
 import Footer from './components/common/Footer';
 import './App.css';
@@ -13,14 +12,22 @@ import ProjectDetailsLayout from './components/layout/ProjectDetailsLayout';
 import ProjectsUrbanization from './components/projectComponents/Urbanization';
 import ProjectsHouses from './components/projectComponents/Houses';
 
+const Wrapper = ({ children }) => {
+	const location = useLocation();
+	useLayoutEffect(() => {
+		document.documentElement.scrollTo(0, 0);
+	}, [location.pathname]);
+	return children;
+};
+
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<BrowserRouter>
-				<Grid style={theme.container}>
-					<Grid my={4}>
-						<Appbar />
-					</Grid>
+		<BrowserRouter>
+			<Grid>
+				<Grid my={4}>
+					<Appbar />
+				</Grid>
+				<Wrapper>
 					<Routes>
 						<Route exact path='/' element={<HomeLayout />} />
 						<Route path='/about' element={<AboutLayout />} />
@@ -33,15 +40,16 @@ function App() {
 						<Route path='/urbanizations' element={<ProjectsUrbanization />} />
 						<Route path='/houses' element={<ProjectsHouses />} />
 					</Routes>
-					<Grid
-						mt={0}
-						sx={{ alignSelf: 'flex-end', width: '100%', marginTop: '40vh' }}
-					>
-						<Footer />
-					</Grid>
+				</Wrapper>
+
+				<Grid
+					mt={0}
+					sx={{ alignSelf: 'flex-end', width: '100%', marginTop: '40vh' }}
+				>
+					<Footer />
 				</Grid>
-			</BrowserRouter>
-		</ThemeProvider>
+			</Grid>
+		</BrowserRouter>
 	);
 }
 

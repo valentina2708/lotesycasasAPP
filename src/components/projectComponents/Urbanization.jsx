@@ -147,9 +147,8 @@ export default function ProjectsUrbanization() {
 									sx={{
 										// maxWidth: 345,
 										borderRadius: 4,
-										height: '100%'
+										height: '100%',
 									}}
-									
 								>
 									<CardHeader
 										avatar={
@@ -184,11 +183,18 @@ export default function ProjectsUrbanization() {
 									<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
 									</Button>
 									</Link>  */}
-									<Link to={`/ProjectDetails/${urbanization.id}`}>
+										<Link to={`/ProjectDetails/${urbanization.id}`}>
 											<Button size='small'>
 												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
 											</Button>
 										</Link>
+										{/* {urbanization.id >= 1 && urbanization.id <= 2 ? (
+											
+										) : (
+											<Button disabled size='small'>
+												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
+											</Button>
+										)} */}
 									</CardActions>
 								</Card>
 							</Grid>
