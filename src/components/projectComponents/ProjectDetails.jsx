@@ -10,8 +10,6 @@ import {
 	Divider,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { Prueba } from '/src/DataProvider/Prueba.js';
-//import Carousel from 'better-react-carousel'
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState, useEffect } from 'react';
@@ -21,13 +19,13 @@ import ReactPlayer from 'react-player';
 import { GoogleMap, MarkerF, useLoadScript } from '@react-google-maps/api';
 import AOS from 'aos';
 import { Parallax } from 'react-parallax';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 import SportsVolleyballIcon from '@mui/icons-material/SportsVolleyball';
 import Groups3Icon from '@mui/icons-material/Groups3';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ImageGallery from '../projectComponents/ImageGallery.jsx';
+import UrbanizationsDetails from '../projectComponents/UrbanizationsDetails.jsx'
 
 export default function PaginaProyectos(props) {
 	useEffect(() => {
@@ -82,7 +80,7 @@ export default function PaginaProyectos(props) {
 
 					<Box
 						sx={{
-							marginBottom: '15vh',
+							marginBottom: '5vh',
 							display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' },
 						}}
 					>
@@ -99,7 +97,7 @@ export default function PaginaProyectos(props) {
 									display: 'grid',
 									justifyContent: 'center',
 									alignItems: 'center',
-									marginTop: '10vh',
+									marginTop: '5vh',
 								}}
 							>
 								<Grid
@@ -270,8 +268,11 @@ export default function PaginaProyectos(props) {
 								</Grid>
 							</Grid>
 						</Card>
+					
 					</Box>
+				
 				</Grid>
+				
 
 				<Grid container sx={{}}>
 					{miArray.Prueba[id - 1].adicional === 'rinconlago' ? (
@@ -711,7 +712,9 @@ export default function PaginaProyectos(props) {
 						</Grid>
 					) : (
 						////////////////////////////////////////////
-						<Box></Box>
+						<Box>
+						<UrbanizationsDetails/>
+						</Box>
 					)}
 
 					{miArray.Prueba[id - 1].adicional === 'u' ? (
@@ -888,8 +891,9 @@ export default function PaginaProyectos(props) {
 							data-aos-offset='0'
 							sx={{
 								width: '100%',
-								marginTop: '20px',
-								marginBottom: '20px',
+								marginTop: '40px',
+								marginBottom: '40px',
+								gap: 12
 							}}
 						>
 							<Typography
@@ -900,80 +904,13 @@ export default function PaginaProyectos(props) {
 									textAlign: 'center',
 									paddingTop: '10px',
 									margin: '20px',
+									
 								}}
 							>
 								Galeria
 							</Typography>
 						</Box>
-
-						<Box
-							data-aos='fade-zoom-in'
-							data-aos-easing='ease-in-back'
-							data-aos-delay='300'
-							data-aos-offset='0'
-							sx={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								width: '70%',
-								marginInline: '5rem',
-							}}
-						>
-							{/*   <Carousel cols={2} rows={2} gap={10} loop>
-
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen1} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen2} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen3} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen4} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen5} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen6} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen7} />
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <img width="100%" src={miArray.Prueba[id - 1].imagen8} />
-              </Carousel.Item>
-
-
-
-            </Carousel> */}
-							<ImageList
-								sx={{ width: '90vw', height: '55vw' }}
-								cols={3}
-								rowHeight={164}
-								gap={8}
-							>
-								{miArray.Prueba[id - 1].images?.map(item => (
-									<ImageListItem key={item.title}>
-										<img
-											src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-											srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-											alt={item.title}
-											loading='lazy'
-										/>
-									</ImageListItem>
-								))}
-							</ImageList>
-						</Box>
+                        <ImageGallery/>
 						{miArray.Prueba[id - 1].id === 1 && (
 							<Box
 								data-aos='fade-zoom-in'
