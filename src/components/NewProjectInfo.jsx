@@ -61,7 +61,7 @@ export default function BasicStack() {
 				<Card
 					elevation={12}
 					sx={{
-						width: {xs: '90%',sm:'70%'},
+						width: {xs: '90%', sm:'70%'},
 						position: 'relative',
 						top: '-150px',
 						left: {xs: '1rem', sm: '15%', md:'15%'},

@@ -8,12 +8,13 @@ import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
+import fondoCredito from '/src/assets/fondoCredito.jpg';
 
 const useStyles = makeStyles()(theme => {
 	
 	return {
 		InfoImage: {
-			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/fondoCredito.jpg')`,
+			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${fondoCredito})`,
 			height: '500px',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',

@@ -1,4 +1,5 @@
-import parquerinconlago from '/src/assets/parque.jpg';
+import parqueRinconLago from '/src/assets/parque3.jpg';
+
 export const Prueba = [
 	{
 		id: '1',
@@ -23,7 +24,10 @@ export const Prueba = [
 		lat: 3.2499367481968666,
 		lng: -76.56676798926843,
 		images: [
-			{img: `${parquerinconlago}`, title: 'parque',},
+			{
+				img: parqueRinconLago,
+				title: 'parque',
+			},
 			{ img: '/src/assets/TERRAZA1.jpg', title: 'terraza1' },
 			{ img: '/src/assets/TERRAZA3.jpg', title: 'terraza3' },
 			{ img: '/src/assets/parque2.jpg', title: 'parque2' },

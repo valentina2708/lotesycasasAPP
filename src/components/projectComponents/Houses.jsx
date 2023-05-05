@@ -11,8 +11,8 @@ import {
 	Container,
 	Avatar,
 	CardContent,
-    CardActions,
-    Button
+	CardActions,
+	Button,
 } from '@mui/material';
 import house from '../../assets/house.jpg';
 import AOS from 'aos';
@@ -25,6 +25,7 @@ import { DataHouses } from '../../DataProvider/DataProjects.js';
 import GiteIcon from '@mui/icons-material/Gite';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
+import { display } from 'styled-system';
 
 export default function ProjectsHouses() {
 	const [element, controls] = useScroll();
@@ -44,7 +45,6 @@ export default function ProjectsHouses() {
 				strength={200}
 			>
 				<Box
-					container
 					data-aos='zoom-in-down'
 					sx={{
 						display: 'flex',
@@ -124,26 +124,22 @@ export default function ProjectsHouses() {
 					</Stack>
 				</motion.div>
 			</Box>
-			<Box
-				container ='true'
+			<Box sx={{ flexGrow: 1, paddingInline: {xs:'15%', sm:'0%'} }}>
+				<Container
 					sx={{
-						display:'flex',
+						width: '100%',
 						justifyContent: 'center',
-						alignItems: 'center',
+						alignContent: 'center',
+						paddingLeft: { xs: '0rem', sm: '5rem' },
 					}}
 				>
-					<Grid
-						container
-						columns={{ xs: 6, sm: 8, md: 12 }}
-						direction='row'
-						rowSpacing={4}
-					>
+					<Grid container columns={{ xs: 6, sm: 12 }} gap={10}>
 						{DataHouses.map(house => (
-							<Grid item xs={6} sm={4} key={house.id}>
+							<Grid item xs={6} sm={3} key={house.id}>
 								<Card
 									elevation={4}
 									sx={{
-										maxWidth: {xs:'none', sm:320, md: 350},
+										maxWidth: { xs: 320, sm: 420 },
 										height: '100%',
 										borderRadius: 4,
 									}}
@@ -177,19 +173,18 @@ export default function ProjectsHouses() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										
-								
 										<Link to={`/ProjectDetails/${house.id}`}>
-										<Button disabled size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} /></Button>
-											</Link>
-									
+											<Button size='small'>
+												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
+											</Button>
+										</Link>
 									</CardActions>
 								</Card>
 							</Grid>
 						))}
 					</Grid>
-				</Box>
-		
+				</Container>
+			</Box>
 		</>
 	);
 }
