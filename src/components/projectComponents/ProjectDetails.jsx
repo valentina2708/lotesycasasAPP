@@ -962,7 +962,7 @@ export default function PaginaProyectos(props) {
 								rowHeight={164}
 								gap={8}
 							>
-								{miArray.Prueba[id - 1].images.map(item => (
+								{miArray.Prueba[id - 1].images?.map(item => (
 									<ImageListItem key={item.title}>
 										<img
 											src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
