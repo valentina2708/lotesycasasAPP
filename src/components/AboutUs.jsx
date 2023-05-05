@@ -97,7 +97,7 @@ export default function AboutUs() {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
-							width: '44vh',
+							width: {xs:'48.5vh', sm:'44vh'},
 							height: '45vh',
 						}}
 					>
@@ -179,7 +179,7 @@ export default function AboutUs() {
 								// fontWeight: 'bold',
 								mt: 2,
 								textAlign: 'center',
-								paddingInline: '15rem',
+								paddingInline: {xs: '1rem', sm:'15rem'},
 							}}
 						>
 							Somos constructores con 15 años de experiencia en el Valle del
@@ -449,7 +449,7 @@ export default function AboutUs() {
 					</Grid>
 				</Grid>
 			</Parallax>
-			<Box sx={{ marginTop: '60px' }}>
+			<Box sx={{ marginTop: '60px', marginInline: {xs: '0%', sm:'20%'} }}>
 				<NewProjectInfo />
 			</Box>
 		</Grid>
