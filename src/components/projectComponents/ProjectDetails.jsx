@@ -11,8 +11,6 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Prueba } from '/src/DataProvider/Prueba.js';
-import LogoRinconDelLago from '../../assets/logoRincondelLago.jpg';
-import Mapap from './Map';
 //import Carousel from 'better-react-carousel'
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -25,13 +23,16 @@ import AOS from 'aos';
 import { Parallax } from 'react-parallax';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import SportsVolleyballIcon from '@mui/icons-material/SportsVolleyball';
+import Groups3Icon from '@mui/icons-material/Groups3';
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
+import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 export default function PaginaProyectos(props) {
 	useEffect(() => {
 		AOS.init({ offset: 200, duration: 1000 });
 	}, []);
-
-	
 
 	const { id } = useParams();
 
@@ -142,11 +143,11 @@ export default function PaginaProyectos(props) {
 										<Typography
 											variant='body1'
 											sx={{
-												align: 'justifyContent',
 												width: '100%',
 												height: '100%',
 												color: 'Black',
 												fontSize: 25,
+												textAlign: 'center',
 											}}
 										>
 											{/*  ######### Descripcion 1 ########### */}
@@ -416,7 +417,7 @@ export default function PaginaProyectos(props) {
 												height: '100%',
 												marginLeft: 'auto',
 												marginRight: 'auto',
-												textAlign: 'justify',
+												textAlign: 'center',
 
 												fontSize: 25,
 											}}
@@ -510,19 +511,14 @@ export default function PaginaProyectos(props) {
 															margin: '10px',
 														}}
 													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
+														<Box
+															sx={{
+																width: '30px',
+																display: 'flex',
+																marginRight: '20px',
+															}}
+														>
+															<StoreMallDirectoryIcon sx={{ fontSize: 40 }} />
 														</Box>
 														<Typography
 															variant='h4'
@@ -543,19 +539,14 @@ export default function PaginaProyectos(props) {
 															margin: '10px',
 														}}
 													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
+														<Box
+															sx={{
+																width: '30px',
+																display: 'flex',
+																marginRight: '20px',
+															}}
+														>
+															<Groups3Icon sx={{ fontSize: 40 }} />
 														</Box>
 														<Typography
 															variant='h4'
@@ -576,19 +567,14 @@ export default function PaginaProyectos(props) {
 															margin: '10px',
 														}}
 													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
+														<Box
+															sx={{
+																width: '30px',
+																display: 'flex',
+																marginRight: '20px',
+															}}
+														>
+															<SportsVolleyballIcon sx={{ fontSize: 40 }} />
 														</Box>
 														<Typography
 															variant='h4'
@@ -608,32 +594,7 @@ export default function PaginaProyectos(props) {
 															justifyContent: 'left',
 															margin: '10px',
 														}}
-													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
-														</Box>
-														<Typography
-															variant='h4'
-															sx={{
-																fontWeight: 'bold',
-																marginTop: 'auto',
-																marginBottom: 'auto',
-															}}
-														>
-															Zona BBQ
-														</Typography>
-													</Box>
+													></Box>
 												</Box>
 
 												<Box
@@ -653,85 +614,14 @@ export default function PaginaProyectos(props) {
 															margin: '10px',
 														}}
 													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
-														</Box>
-														<Typography
-															variant='h4'
+														<Box
 															sx={{
-																fontWeight: 'bold',
-																marginTop: 'auto',
-																marginBottom: 'auto',
+																width: '30px',
+																display: 'flex',
+																marginRight: '20px',
 															}}
 														>
-															Club House
-														</Typography>
-													</Box>
-
-													<Box
-														sx={{
-															display: 'flex',
-															justifyContent: 'left',
-															margin: '10px',
-														}}
-													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
-														</Box>
-														<Typography
-															variant='h4'
-															sx={{
-																fontWeight: 'bold',
-																marginTop: 'auto',
-																marginBottom: 'auto',
-															}}
-														>
-															Vóley playa
-														</Typography>
-													</Box>
-
-													<Box
-														sx={{
-															display: 'flex',
-															justifyContent: 'left',
-															margin: '10px',
-														}}
-													>
-														<Box>
-															<Box
-																sx={{
-																	width: '30px',
-																	display: 'flex',
-																	marginRight: '20px',
-																}}
-															>
-																<img
-																	src={miArray.Prueba[id - 1].mini}
-																	width={'100%'}
-																/>
-															</Box>
+															<OutdoorGrillIcon sx={{ fontSize: 40 }} />
 														</Box>
 														<Typography
 															variant='h4'
@@ -742,6 +632,33 @@ export default function PaginaProyectos(props) {
 															}}
 														>
 															Zona BBQ
+														</Typography>
+													</Box>
+													<Box
+														sx={{
+															display: 'flex',
+															justifyContent: 'left',
+															margin: '10px',
+														}}
+													>
+														<Box
+															sx={{
+																width: '30px',
+																display: 'flex',
+																marginRight: '20px',
+															}}
+														>
+															<Diversity3Icon sx={{ fontSize: 40 }} />
+														</Box>
+														<Typography
+															variant='h4'
+															sx={{
+																fontWeight: 'bold',
+																marginTop: 'auto',
+																marginBottom: 'auto',
+															}}
+														>
+															Zona Sociales
 														</Typography>
 													</Box>
 												</Box>
@@ -790,7 +707,7 @@ export default function PaginaProyectos(props) {
 									</Grid>
 								</Card>
 							</Grid>
-							//{' '}
+						
 						</Grid>
 					) : (
 						////////////////////////////////////////////
@@ -995,8 +912,10 @@ export default function PaginaProyectos(props) {
 							data-aos-delay='300'
 							data-aos-offset='0'
 							sx={{
-								marginTop: '10vh',
-								marginBottom: '10vh',
+								justifyContent: 'center',
+								alignItems: 'center',
+								width: '70%',
+								marginInline: '5rem',
 							}}
 						>
 							{/*   <Carousel cols={2} rows={2} gap={10} loop>
@@ -1038,9 +957,10 @@ export default function PaginaProyectos(props) {
 
             </Carousel> */}
 							<ImageList
-								sx={{ width: 500, height: 450 }}
+								sx={{ width: '90vw', height: '55vw' }}
 								cols={3}
 								rowHeight={164}
+								gap={8}
 							>
 								{miArray.Prueba[id - 1].images.map(item => (
 									<ImageListItem key={item.title}>
