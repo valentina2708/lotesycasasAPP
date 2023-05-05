@@ -31,8 +31,6 @@ export default function PaginaProyectos(props) {
 		AOS.init({ offset: 200, duration: 1000 });
 	}, []);
 
-	
-
 	const { id } = useParams();
 
 	const { isLoaded } = useLoadScript({
@@ -1042,7 +1040,7 @@ export default function PaginaProyectos(props) {
 								cols={3}
 								rowHeight={164}
 							>
-								{miArray.Prueba[id - 1].images.map(item => (
+								{miArray.Prueba[id - 1].images?.map(item => (
 									<ImageListItem key={item.title}>
 										<img
 											src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
