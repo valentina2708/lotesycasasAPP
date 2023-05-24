@@ -72,7 +72,7 @@ export default function MediaCard() {
 					// columns={{xs: 6, sm: 12}}
 					rowSpacing={6}
 				>
-					{DataProjects.map(project => (
+					{DataProjects.slice(0, 5)?.map(project => (
 						<Grid item xs={12} key={project.id}>
 							<motion.div
 								// className='home'
@@ -265,7 +265,6 @@ export default function MediaCard() {
 														</Link>
 													)}
 												</Stack>
-
 												<Modal
 													estado={estadoModal1}
 													cambiarEstado={cambiarEstadoModal1}
@@ -274,7 +273,7 @@ export default function MediaCard() {
 													padding={'0px'}
 												>
 													<Contenido>
-														<img src='/src/assets/pisina1.png' alt='pisina' />
+														<img src='/src/assets/pisina1.png' alt='piscina' />
 													</Contenido>
 												</Modal>
 												<Modal

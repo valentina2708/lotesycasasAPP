@@ -97,7 +97,7 @@ export default function AboutUs() {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
-							width: '44vh',
+							width: {xs:'48.5vh', sm:'44vh'},
 							height: '45vh',
 						}}
 					>
@@ -469,9 +469,9 @@ export default function AboutUs() {
 					</Grid>
 				</Grid>
 			</Parallax>
-			
-			<NewProjectInfo />
-		
+			<Box sx={{ marginTop: '60px' }}>
+				<NewProjectInfo />
+			</Box>
 		</Grid>
 		
 	);

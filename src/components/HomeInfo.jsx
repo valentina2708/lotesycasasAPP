@@ -14,6 +14,8 @@ import { useScroll } from './useScroll';
 import { motion } from 'framer-motion';
 import { mensajebox } from '../animation';
 import PointOfSaleRoundedIcon from '@mui/icons-material/PointOfSaleRounded';
+import vendeConNosotros from '/src/assets/vendeconNosotros.jpg';
+import { display } from 'styled-system';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -40,27 +42,28 @@ export default function BasicStack() {
 						alignItems: 'center',
 						bgcolor: Colors.info,
 						position: 'relative',
-						left: '33%',
+						left: '23%',
 						width: {xs:'75%', sm:'50%'},
 						height: {xs:'30rem'},
-						top: {xs:'42rem', sm:'15rem'}
+						top: {xs:'42rem', sm:'15rem'},
 					}}
 				>
 
 				</Stack>
 				<Card
 					sx={{
-						width: 820,
+						width:{xs: 350, sm:820},
 						height: 450,
 						position: 'relative',
-						left: '15%',
+						left: {xs:'2%', sm:'15%'},
 						bottom: '110px',
 					}}
 				>
 					<CardMedia
 						component='img'
+						lazyload
 						sx={{
-							width: 820,
+							width: {xs: 350, sm:820},
 							height: 450,
 							cursor: 'pointer',
 							'&:hover': {
@@ -68,7 +71,7 @@ export default function BasicStack() {
 								opacity: [0.9],
 							},
 						}}
-						image='../../src/assets/vendeconNosotros.jpg'
+						image={vendeConNosotros}
 						title='visitanos'
 					/>
 				</Card>
@@ -76,7 +79,7 @@ export default function BasicStack() {
 					elevation={4}
 					sx={{
 						width: { xs: '350px', sm: '460px' },
-						height: { xs: '450px', sm: '370px' },
+						height: { xs: '510px', sm: '420px'},
 						bgcolor: Colors.white,
 						position: 'relative',
 						left: { xs: '0%', sm: '25%', md: '47%' },
