@@ -85,7 +85,7 @@ export default function AboutUs() {
 					style={{
 						width: '100%',
 						height: '100%',
-						opacity: [10],
+						//opacity: [10],
 					}}
 					bgImage={Nosotros1}
 					strength={100}
@@ -158,6 +158,7 @@ export default function AboutUs() {
 							marginTop: '40px',
 							marginBottom: '40px',
 							padding: '10px',
+							
 						}}
 					>
 						<Typography
@@ -168,6 +169,7 @@ export default function AboutUs() {
 								mt: 2,
 								textAlign: 'center',
 								padding: '10px',
+								
 							}}
 						>
 							Casas & Lotes
@@ -176,10 +178,11 @@ export default function AboutUs() {
 							variant='body1'
 							sx={{
 								color: 'black',
-								// fontWeight: 'bold',
+								fontWeight: 'bold',
 								mt: 2,
 								textAlign: 'center',
-								paddingInline: '15rem',
+							
+								
 							}}
 						>
 							Somos constructores con 15 años de experiencia en el Valle del
@@ -194,7 +197,7 @@ export default function AboutUs() {
 			<br />
 			<br />
 
-			<Parallax bgImage={Nosotros2} strength={600}>
+			<Parallax bgImage={Nosotros2} strength={100}>
 				<Grid container sx={{}}>
 					<Grid
 						item
@@ -220,7 +223,7 @@ export default function AboutUs() {
 								margin: 'auto',
 							}}
 						>
-							<Grid
+							<Grid data-aos='fade-right'
 								item
 								xs={12}
 								sm={12}
@@ -231,7 +234,7 @@ export default function AboutUs() {
 									height: '100%',
 									display: 'flex',
 									padding: '20px',
-
+									
 									alignContent: 'center',
 									justifyContent: 'center',
 								}}
@@ -247,21 +250,28 @@ export default function AboutUs() {
 										height: '100%',
 										padding: '10px',
 										minHeight: '65vh',
+										//border:3
 									}}
 								>
 									<Box
-										data-aos='fade-right'
+										
 										sx={{
-											width: '300px',
+											display:'flex',
+											width: '90%',
 											height: '200px',
 											marginLeft: 'auto',
 											marginRight: 'auto',
-											marginBottom: '10px',
+											//border:3,
+											alignItems: 'center',
+											justifyContent: 'center',
 										}}
 									>
-										<img width={'100%'} height={'100%'} src={Mision} />
+										<img width={'70%'} height={'70%'} 
+										
+										src={Mision} />
 									</Box>
-									<Box data-aos='fade-right'>
+									<Box //data-aos='fade-right'
+									>
 										<Box>
 											<Typography
 												variant='h3'
@@ -292,7 +302,7 @@ export default function AboutUs() {
 								</Box>
 							</Grid>
 
-							<Grid
+							<Grid data-aos='fade-up'
 								item
 								xs={12}
 								sm={12}
@@ -319,21 +329,27 @@ export default function AboutUs() {
 										height: '100%',
 										padding: '10px',
 										minHeight: '65vh',
+										//border:3
 									}}
 								>
 									<Box
-										data-aos='fade-up'
+										
 										sx={{
-											width: '300px',
+											display:'flex',
+											width: '90%',
 											height: '200px',
 											marginLeft: 'auto',
 											marginRight: 'auto',
-											marginBottom: '10px',
+											//border:3,
+											alignItems: 'center',
+											justifyContent: 'center',
+
 										}}
 									>
-										<img width={'90%'} height={'90%'} src={Vision} />
+										<img width={'70%'} height={'70%'} src={Vision} />
 									</Box>
-									<Box data-aos='fade-up'>
+									<Box //data-aos='fade-up'
+									>
 										<Box>
 											<Typography
 												variant='h3'
@@ -366,7 +382,7 @@ export default function AboutUs() {
 								</Box>
 							</Grid>
 
-							<Grid
+							<Grid data-aos='fade-left'
 								item
 								xs={12}
 								sm={12}
@@ -384,7 +400,6 @@ export default function AboutUs() {
 							>
 								<Box
 									sx={{
-										//border:2,
 										textAlign: 'center',
 										backgroundColor: '#f3f6f9',
 										opacity: [0.7],
@@ -394,21 +409,26 @@ export default function AboutUs() {
 										height: '100%',
 										padding: '10px',
 										minHeight: '65vh',
+										//border:3
 									}}
 								>
 									<Box
-										data-aos='fade-left'
+										
 										sx={{
-											width: '300px',
+											display:'flex',
+											width: '90%',
 											height: '200px',
 											marginLeft: 'auto',
 											marginRight: 'auto',
-											marginBottom: '10px',
+											//border:3,
+											alignItems: 'center',
+											justifyContent: 'center',
 										}}
 									>
-										<img width={'100%'} height={'100%'} src={Filosofia} />
+										<img width={'70%'} height={'70%'} src={Filosofia} />
 									</Box>
-									<Box data-aos='fade-left'>
+									<Box //data-aos='fade-left'
+									>
 										<Box>
 											<Typography
 												variant='h3'
@@ -449,9 +469,10 @@ export default function AboutUs() {
 					</Grid>
 				</Grid>
 			</Parallax>
-			<Box sx={{ marginTop: '60px' }}>
-				<NewProjectInfo />
-			</Box>
+			
+			<NewProjectInfo />
+		
 		</Grid>
+		
 	);
 }
