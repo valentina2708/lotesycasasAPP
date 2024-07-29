@@ -33,7 +33,7 @@ export default function BasicStack() {
 				transition={{
 					delay: 0.03,
 					type: 'tween',
-					duration: 0.4,
+					duration: 0.5,
 				}}
 			>
 				<Stack
