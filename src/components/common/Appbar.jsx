@@ -14,8 +14,9 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material/';
 import { Colors } from '../../config/themeConfig';
-import logo from '../../assets/logoColor.jpg';
+import logo from '../../assets/logo_terranova.png';
 import { Link } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
 
 const Appbar = () => {
 	const StyledToolbar = styled(Toolbar)({
@@ -28,13 +29,11 @@ const Appbar = () => {
 	});
 	const MenuBox = styled(Box)({
 		display: 'flex',
-		gap: 30,
+		gap: 20,
 	});
 	const SearchBox = styled(Box)({
 		display: 'flex',
 		gap: 5,
-		
-	
 	});
 	const MenuItems = [
 		{ Name: 'Inicio', Link: '/' },
@@ -47,35 +46,32 @@ const Appbar = () => {
 	return (
 		<AppBar sx={{ background: Colors.body_bg }} elevation={0}>
 			<StyledToolbar>
-				<IconBox sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-					<img src={logo} alt='logo' style={{ width: 150, height: 95 }} />
-					<Typography
-						variant='h4'
-						component='a'
-						href='/'
+				<IconBox sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
+					<IconButton
 						sx={{
-							mr: 2,
-							display: { xs: 'none', md: 'flex' },
-							alignItems: 'center',
-							fontWeight: 800,
-							letterSpacing: '.1rem',
-							textDecoration: 'none',
-							color: Colors.info2,
+							padding: 0,
+							width: 80,
+							height: 80,
+						    ml:2
 						}}
 					>
-						Casas & Lotes
-					</Typography>
+						<img
+							src={logo}
+							alt='logo'
+							style={{ width: '200%', height: '210%' }}
+						/>
+					</IconButton>
 				</IconBox>
 
 				<MenuBox sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
 					{MenuItems.map(item => (
-						<Link to={item.Link} key={item.Name} className="nav-link">
+						<Link to={item.Link} key={item.Name} className='nav-link'>
 							<Button
 								variant='text'
 								sx={{
 									color: Colors.info2,
 									borderRadius: 2,
-									padding: '10px',
+									padding: '6px 12px',
 
 									fontWeight: 600,
 
@@ -93,8 +89,12 @@ const Appbar = () => {
 								}}
 							>
 								<Typography
+								
 									sx={{
 										cursor: 'pointer',
+										fontWeight:'500', 
+										fontSize:'16px',
+										textTransform: 'capitalize',
 									}}
 								>
 									{item.Name}
@@ -103,14 +103,13 @@ const Appbar = () => {
 						</Link>
 					))}
 				</MenuBox>
-				
 
-				<SearchBox>
-					<InputBase
+			
+					{/* <InputBase
 						placeholder='Buscar'
 						icon={<SearchIcon />}
 						sx={{ color: Colors.info2 }}
-					/>
+					/> */}
 
 					<MenuIcon
 						sx={{
@@ -119,7 +118,7 @@ const Appbar = () => {
 						}}
 						onClick={() => SetOpen(!open)}
 					/>
-				</SearchBox>
+			
 			</StyledToolbar>
 			<Menu
 				id='demo-positioned-menu'
@@ -136,16 +135,16 @@ const Appbar = () => {
 			>
 				<Box sx={{ width: 350, height: '30vh' }}>
 					{MenuItems.map(item => (
-						<Link to={item.Link} key={item.Name} className="nav-link">
-						<MenuItem
-							key={item.Name}
-							sx={{
-								cursor: 'pointer',
-								fontSize: '14px',
-							}}
-						>
-							{item.Name}
-						</MenuItem>
+						<Link to={item.Link} key={item.Name} className='nav-link'>
+							<MenuItem
+								key={item.Name}
+								sx={{
+									cursor: 'pointer',
+									fontSize: '14px',
+								}}
+							>
+								{item.Name}
+							</MenuItem>
 						</Link>
 					))}
 				</Box>

@@ -77,19 +77,7 @@ export default function BasicStack() {
 						// columnSpacing={{ xs: 12, sm: 6, md: 4 }}
 					>
 						<Grid item xs={6}>
-							<ReactPlayer
-								// borderradius='3'
-								position='relative'
-								bottom='5px'
-								url='https://youtu.be/N3GwlQdjhjU'
-								className='react-player'
-								// playing
-								controls
-								loop
-								muted
-								width='100%'
-								height='100%'
-							/>
+						
 						</Grid>
 						<Grid item xs={6}>
 							<Stack

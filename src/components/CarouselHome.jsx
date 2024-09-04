@@ -2,13 +2,15 @@ import { Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import Box from '@mui/material/Box';
 import HeroSlider, { Slide, ButtonsNav, Overlay, Nav } from 'hero-slider';
-import home1 from '../assets/casasylotes3.jpeg';
-import home2 from '../assets/rincondelLago.jpg';
-import home3 from '../assets/casasylotes6.jpeg';
-import home4 from '../assets/casasylotes1.jpeg';
+import home1 from '../assets/home/home.jpg';
+import home2 from '../assets/home/home2.jpeg';
+import home3 from '../assets/home/home3.jpeg';
+import home4 from '../assets/home/home4.jpeg';
 import { motion } from 'framer-motion';
 import { homeInfoAnimation } from '../animation';
 import { Colors } from '/src/config/themeConfig.js';
+import { Opacity } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 
 export default function BlendModeSlider() {
 	return (
@@ -37,9 +39,9 @@ export default function BlendModeSlider() {
 						flexFlow: 'column',
 						alignItems: 'center',
 						justifyContent: 'center',
-						// width: '100%',
+						//width: '50%',
 						height: '100%',
-						margin: '0 auto',
+						m: '0 auto',
 					}}
 				>
 					<motion.div
@@ -49,52 +51,77 @@ export default function BlendModeSlider() {
 					>
 						<Box
 							sx={{
-								backgroundColor: Colors.body_bg,
 								textAlign: 'center',
 								border: 'none',
 								p: '2rem',
-								opacity: [0.8, 0.7, 0.8],
 							}}
 						>
 							<Typography
-								variant='h3'
-								sx={{ fontWeight: 'bold' }}
+								variant='h2'
+								sx={{ fontWeight: '700', color: Colors.info2 }}
 							>
-								Constructura Inmobiliaria-Bienes Raices
+								TERRANOVA
 							</Typography>
-							<Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-								Realizamos grandes proyectos en Colombia, con una alta
-								valorización en el mercado
+							<Typography variant='h6' sx={{ fontWeight: '400', mt: '0.5rem' }}>
+								Constructora Inmobiliaria de Casas y Lotes
 							</Typography>
 						</Box>
+						<Stack direction='row' spacing={3} justifyContent='center' margin={3}>
+							<Button
+								variant='contained'
+								size='large'
+								sx={{
+									borderRadius: '20px',
+									backgroundColor: Colors.info2,
+									':hover': {
+										opacity: [0.8, 0.6, 0.8],
+										backgroundColor: Colors.info2,
+									},
+								}}
+							>
+								Servicios
+							</Button>
+							<Button
+								variant='contained'
+								size='large'
+								sx={{
+									borderRadius: '20px',
+									backgroundColor: Colors.secondary,
+									color: 'black',
+									':hover': {
+										opacity: [0.8, 0.6, 0.8],
+
+										backgroundColor: Colors.secondary,
+									},
+								}}
+							>
+								Ver Más
+							</Button>
+						</Stack>
 					</motion.div>
 				</Stack>
 			</Overlay>
 			<Slide
 				background={{
 					backgroundImageSrc: home1,
-					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
 				background={{
 					backgroundImageSrc: home2,
-					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
 				background={{
 					backgroundImageSrc: home3,
-					backgroundAnimation: 'zoom',
 				}}
 			/>
 
 			<Slide
 				background={{
 					backgroundImageSrc: home4,
-					backgroundAnimation: 'zoom',
 				}}
 			/>
 

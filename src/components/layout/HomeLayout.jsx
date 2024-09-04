@@ -5,6 +5,7 @@ import MainProjects from '../../components/ProjectsInfo/MainProjects';
 import NewProjectInfo from '../../components/NewProjectInfo';
 import HomeInfo from '../..//components/HomeInfo';
 import InfoPaymentMethods from '../../components/InfoPaymentMethods';
+
 import { motion } from 'framer-motion';
 
 export default function HomeLayout() {
@@ -17,6 +18,7 @@ export default function HomeLayout() {
 			<MainProjects />
 			<InfoPaymentMethods />
 			<HomeInfo />
+
 		</motion.div>
 	);
 }

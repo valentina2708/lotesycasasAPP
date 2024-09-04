@@ -12,7 +12,9 @@ export const Colors = {
 	light: '#aaa',
 	muted: '#abafb3',
 	border: '#DDDFE1',
+	'fondo':'#020202',
 	'@mui/material': '#2F3D4A',
+	
 	
 	/// ////////////
 	// Grays
