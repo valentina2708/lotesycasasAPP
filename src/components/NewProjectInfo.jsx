@@ -17,9 +17,12 @@ export default function BasicStack() {
 			ref={element}
 			sx={{
 				p: '5% 0',
+				
+				width: '100%',
 			}}
 		>
 			<motion.div
+				
 				className='home'
 				variants={servicesAnimations}
 				animate={controls}
@@ -30,28 +33,34 @@ export default function BasicStack() {
 				}}
 			>
 				{/* elemento 1 */}
-				<Grid container rowSpacing={3} columnSpacing={{ xs: 12, sm: 6, md: 4 }}>
-					<Grid item xs={6}>
+				<Grid containerrowSpacing={3} columnSpacing={{ xs: 12, sm: 6, md: 4 }}
+				>
+					<Grid item 
+					>
 						<Stack
 							sx={{
 								p: '60px 0px',
 								backgroundColor: Colors.info2,
 								position: 'relative',
 								top: 290,
-								left: '20%',
-								height: '30%',
+								//left: '90%',
+								right: '0%',
+								//border:2
+								width:'100%'
 							}}
 						></Stack>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid >
 						<Stack
 							sx={{
 								p: '60px 0px',
-								height: '60%',
+								
 								backgroundColor: Colors.info2,
 								position: 'relative',
 								top: 50,
-								right: '20%',
+								//right: '20%',
+								//left: '90%',
+								width:'100%'
 							}}
 						></Stack>
 					</Grid>
@@ -67,10 +76,12 @@ export default function BasicStack() {
 						left: {xs: '1rem', sm: '15%', md:'15%'},
 						borderRadius: 3,
 						justifyContent: 'center',
-						alignItems: 'center'
+						alignItems: 'center',
+						
 					}}
 				>
 					<Grid
+						
 						container
 						rowSpacing={1}
 						columns={{ xs: 6, md: 12 }}

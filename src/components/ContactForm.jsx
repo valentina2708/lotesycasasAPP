@@ -585,7 +585,7 @@ export default function ContactForm() {
 														paddingBottom: '5rem',
 													}}
 												>
-													info@casaylotes.co
+													info@casaylotes.com.co
 												</Typography>
 											</Box>
 										</Grid>

@@ -3,7 +3,7 @@ import AboutUs from '../AboutUs'
 
 export default function AboutLayout() {
   return (
-    <Box sx={{marginTop:'0rem'}}>
+    <Box>
         <AboutUs/>
     </Box>
   )
