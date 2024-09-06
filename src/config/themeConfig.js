@@ -12,7 +12,7 @@ export const Colors = {
 	light: '#aaa',
 	muted: '#abafb3',
 	border: '#DDDFE1',
-	'fondo':'#2F3645',
+	'fondo':'rgb(37,36,36)',
 	'@mui/material': '#2F3D4A',
 	
 	

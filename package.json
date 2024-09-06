@@ -40,6 +40,7 @@
     "react-simple-image-slider": "^2.4.1",
     "react-viewer": "^3.2.2",
     "styled-components": "5.3.10",
+    "swiper": "^11.1.12",
     "theme-ui": "^0.15.5",
     "title": "^3.5.3",
     "tss-react": "^4.8.2",

@@ -10,7 +10,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import StarIcon from '@mui/icons-material/Star';
 import { cloneElement } from 'react';
-import fondo from '/src/assets/fondo.jpeg'
+import fondo from '/src/assets/fondo.jpeg';
 
 export default function BasicStack() {
 	const [element, controls] = useScroll();
@@ -25,12 +25,12 @@ export default function BasicStack() {
 				justifyContent: 'center',
 				alignItems: 'center',
 				//backgroundColor: Colors.primary,
-        opacity: [0.8, 0.6, 0.8],
-       
-				padding: '5% 0',
+				//opacity: [0.8, 0.6, 0.8],
+
+				padding: '3% 0',
 			}}
 		>
-			<motion.div
+			{/* <motion.div
 				className='milestone'
 				variants={mensajebox}
 				animate={controls}
@@ -39,11 +39,11 @@ export default function BasicStack() {
 					type: 'tween',
 					duration: 0.8,
 				}}
-			>
+			> */}
 				<Box
 					sx={{
-						mt: 1,
-						px: 2,
+						mt: 5,
+						
 					}}
 				>
 					<Grid
@@ -75,16 +75,16 @@ export default function BasicStack() {
 										alignItems: 'center',
 										textAlign: 'center',
 										gap: 2,
-										padding: 3,
-										backgroundColor: Colors.body_bg,
+										padding: 2,
+										backgroundColor: Colors.fondo,
 										borderRadius: 2,
-										boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+										//boxShadow: '0 4px 4px rgba(0, 0, 0, 0)',
 										transition: 'transform 0.3s ease',
 
 										'&:hover': {
-											transform: 'translateY(-10px)',
+											transform: 'translateY(-15px)',
 										},
-										minHeight: 180,
+										minHeight: 200,
 										width: '100%',
 										maxWidth: 200,
 									}}
@@ -95,7 +95,7 @@ export default function BasicStack() {
 									<Typography
 										variant='h6'
 										sx={{
-											color: Colors.fondo,
+											color: Colors.body_bg,
 											fontWeight: '500',
 										}}
 									>
@@ -106,7 +106,14 @@ export default function BasicStack() {
 						))}
 					</Grid>
 				</Box>
-			</motion.div>
+			{/* </motion.div> */}
 		</Box>
 	);
 }
+
+
+
+
+
+
+
