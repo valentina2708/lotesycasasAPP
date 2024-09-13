@@ -1,135 +1,201 @@
-// import { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Colors } from '../config/themeConfig';
-import {
-	Button,
-	Card,
-	CardMedia,
-	CardContent,
-	Avatar,
-	Typography,
-} from '@mui/material';
+import { Typography, Paper } from '@mui/material';
 import { useScroll } from './useScroll';
 import { motion } from 'framer-motion';
 import { mensajebox } from '../animation';
-import PointOfSaleRoundedIcon from '@mui/icons-material/PointOfSaleRounded';
+import {
+	ArrowForwardIos as ArrowForwardIosIcon,
+	Calculate as CalculateIcon,
+	Paid as PaidIcon,
+	Star as StarIcon,
+} from '@mui/icons-material';
 import vendeConNosotros from '/src/assets/vendeconNosotros.jpg';
-import { display } from 'styled-system';
+import Grid from '@mui/material/Unstable_Grid2';
+import { styled } from '@mui/material/styles';
+import { makeStyles } from 'tss-react/mui';
+
+const Item = styled(Paper)(({ theme }) => ({
+	padding: theme.spacing(2),
+	textAlign: 'center',
+	color: theme.palette.text.secondary,
+	height: '100%',
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	alignItems: 'center',
+	boxShadow: 'none',
+	borderRadius: 0,
+}));
+
+const backgroundColors = {
+	darkOrange: Colors.info3,
+	lightOrange: Colors.info4,
+};
+
+const useStyles = makeStyles()(theme => ({
+	InfoImage: {
+		backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${vendeConNosotros})`,
+		height: '270px',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		backgroundSize: 'cover',
+		position: 'relative',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		color: '#fff',
+		fontSize: '2rem',
+		opacity: 0.6,
+		[theme.breakpoints.down('sm')]: {
+			height: '150px',
+			fontSize: '1.5rem',
+		},
+	},
+}));
 
 export default function BasicStack() {
+	const { classes } = useStyles();
 	const [element, controls] = useScroll();
+
 	return (
 		<Box
 			ref={element}
 			sx={{
-				p: '10px 0px ',
+				p: '10px 0px',
 			}}
 		>
-			<motion.div
-				className='milestone'
-				variants={mensajebox}
-				animate={controls}
-				transition={{
-					delay: 0.03,
-					type: 'tween',
-					duration: 0.5,
+			<Stack
+				sx={{
+					width: '100%',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					height: { xs: 'auto', sm: '10vh' },
+					textAlign: 'center',
+					p: { xs: 2, sm: 7 },
+					mb: '0',
+					mt: '2rem',
 				}}
 			>
-				<Stack
+				<Typography
+					variant='h4'
 					sx={{
-						justifyContent: 'center',
-						alignItems: 'center',
-						bgcolor: Colors.info,
-						position: 'relative',
-						left: '23%',
-						width: {xs:'75%', sm:'50%'},
-						height: {xs:'30rem'},
-						top: {xs:'42rem', sm:'15rem'},
+						color: Colors.fondo,
+						fontWeight: 500,
+						textAlign: 'center',
+						fontSize: { xs: '1.5rem', sm: '2rem' },
 					}}
 				>
+					Cuenta con Nosotros
+				</Typography>
+				<Typography
+					variant='h6'
+					sx={{
+						color: Colors.fondo,
+						fontWeight: 300,
+						mt: 2,
+						textAlign: 'center',
+					}}
+				>
+					En Terranova Inmobiliaria, nos especializamos en conectar a los
+					clientes con su oasis urbano perfecto, experimente la emoción de la
+					vida urbana con facilidad y un servicio excepcional.
+				</Typography>
+			</Stack>
 
-				</Stack>
-				<Card
-					sx={{
-						width:{xs: 350, sm:820},
-						height: 450,
-						position: 'relative',
-						left: {xs:'2%', sm:'15%'},
-						bottom: '110px',
-					}}
-				>
-					<CardMedia
-						component='img'
-						lazyload
-						sx={{
-							width: {xs: 350, sm:820},
-							height: 450,
-							cursor: 'pointer',
-							'&:hover': {
-								backgroundColor: Colors.muted,
-								opacity: [0.9],
-							},
-						}}
-						image={vendeConNosotros}
-						title='visitanos'
-					/>
-				</Card>
-				<Card
-					elevation={4}
-					sx={{
-						width: { xs: '350px', sm: '460px' },
-						height: { xs: '510px', sm: '420px'},
-						bgcolor: Colors.white,
-						position: 'relative',
-						left: { xs: '0%', sm: '25%', md: '47%' },
-						bottom: '300px',
-						p: '10px 0',
-					}}
-				>
-					<CardContent>
-						<Typography
-							variant='h4'
+			<Box sx={{ width: '100%', mt: '3rem' }}>
+				<Grid container sx={{ height: '68vh' }}>
+					<Grid item xs={12} sm={6} md={4}>
+						<Item
 							sx={{
-								color: Colors.info2,
-								fontWeight: 500,
-								mt: 2,
-								textAlign: 'center',
+								backgroundColor: backgroundColors.darkOrange,
+								color: Colors.body_bg,
 							}}
 						>
-							Vende con Nosotros
-						</Typography>
-						<Avatar
+							<CalculateIcon sx={{ fontSize: '3rem' }} />
+							<Typography variant='h4' sx={{ fontWeight: 500, mt: 2 }}>
+								Calcula tu Cuota
+							</Typography>
+							<Stack
+								direction='row'
+								spacing={1}
+								alignItems='center'
+								sx={{ mt: '3rem', cursor: 'pointer' }}
+								onClick={() => (window.location.href = '/calcula-tu-cuota')}
+							>
+								<Typography variant='body1' sx={{ fontWeight: 500,  }}>
+									Ver Más
+								</Typography>
+								<ArrowForwardIosIcon />
+							</Stack>
+						</Item>
+					</Grid>
+					<Grid item xs={12} sm={6} md={4}>
+						<Item
 							sx={{
-								width: 75,
-								height: 70,
-								bgcolor: Colors.info3,
-								position: 'relative',
-								left: '40%',
-								mt: '25px',
+								backgroundColor: backgroundColors.lightOrange,
+								color: Colors.body_bg,
 							}}
 						>
-							<PointOfSaleRoundedIcon sx={{ fontSize: 40 }} />
-						</Avatar>
-						<Typography sx={{ mt: '20px' }} variant='h5' textAlign='center'>
-							Estamos dispuestos a brindarte toda la informacion. Comunícate hoy
-							con un experto!
-						</Typography>
-					</CardContent>
+							<PaidIcon sx={{ fontSize: '3rem' }} />
+							<Typography variant='h4' sx={{ fontWeight: 500, mt: 2 }}>
+								Asesoramiento
+							</Typography>
+							<Stack
+								direction='row'
+								spacing={1}
+								alignItems='center'
+								sx={{ mt: '3rem', cursor: 'pointer' }}
+								onClick={() => (window.location.href = '/calcula-tu-cuota')}
+							>
+								<Typography variant='body1' sx={{ fontWeight: 500 }}>
+									Ver Más
+								</Typography>
+								<ArrowForwardIosIcon />
+							</Stack>
+						</Item>
+					</Grid>
+					<Grid item xs={12} sm={12} md={4}>
+						<Item
+							sx={{
+								backgroundColor: backgroundColors.darkOrange,
+								color: Colors.body_bg,
+							}}
+						>
+							<StarIcon sx={{ fontSize: '3rem' }} />
+							<Typography variant='h4' sx={{ fontWeight: 500, mt: 2 }}>
+								Valoración de propiedades
+							</Typography>
+							<Stack
+								direction='row'
+								spacing={1}
+								alignItems='center'
+								sx={{ mt: '3rem', cursor: 'pointer' }}
+								onClick={() => (window.location.href = '/calcula-tu-cuota')}
+							>
+								<Typography variant='body1' sx={{ fontWeight: 500 }}>
+									Ver Más
+								</Typography>
+								<ArrowForwardIosIcon />
+							</Stack>
+						</Item>
+					</Grid>
+				</Grid>
+			</Box>
 
-					<Button
-						size='large'
-						variant='contained'
-						sx={{
-							left: '35%',
-							mt: '20px',
-							backgroundColor: 'Colors.info',
-						}}
-					>
-						Escríbenos
-					</Button>
-				</Card>
-			</motion.div>
+			<Box
+				ref={element}
+				className={classes.InfoImage}
+				sx={{
+					justifyContent: 'center',
+					alignItems: 'center',
+					p: '0px',
+					mt: '-1px',
+				}}
+			/>
 		</Box>
 	);
 }

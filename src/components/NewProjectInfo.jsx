@@ -1,15 +1,24 @@
 import Box from '@mui/material/Box';
-import { Stack, CardMedia, Card, Typography, Button, List, ListItem,ListItemText, ListItemIcon } from '@mui/material';
+import {
+	Stack,
+	CardMedia,
+	Card,
+	Typography,
+	Button,
+	List,
+	ListItem,
+	ListItemText,
+	ListItemIcon,
+} from '@mui/material';
 import { Colors } from '../config/themeConfig.js';
-//import logo from '../assets/logoRincondelLago.jpg';
 import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
-import nosotrosInicio from '/src/assets/fondo.jpeg'
+import nosotrosInicio from '/src/assets/fondo.jpeg';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
-import BuildIcon from '@mui/icons-material/Build'; // Importa algunos iconos para los servicios
+import BuildIcon from '@mui/icons-material/Build'; 
 import HomeIcon from '@mui/icons-material/Home';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -20,7 +29,7 @@ export default function BasicStack() {
 		<Box
 			ref={element}
 			sx={{
-				p: '3% 0',
+				p: '2% 0',
 				width: '100%',
 			}}
 		>
@@ -40,7 +49,7 @@ export default function BasicStack() {
 						<Stack
 							sx={{
 								p: '60px 0px',
-								backgroundColor: Colors.info2,
+								backgroundColor: Colors.info3,
 								position: 'relative',
 								top: 290,
 								//left: '90%',
@@ -55,7 +64,7 @@ export default function BasicStack() {
 							sx={{
 								p: '60px 0px',
 
-								backgroundColor: Colors.info2,
+								backgroundColor: Colors.info3,
 								position: 'relative',
 								top: 50,
 								//right: '20%',
@@ -86,23 +95,21 @@ export default function BasicStack() {
 						// columnSpacing={{ xs: 12, sm: 6, md: 4 }}
 					>
 						<Grid item xs={6}>
-					
-					<CardMedia
-						component='img'
-						lazyload
-						sx={{
-							width: {xs: 350, sm:450},
-							height: 450,
-							cursor: 'pointer',
-							'&:hover': {
-								backgroundColor: Colors.muted,
-								opacity: [0.9],
-							},
-						}}
-						image={nosotrosInicio}
-						title='nosotros'
-					/>
-				
+							<CardMedia
+								component='img'
+								lazyload
+								sx={{
+									width: { xs: 360, sm: 480 },
+									height: 450,
+									cursor: 'pointer',
+									'&:hover': {
+										backgroundColor: Colors.muted,
+										opacity: [0.9],
+									},
+								}}
+								image={nosotrosInicio}
+								title='nosotros'
+							/>
 						</Grid>
 						<Grid item xs={6}>
 							<Stack
@@ -123,39 +130,39 @@ export default function BasicStack() {
 								>
 									Que Hacemos
 								</Typography>
-								<Typography variant='body1' sx={{ mt: 3 }}>
-									Ofrecemos una variedad de Servicios segun tus necesidades
+								<Typography variant='body1' sx={{ mt: 3, textAlign:'center' }}>
+									Ofrecemos una variedad de servicios según tus necesidades
 								</Typography>
-								
+
 								<List sx={{ mt: 3, width: '100%' }}>
-              <ListItem>
-                <ListItemIcon>
-                  <BuildIcon sx={{ color: Colors.info3 }} />
-                </ListItemIcon>
-                <ListItemText primary="Construcción y Remodelación" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <HomeIcon sx={{ color: Colors.info3 }} />
-                </ListItemIcon>
-                <ListItemText primary="Gestión de Propiedades" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <DesignServicesIcon sx={{ color: Colors.info3 }} />
-                </ListItemIcon>
-                <ListItemText primary="Diseño de Interiores" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <EngineeringIcon sx={{ color: Colors.info3 }} />
-                </ListItemIcon>
-                <ListItemText primary="Consultoría de Proyectos" />
-              </ListItem>
-            </List>
-								<Link to={`/ProjectDetails/${1}`} className='nav-link'>
+									<ListItem>
+										<ListItemIcon>
+											<BuildIcon sx={{ color: Colors.info3 }} />
+										</ListItemIcon>
+										<ListItemText primary='Construcción y Remodelación' />
+									</ListItem>
+									<ListItem>
+										<ListItemIcon>
+											<HomeIcon sx={{ color: Colors.info3 }} />
+										</ListItemIcon>
+										<ListItemText primary='Servicios de planificación y construcción' />
+									</ListItem>
+									<ListItem>
+										<ListItemIcon>
+											<DesignServicesIcon sx={{ color: Colors.info3 }} />
+										</ListItemIcon>
+										<ListItemText primary='Diseño de Interiores' />
+									</ListItem>
+									<ListItem>
+										<ListItemIcon>
+											<EngineeringIcon sx={{ color: Colors.info3 }} />
+										</ListItemIcon>
+										<ListItemText primary='Consultoría de Proyectos' />
+									</ListItem>
+								</List>
+								{/* <Link to={`/ProjectDetails/${1}`} className='nav-link'>
 									<Button variant='contained'>Ver Más</Button>
-								</Link>
+								</Link> */}
 							</Stack>
 						</Grid>
 					</Grid>
@@ -164,4 +171,3 @@ export default function BasicStack() {
 		</Box>
 	);
 }
-

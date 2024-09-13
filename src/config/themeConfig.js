@@ -1,4 +1,5 @@
-import { createTheme } from '@mui/material';
+import createTheme from "@mui/material/styles/createTheme";
+
 
 export const Colors = {
 	primary: '#813315',
@@ -6,14 +7,15 @@ export const Colors = {
 	success: '#A16553',
 	info: '#A15600',
 	info2:'#E9601C',
-	info3:'#eb7033',
+	info3:'#144C42',
+	info4:'#447168',
 	danger: '#FF5722',
 	dark: '#0e1b20', 
 	light: '#aaa',
 	muted: '#abafb3',
 	border: '#DDDFE1',
-	'fondo':'rgb(37,36,36)',
-	'@mui/material': '#2F3D4A',
+	'fondo':'rgb(22,31,30)',
+	//'@mui/material': '#2F3D4A',
 	
 	
 	/// ////////////

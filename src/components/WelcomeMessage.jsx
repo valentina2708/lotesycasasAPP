@@ -20,7 +20,7 @@ export default function BasicStack() {
 			ref={element}
 			sx={{
 				width: '100%',
-				minHeight: '40vh',
+				minHeight: '30vh',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
@@ -28,6 +28,7 @@ export default function BasicStack() {
 				//opacity: [0.8, 0.6, 0.8],
 
 				padding: '3% 0',
+				mt: '2rem',
 			}}
 		>
 			{/* <motion.div
@@ -40,80 +41,70 @@ export default function BasicStack() {
 					duration: 0.8,
 				}}
 			> */}
-				<Box
-					sx={{
-						mt: 5,
-						
-					}}
+			<Box
+				sx={{
+					mt: 2,
+				}}
+			>
+				<Grid
+					container
+					spacing={{ xs: 4, md: 6 }}
+					justifyContent='center'
+					alignItems='stretch'
 				>
-					<Grid
-						container
-						spacing={{ xs: 4, md: 6 }}
-						justifyContent='center'
-						alignItems='stretch'
-					>
-						{[
-							{ icon: <GroupIcon />, label: 'Clientes Satisfechos' },
-							{ icon: <StarIcon />, label: 'Efectividad' },
-							{
-								icon: <AssignmentTurnedInIcon />,
-								label: 'Proyectos Terminados',
-							},
-						].map((item, index) => (
-							<Grid
-								item
-								xs={12}
-								sm={6}
-								md={4}
-								key={index}
-								sx={{ display: 'flex', justifyContent: 'center' }}
-							>
-								<Box
-									sx={{
-										display: 'flex',
-										flexDirection: 'column',
-										alignItems: 'center',
-										textAlign: 'center',
-										gap: 2,
-										padding: 2,
-										backgroundColor: Colors.fondo,
-										borderRadius: 2,
-										//boxShadow: '0 4px 4px rgba(0, 0, 0, 0)',
-										transition: 'transform 0.3s ease',
+					{[
+						{ icon: <GroupIcon />, label: 'Clientes Satisfechos' },
+						{ icon: <StarIcon />, label: 'Efectividad' },
+						{ icon: <AssignmentTurnedInIcon />, label: 'Proyectos Terminados' },
+		
+					].map((item, index) => (
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={4}
+							key={index}
+							sx={{ display: 'flex', justifyContent: 'center' }}
+						>
+							<Box
+								sx={{
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+									textAlign: 'center',
+									gap: 2,
+									padding: 2,
+									backgroundColor: Colors.fondo,
+									borderRadius: 2,
+									//boxShadow: '0 4px 4px rgba(0, 0, 0, 0)',
+									transition: 'transform 0.3s ease',
 
-										'&:hover': {
-											transform: 'translateY(-15px)',
-										},
-										minHeight: 200,
-										width: '100%',
-										maxWidth: 200,
+									'&:hover': {
+										transform: 'translateY(-15px)',
+									},
+									minHeight: 200,
+									width: '100%',
+									maxWidth: 200,
+								}}
+							>
+								{cloneElement(item.icon, {
+									sx: { fontSize: 70, color: Colors.info3 },
+								})}
+								<Typography
+									variant='h6'
+									sx={{
+										color: Colors.body_bg,
+										fontWeight: '500',
 									}}
 								>
-									{cloneElement(item.icon, {
-										sx: { fontSize: 70, color: Colors.info3 },
-									})}
-									<Typography
-										variant='h6'
-										sx={{
-											color: Colors.body_bg,
-											fontWeight: '500',
-										}}
-									>
-										{item.label}
-									</Typography>
-								</Box>
-							</Grid>
-						))}
-					</Grid>
-				</Box>
+									{item.label}
+								</Typography>
+							</Box>
+						</Grid>
+					))}
+				</Grid>
+			</Box>
 			{/* </motion.div> */}
 		</Box>
 	);
 }
-
-
-
-
-
-
-

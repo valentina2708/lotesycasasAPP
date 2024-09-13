@@ -15,21 +15,18 @@ const useStyles = makeStyles()(theme => {
 	return {
 		InfoImage: {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${fondoCredito})`,
-			height: '500px',
+			height: '400px',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: 'cover',
 			position: 'relative',
-			margin: '10% 0px 10% 0px',
+			margin: '2% 0px 10% 0px',
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
 			color: '#fff',
 			fontSize: '4rem',
-			// [theme.breakpoints.down('sm')]: {
-			// 	height: 300,
-			// 	fontSize: '3em',
-			// },
+
 		},
 	};
 });
@@ -38,16 +35,16 @@ export default function BasicStack() {
 	const { classes } = useStyles();
 	const [element, controls] = useScroll();
 	return (
-		<motion.div
-				className='home'
-				variants={servicesAnimations}
-				animate={controls}
-				transition={{
-					delay: 0.03,
-					type: 'tween',
-					duration: 0.9,
-				}}
-			>
+		// <motion.div
+		// 		className='home'
+		// 		variants={servicesAnimations}
+		// 		animate={controls}
+		// 		transition={{
+		// 			delay: 0.03,
+		// 			type: 'tween',
+		// 			duration: 0.9,
+		// 		}}
+		// 	>
 		<Box
 		ref={element}
 			className={classes.InfoImage}
@@ -65,11 +62,7 @@ export default function BasicStack() {
 					opacity: [0.7, 0.6, 0.7],
 					position: 'relative',
 					marginInline: {xs:'0', sm:'10rem'},
-					// bottom: '5px',
-					// width: '55%',
-					// height: 220,
 					borderRadius: 3,
-					// left: '30px',
 					p:'20px'
 				
 				}}
@@ -95,7 +88,7 @@ export default function BasicStack() {
 							<Typography
 								variant='h6'
 								sx={{
-									color: Colors.primary,
+									color: Colors.fondo,
 									fontWeight: 400,
 									mt: 2,
 									textAlign: 'center',
@@ -122,20 +115,20 @@ export default function BasicStack() {
 							<Typography
 								variant='h6'
 								sx={{
-									color: Colors.primary,
+									color: Colors.fondo,
 									fontWeight: 400,
 									mt: 2,
 									textAlign: 'center',
 									
 								}}
 							>
-							Creditos directamente con la constructora sin necesidad de bancos, cuotas hasta de 5 años.
+							Creditos directamente con la constructora sin bancos, cuotas hasta de 5 años.
 							</Typography>
 						</CardContent>
 					</Grid>
 				</Grid>
 			</Card>
 		</Box>
-		</motion.div>
+		// </motion.div>
 	);
 }

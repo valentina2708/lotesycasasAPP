@@ -24,9 +24,9 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Grid>
-				<Grid my={4}>
+				
 					<Appbar />
-				</Grid>
+				
 				<Wrapper>
 					<Routes>
 						<Route exact path='/' element={<HomeLayout />} />

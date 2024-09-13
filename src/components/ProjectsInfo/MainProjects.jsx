@@ -1,13 +1,21 @@
-import { Box, Typography, Chip, Stack, Avatar, Button } from '@mui/material';
-import { Colors } from '/src/config/themeConfig.js';
+import React, { useState } from 'react';
 import {
-	CardMedia,
-	CardContent,
-	CardHeader,
+	Box,
+	Typography,
+	Chip,
+	Stack,
+	Avatar,
 	Container,
 	Card,
+	CardContent,
+	CardHeader,
+	Grid,
+	Divider,
+	Tooltip,
+	CardMedia,
 } from '@mui/material';
-import SeeMoreButton from '/src/components/ProjectsInfo/SeeMoreButton';
+import { Colors } from '/src/config/themeConfig.js';
+import { motion } from 'framer-motion';
 import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
 import {
@@ -19,19 +27,11 @@ import {
 	GarageOutlined,
 	BathtubOutlined,
 	TimeToLeave,
-} from '@mui/icons-material/';
-import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
-import { motion } from 'framer-motion';
+} from '@mui/icons-material';
+import Modal from '../ProjectsInfo/Modal';
+import styled from 'styled-components';
 import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
-import Modal from '../ProjectsInfo/Modal';
-import { useState } from 'react';
-
-import styled from 'styled-components';
-import ProjectDetails from '../projectComponents/ProjectDetails';
-import App from '../../App';
-import ProyectDetailsLayout from '../layout/ProjectDetailsLayout';
 
 const Contenido = styled.div`
 	display: flex;
@@ -39,10 +39,11 @@ const Contenido = styled.div`
 	align-items: center;
 
 	img {
-		width: 800px;
-		min-height: 500px;
-		vertical-align: top;
+		width: 100%;
+		height: auto;
+		max-height: 500px;
 		border-radius: 3px;
+		object-fit: cover; /* Mantener la proporción */
 	}
 `;
 
@@ -54,28 +55,21 @@ export default function MediaCard() {
 	const [estadoModal3, cambiarEstadoModal3] = useState(false);
 	const [estadoModal4, cambiarEstadoModal4] = useState(false);
 
-	const [id, setId] = useState(null);
-
 	return (
-		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px' }}>
+		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px', mt: '3rem' }}>
 			<Container
 				sx={{
-					direction: 'column',
+					display: 'flex',
+					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
 					gap: '15px',
 				}}
 			>
-				<Grid
-					container
-					// columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-					// columns={{xs: 6, sm: 12}}
-					rowSpacing={6}
-				>
-					{DataProjects.slice(0, 5)?.map(project => (
-						<Grid item xs={12} key={project.id}>
+				<Grid container spacing={4}>
+					{DataProjects.slice(0, 6).map(project => (
+						<Grid item xs={12} sm={6} md={4} key={project.id}>
 							<motion.div
-								// className='home'
 								variants={servicesAnimations}
 								animate={controls}
 								transition={{
@@ -87,237 +81,167 @@ export default function MediaCard() {
 								<Card
 									elevation={4}
 									sx={{
-										width: '100%',
-										// height: '100%',
-										borderRadius: 4,
 										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'space-between',
+										height: '450',
+										//minHeight: '450px',
+										borderRadius: 4,
+										overflow: 'hidden',
 									}}
 								>
-									{/* <CardMedia
-										component='img'
+									<CardContent
 										sx={{
-											width: 300,
-											height: 320,
-											margin: '0 auto 1.5em',
-											cursor: 'pointer',
-
-											'&:hover': {
-												backgroundColor: Colors.muted,
-												opacity: [0.7],
-											},
+											p: '15px 20px',
+											display: 'flex',
+											flexDirection: 'column',
+											justifyContent: 'space-between',
+											flexGrow: 1,
 										}}
-										image={project.imagen}
-										alt='imagen'
-									/> */}
-									<Grid container>
-										{/* <Grid item xs={4}>
-										<Box>
-													<img src={project.imagen} width={'100%'} height={'100%'}/>
-												</Box>
-										</Grid> */}
-										<Grid item>
-											<CardContent
-												sx={{ 
-												// flex: '1 0 auto', 
-												p: ' 15px 40px 0 40px' 
+									>
+										<Stack
+											direction={'row'}
+											sx={{ justifyContent: 'space-between', mb: 2 }}
+										>
+											<Typography
+												variant='h6'
+												component='div'
+												sx={{
+													fontWeight: 700,
+													color: Colors.fondo,
+													textAlign: 'center',
 												}}
 											>
-												<Stack
-													direction={'row'}
-													sx={{ justifyContent: 'space-between' }}
+												{project.nombre}
+											</Typography>
+											<Chip
+												sx={{
+													fontSize: '12px',
+													display: 'flex',
+													color: Colors.body_bg,
+													bgcolor: Colors.info3,
+												}}
+												label={project.estado}
+											/>
+										</Stack>
+
+										{/* Imagen clicable con CardMedia */}
+										<Link
+											to={`/ProjectDetails/${project.id}`}
+											style={{ textDecoration: 'none' }}
+										>
+											<CardMedia
+												component='img'
+												image={project.imagen}
+												alt={project.nombre}
+												sx={{
+													height: 200,
+													borderRadius: '8px',
+													cursor: 'pointer',
+													transition: 'transform 0.3s ease-in-out',
+													'&:hover': {
+														transform: 'scale(1.05)',
+													},
+												}}
+											/>
+										</Link>
+
+										<CardHeader
+											sx={{ ml: '-1rem' }}
+											avatar={
+												<Avatar
+													sx={{ bgcolor: Colors.info3 }}
+													variant='rounded'
 												>
-													<Typography
-														variant='h5'
-														component='div'
-														sx={{
-															fontWeight: 700,
-															color: Colors.primary,
-															textAlign: 'center',
-														}}
-													>
-														{project.nombre}
-													</Typography>
-													<Chip
-														sx={{
-															fontSize: '12px',
-															display: 'flex',
-															color: Colors.body_bg,
-															position: 'relative',
-															// top: '20px',
-															// right: '30px',
-
-															bgcolor: Colors.primary,
-														}}
-														label={project.estado}
-													/>
-												</Stack>
-												<CardHeader
-													avatar={
-														<Avatar
-															sx={{ bgcolor: Colors.info3 }}
-															variant='rounded'
-														>
-															<HolidayVillage />
-														</Avatar>
-													}
-													title={project.ubicacion}
-													subheader={project.tipo}
-												/>
-
+													<HolidayVillage />
+												</Avatar>
+											}
+											title={project.ubicacion}
+											subheader={project.tipo}
+										/>
+										<Typography
+											variant='subtitle2'
+											color='#696969'
+											sx={{ textAlign: 'justify', mb: 2 }}
+										>
+											{project.descripcion}
+										</Typography>
+										<Divider sx={{ mb: 2 }} />
+										<Box sx={{ mb: 2, color: Colors.info3 }}>
+											{project.tipo === 'Urbanización' ? (
 												<Typography
-													variant='subtitle1'
-													color='#696969'
-													sx={{ textAlign: 'justify' }}
+													gutterBottom
+													variant='body2'
+													fontWeight='500'
 												>
-													{project.descripcion}
+													Área de lote: {project.areaDelLote}
 												</Typography>
-
-												<Divider />
-												<Box sx={{ m: 2, color: Colors.info3 }}>
-													{project.tipo === 'Proyecto Urbanización' ? (
-														<Typography
-															gutterBottom
-															variant='body2'
-															fontWeight='500'
-														>
-															Área de lote: {project.areaDelLote}
-														</Typography>
-													) : (
-														<Typography
-															gutterBottom
-															variant='body2'
-															color='Colors.info3'
-														>
-															Área de construcción: {project.areaConstruida}
-														</Typography>
-													)}
-												</Box>
-
+											) : (
+												<Typography gutterBottom variant='body2'>
+													Área de construcción: {project.areaConstruida}
+												</Typography>
+											)}
+										</Box>
+										<Stack
+											direction={{ xs: 'column', sm: 'row' }}
+											sx={{
+												alignItems: 'center',
+												justifyContent: 'space-between',
+												mb: 2,
+											}}
+											spacing={2}
+										>
+											{project.tipo === 'Urbanización' ? (
 												<Stack
 													direction={{ xs: 'column', sm: 'row' }}
-													sx={{
-														alignItems: 'center',
-														justifyContent: 'space-between',
-													}}
+													spacing={1}
 												>
-													{project.tipo === 'Urbanización' ? (
-														<Stack
-															direction={{ xs: 'column', sm: 'row' }}
-															spacing={2}
-														>
-															<Chip
-																icon={<Pool />}
-																label='Piscina'
-																onClick={() =>
-																	cambiarEstadoModal1(!estadoModal1)
-																}
-															/>
-															<Chip
-																icon={<Diversity3 />}
-																label='Zonas Sociales'
-																onClick={() =>
-																	cambiarEstadoModal2(!estadoModal2)
-																}
-															/>
-															<Chip
-																icon={<TimeToLeave />}
-																label='Porteria'
-																onClick={() =>
-																	cambiarEstadoModal3(!estadoModal3)
-																}
-															/>
-															<Chip
-																icon={<Forest />}
-																label='Zonas Verdes'
-																onClick={() =>
-																	cambiarEstadoModal4(!estadoModal4)
-																}
-															/>
-														</Stack>
-													) : (
-														//
-
-														<Stack
-															direction={{ xs: 'column', sm: 'row' }}
-															spacing={2}
-														>
-															<Chip
-																icon={<BedroomParentOutlined />}
-																label={project.habitaciones}
-															/>
-															<Chip
-																icon={<GarageOutlined />}
-																label={project.garaje}
-															/>
-															<Chip
-																icon={<BathtubOutlined />}
-																label={project.baños}
-															/>
-															<Chip
-																icon={<Diversity3 />}
-																label='Zonas Sociales'
-															/>
-														</Stack>
-													)}
-													{project.act === 'v' && (
-														<Link to={`/ProjectDetails/${project.id}`}>
-															<SeeMoreButton />
-														</Link>
-													)}
+													<Tooltip title='Piscina'>
+														<Chip
+															icon={<Pool />}
+															onClick={() => cambiarEstadoModal1(!estadoModal1)}
+														/>
+													</Tooltip>
+													<Tooltip title='Zonas Sociales'>
+														<Chip
+															icon={<Diversity3 />}
+															onClick={() => cambiarEstadoModal2(!estadoModal2)}
+														/>
+													</Tooltip>
+													<Tooltip title='Porteria'>
+														<Chip
+															icon={<TimeToLeave />}
+															onClick={() => cambiarEstadoModal3(!estadoModal3)}
+														/>
+													</Tooltip>
+													<Tooltip title='Zonas Verdes'>
+														<Chip
+															icon={<Forest />}
+															onClick={() => cambiarEstadoModal4(!estadoModal4)}
+														/>
+													</Tooltip>
 												</Stack>
-												<Modal
-													estado={estadoModal1}
-													cambiarEstado={cambiarEstadoModal1}
-													mostrarOverlay={true}
-													posicionModal={'center'}
-													padding={'0px'}
+											) : (
+												<Stack
+													direction={{ xs: 'column', sm: 'row' }}
+													spacing={1}
 												>
-													<Contenido>
-														<img src='/src/assets/pisina1.png' alt='piscina' />
-													</Contenido>
-												</Modal>
-												<Modal
-													estado={estadoModal2}
-													cambiarEstado={cambiarEstadoModal2}
-													mostrarOverlay={true}
-													posicionModal={'center'}
-													padding={'0px'}
-												>
-													<Contenido>
-														<img
-															src='/src/assets/terraza2_1.jpg'
-															alt='zonaSocial'
-														/>
-													</Contenido>
-												</Modal>
-												<Modal
-													estado={estadoModal3}
-													cambiarEstado={cambiarEstadoModal3}
-													mostrarOverlay={true}
-													posicionModal={'center'}
-													padding={'0px'}
-												>
-													<Contenido>
-														<img
-															src='/src/assets/porteria.jpg'
-															alt='porteria'
-														/>
-													</Contenido>
-												</Modal>
-												<Modal
-													estado={estadoModal4}
-													cambiarEstado={cambiarEstadoModal4}
-													mostrarOverlay={true}
-													posicionModal={'center'}
-													padding={'0px'}
-												>
-													<Contenido>
-														<img src='/src/assets/parque.jpg' alt='parque' />
-													</Contenido>
-												</Modal>
-											</CardContent>
-										</Grid>
-									</Grid>
+													<Tooltip title='Habitaciones'>
+														<Chip icon={<BedroomParentOutlined />} />
+													</Tooltip>
+													<Tooltip title='Garaje'>
+														<Chip icon={<GarageOutlined />} />
+													</Tooltip>
+													<Tooltip title='Baños'>
+														<Chip icon={<BathtubOutlined />} />
+													</Tooltip>
+													<Tooltip title='Zonas Sociales'>
+														<Chip icon={<Diversity3 />} />
+													</Tooltip>
+												</Stack>
+											)}
+										</Stack>
+									</CardContent>
 								</Card>
 							</motion.div>
 						</Grid>
