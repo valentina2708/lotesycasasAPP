@@ -8,14 +8,14 @@ export const Colors = {
 	info: '#A15600',
 	info2:'#E9601C',
 	info3:'#144C42',
-	info4:'#447168',
+	info4:'#FFB534',
 	danger: '#FF5722',
 	dark: '#0e1b20', 
 	light: '#aaa',
 	muted: '#abafb3',
 	border: '#DDDFE1',
 	'fondo':'rgb(22,31,30)',
-	//'@mui/material': '#2F3D4A',
+	
 	
 	
 	/// ////////////

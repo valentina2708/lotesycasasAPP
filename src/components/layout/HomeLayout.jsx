@@ -15,9 +15,9 @@ export default function HomeLayout() {
 			<CarouselHome />
 			<WelcomeMessage />
 			<MainProjects />
-			<NewProjectInfo />
-			<Box sx={{ padding: 0, margin: 0 }}><InfoPaymentMethods />
-			<HomeInfo  /></Box>
+			<NewProjectInfo />	
+			<InfoPaymentMethods />
+			<HomeInfo  />
 			
 		</motion.div>
 	);
