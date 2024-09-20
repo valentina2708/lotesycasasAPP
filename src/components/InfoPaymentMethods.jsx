@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box';
-import { Typography, Card, Avatar, CardContent } from '@mui/material';
+import { Typography, Card, Avatar, Box, CardContent } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import { makeStyles } from 'tss-react/mui';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';

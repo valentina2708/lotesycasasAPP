@@ -8,6 +8,11 @@ export default defineConfig({
 		chunkSizeWarningLimit: 1600,
 	},
 	optimizeDeps: {
-		include: ['@mui/material/Tooltip', '@emotion/styled'],
+		include: [
+			'@mui/material/Tooltip',
+			'@emotion/styled',
+			'@mui/material/Box',
+			'@mui/material/Unstable_Grid2',
+		],
 	},
 });

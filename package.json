@@ -21,7 +21,7 @@
     "@react-google-maps/api": "^2.18.1",
     "@react-spring/web": "^9.7.1",
     "aos": "^2.3.4",
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "bootstrap": "^5.2.3",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.9.2",

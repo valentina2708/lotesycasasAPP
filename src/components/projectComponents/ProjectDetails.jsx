@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
 	Box,
 	Typography,
@@ -8,8 +6,8 @@ import {
 	Card,
 	Button,
 	Divider,
+	Grid
 } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState, useEffect } from 'react';

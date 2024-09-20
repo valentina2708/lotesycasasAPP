@@ -1,8 +1,5 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import { Colors } from '../config/themeConfig';
-import { Typography, Paper } from '@mui/material';
+import { Typography, Paper,Box, Stack, Grid } from '@mui/material';
 import { useScroll } from './useScroll';
 import { motion } from 'framer-motion';
 import { mensajebox } from '../animation';
@@ -13,7 +10,7 @@ import {
 	Star as StarIcon,
 } from '@mui/icons-material';
 import vendeConNosotros from '/src/assets/vendeconNosotros.jpg';
-import Grid from '@mui/material/Unstable_Grid2';
+
 import { styled } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 

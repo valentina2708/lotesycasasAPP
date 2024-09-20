@@ -1,5 +1,4 @@
 // components/Carousel.js
-import React from 'react';
 import { Box, Typography, Stack, Button } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';

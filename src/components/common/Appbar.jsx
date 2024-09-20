@@ -1,5 +1,5 @@
 // components/Navbar.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
 	AppBar,
 	Toolbar,
@@ -8,9 +8,9 @@ import {
 	IconButton,
 	Menu,
 	MenuItem,
-	styled,
 	Typography,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { Menu as MenuIcon } from '@mui/icons-material/';
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import { Colors } from '../../config/themeConfig';

@@ -1,23 +1,20 @@
-import Box from '@mui/material/Box';
+import { Colors } from '../config/themeConfig.js';
 import {
+	Box,
 	Stack,
 	CardMedia,
 	Card,
 	Typography,
-	Button,
 	List,
 	ListItem,
 	ListItemText,
 	ListItemIcon,
 } from '@mui/material';
-import { Colors } from '../config/themeConfig.js';
 import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { useScroll } from '../components/useScroll';
 import { servicesAnimations } from '../animation.js';
 import nosotrosInicio from '/src/assets/fondo.jpeg';
-import ReactPlayer from 'react-player';
-import { Link } from 'react-router-dom';
 import BuildIcon from '@mui/icons-material/Build'; 
 import HomeIcon from '@mui/icons-material/Home';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';

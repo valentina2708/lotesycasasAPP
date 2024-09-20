@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
 	Box,
 	Typography,
@@ -28,32 +27,33 @@ import {
 	BathtubOutlined,
 	TimeToLeave,
 } from '@mui/icons-material';
-import Modal from '../ProjectsInfo/Modal';
-import styled from 'styled-components';
+// import Modal from '../ProjectsInfo/Modal';
+// import { styled } from '@mui/material/styles';
+
 import { useScroll } from '../useScroll';
 import { servicesAnimations } from '../../animation';
 
-const Contenido = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+// const Contenido = styled.div`
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
 
-	img {
-		width: 100%;
-		height: auto;
-		max-height: 500px;
-		border-radius: 3px;
-		object-fit: cover; /* Mantener la proporción */
-	}
-`;
+// 	img {
+// 		width: 100%;
+// 		height: auto;
+// 		max-height: 500px;
+// 		border-radius: 3px;
+// 		object-fit: cover; 
+// 	}
+// `;
 
 export default function MediaCard() {
 	const [element, controls] = useScroll();
 
-	const [estadoModal1, cambiarEstadoModal1] = useState(false);
-	const [estadoModal2, cambiarEstadoModal2] = useState(false);
-	const [estadoModal3, cambiarEstadoModal3] = useState(false);
-	const [estadoModal4, cambiarEstadoModal4] = useState(false);
+	// const [estadoModal1, cambiarEstadoModal1] = useState(false);
+	// const [estadoModal2, cambiarEstadoModal2] = useState(false);
+	// const [estadoModal3, cambiarEstadoModal3] = useState(false);
+	// const [estadoModal4, cambiarEstadoModal4] = useState(false);
 
 	return (
 		<Box ref={element} sx={{ flexGrow: 1, p: '40px 0px', mt: '3rem' }}>
@@ -199,25 +199,25 @@ export default function MediaCard() {
 													<Tooltip title='Piscina'>
 														<Chip
 															icon={<Pool />}
-															onClick={() => cambiarEstadoModal1(!estadoModal1)}
+															// onClick={() => cambiarEstadoModal1(!estadoModal1)}
 														/>
 													</Tooltip>
 													<Tooltip title='Zonas Sociales'>
 														<Chip
 															icon={<Diversity3 />}
-															onClick={() => cambiarEstadoModal2(!estadoModal2)}
+															// onClick={() => cambiarEstadoModal2(!estadoModal2)}
 														/>
 													</Tooltip>
 													<Tooltip title='Porteria'>
 														<Chip
 															icon={<TimeToLeave />}
-															onClick={() => cambiarEstadoModal3(!estadoModal3)}
+															// onClick={() => cambiarEstadoModal3(!estadoModal3)}
 														/>
 													</Tooltip>
 													<Tooltip title='Zonas Verdes'>
 														<Chip
 															icon={<Forest />}
-															onClick={() => cambiarEstadoModal4(!estadoModal4)}
+															// onClick={() => cambiarEstadoModal4(!estadoModal4)}
 														/>
 													</Tooltip>
 												</Stack>

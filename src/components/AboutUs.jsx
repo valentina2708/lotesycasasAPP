@@ -5,9 +5,10 @@ import {
 	CardContent,
 	Avatar,
 	IconButton,
+	Grid
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Unstable_Grid2';
+
 import { makeStyles } from 'tss-react/mui';
 import { Colors } from '../config/themeConfig.js';
 import { Paper } from '@mui/material';
@@ -15,6 +16,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { Parallax } from 'react-parallax';
+import { motion } from 'framer-motion';
+import { useScroll } from '../components/useScroll';
+import { servicesAnimations } from '../animation.js';
 import Nosotros1 from '../assets/nosotros1.jpg';
 import logoEmpresa1 from '../assets/logoem1.png';
 import logoEmpresa2 from '../assets/logo2em.png';
@@ -42,7 +46,6 @@ const useStyles = makeStyles()(theme => ({
 			opacity: 1,
 		},
 	},
-
 }));
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -55,7 +58,6 @@ const Item = styled(Paper)(({ theme }) => ({
 	alignItems: 'center',
 	boxShadow: 'none',
 	borderRadius: 0,
-	
 }));
 
 const ItemBox = styled(Paper)(({ theme }) => ({
@@ -66,14 +68,12 @@ const ItemBox = styled(Paper)(({ theme }) => ({
 	backgroundColor: Colors.info3,
 	boxShadow: 'none',
 	borderRadius: 0,
-	
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
 	width: theme.spacing(12),
 	height: theme.spacing(12),
 	margin: 'auto',
-	
 }));
 
 const advisors = [
@@ -99,122 +99,61 @@ export default function AboutUs() {
 		AOS.init({ offset: 200, duration: 1000 });
 	}, []);
 	const { classes } = useStyles();
+	const [element, controls] = useScroll();
 
 	return (
-		<Grid container sx={{ marginTop: '99px' }}>
-			<Box
-				sx={{
+		<>
+			<Parallax
+				style={{
 					width: '100%',
 					height: '100%',
-					display: { xs: 'none', sm: 'block', md: 'block', xl: 'block' },
 				}}
+				bgImage={Nosotros1}
+				strength={300}
 			>
-				<Parallax
-					style={{
+				<Box
+					container
+					data-aos='zoom-in-down'
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
 						width: '100%',
-						height: '100%',
+						height: '75vh',
+						margin: 0,
 					}}
-					bgImage={Nosotros1}
-					strength={0}
 				>
-					<Box
-						container
-						data-aos='zoom-in-down'
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-							width: '100%',
-							height: '75vh',
-						}}
-					>
-						<Box sx={{}}>
-							<Box
-								sx={{
-									width: '100%',
-								}}
-							>
-								<Typography
-									variant='h2'
-									sx={{
-										opacity: [90],
-										color: Colors.info3,
-										fontWeight: 'bold',
-										mt: 2,
-										textAlign: 'center',
-										paddingTop: '10px',
-										// margin: '20px',
-									}}
-								>
-									Nosotros
-								</Typography>
-							</Box>
-						</Box>
+					<Box>
+						<Typography
+							variant='h2'
+							sx={{
+								opacity: [90],
+								color: Colors.info3,
+								fontWeight: 'bold',
+								mt: 2,
+								textAlign: 'center',
+								paddingTop: '10px',
+							}}
+						>
+							Nosotros
+						</Typography>
 					</Box>
-				</Parallax>
-			</Box>
+				</Box>
+			</Parallax>
 
-			<Box
-				sx={{ display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' } }}
-			>
-				<Parallax
-					style={{
-						width: '100%',
-						height: '100%',
-		
-					}}
-					bgImage={Nosotros1}
-					strength={100}
-				>
-					<Box
-						container
-						data-aos='zoom-in-down'
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-							width: { xs: '48.5vh', sm: '44vh' },
-							height: '45vh',
-						}}
-					>
-						<Box sx={{}}>
-							<Box
-								sx={{
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-								}}
-							>
-								<Typography
-									variant='h4'
-									sx={{
-										color: Colors.info4,
-										fontWeight: 'bold',
-										mt: 2,
-									}}
-								>
-									Nosotros
-								</Typography>
-							</Box>
-						</Box>
-					</Box>
-				</Parallax>
-			</Box>
-
-			<Box sx={{ flexGrow: 1, width: '100%' }}>
-				<Grid container sx={{ height: { md: '50vh' } }}>
+			<Box 	 sx={{ flexGrow: 1, width: '100%' }}>
+				<Grid container sx={{ height: { md: '40vh' } }}>
 					<Grid item xs={12} md={4}>
 						<ItemBox>
 							<Typography
 								variant='h3'
 								sx={{
 									fontWeight: 600,
-									mt: '3.5rem',
+									mt:'1rem',
 									color: Colors.dove_gray,
 									textAlign: { xs: 'center', md: 'left' },
 									mb: { xs: '1rem', md: '100px' },
-									ml:'1rem'
-								
+									ml: '1rem',
 								}}
 							>
 								Una Historia con experiencia
@@ -252,36 +191,54 @@ export default function AboutUs() {
 				</Grid>
 			</Box>
 
-			<Box sx={{ width: '100%', mt: '4rem' }}>
-				<Typography
-					variant='h4'
-					sx={{ textAlign: 'center', mb: 4, fontWeight: 600, color:Colors.fondo }}
-				>
-					Nuestros Clientes
-				</Typography>
-				<Grid container spacing={2} justifyContent='center'>
-					{[
-						logoEmpresa1,
-						logoEmpresa2,
-						logoEmpresa3,
-						logoEmpresa4,
-						logoEmpresa5,
-						logoEmpresa6,
-						logoEmpresa7,
-						logoEmpresa8,
-					].map((logo, index) => (
-						<Grid item xs={6} sm={4} md={3} key={index}>
-							<Item>
-								<img
-									src={logo}
-									alt={`Empresa ${index + 1}`}
-									className={classes.companyLogo}
-								/>
-							</Item>
-						</Grid>
-					))}
-				</Grid>
-			</Box>
+		
+				<Box  ref={element} sx={{ width: '100%', mt: '4rem' }}>
+				<motion.div
+				className='clients'
+				variants={servicesAnimations}
+				animate={controls}
+				transition={{
+					delay: 0.02,
+					type: 'tween',
+					duration: 0.9,
+				}}
+			>
+					<Typography
+						variant='h4'
+						sx={{
+							textAlign: 'center',
+							mb: 4,
+							fontWeight: 600,
+							color: Colors.fondo,
+						}}
+					>
+						Nuestros Clientes
+					</Typography>
+					<Grid container spacing={2} justifyContent='center'>
+						{[
+							logoEmpresa1,
+							logoEmpresa2,
+							logoEmpresa3,
+							logoEmpresa4,
+							logoEmpresa5,
+							logoEmpresa6,
+							logoEmpresa7,
+							logoEmpresa8,
+						].map((logo, index) => (
+							<Grid item xs={6} sm={4} md={3} key={index}>
+								<Item>
+									<img
+										src={logo}
+										alt={`Empresa ${index + 1}`}
+										className={classes.companyLogo}
+									/>
+								</Item>
+							</Grid>
+						))}
+					</Grid>
+					</motion.div>
+				</Box>
+	
 
 			<Box
 				sx={{
@@ -295,7 +252,12 @@ export default function AboutUs() {
 			>
 				<Typography
 					variant='h4'
-					sx={{ textAlign: 'center', mb: 4, fontWeight: 600,color:Colors.fondo  }}
+					sx={{
+						textAlign: 'center',
+						mb: 4,
+						fontWeight: 600,
+						color: Colors.fondo,
+					}}
 				>
 					Asesores
 				</Typography>
@@ -317,9 +279,7 @@ export default function AboutUs() {
 									<Typography variant='h6' sx={{ mt: 2, fontWeight: 'bold' }}>
 										{advisor.name}
 									</Typography>
-									<Typography variant='body2' >
-										{advisor.position}
-									</Typography>
+									<Typography variant='body2'>{advisor.position}</Typography>
 									<Box
 										sx={{
 											display: 'flex',
@@ -328,13 +288,13 @@ export default function AboutUs() {
 											mt: 2,
 										}}
 									>
-										<IconButton sx={{color:Colors.fondo}}>
+										<IconButton sx={{ color: Colors.fondo }}>
 											<FacebookIcon />
 										</IconButton>
-										<IconButton sx={{color:Colors.fondo}}>
+										<IconButton sx={{ color: Colors.fondo }}>
 											<TwitterIcon />
 										</IconButton>
-										<IconButton sx={{color:Colors.fondo}}>
+										<IconButton sx={{ color: Colors.fondo }}>
 											<LinkedInIcon />
 										</IconButton>
 									</Box>
@@ -379,17 +339,16 @@ export default function AboutUs() {
 										justifyContent: 'center',
 										gap: 2,
 										mt: 2,
-										
 									}}
 								>
-									<IconButton >
-										<FacebookIcon sx={{color:Colors.fondo}} />
+									<IconButton>
+										<FacebookIcon sx={{ color: Colors.fondo }} />
 									</IconButton>
-									<IconButton sx={{color:Colors.fondo}} >
+									<IconButton sx={{ color: Colors.fondo }}>
 										<TwitterIcon />
 									</IconButton>
 									<IconButton>
-										<LinkedInIcon sx={{color:Colors.fondo}} />
+										<LinkedInIcon sx={{ color: Colors.fondo }} />
 									</IconButton>
 								</Box>
 							</CardContent>
@@ -397,6 +356,6 @@ export default function AboutUs() {
 					</Grid>
 				</Box>
 			</Box>
-		</Grid>
+		</>
 	);
 }

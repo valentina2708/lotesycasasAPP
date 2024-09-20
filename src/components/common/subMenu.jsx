@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Menu, MenuItem } from '@mui/material';
 
 const Menu = () => {

@@ -5,7 +5,7 @@ import MainProjects from '../../components/ProjectsInfo/MainProjects';
 import NewProjectInfo from '../../components/NewProjectInfo';
 import HomeInfo from '../..//components/HomeInfo';
 import InfoPaymentMethods from '../../components/InfoPaymentMethods';
-import { Box } from '@mui/material';
+
 
 import { motion } from 'framer-motion';
 

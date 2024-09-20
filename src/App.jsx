@@ -12,6 +12,8 @@ import ProjectDetailsLayout from './components/layout/ProjectDetailsLayout';
 import ProjectsUrbanization from './components/projectComponents/Urbanization';
 import ProjectsHouses from './components/projectComponents/Houses';
 
+
+
 const Wrapper = ({ children }) => {
 	const location = useLocation();
 	useLayoutEffect(() => {
@@ -24,9 +26,8 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Grid>
-				
-					<Appbar />
-				
+				<Appbar />
+
 				<Wrapper>
 					<Routes>
 						<Route exact path='/' element={<HomeLayout />} />

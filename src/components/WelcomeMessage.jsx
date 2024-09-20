@@ -1,6 +1,4 @@
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import { useScroll } from './useScroll';
 import { motion } from 'framer-motion';

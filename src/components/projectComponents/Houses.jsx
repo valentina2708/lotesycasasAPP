@@ -13,6 +13,7 @@ import {
 	CardContent,
 	CardActions,
 	Button,
+	Grid
 } from '@mui/material';
 import house from '../../assets/house.jpg';
 import AOS from 'aos';
@@ -20,7 +21,6 @@ import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { useScroll } from '../useScroll';
 import { mensajebox } from '../../animation';
-import Grid from '@mui/material/Grid';
 import { DataHouses } from '../../DataProvider/DataProjects.js';
 import GiteIcon from '@mui/icons-material/Gite';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';

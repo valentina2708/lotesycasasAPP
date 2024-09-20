@@ -1,18 +1,17 @@
 import { Colors } from '../../config/themeConfig.js';
 import { Parallax } from 'react-parallax';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	Box,
 	Typography,
 	Stack,
-	Card,
-	CardMedia,
-	CardHeader,
+	Grid,
+	ButtonBase,
+	Stepper,
+	Step,
+	StepLabel,
 	Container,
-	Avatar,
-	CardContent,
-	CardActions,
-	Button,
+	StepContent,
 } from '@mui/material';
 import urbanizacion from '../../assets/urbanizacion.jpg';
 import AOS from 'aos';
@@ -20,19 +19,112 @@ import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { useScroll } from '../useScroll';
 import { mensajebox } from '../../animation';
-import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 import { DataUrbanizations } from '../../DataProvider/DataProjects.js';
-import { Villa } from '@mui/icons-material/';
 import InfoUrbanization from '../projectComponents/InfoUrbanization.jsx';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
-import * as miArray from '../../DataProvider/DataProjects';
+import CalculateFee from '/src/components/CalculateFee';
+
+const steps = ['Planificación', 'Diseño', 'Construcción'];
+
+const ImageButton = styled(ButtonBase)(({ theme }) => ({
+	position: 'relative',
+	height: 200,
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+
+	[theme.breakpoints.down('sm')]: {
+		width: '100% !important',
+		height: 100,
+	},
+	'&:hover, &.Mui-focusVisible': {
+		zIndex: 1,
+		'& .MuiImageBackdrop-root': {
+			opacity: 0.15,
+		},
+		'& .MuiImageMarked-root': {
+			opacity: 0,
+		},
+		'& .MuiTypography-root': {
+			border: '4px solid currentColor',
+		},
+	},
+}));
+
+const ImageSrc = styled('span')({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	backgroundSize: 'cover',
+	backgroundPosition: 'center 40%',
+});
+
+const Image = styled('span')(({ theme }) => ({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	color: theme.palette.common.white,
+}));
+
+const ImageBackdrop = styled('span')(({ theme }) => ({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	backgroundColor: theme.palette.common.black,
+	opacity: 0.4,
+	transition: theme.transitions.create('opacity'),
+}));
+
+const ImageMarked = styled('span')(({ theme }) => ({
+	height: 3,
+	width: 18,
+	backgroundColor: theme.palette.common.white,
+	position: 'absolute',
+	bottom: -2,
+	left: 'calc(50% - 9px)',
+	transition: theme.transitions.create('opacity'),
+}));
+
 export default function ProjectsUrbanization() {
 	const [element, controls] = useScroll();
+	const [activeStep, setActiveStep] = useState(0);
 
 	useEffect(() => {
-		AOS.init({ offset: 200, duration: 1000 });
+		AOS.init({ duration: 1000 });
+
+		const handleScroll = () => {
+			const scrollPosition = window.scrollY + window.innerHeight / 2; // Posición de scroll
+			const windowHeight = window.innerHeight; // Altura de la ventana
+
+			// Calculamos cuándo se activa cada paso basándonos en la posición de scroll
+			if (scrollPosition < windowHeight) {
+				setActiveStep(0);
+			} else if (
+				scrollPosition >= windowHeight &&
+				scrollPosition < windowHeight * 2
+			) {
+				setActiveStep(1);
+			} else if (scrollPosition >= windowHeight * 2) {
+				setActiveStep(2);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
 	}, []);
 
 	return (
@@ -113,95 +205,128 @@ export default function ProjectsUrbanization() {
 				>
 					<Stack spacing={2} ml={{ xs: '1rem', sm: '2rem', md: '0' }}>
 						<Typography
-							variant='h3'
+							variant='h4'
 							sx={{
-								color: Colors.primary,
+								color: Colors.fondo,
 								fontWeight: 'bold',
 								mt: 2,
 							}}
 						>
-							Proyectos Urbanísticos en el Valle del Cauca
+							Proyectos urbanísticos en la ciudad blanca
 						</Typography>
 					</Stack>
 				</motion.div>
 			</Box>
-			<Box sx={{ flexGrow: 1, padding: '6% ' }}>
-				<Container
-					sx={{
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
+			{/* <CalculateFee /> */}
+
+			<Container sx={{ py: 8, display: 'flex', flexDirection: 'row' }}>
+				{/* Stepper Vertical */}
+				<Stepper
+					activeStep={activeStep}
+					orientation='vertical'
+					sx={{ flex: 1, mr: 4 }} // El Stepper se mostrará verticalmente y ocupará espacio a la izquierda
 				>
+					{steps.map((label, index) => (
+						<Step key={label}>
+							<StepLabel>{label}</StepLabel>
+						</Step>
+					))}
+				</Stepper>
+
+				{/* Contenido dividido en imagen y texto */}
+				<Grid container spacing={3} sx={{ flex: 3, alignItems: 'center' }}>
+					{/* Imagen */}
+					<Grid item xs={12} md={6} data-aos='fade-right'>
+						<Box
+							component='img'
+							sx={{
+								width: '100%',
+								height: 'auto',
+								borderRadius: 2,
+								boxShadow: 3,
+							}}
+							src={urbanizacion} // Reemplaza por la ruta de tu imagen
+							alt='Urbanización'
+						/>
+					</Grid>
+
+					{/* Texto */}
+					<Grid item xs={12} md={6} data-aos='fade-left'>
+						<Box>
+							<Typography variant='h4' fontWeight='bold' gutterBottom>
+								{activeStep === 0 && 'Planificación del proyecto'}
+								{activeStep === 1 && 'Diseño de la infraestructura'}
+								{activeStep === 2 && 'Construcción de los espacios'}
+							</Typography>
+							<Typography variant='body1'>
+								{activeStep === 0 &&
+									'Durante esta fase, trabajamos en la planificación meticulosa de cada aspecto del proyecto.'}
+								{activeStep === 1 &&
+									'En el diseño, creamos planos detallados que maximizan el uso eficiente del espacio.'}
+								{activeStep === 2 &&
+									'La construcción incluye tanto la infraestructura como los detalles arquitectónicos.'}
+							</Typography>
+						</Box>
+					</Grid>
+				</Grid>
+			</Container>
+
+			<Grid
+				container
+				spacing={2}
+				sx={{
+					justifyContent: 'center',
+					alignItems: 'center',
+					width: '100%',
+					p: 3,
+				}}
+			>
+				{DataProjects.map(urbanization => (
 					<Grid
 						item
-						xs
-						container
-						columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-						direction='row'
-						rowSpacing={4}
+						xs={12}
+						sm={6}
+						md={4}
+						key={urbanization.nombre}
+						sx={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
 					>
-						{DataUrbanizations.map(urbanization => (
-							<Grid item xs={12} sm={6} md={4} key={urbanization.id}>
-								<Card
-									elevation={4}
+						<ImageButton
+							focusRipple
+							style={{
+								width: '100%',
+								height: 300,
+							}}
+						>
+							<ImageSrc
+								style={{ backgroundImage: `url(${urbanization.imagen})` }}
+							/>
+							<ImageBackdrop className='MuiImageBackdrop-root' />
+							<Image>
+								<Typography
+									component='span'
+									variant='subtitle1'
+									color='inherit'
 									sx={{
-										// maxWidth: 345,
-										borderRadius: 4,
-										height: '100%',
+										position: 'relative',
+										p: 2,
+										textAlign: 'center',
+										fontSize: '1.3rem',
+										pb: theme => 'calc(${theme.spacing(1)} + 6px)',
 									}}
 								>
-									<CardHeader
-										avatar={
-											<Avatar sx={{ bgcolor: Colors.info3 }} variant='rounded'>
-												<Villa />
-											</Avatar>
-										}
-										title={urbanization.nombre}
-										subheader={urbanization.ubicacion}
-									/>
-									<CardMedia
-										component='img'
-										sx={{
-											height: 194,
-											cursor: 'pointer',
-											'&:hover': {
-												backgroundColor: Colors.muted,
-												opacity: [0.7],
-											},
-										}}
-										image={urbanization.imgUrbanizacion}
-										alt='imagen'
-									/>
-
-									<CardContent>
-										<Typography variant='subtitle1' fontWeight='40px'>
-											{urbanization.descripcionCorta}
-										</Typography>
-									</CardContent>
-									<CardActions>
-										{/* <Link to={`/ProjectDetails/${urbanization.id}`}>
-									<Button size='small'>Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />\
-									</Button>
-									</Link>  */}
-										<Link to={`/ProjectDetails/${urbanization.id}`}>
-											<Button size='small'>
-												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
-											</Button>
-										</Link>
-										{/* {urbanization.id >= 1 && urbanization.id <= 2 ? (
-											
-										) : (
-											<Button disabled size='small'>
-												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
-											</Button>
-										)} */}
-									</CardActions>
-								</Card>
-							</Grid>
-						))}
+									{urbanization.nombre}
+									<ImageMarked className='MuiImageMarked-root' />
+								</Typography>
+							</Image>
+						</ImageButton>
 					</Grid>
-				</Container>
-			</Box>
+				))}
+			</Grid>
+
 			<InfoUrbanization />
 		</>
 	);

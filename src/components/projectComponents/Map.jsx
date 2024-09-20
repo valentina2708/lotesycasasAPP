@@ -1,7 +1,6 @@
 import { height } from '@mui/system'
 import { GoogleMap, Marker, MarkerF, useLoadScript } from '@react-google-maps/api'
-import React from 'react'
-import Box  from '@mui/material/Box'
+import { Box } from '@mui/material';
 
 export default function Mapaa(latt,lngg) {
   
