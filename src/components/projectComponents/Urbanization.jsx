@@ -1,17 +1,12 @@
 import { Colors } from '../../config/themeConfig.js';
 import { Parallax } from 'react-parallax';
-import { useEffect, useState } from 'react';
 import {
 	Box,
 	Typography,
 	Stack,
 	Grid,
 	ButtonBase,
-	Stepper,
-	Step,
-	StepLabel,
-	Container,
-	StepContent,
+	Divider,
 } from '@mui/material';
 import urbanizacion from '../../assets/urbanizacion.jpg';
 import AOS from 'aos';
@@ -25,8 +20,34 @@ import InfoUrbanization from '../projectComponents/InfoUrbanization.jsx';
 import { DataProjects } from '/src/DataProvider/DataProjects.js';
 import { Link } from 'react-router-dom';
 import CalculateFee from '/src/components/CalculateFee';
+import construcion1 from '../../assets/construccion1.jpg';
+import construcion2 from '../../assets/construccion2.jpg';
+import construcion3 from '../../assets/construccion3.jpg';
+import { RoomTwoTone } from '@mui/icons-material';
 
-const steps = ['Planificación', 'Diseño', 'Construcción'];
+const rows = [
+	{
+		id: 1,
+		imgSrc: construcion1,
+		text: 'Servicios de preconstrucción',
+		subtitle:
+			'Todo comienza con los servicios previos a la construcción . ¿Cuál es el primer paso en el que debe centrarse? Responderemos a esta y otras muchas preguntas que es esencial conocer antes de que comience el proceso de construcción. Desarrollaremos un plan detallado que lo guiará a lo largo de todo el proceso.',
+	},
+	{
+		id: 2,
+		imgSrc: construcion2,
+		text: 'Planificación y construcción',
+		subtitle:
+			'Planificamos los proyectos desde cero y construimos las casas que usted ha imaginado, brindar servicios de alta calidad es uno de nuestros principales objetivos. Nos esforzamos por cumplir e incluso superar las expectativas de nuestros clientes y aportar valor.',
+	},
+	{
+		id: 3,
+		imgSrc: construcion3,
+		text: 'Diseño exterior e interior',
+		subtitle:
+			'Impresione a todos con un diseño exterior excepcional para sus casas. No importa si se trata de un simple reemplazo o de un rediseño completo, puede contar con nosotros para hacer realidad sus ideas, soluciones interesantes acompañadas de alta calidad serán la clave del diseño exterior de la casa que construimos para usted.',
+	},
+];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
 	position: 'relative',
@@ -98,35 +119,6 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function ProjectsUrbanization() {
 	const [element, controls] = useScroll();
-	const [activeStep, setActiveStep] = useState(0);
-
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-
-		const handleScroll = () => {
-			const scrollPosition = window.scrollY + window.innerHeight / 2; // Posición de scroll
-			const windowHeight = window.innerHeight; // Altura de la ventana
-
-			// Calculamos cuándo se activa cada paso basándonos en la posición de scroll
-			if (scrollPosition < windowHeight) {
-				setActiveStep(0);
-			} else if (
-				scrollPosition >= windowHeight &&
-				scrollPosition < windowHeight * 2
-			) {
-				setActiveStep(1);
-			} else if (scrollPosition >= windowHeight * 2) {
-				setActiveStep(2);
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
 	return (
 		<>
 			<Parallax
@@ -218,58 +210,130 @@ export default function ProjectsUrbanization() {
 				</motion.div>
 			</Box>
 			{/* <CalculateFee /> */}
+			<Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        width: '100%',
+        mt: 2,
+      }}
+    >
+      {rows.map((row, index) => (
+        <Grid
+          container
+          key={row.id}
+          spacing={2}
+          alignItems="center"
+          sx={{ position: 'relative', mb: 5, p:'2rem' }}
+          direction={{
+            xs: 'column',
+            md: index % 2 === 0 ? 'row' : 'row-reverse', 
+          }}
+        >
+          {/* Columna de Imagen */}
+          <Grid
+            item
+            xs={12}
+            md={5} 
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+            }}
+          >
+            <img
+              src={row.imgSrc}
+              alt={`Imagen ${row.id}`}
+              style={{ maxWidth: '100%', maxHeight: '100%' }}
+            />
+          </Grid>
 
-			<Container sx={{ py: 8, display: 'flex', flexDirection: 'row' }}>
-				{/* Stepper Vertical */}
-				<Stepper
-					activeStep={activeStep}
-					orientation='vertical'
-					sx={{ flex: 1, mr: 4 }} // El Stepper se mostrará verticalmente y ocupará espacio a la izquierda
-				>
-					{steps.map((label, index) => (
-						<Step key={label}>
-							<StepLabel>{label}</StepLabel>
-						</Step>
-					))}
-				</Stepper>
+      
+          <Grid
+            item
+            xs={12} 
+            md={2}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+              position: 'relative',
+              my: { xs: 2, md: 0 }, 
+            }}
+          >
+            {/* Divider Vertical */}
+            <Divider
+              orientation={{
+                xs: 'horizontal', 
+                md: 'vertical', 
+              }}
+              sx={{
+                width: { xs: '100%', md: '2px' }, 
+                height: { xs: '2px', md: '150px' }, 
+                bgcolor: Colors.info3,
+              }}
+            />
+            {/* Número dentro del Divider */}
+            <Box
+              sx={{
+                position: 'absolute',
+                top: { xs: '50%', md: 'calc(50% - 25px)' }, 
+                left: '53%',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: Colors.body_bg,
+				color: Colors.info3,
+                borderRadius: '50%',
+                padding: '5px 10px',
+                border: '2px solid black',
+      
+              }}
+            >
+              <Typography variant="h6">{row.id}</Typography>
+            </Box>
+          </Grid>
 
-				{/* Contenido dividido en imagen y texto */}
-				<Grid container spacing={3} sx={{ flex: 3, alignItems: 'center' }}>
-					{/* Imagen */}
-					<Grid item xs={12} md={6} data-aos='fade-right'>
-						<Box
-							component='img'
-							sx={{
-								width: '100%',
-								height: 'auto',
-								borderRadius: 2,
-								boxShadow: 3,
-							}}
-							src={urbanizacion} // Reemplaza por la ruta de tu imagen
-							alt='Urbanización'
-						/>
-					</Grid>
-
-					{/* Texto */}
-					<Grid item xs={12} md={6} data-aos='fade-left'>
-						<Box>
-							<Typography variant='h4' fontWeight='bold' gutterBottom>
-								{activeStep === 0 && 'Planificación del proyecto'}
-								{activeStep === 1 && 'Diseño de la infraestructura'}
-								{activeStep === 2 && 'Construcción de los espacios'}
-							</Typography>
-							<Typography variant='body1'>
-								{activeStep === 0 &&
-									'Durante esta fase, trabajamos en la planificación meticulosa de cada aspecto del proyecto.'}
-								{activeStep === 1 &&
-									'En el diseño, creamos planos detallados que maximizan el uso eficiente del espacio.'}
-								{activeStep === 2 &&
-									'La construcción incluye tanto la infraestructura como los detalles arquitectónicos.'}
-							</Typography>
-						</Box>
-					</Grid>
-				</Grid>
-			</Container>
+    
+          <Grid
+            item
+            xs={12} 
+            md={5} 
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+            }}
+          >
+            <Box
+              sx={{
+                textAlign: { xs: 'center', md: index % 2 === 0 ? 'left' : 'right' },
+                width: '100%',
+                p: '2rem',
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 500,
+                  color: Colors.info3,
+                  mb: 1,
+                }}
+              >
+                {row.text}
+              </Typography>
+              <Typography variant="subtitle1" sx={{ color: Colors.fondo, fontWeight: 250,}}>
+                {row.subtitle}
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      ))}
+    </Box>
 
 			<Grid
 				container
@@ -315,7 +379,6 @@ export default function ProjectsUrbanization() {
 										p: 2,
 										textAlign: 'center',
 										fontSize: '1.3rem',
-										pb: theme => 'calc(${theme.spacing(1)} + 6px)',
 									}}
 								>
 									{urbanization.nombre}

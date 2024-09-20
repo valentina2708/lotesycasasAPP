@@ -15,6 +15,7 @@ import Contacto1 from '../assets/contacto1.jpg';
 import Grid from '@mui/material/Grid';
 import parallax, { Parallax } from 'react-parallax';
 import SendIcon from '@mui/icons-material/Send';
+import { Colors } from '../config/themeConfig';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -113,7 +114,7 @@ export default function ContactForm() {
 										variant='h3'
 										sx={{
 											opacity: [90],
-											color: '#A15600',
+											color: Colors.info3,
 											fontWeight: 'bold',
 											mt: 2,
 											textAlign: 'center',
@@ -138,7 +139,7 @@ export default function ContactForm() {
 										variant='h2'
 										sx={{
 											opacity: [90],
-											color: '#A15600',
+											color: Colors.info3,
 											fontWeight: 'bold',
 											mt: 2,
 											textAlign: 'center',
@@ -195,7 +196,7 @@ export default function ContactForm() {
 									variant='h2'
 									sx={{
 										opacity: [90],
-										color: '#A15600',
+										color: Colors.info3,
 										fontWeight: 'bold',
 
 										textAlign: 'center',
@@ -240,34 +241,8 @@ export default function ContactForm() {
 						alignItems: 'center',
 					}}
 				>
-					<Box
-						data-aos='fade-right'
-						sx={{
-							position: 'absolute',
-							width: '150px',
-							margin: '5px',
-							height: '150px',
-							top: 90,
-							left: { md: '280px' },
-							backgroundColor: '#FE6B1D',
-							borderRadius: 6,
-							boxShadow: 20,
-						}}
-					></Box>
-					<Box
-						data-aos='fade-left'
-						sx={{
-							position: 'absolute',
-							width: '150px',
-							margin: '5px',
-							height: '150px',
-							top: 250,
-							left: { md: '980px' },
-							backgroundColor: '#FE6B1D',
-							borderRadius: 6,
-							boxShadow: 20,
-						}}
-					></Box>
+					
+				
 
 					<Grid
 						item
