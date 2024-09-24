@@ -5,7 +5,7 @@ import {
 	CardContent,
 	Avatar,
 	IconButton,
-	Grid
+	Grid,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -58,21 +58,22 @@ const Item = styled(Paper)(({ theme }) => ({
 	alignItems: 'center',
 	boxShadow: 'none',
 	borderRadius: 0,
+	backgroundColor: 'transparent',
+	p: 2,
 }));
 
 const ItemBox = styled(Paper)(({ theme }) => ({
-	padding: theme.spacing(2),
+	padding: theme.spacing(2.5),
 	textAlign: 'center',
 	height: '100%',
-
 	backgroundColor: Colors.info3,
 	boxShadow: 'none',
 	borderRadius: 0,
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
-	width: theme.spacing(12),
-	height: theme.spacing(12),
+	width: theme.spacing(15),
+	height: theme.spacing(15),
 	margin: 'auto',
 }));
 
@@ -107,6 +108,8 @@ export default function AboutUs() {
 				style={{
 					width: '100%',
 					height: '100%',
+					p: '5%',
+					backgroundColor: 'transparent',
 				}}
 				bgImage={Nosotros1}
 				strength={300}
@@ -141,7 +144,7 @@ export default function AboutUs() {
 				</Box>
 			</Parallax>
 
-			<Box 	 sx={{ flexGrow: 1, width: '100%' }}>
+			<Box sx={{ flexGrow: 1, width: '100%' }}>
 				<Grid container sx={{ height: { md: '40vh' } }}>
 					<Grid item xs={12} md={4}>
 						<ItemBox>
@@ -149,7 +152,7 @@ export default function AboutUs() {
 								variant='h3'
 								sx={{
 									fontWeight: 600,
-									mt:'1rem',
+									mt: '5rem',
 									color: Colors.dove_gray,
 									textAlign: { xs: 'center', md: 'left' },
 									mb: { xs: '1rem', md: '100px' },
@@ -168,6 +171,7 @@ export default function AboutUs() {
 								sx={{
 									fontWeight: 300,
 									mt: 2,
+									p: '2rem',
 									color: Colors.body_bg,
 									textAlign: { xs: 'center', md: 'left' },
 									fontSize: { xs: '0.9rem', md: '1rem' },
@@ -191,25 +195,25 @@ export default function AboutUs() {
 				</Grid>
 			</Box>
 
-		
-				<Box  ref={element} sx={{ width: '100%', mt: '4rem' }}>
+			<Box ref={element} sx={{ width: '100%', p: '3rem', mt: '3rem' }}>
 				<motion.div
-				className='clients'
-				variants={servicesAnimations}
-				animate={controls}
-				transition={{
-					delay: 0.02,
-					type: 'tween',
-					duration: 0.9,
-				}}
-			>
+					className='clients'
+					variants={servicesAnimations}
+					animate={controls}
+					transition={{
+						delay: 0.02,
+						type: 'tween',
+						duration: 0.9,
+					}}
+				>
 					<Typography
 						variant='h4'
 						sx={{
 							textAlign: 'center',
-							mb: 4,
+							mb: 5,
+							pt: '5rem',
 							fontWeight: 600,
-							color: Colors.fondo,
+							color: Colors.info3,
 						}}
 					>
 						Nuestros Clientes
@@ -236,9 +240,8 @@ export default function AboutUs() {
 							</Grid>
 						))}
 					</Grid>
-					</motion.div>
-				</Box>
-	
+				</motion.div>
+			</Box>
 
 			<Box
 				sx={{
@@ -246,7 +249,6 @@ export default function AboutUs() {
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
-					margin: '0 auto',
 					mt: '5rem',
 				}}
 			>
@@ -255,23 +257,32 @@ export default function AboutUs() {
 					sx={{
 						textAlign: 'center',
 						mb: 4,
+						pt: '4rem',
 						fontWeight: 600,
-						color: Colors.fondo,
+						color: Colors.info3,
 					}}
 				>
 					Asesores
 				</Typography>
-				<Grid container spacing={4} justifyContent='center' sx={{ mt: '2rem' }}>
+
+				{/* Primera fila con dos tarjetas */}
+				<Grid container spacing={3} justifyContent='center' sx={{ mt: '2rem' }}>
 					{advisors.slice(0, 2).map((advisor, index) => (
-						<Grid item xs={12} sm={6} key={index}>
+						<Grid item xs={12} sm={6} md={4} key={index}>
 							<Card
 								sx={{
 									boxShadow: 5,
 									textAlign: 'center',
 									borderRadius: 2,
-									height: '45vh',
-									width: '400px',
+									height: { xs: 'auto', sm: '50vh' },
+									maxWidth: '350px',
 									margin: '0 auto',
+									padding: { xs: '1.5rem', sm: '2rem' },
+									transition: 'transform 0.3s ease',
+
+									'&:hover': {
+										transform: 'translateY(-15px)',
+									},
 								}}
 							>
 								<CardContent>
@@ -284,7 +295,7 @@ export default function AboutUs() {
 										sx={{
 											display: 'flex',
 											justifyContent: 'center',
-											gap: 2,
+											gap: 1,
 											mt: 2,
 										}}
 									>
@@ -304,22 +315,23 @@ export default function AboutUs() {
 					))}
 				</Grid>
 
-				<Box
-					sx={{
-						mt: '4rem',
-						width: '100%',
-						display: 'flex',
-						justifyContent: 'center',
-					}}
-				>
-					<Grid item xs={12} sm={6}>
+				{/* Segunda fila con una tarjeta centrada */}
+				<Grid container justifyContent='center' sx={{ mt: '4rem' }}>
+					<Grid item xs={12} sm={6} md={4}>
 						<Card
 							sx={{
 								boxShadow: 5,
 								textAlign: 'center',
-								height: '45vh',
-								width: '400px',
+								borderRadius: 2,
+								height: { xs: 'auto', sm: '50vh' },
+								maxWidth: '350px',
 								margin: '0 auto',
+								padding: { xs: '1.5rem', sm: '2rem' },
+								transition: 'transform 0.3s ease',
+
+								'&:hover': {
+									transform: 'translateY(-15px)',
+								},
 							}}
 						>
 							<CardContent>
@@ -337,24 +349,24 @@ export default function AboutUs() {
 									sx={{
 										display: 'flex',
 										justifyContent: 'center',
-										gap: 2,
+										gap: 1,
 										mt: 2,
 									}}
 								>
-									<IconButton>
-										<FacebookIcon sx={{ color: Colors.fondo }} />
+									<IconButton sx={{ color: Colors.fondo }}>
+										<FacebookIcon />
 									</IconButton>
 									<IconButton sx={{ color: Colors.fondo }}>
 										<TwitterIcon />
 									</IconButton>
-									<IconButton>
-										<LinkedInIcon sx={{ color: Colors.fondo }} />
+									<IconButton sx={{ color: Colors.fondo }}>
+										<LinkedInIcon />
 									</IconButton>
 								</Box>
 							</CardContent>
 						</Card>
 					</Grid>
-				</Box>
+				</Grid>
 			</Box>
 		</>
 	);

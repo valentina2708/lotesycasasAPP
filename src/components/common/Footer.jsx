@@ -33,7 +33,7 @@ export default function FooterBar() {
 						</Stack>
 						<Stack direction='row' alignItems='center'>
 							<EmailIcon sx={{ mr: 1 }} />
-							<Typography>info@casasylotes.com</Typography>
+							<Typography>info@terranova.com</Typography>
 						</Stack>
 					</Stack>
 				</Grid>
@@ -74,7 +74,7 @@ export default function FooterBar() {
 			{/* Copyright */}
 			<Box mt={4} textAlign='center'>
 				<Typography variant='body2'>
-					© 2023 Casas & Lotes. Todos los derechos reservados.
+					©Vapaz 2023 Terranova. Todos los derechos reservados. 
 				</Typography>
 			</Box>
 		</Box>

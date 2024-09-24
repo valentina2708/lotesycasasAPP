@@ -5,15 +5,9 @@ import {
 	Box,
 	Typography,
 	Stack,
-	Card,
-	CardMedia,
-	CardHeader,
+	Grid,
+	ButtonBase,
 	Container,
-	Avatar,
-	CardContent,
-	CardActions,
-	Button,
-	Grid
 } from '@mui/material';
 import house from '../../assets/house.jpg';
 import AOS from 'aos';
@@ -22,10 +16,76 @@ import { motion } from 'framer-motion';
 import { useScroll } from '../useScroll';
 import { mensajebox } from '../../animation';
 import { DataHouses } from '../../DataProvider/DataProjects.js';
-import GiteIcon from '@mui/icons-material/Gite';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
-import { display } from 'styled-system';
+import { styled } from '@mui/material/styles';
+
+const ImageButton = styled(ButtonBase)(({ theme }) => ({
+	position: 'relative',
+	height: 200,
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+
+	[theme.breakpoints.down('sm')]: {
+		width: '100% !important',
+		height: 100,
+	},
+	'&:hover, &.Mui-focusVisible': {
+		zIndex: 1,
+		'& .MuiImageBackdrop-root': {
+			opacity: 0.15,
+		},
+		'& .MuiImageMarked-root': {
+			opacity: 0,
+		},
+		'& .MuiTypography-root': {
+			border: '4px solid currentColor',
+		},
+	},
+}));
+
+const ImageSrc = styled('span')({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	backgroundSize: 'cover',
+	backgroundPosition: 'center 40%',
+});
+
+const Image = styled('span')(({ theme }) => ({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	color: theme.palette.common.white,
+}));
+
+const ImageBackdrop = styled('span')(({ theme }) => ({
+	position: 'absolute',
+	left: 0,
+	right: 0,
+	top: 0,
+	bottom: 0,
+	backgroundColor: theme.palette.common.black,
+	opacity: 0.4,
+	transition: theme.transitions.create('opacity'),
+}));
+
+const ImageMarked = styled('span')(({ theme }) => ({
+	height: 3,
+	width: 18,
+	backgroundColor: theme.palette.common.white,
+	position: 'absolute',
+	bottom: -2,
+	left: 'calc(50% - 9px)',
+	transition: theme.transitions.create('opacity'),
+}));
 
 export default function ProjectsHouses() {
 	const [element, controls] = useScroll();
@@ -110,9 +170,9 @@ export default function ProjectsHouses() {
 				>
 					<Stack spacing={2}>
 						<Typography
-							variant='h3'
+							variant='h4'
 							sx={{
-								color: Colors.primary,
+								color: Colors.info3,
 								fontWeight: 'bold',
 								mt: 2,
 								textAlign: 'center',
@@ -124,7 +184,7 @@ export default function ProjectsHouses() {
 					</Stack>
 				</motion.div>
 			</Box>
-			<Box sx={{ flexGrow: 1, paddingInline: {xs:'15%', sm:'0%'} }}>
+			<Box sx={{ flexGrow: 1, paddingInline: { xs: '15%', sm: '0%' } }}>
 				<Container
 					sx={{
 						width: '100%',
@@ -133,53 +193,57 @@ export default function ProjectsHouses() {
 						paddingLeft: { xs: '0rem', sm: '5rem' },
 					}}
 				>
-					<Grid container columns={{ xs: 6, sm: 12 }} gap={10}>
+					<Grid
+						container
+						spacing={2}
+						sx={{
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+							p: 3,
+						}}
+					>
 						{DataHouses.map(house => (
-							<Grid item xs={6} sm={3} key={house.id}>
-								<Card
-									elevation={4}
-									sx={{
-										maxWidth: { xs: 320, sm: 420 },
-										height: '100%',
-										borderRadius: 4,
+							<Grid
+								item
+								xs={12}
+								sm={6}
+								md={4}
+								key={house.nombre}
+								sx={{
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+								}}
+							>
+								<ImageButton
+									focusRipple
+									style={{
+										width: '100%',
+										height: 300,
 									}}
 								>
-									<CardHeader
-										avatar={
-											<Avatar sx={{ bgcolor: Colors.info3 }} variant='rounded'>
-												<GiteIcon />
-											</Avatar>
-										}
-										title={house.nombre}
-										subheader={house.ubicacion}
+									<ImageSrc
+										style={{ backgroundImage: `url(${house.imagen})` }}
 									/>
-									<CardMedia
-										component='img'
-										sx={{
-											// height: 194,
-											cursor: 'pointer',
-											'&:hover': {
-												backgroundColor: Colors.muted,
-												opacity: [0.7],
-											},
-										}}
-										image={house.imagen}
-										alt='imagen'
-									/>
-
-									<CardContent>
-										<Typography variant='subtitle1' fontWeight='40px'>
-											{house.descripcionCorta}
+									<ImageBackdrop className='MuiImageBackdrop-root' />
+									<Image>
+										<Typography
+											component='span'
+											variant='subtitle1'
+											color='inherit'
+											sx={{
+												position: 'relative',
+												p: 2,
+												textAlign: 'center',
+												fontSize: '1.3rem',
+											}}
+										>
+											{house.nombre}
+											<ImageMarked className='MuiImageMarked-root' />
 										</Typography>
-									</CardContent>
-									<CardActions>
-										<Link to={`/ProjectDetails/${house.id}`}>
-											<Button size='small'>
-												Ver <ArrowForwardIosIcon sx={{ fontSize: 15 }} />
-											</Button>
-										</Link>
-									</CardActions>
-								</Card>
+									</Image>
+								</ImageButton>
 							</Grid>
 						))}
 					</Grid>

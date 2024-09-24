@@ -1,4 +1,12 @@
-import { Typography, Card,Box, Avatar, CardContent, Button, Stack } from '@mui/material';
+import {
+	Typography,
+	Card,
+	Box,
+	Avatar,
+	CardContent,
+	Button,
+	Stack,
+} from '@mui/material';
 import { Colors } from '/src/config/themeConfig.js';
 import { makeStyles } from 'tss-react/mui';
 import { motion } from 'framer-motion';
@@ -11,8 +19,8 @@ import * as Array from '../../DataProvider/DataProjects';
 const useStyles = makeStyles()(theme => {
 	return {
 		InfoImage: {
-			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/infourbanizacion.jpg')`,
-			height: '550px',
+			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/infourbanizacion.jpg')`,
+			height: '300px',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: 'cover',
@@ -53,72 +61,28 @@ export default function BasicStack() {
 				sx={{
 					justifyContent: 'center',
 					alignItems: 'center',
-					p: '20px 0px',
+					p: '3rem',
 				}}
 			>
-				<Card
-					elevation={12}
-					sx={{
-						color: Colors.dove_gray,
-						opacity: [0.7, 0.6, 0.7],
-						position: 'relative',
-						top: { xs: '1rem', sm: 0 },
-						width: { sm: '60%' },
-						// height: 350,
-						borderRadius: { xs: 0, sm: 3 },
-						// left: '30px',
-						p: '20px',
-					}}
-				>
-					<Stack sx={{justifyContent: 'center', alignItems: 'center'}}>
-					<Avatar
-						alt='logo rincon del lago'
-						src='/src/assets/logoRincon.png'
+				<CardContent>
+					<Typography
+						variant='h5'
 						sx={{
-							width: 190,
-							height: 130,
-							bgcolor: Colors.info3,
-							position: 'relative',
-							// left: '35%',
+							color: Colors.dove_gray,
+							fontWeight: 400,
+							mt: 0.5,
+							textAlign: 'center',
 						}}
-					/>
-					</Stack>
+					>
+						Contamos con una variedad de proyectos de diseño interior y
+						exterior, completados con éxito.
+					</Typography>
+					{/*  <Link to={`/ProjectDetails/${project.id}`}> */}
 
-					<CardContent>
-						<Typography
-							variant='h6'
-							sx={{
-								color: Colors.primary,
-								fontWeight: 500,
-								mt: 0.5,
-								textAlign: 'center',
-							}}
-						>
-							Estamos en construcción del nuevo proyecto Rincón del Lago, en el
-							encontraras el hogar de tus sueños, ven, conocelo y haz parte de
-							nuestra familia.
-						</Typography>
-						{/*  <Link to={`/ProjectDetails/${project.id}`}> */}
-
-						<Stack sx={{justifyContent: 'center', alignItems: 'center'}}>
-							<Button
-								sx={{
-									position: 'relative',
-									mt: 2,
-									// left: '50%',
-									p: '10px',
-									background: Colors.info3,
-								}}
-								variant='contained'
-							>
-								Ver Más
-							</Button>
-						</Stack>
-						{/* </Link>   */}
-						{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
+					{/* </Link>   */}
+					{/* 	{ miArray.Prueba[id - 1].activo === 'v'?
 											 (código si es cerdadero) : (código si es falso) } */}
-					</CardContent>
-				</Card>
+				</CardContent>
 			</Box>
 			{/* ))}  */}
 		</motion.div>

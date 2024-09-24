@@ -13,7 +13,7 @@ export default function HomeLayout() {
 	return (
 		<motion.div initial='hidden' animate='show'>
 			<CarouselHome />
-			<WelcomeMessage />
+			{/* <WelcomeMessage /> */}
 			<MainProjects />
 			<NewProjectInfo />	
 			<InfoPaymentMethods />
