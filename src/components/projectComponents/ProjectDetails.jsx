@@ -6,7 +6,7 @@ import {
 	Card,
 	Button,
 	Divider,
-	Grid
+	Grid,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -23,7 +23,9 @@ import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImageGallery from '../projectComponents/ImageGallery.jsx';
-import UrbanizationsDetails from '../projectComponents/UrbanizationsDetails.jsx'
+import UrbanizationsDetails from '../projectComponents/UrbanizationsDetails.jsx';
+import { Colors } from '../../config/themeConfig.js';
+import CalculateFee from '../../components/CalculateFee.jsx';
 
 export default function PaginaProyectos(props) {
 	useEffect(() => {
@@ -61,7 +63,7 @@ export default function PaginaProyectos(props) {
 							<Typography
 								variant='h4'
 								sx={{
-									color: '#A15600',
+									color: Colors.info3,
 									fontWeight: 'bold',
 									mt: 2,
 									textAlign: 'center',
@@ -76,85 +78,105 @@ export default function PaginaProyectos(props) {
 						</Box>
 					</Grid>
 
-					<Box
+					<Grid
 						sx={{
-							marginBottom: '5vh',
-							display: { xs: 'block', sm: 'none', md: 'none', xl: 'none' },
+							height: 'auto',
+							minHeight: '75vh',
+							alignItems: 'center',
+							mt: '4rem',
+							p: '2rem',
 						}}
 					>
-						<Box
-							sx={{
-								borderRadius: 10,
-							}}
+						<Grid
+							item
+							xs={12}
+							md={6}
+							sx={{ display: 'flex', justifyContent: 'center' }}
 						>
-							<Grid
-								container='true'
-								sx={{
-									width: '100%',
-									height: '100%',
-									display: 'grid',
-									justifyContent: 'center',
-									alignItems: 'center',
-									marginTop: '5vh',
-								}}
-							>
-								<Grid
-									item='true'
-									xs={12}
-									sm={12}
-									md={12}
-									lg={6}
+							<Box>
+								<Box
 									sx={{
-										display: 'flex',
-										width: '100%',
-										height: '100%',
+										borderRadius: 10,
 									}}
 								>
-									<Box data-aos='fade-up' data-aos-duration='1000' sx={{}}>
-										{/*  ######### imagen 1 logo ########### */}
-										<img
-											src={miArray.Prueba[id - 1].imagencard}
-											width={'100%'}
-											height={'100%'}
-										/>
-									</Box>
-								</Grid>
-								<Grid
-									sx={{
-										display: 'grid',
-										justifyContent: 'center',
-									}}
-								>
-									<Box
-										data-aos='fade-up'
-										data-aos-duration='1000'
+									<Grid
+										container='true'
 										sx={{
-											margin: 'auto',
-											display: 'flex',
+											width: '100%',
+											height: '100%',
+											display: 'grid',
 											justifyContent: 'center',
-											paddingLeft: '2rem',
-											paddingRight: '2rem',
+											alignItems: 'center',
+											marginTop: '5vh',
 										}}
 									>
-										<Typography
-											variant='body1'
+										<Grid
+											item='true'
+											xs={12}
+											sm={12}
+											md={12}
+											lg={6}
 											sx={{
+												display: 'flex',
 												width: '100%',
 												height: '100%',
-												color: 'Black',
-												fontSize: 25,
-												textAlign: 'center',
 											}}
 										>
-											{/*  ######### Descripcion 1 ########### */}
+											<Box data-aos='fade-up' data-aos-duration='1000' sx={{}}>
+												{/*  ######### imagen 1 logo ########### */}
+												<img
+													src={miArray.Prueba[id - 1].imagencard}
+													width={'100%'}
+													height={'100%'}
+												/>
+											</Box>
+										</Grid>
+										<Grid
+											sx={{
+												display: 'grid',
+												justifyContent: 'center',
+											}}
+										>
+											<Box
+												data-aos='fade-up'
+												data-aos-duration='1000'
+												sx={{
+													margin: 'auto',
+													display: 'flex',
+													justifyContent: 'center',
+													paddingLeft: '2rem',
+													paddingRight: '2rem',
+												}}
+											>
+												<Typography
+													variant='body1'
+													sx={{
+														width: '100%',
+														height: '100%',
+														color: 'Black',
+														fontSize: 25,
+														textAlign: 'center',
+													}}
+												>
+													{/*  ######### Descripcion 1 ########### */}
 
-											{miArray.Prueba[id - 1].descripcion}
-										</Typography>
-									</Box>
-								</Grid>
-							</Grid>
-						</Box>
-					</Box>
+													{miArray.Prueba[id - 1].descripcion}
+												</Typography>
+											</Box>
+										</Grid>
+									</Grid>
+								</Box>
+							</Box>
+						</Grid>
+						<Grid
+							item
+							xs={12}
+							md={6}
+							sx={{ display: 'flex', justifyContent: 'center' }}
+						>
+							<CalculateFee/>
+						</Grid>
+					</Grid>
 
 					<Box
 						sx={{
@@ -266,11 +288,8 @@ export default function PaginaProyectos(props) {
 								</Grid>
 							</Grid>
 						</Card>
-					
 					</Box>
-				
 				</Grid>
-				
 
 				<Grid container sx={{}}>
 					{miArray.Prueba[id - 1].adicional === 'rinconlago' ? (
@@ -706,12 +725,11 @@ export default function PaginaProyectos(props) {
 									</Grid>
 								</Card>
 							</Grid>
-						
 						</Grid>
 					) : (
 						////////////////////////////////////////////
 						<Box>
-						<UrbanizationsDetails/>
+							<UrbanizationsDetails />
 						</Box>
 					)}
 
@@ -891,7 +909,7 @@ export default function PaginaProyectos(props) {
 								width: '100%',
 								marginTop: '40px',
 								marginBottom: '40px',
-								gap: 12
+								gap: 12,
 							}}
 						>
 							<Typography
@@ -902,13 +920,12 @@ export default function PaginaProyectos(props) {
 									textAlign: 'center',
 									paddingTop: '10px',
 									margin: '20px',
-									
 								}}
 							>
 								Galeria
 							</Typography>
 						</Box>
-                        <ImageGallery/>
+						<ImageGallery />
 						{miArray.Prueba[id - 1].id === 1 && (
 							<Box
 								data-aos='fade-zoom-in'

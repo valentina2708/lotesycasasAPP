@@ -149,7 +149,7 @@ export const Prueba = [
 		id: '1',
 		adicional: 'rinconlago',
 		act: 'v',
-		nombre: 'Rincón Del Lago',
+		nombre: 'Rincón De Pubenza',
 		subtitulo: ' Condominio Campestre y Plaza Comercial',
 		imagencard: '/src/assets/logoRincondelLago.jpg',
 		mini: '/src/assets/Mini_Rincon_del_lago.jpg',
@@ -192,7 +192,7 @@ export const Prueba = [
 
 	{
 		id: 2,
-		nombre: 'Puertas Del Sol',
+		nombre: 'La Primavera',
 		adicional: 'u',
 		imagencard: '/src/assets/logopuertasdelsol.png',
 		subtitulo:'Proyecto de la constructora inmobiliaria Casas & Lotes en Jamundí',
@@ -223,7 +223,7 @@ export const Prueba = [
 	{
 		id: '3',
 		adicional: 'u',
-		nombre: 'Palmeras De La Italia',
+		nombre: 'Palmeras',
 		subtitulo: 'Condominio Campestre',
 		imagencard: '/src/assets/logoPalmerasr.png',
 		tipo: 'Urbanización',
@@ -250,7 +250,7 @@ export const Prueba = [
 	},
 	{
 		id: 4,
-		nombre: 'Caña Dulce',
+		nombre: 'Caña Verde',
 		adicional: 'u',
 		subtitulo:'Proyecto de la segunda urbanización campestre de las constructoras W Valle Verde y Casas & Lotes.',
 		estado: 'Finalizado',
@@ -277,7 +277,7 @@ export const Prueba = [
 	},
 	{
 		id: 5,
-		nombre: 'Caña Brava',
+		nombre: 'Morinda',
 		estado: 'Finalizado',
 		adicional: 'u',
 		subtitulo: 'Proyecto ejecutado y vendido al 100% en tiempo record. ',

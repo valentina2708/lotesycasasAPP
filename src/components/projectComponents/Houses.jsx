@@ -179,7 +179,7 @@ export default function ProjectsHouses() {
 								p: '10px',
 							}}
 						>
-							Viviendas con los mejores ambientes dentro de la ciudad de Cali
+							Viviendas con los mejores ambientes dentro de la ciudad
 						</Typography>
 					</Stack>
 				</motion.div>

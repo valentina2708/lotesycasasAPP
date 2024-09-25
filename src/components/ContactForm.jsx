@@ -22,15 +22,15 @@ import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
 
 import Contacto1 from '../assets/contacto1.jpg';
-import LoteImage from '../assets/lotes.jpeg';
+import LoteImage from '../assets/contacto2.jpg';
 
 const CssTextField = styled(TextField)({
 	borderRadius: 60,
 	margin: '10px',
 	width: '90%',
-	p:'2rem',
-	display:'flex',
-	justifyContent:'center',
+
+	display: 'flex',
+	justifyContent: 'center',
 
 	'& .MuiOutlinedInput-root': {
 		'& fieldset': {
@@ -59,7 +59,7 @@ export default function ContactForm() {
 				strength={300}
 				style={{
 					width: '100%',
-					height: '100vh',
+					height: '80vh',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
@@ -147,22 +147,65 @@ export default function ContactForm() {
 						alignItems: 'center',
 					}}
 				>
-					<Card sx={{ width: '90%', borderRadius: 10, boxShadow: 20 }}>
-						<CardContent>
-							<CssTextField label='Nombre' required />
-							<CssTextField label='Apellido' required />
-							<CssTextField label='Email' type='email' required />
-							<CssTextField label='Celular' type='text' required />
+					<Card
+						sx={{
+							width: '80%', // Ajusta el ancho para que no sea tan grande
+							borderRadius: 6,
+							boxShadow: 20,
+							padding: 3, // Añade un poco de padding interno para los contenidos
+						}}
+					>
+						<CardContent
+							sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+						>
+							<CssTextField
+								label='Nombre'
+								fullWidth
+								required
+								sx={{
+									marginBottom: 1, 
+									input: { padding: '12px' }, 
+								}}
+							/>
+							<CssTextField
+								label='Apellido'
+								fullWidth
+								required
+								sx={{
+									marginBottom: 1,
+									input: { padding: '12px' },
+								}}
+							/>
+							<CssTextField
+								label='Email'
+								fullWidth
+								required
+								type='email'
+								sx={{
+									marginBottom: 1,
+									input: { padding: '12px' },
+								}}
+							/>
+							<CssTextField
+								label='Celular'
+								fullWidth
+								required
+								type='text'
+								sx={{
+									marginBottom: 1,
+									input: { padding: '12px' },
+								}}
+							/>
 							<Button
 								sx={{
-									width: '90%',
+									width: '100%',
 									height: '45px',
 									backgroundColor: Colors.info3,
 									borderRadius: 60,
 									mt: 2,
-									":hover":
-									{
-									backgroundColor: Colors.info4},
+									':hover': {
+										backgroundColor: Colors.info4,
+									},
 								}}
 								variant='contained'
 								endIcon={<SendIcon />}
