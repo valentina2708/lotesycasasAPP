@@ -44,137 +44,86 @@ export default function PaginaProyectos(props) {
 		<Box sx={{ marginTop: '15vh' }}>
 			<Grid>
 				<Grid container='true'>
-					<Grid sx={{}} item='true' xs={12} sm={12} md={12} lg={12}>
-						<Box data-aos='fade-down' data-aos-duration='1000' sx={{}}>
-							<Typography
-								variant='h2'
-								sx={{
-									color: 'Black',
-									fontWeight: 'bold',
-									mt: 2,
-									textAlign: 'center',
-									paddingTop: '10px',
-									margin: '20px',
-								}}
-							>
-								{/*  ######### Nombre proyecto ########### */}
-								{miArray.Prueba[id - 1].nombre}
-							</Typography>
-							<Typography
-								variant='h4'
-								sx={{
-									color: Colors.info3,
-									fontWeight: 'bold',
-									mt: 2,
-									textAlign: 'center',
-									paddingTop: '10px',
-									margin: '20px',
-								}}
-							>
-								{/*  ######### Subtitulo proyecto ########### */}
-
-								{miArray.Prueba[id - 1].subtitulo}
-							</Typography>
-						</Box>
-					</Grid>
-
 					<Grid
-						sx={{
-							height: 'auto',
-							minHeight: '75vh',
-							alignItems: 'center',
-							mt: '4rem',
-							p: '2rem',
-						}}
+						container
+						sx={{ height: 'auto', minHeight: '75vh', mt: '4rem', p: '2rem' }}
 					>
+						{/* Primera columna: Imagen y descripción */}
 						<Grid
 							item
 							xs={12}
 							md={6}
-							sx={{ display: 'flex', justifyContent: 'center' }}
+							sx={{
+								display: 'flex',
+								justifyContent: 'center',
+								flexDirection: 'column',
+							}}
 						>
-							<Box>
+							<Box
+								sx={{
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+								}}
+							>
 								<Box
+									data-aos='fade-up'
+									data-aos-duration='1000'
 									sx={{
 										borderRadius: 10,
+										width: '80%', // Ajusta el tamaño para que no sea demasiado grande
+										marginBottom: '2rem', // Añade espacio inferior
 									}}
 								>
-									<Grid
-										container='true'
+									<img
+										src={miArray.Prueba[id - 1].imagencard}
+										alt='Imagen del proyecto'
+										width={'100%'}
+										style={{ borderRadius: '10px' }}
+									/>
+								</Box>
+								<Box
+									data-aos='fade-up'
+									data-aos-duration='1000'
+									sx={{
+										width: '80%', // Ajusta para que tenga un ancho consistente
+										marginTop: '2rem',
+										textAlign: 'center',
+									}}
+								>
+									<Typography
+										variant='body1'
 										sx={{
-											width: '100%',
-											height: '100%',
-											display: 'grid',
-											justifyContent: 'center',
-											alignItems: 'center',
-											marginTop: '5vh',
+											color: 'Black',
+											fontSize: 20, // Reduce un poco el tamaño de la fuente
 										}}
 									>
-										<Grid
-											item='true'
-											xs={12}
-											sm={12}
-											md={12}
-											lg={6}
-											sx={{
-												display: 'flex',
-												width: '100%',
-												height: '100%',
-											}}
-										>
-											<Box data-aos='fade-up' data-aos-duration='1000' sx={{}}>
-												{/*  ######### imagen 1 logo ########### */}
-												<img
-													src={miArray.Prueba[id - 1].imagencard}
-													width={'100%'}
-													height={'100%'}
-												/>
-											</Box>
-										</Grid>
-										<Grid
-											sx={{
-												display: 'grid',
-												justifyContent: 'center',
-											}}
-										>
-											<Box
-												data-aos='fade-up'
-												data-aos-duration='1000'
-												sx={{
-													margin: 'auto',
-													display: 'flex',
-													justifyContent: 'center',
-													paddingLeft: '2rem',
-													paddingRight: '2rem',
-												}}
-											>
-												<Typography
-													variant='body1'
-													sx={{
-														width: '100%',
-														height: '100%',
-														color: 'Black',
-														fontSize: 25,
-														textAlign: 'center',
-													}}
-												>
-													{/*  ######### Descripcion 1 ########### */}
-
-													{miArray.Prueba[id - 1].descripcion}
-												</Typography>
-											</Box>
-										</Grid>
-									</Grid>
+										{/* ######### Descripción 1 ########### */}
+										{miArray.Prueba[id - 1].descripcion}
+									</Typography>
 								</Box>
 							</Box>
 						</Grid>
+
+						{/* Segunda columna: Componente CalculateFee */}
 						<Grid
 							item
 							xs={12}
 							md={6}
-							sx={{ display: 'flex', justifyContent: 'center' }}
+							sx={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center', // Centra el contenido verticalmente
+							}}
 						>
-							<CalculateFee/>
+							<Box
+								sx={{
+									width: '80%', // Ajusta el tamaño del componente CalculateFee
+									marginTop: '2rem',
+								}}
+							>
+								<CalculateFee />
+							</Box>
 						</Grid>
 					</Grid>
 
@@ -197,96 +146,7 @@ export default function PaginaProyectos(props) {
 								borderRadius: 10,
 							}}
 						>
-							<Grid
-								container='true'
-								sx={{
-									// border: 2,
-									width: '100%',
-									height: '100%',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-								}}
-							>
-								<Grid
-									item='true'
-									xs={6}
-									sm={12}
-									md={12}
-									lg={6}
-									sx={{
-										marginBottom: '20px',
-										marginTop: '20px',
-										// border: 2,
-										padding: '10px',
-										display: 'flex',
-										justifyContent: 'center',
-										alignItems: 'center',
-										width: '100%',
-										height: '70%',
-									}}
-								>
-									<Box
-										data-aos='fade-up'
-										data-aos-duration='1000'
-										sx={{
-											//marginLeft:'10rem'
-											//border: 2,
-											display: 'flex',
-											justifyContent: 'right',
-											alignItems: 'center',
-											width: '80%',
-											height: '100%',
-										}}
-									>
-										{/*  ######### imagen 1 logo ########### */}
-										<img
-											src={miArray.Prueba[id - 1].imagencard}
-											width={'100%'}
-											height={'100%'}
-										/>
-									</Box>
-								</Grid>
-								<Grid
-									item='true'
-									xs={12}
-									sm={12}
-									md={12}
-									lg={6}
-									sx={{
-										display: 'flex',
-										justifyContent: 'center',
-										alignItems: 'center',
-										marginLeft: 'auto',
-										marginRight: 'auto',
-										marginTop: '4vh',
-										marginBottom: '4vh',
-									}}
-								>
-									<Box
-										data-aos='fade-up'
-										data-aos-duration='1000'
-										sx={{
-											justifyContent: 'left',
-											padding: '10px',
-										}}
-									>
-										<Typography
-											variant='body1'
-											sx={{
-												width: '450px',
-												height: '100%',
-												color: 'Black',
-												fontSize: 25,
-											}}
-										>
-											{/*  ######### Descripcion 1 ########### */}
-
-											{miArray.Prueba[id - 1].descripcion}
-										</Typography>
-									</Box>
-								</Grid>
-							</Grid>
+							
 						</Card>
 					</Box>
 				</Grid>

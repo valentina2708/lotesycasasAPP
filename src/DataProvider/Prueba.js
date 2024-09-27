@@ -151,7 +151,7 @@ export const Prueba = [
 		act: 'v',
 		nombre: 'Rincón De Pubenza',
 		subtitulo: ' Condominio Campestre y Plaza Comercial',
-		imagencard: '/src/assets/logoRincondelLago.jpg',
+		imagencard: '/src/assets/logo2em.png',
 		mini: '/src/assets/Mini_Rincon_del_lago.jpg',
 		imagenad: '/src/assets/parque-1.jpg',
 		imagenad2: '/src/assets/car2.jpg',
