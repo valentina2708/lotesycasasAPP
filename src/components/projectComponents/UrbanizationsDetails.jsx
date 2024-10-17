@@ -18,6 +18,7 @@ import {
 	Diversity1,
 	TimeToLeave,
 } from '@mui/icons-material/';
+import { Colors } from '../../config/themeConfig.js';
 
 export default function Details() {
 	const { id } = useParams();
@@ -68,7 +69,7 @@ export default function Details() {
 							>
 								<Avatar
 									alt='logo rincon del lago'
-									src='/src/assets/logoColor.jpg'
+									src='/src/assets/logo_terranova2.png'
 									sx={{
 										width: 190,
 										height: 130,
@@ -80,11 +81,11 @@ export default function Details() {
 
 								<CardContent sx={{}}>
 									<Typography
-										variant='h5'
+										variant='h6'
 										sx={{
-											color: 'black',
+											color: Colors.fondo,
 											fontWeight: 500,
-											mt: 0.5,
+											mt: '-2rem',
 											textAlign: 'center',
 										}}
 									>

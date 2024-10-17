@@ -8,6 +8,7 @@ import {
 	Fab,
 	Button,
 	Grid,
+	Link,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Parallax } from 'react-parallax';
@@ -20,6 +21,7 @@ import { useEffect } from 'react';
 import RoomIcon from '@mui/icons-material/Room';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import Contacto1 from '../assets/contacto1.jpg';
 import LoteImage from '../assets/contacto2.jpg';
@@ -76,7 +78,7 @@ export default function ContactForm() {
 							pt: '10px',
 						}}
 					>
-						Nosotros
+						Contacto
 					</Typography>
 				</Box>
 			</Parallax>
@@ -163,8 +165,8 @@ export default function ContactForm() {
 								fullWidth
 								required
 								sx={{
-									marginBottom: 1, 
-									input: { padding: '12px' }, 
+									marginBottom: 1,
+									input: { padding: '12px' },
 								}}
 							/>
 							<CssTextField
@@ -217,7 +219,7 @@ export default function ContactForm() {
 				</Grid>
 			</Grid>
 
-			{/* Sección de Ponte en contacto */}
+
 			<Box sx={{ width: '100%', py: 5 }}>
 				<Card
 					sx={{
@@ -289,6 +291,31 @@ export default function ContactForm() {
 						</Grid>
 					</CardContent>
 				</Card>
+				
+			<Box
+				data-aos='fade-zoom-in'
+				data-aos-easing='ease-in-back'
+				data-aos-delay='300'
+				data-aos-offset='0'
+				sx={{
+					marginTop: '10rem',
+					marginLeft: '3rem',
+					marginRight: '3rem',
+				}}
+			>
+				<Link to='https://api.whatsapp.com/send?phone=3147456473'>
+					<Button
+						sx={{
+							height: '4rem',
+							width: '100%',
+						}}
+						variant='contained'
+						endIcon={<WhatsAppIcon />}
+					>
+						Comunícate con un asesor
+					</Button>
+				</Link>
+			</Box>
 			</Box>
 		</>
 	);

@@ -1,22 +1,22 @@
 //rincon del lago
-import parquerinconlago from '/src/assets/parque.jpg';
-import terrazarinconlago from '/src/assets/TERRAZA1.jpg';
-import terraza3rinconlago from '/src/assets/TERRAZA3.jpg';
-import parque2rinconlago from '/src/assets/parque2.jpg';
-import rincon5 from '/src/assets/galeririncon5.jpg';
-import rincon6 from '/src/assets/galeririncon6.jpg';
-import rincon7 from '/src/assets/galeririncon7.jpg';
-import rincon8 from '/src/assets/galeririncon8.jpg';
+import parquerinconlago from '/src/assets/RPubenza1.jpg';
+import terrazarinconlago from '/src/assets/RPubenza2.jpg';
+import terraza3rinconlago from '/src/assets/RPubenza3.jpg';
+import parque2rinconlago from '/src/assets/RPubenza4.jpg';
+import rincon5 from '/src/assets/RPubenza5.jpg';
+import rincon6 from '/src/assets/RPubenza6.jpg';
+import rincon7 from '/src/assets/RPubenza7.jpg';
+import rincon8 from '/src/assets/RPubenza8.jpg';
 
 //puertas del sol
-import puertadelsol1 from '/src/assets/galeripuertasdelsol1.png';
-import puertadelsol2 from '/src/assets/galeripuertasdelsol2.png';
-import puertadelsol3 from '/src/assets/galeripuertasdelsol3.png';
-import puertadelsol4 from '/src/assets/galeripuertasdelsol4.png';
-import puertadelsol5 from '/src/assets/galeripuertasdelsol5.png';
-import puertadelsol6 from '/src/assets/galeripuertasdelsol6.png';
-import puertadelsol7 from '/src/assets/galeripuertasdelsol7.jpg';
-import puertadelsol8 from '/src/assets/galeripuertasdelsol8.jpg';
+import puertadelsol1 from '/src/assets/PSol1.jpg';
+import puertadelsol2 from '/src/assets/PSol2.jpg';
+import puertadelsol3 from '/src/assets/PSol3.jpg';
+import puertadelsol4 from '/src/assets/PSol4.jpg';
+import puertadelsol5 from '/src/assets/PSol5.jpg';
+import puertadelsol6 from '/src/assets/PSol6.jpg';
+import puertadelsol7 from '/src/assets/PSol7.jpg';
+import puertadelsol8 from '/src/assets/PSol8.jpg';
 import fondo from '/src/assets/urbanizacionproyectos.jpg'
 
 //palmmeras de la italia
@@ -152,19 +152,16 @@ export const Prueba = [
 		nombre: 'Rincón De Pubenza',
 		subtitulo: ' Condominio Campestre y Plaza Comercial',
 		imagencard: '/src/assets/logo2em.png',
-		mini: '/src/assets/Mini_Rincon_del_lago.jpg',
 		imagenad: '/src/assets/parque-1.jpg',
 		imagenad2: '/src/assets/car2.jpg',
 		tipo: 'Urbanización',
-		descripcion: 'A pocos minutos de Cali por las avenidas Panamericana, Cañas Gordas y Sachamate. Cerca de los mejores colegios y universidades del sur occidente colombiano. A pocas cuadras de centros comerciales, súper mercados, restaurantes parques, gimnasios, entre otros establecimientos  ofrecen servicios de calidad en el ambiente campestre de Jamundí.',
+		descripcion: 'A pocos minutos de Cali por las avenidas Panamericana. Cerca de los mejores colegios y universidades del sur occidente colombiano, a pocas cuadras de centros comerciales, súper mercados, restaurantes parques, gimnasios, entre otros establecimientos, ofrecen servicios de calidad en el ambiente campestre de la ciudad.',
 		descripcionad:
 			'' +
 			'Sin duda una de las zonas más apacibles, seguras y ' +
 			'confortables para vivir en familia o para invertir' +
-			' con confianza gracias al desarrollo urbanístico de' +
-			'este sector por parte de importantes constructoras' +
-			'que cada día mejoran su plusvalía. ' +
-			'Panamericana',
+			'con confianza gracias al desarrollo urbanístico de ' +
+			'este sector por parte de importantes constructoras.' ,
 		lat: 3.2499367481968666,
 		lng: -76.56676798926843,
 		images: [
@@ -179,7 +176,7 @@ export const Prueba = [
 		],
 		descripcion2:'Proyecto nuevo de la contructora inmobiliaria Casas & Lotes en Jamundí con financiación' +
 			'de hasta 60 meses, 173 lotes de vivienda, 8 lotes comerciales, 64 lotes vendidos con una alta valorización.',
-		ubicacion: 'Ubicado en el corazón de Alfaguara, Jamundí. Sector las Mercedes',
+		ubicacion: 'Ubicado en Jamundí, Sector las Mercedes',
 		areaDelLote:'Lotes comerciales desde 108 mts²' +
 			       'Lotes de vivienda desde 150 mts²mts²',
 		estado: 'Lanzamiento',
@@ -194,7 +191,7 @@ export const Prueba = [
 		id: 2,
 		nombre: 'La Primavera',
 		adicional: 'u',
-		imagencard: '/src/assets/logopuertasdelsol.png',
+		imagencard: '/src/assets/logo3em.png',
 		subtitulo:'Proyecto de la constructora inmobiliaria Casas & Lotes en Jamundí',
 		estado: 'Finalizado',
 		tipo: 'Proyecto Urbanización',
@@ -225,7 +222,7 @@ export const Prueba = [
 		adicional: 'u',
 		nombre: 'Palmeras',
 		subtitulo: 'Condominio Campestre',
-		imagencard: '/src/assets/logoPalmerasr.png',
+		imagencard: '/src/assets/logo4em.png',
 		tipo: 'Urbanización',
 		descripcion:'El proyecto se desarrollará en dos sectores, en un lote de más de 10 hectáreas, tenemos una reserva de más de 3.500 metros cuadrados para futuro desarrollo comercial una vez se encuentren consolidadas las dos primeros sectores de vivienda. En total serán 333 lotes para el desarrollo de vivienda unifamiliar, más de 12.300 metros cuadrados de espacio público, Todo esto enmarcado por el espectacular paisaje del Valle del Cauca, entre frondosos árboles y guaduales.',
 		ubicacion: 'El Paso de la Bolsa',
@@ -254,7 +251,7 @@ export const Prueba = [
 		adicional: 'u',
 		subtitulo:'Proyecto de la segunda urbanización campestre de las constructoras W Valle Verde y Casas & Lotes.',
 		estado: 'Finalizado',
-		imagencard: '/src/assets/logoCañaDulce.png',
+		imagencard: '/src/assets/logo5em.png',
 		descripcion:'Proyecto desarrollado en la segunda urbanización campestre de las constructoras W Valle Verde y Casas & Lotes. Caña dulce cuenta con 46 lotes a ejecutarse entre Julio 2020 y octubre de 2021 (15 meses desde su inicio de obras).',
 		ubicacion: 'Corregimiento San José, a 15 minutos de Tuluá',
 		tipo: 'Proyecto Urbanización',
@@ -281,7 +278,7 @@ export const Prueba = [
 		estado: 'Finalizado',
 		adicional: 'u',
 		subtitulo: 'Proyecto ejecutado y vendido al 100% en tiempo record. ',
-		imagencard: '/src/assets/LogoCañaBrava.png',
+		imagencard: '/src/assets/logo6em.png',
 		tipo: 'Proyecto Urbanización',
 		lat: 4.0292491,
 		lng: -76.2674871,
@@ -304,7 +301,7 @@ export const Prueba = [
 		nombre: 'Casa Esquinera Alfaguara',
 		estado: 'En venta',
 		tipo: 'Condominio',
-		imagencard: '/src/assets/casa17OG.jpg',
+		imagencard: '/src/assets/logo7em.png',
 		subtitulo: 'Casa de lujo en condominio cerrado, terminada.',
 		descripcionad:'Casa de lujo en condominio cerrado, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas.',
 		descripcion:'Casa en obra gris: Tres apartamentos independientes, cada uno con dos amplias habitaciones, la principal con baño privado, closets espaciosos en fina madera. Cocinas integrales, terminada con los mejores acabados en pisos, cerámica sanitaria y maderas.',
