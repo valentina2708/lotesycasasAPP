@@ -23,6 +23,8 @@ import { Colors } from '../../config/themeConfig.js';
 export default function Details() {
 	const { id } = useParams();
 	return (
+
+		<>
 		<Grid container='true'>
         
 			<Grid item='true' xs={12} sm={12} md={12} lg={12}>
@@ -105,18 +107,18 @@ export default function Details() {
 				sm={12}
 				md={12}
 				lg={12}
-				sx={{ marginBottom: '5vh', marginTop: '5vh' }}
+				sx={{ mb: '2rem', mt: '-1rem',backgroundColor:Colors.info3, p:'15px' }}
 			>
 				<Grid container sx={{ birderTop: '10vh' }}>
 					<Box
 						data-aos='fade-up'
 						data-aos-duration='1000'
-						sx={{ margin: 'auto', whith: '50%' }}
+						sx={{ margin: 'auto', whith: '50%',  }}
 					>
 						<Typography
 							variant='h4'
 							sx={{
-								color: '#A15600',
+								color: Colors.body_bg,
 								fontWeight: 'bold',
 								mt: 2,
 								textAlign: 'center',
@@ -134,15 +136,16 @@ export default function Details() {
 						sx={{ margin: 'auto', padding: '20px' }}
 					>
 						<Typography
-							variant='body1'
 							sx={{
-								width: '100%',
+								width: '70%',
 								height: '100%',
 								marginLeft: 'auto',
 								marginRight: 'auto',
 								textAlign: 'center',
-
-								fontSize: 25,
+								mb:'-1rem',
+								fontSize: 20,
+								color: Colors.body_bg,
+								fontWeight: 100,
 							}}
 						>
 							{/*  ######### Descripcion 2 ########### */}
@@ -152,286 +155,179 @@ export default function Details() {
 					</Box>
 				</Grid>
 			</Grid>
-
-
-			<Grid item='true' xs={12} sm={12} md={12} lg={12}>
-				<Card
-					sx={{
-						height: '100%',
-						marginLeft: 'auto',
-						marginRight: 'auto',
-						marginBottom: '10vh',
-						marginTop: '5vh',
-						borderRadius: 10,
-					}}
-				>
-					<Grid
-						container='true'
-						sx={{
-							width: '100%',
-							height: '100%',
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}
-					>
-						<Grid
-							item='true'
-							xs={12}
-							sm={12}
-							md={12}
-							lg={6}
-							sx={{
-								display: 'grid',
-								justifyContent: 'center',
-								alignItems: 'center',
-								margin: 'auto',
-							}}
-						>
-							<Box
-								data-aos='fade-up'
-								data-aos-duration='1000'
-								sx={{ margin: 'auto', padding: '5px' }}
-							>
-								<Typography
-									variant='h4'
-									sx={{
-										color: '#A15600',
-										fontWeight: 'bold',
-										mt: 2,
-										textAlign: 'center',
-										paddingTop: '10px',
-										margin: '20px',
-									}}
-								>
-									{/*  ######### Subtitulo 2 proyecto ########### */}
-									Zonas y Espacios
-								</Typography>
-							</Box>
-
-							<Box
-								sx={{
-									display: { lg: 'flex' },
-									justifyContent: 'center',
-									alignItems: 'center',
-									marginLeft: 'auto',
-									marginRight: 'auto',
-									padding: '0px',
-								}}
-							>
-								<Box
-									data-aos='fade-up'
-									data-aos-duration='1000'
-									sx={{
-										display: 'grid',
-										width: '100%',
-										justifyContent: 'left',
-										alignItems: 'left',
-									}}
-								>
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'center',
-											margin: '10px',
-										}}
-									>
-										<Box
-											sx={{
-												width: '30px',
-												display: 'flex',
-												marginRight: '20px',
-											}}
-										>
-											<Forest sx={{ fontSize: 40 }} />
-										</Box>
-										<Typography
-											variant='h4'
-											sx={{
-												fontWeight: 'bold',
-												marginTop: 'auto',
-												marginBottom: 'auto',
-											}}
-										>
-											Zonas verdes
-										</Typography>
-									</Box>
-
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'left',
-											margin: '10px',
-										}}
-									>
-										<Box
-											sx={{
-												width: '30px',
-												display: 'flex',
-												marginRight: '20px',
-											}}
-										>
-											<SportsBasketball sx={{ fontSize: 40 }} />
-										</Box>
-										<Typography
-											variant='h4'
-											sx={{
-												fontWeight: 'bold',
-												marginTop: 'auto',
-												marginBottom: 'auto',
-											}}
-										>
-											Canchas
-										</Typography>
-									</Box>
-
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'left',
-											margin: '10px',
-										}}
-									>
-										<Box
-											sx={{
-												width: '30px',
-												display: 'flex',
-												marginRight: '20px',
-											}}
-										>
-											<TimeToLeave sx={{ fontSize: 40 }} />
-										</Box>
-										<Typography
-											variant='h4'
-											sx={{
-												fontWeight: 'bold',
-												marginTop: 'auto',
-												marginBottom: 'auto',
-											}}
-										>
-											Porteria
-										</Typography>
-									</Box>
-
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'left',
-											margin: '10px',
-										}}
-									></Box>
-								</Box>
-
-								<Box
-									data-aos='fade-up'
-									data-aos-duration='1000'
-									sx={{
-										display: 'grid',
-										width: '100%',
-										justifyContent: 'left',
-										alignItems: 'left',
-									}}
-								>
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'left',
-											margin: '10px',
-										}}
-									>
-										<Box
-											sx={{
-												width: '30px',
-												display: 'flex',
-												marginRight: '20px',
-											}}
-										>
-											<Pool sx={{ fontSize: 40 }} />
-										</Box>
-										<Typography
-											variant='h4'
-											sx={{
-												fontWeight: 'bold',
-												marginTop: 'auto',
-												marginBottom: 'auto',
-											}}
-										>
-											Piscina
-										</Typography>
-									</Box>
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'left',
-											margin: '10px',
-										}}
-									>
-										<Box
-											sx={{
-												width: '30px',
-												display: 'flex',
-												marginRight: '20px',
-											}}
-										>
-											<Diversity1 sx={{ fontSize: 40 }} />
-										</Box>
-										<Typography
-											variant='h4'
-											sx={{
-												fontWeight: 'bold',
-												marginTop: 'auto',
-												marginBottom: 'auto',
-											}}
-										>
-											Zona Sociales
-										</Typography>
-									</Box>
-								</Box>
-							</Box>
-						</Grid>
-
-						<Grid
-							item='true'
-							xs={12}
-							sm={12}
-							md={12}
-							lg={6}
-							sx={{
-								marginBottom: '20px',
-								marginTop: '20px',
-
-								padding: '10px',
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center',
-							}}
-						>
-							<Box
-								data-aos='fade-up'
-								data-aos-duration='1000'
-								sx={{
-									//marginLeft:'10rem'
-									//border: 2,
-									display: 'flex',
-									justifyContent: 'left',
-									alignItems: 'center',
-
-									widthMax: '200px',
-									heightMax: '200px',
-								}}
-							>
-								{/*  ######### imagen 2 ad ########### */}
-
-								<img
-									src={miArray.Prueba[id - 1].imagen}
-									width={'100%'}
-									height={'100%'}
-								/>
-							</Box>
-						</Grid>
-					</Grid>
-				</Card>
-			</Grid>
 		</Grid>
+
+		<Box sx={{ m: { xs: '2rem', md: '4rem' } }}>
+							<Grid container justifyContent='center'>
+								<Grid item xs={12} md={10} lg={8}>
+									<Card
+										sx={{
+											padding: { xs: '2rem', md: '3rem' },
+											borderRadius: 8,
+											boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+											width: '100%',
+											margin: 'auto',
+										}}
+									>
+										<Grid container spacing={3} alignItems='center'>
+											{/* Sección de Texto e Íconos */}
+											<Grid item xs={12} md={6}>
+												<Typography
+													variant='h5'
+													sx={{
+														color: Colors.fondo,
+														fontWeight: 'bold',
+														textAlign: 'center',
+														mb: { xs: 2, md: 3 },
+													}}
+												>
+												Espacios para toda la familia
+												</Typography>
+												<Grid container spacing={2}>
+													{/* Primera fila */}
+													<Grid
+														item
+														xs={6}
+														display='flex'
+														justifyContent='center'
+													>
+														<Box display='flex' alignItems='center'>
+															<Diversity1
+																sx={{
+																	fontSize: { xs: 30, md: 36 },
+																	color: Colors.info4,
+																	ml:3
+																}}
+															/>
+															<Typography
+																variant='body1'
+																sx={{ fontWeight: 'bold', ml: 2 }}
+															>
+																Zona Social
+															</Typography>
+														</Box>
+													</Grid>
+													<Grid
+														item
+														xs={6}
+														display='flex'
+														justifyContent='center'
+													>
+														<Box display='flex' alignItems='center'>
+															<Forest
+																sx={{
+																	fontSize: { xs: 30, md: 36 },
+																	color: Colors.info4,
+																}}
+															/>
+															<Typography
+																variant='body1'
+																sx={{ fontWeight: 'bold', ml: 1 }}
+															>
+																Parques
+															</Typography>
+														</Box>
+													</Grid>
+
+													{/* Segunda fila */}
+													<Grid
+														item
+														xs={6}
+														display='flex'
+														justifyContent='center'
+													>
+														<Box display='flex' alignItems='center'>
+															<Pool
+																sx={{
+																	fontSize: { xs: 30, md: 36 },
+																	color: Colors.info4,
+				
+																	mr:2
+																}}
+															/>
+															<Typography
+																variant='body1'
+																sx={{ fontWeight: 'bold',mr:2 }}
+															>
+																Piscina
+															</Typography>
+														</Box>
+													</Grid>
+													<Grid
+														item
+														xs={6}
+														display='flex'
+														justifyContent='center'
+													>
+														<Box display='flex' alignItems='center'>
+															<SportsBasketball
+																sx={{
+																	fontSize: { xs: 30, md: 36 },
+																	color: Colors.info4,
+																}}
+															/>
+															<Typography
+																variant='body1'
+																sx={{ fontWeight: 'bold', ml: 1 }}
+															>
+																Canchas
+															</Typography>
+														</Box>
+													</Grid>
+
+													{/* Tercera fila */}
+													<Grid
+														item
+														xs={6}
+														display='flex'
+														justifyContent='center'
+													>
+														<Box display='flex' alignItems='center'>
+															<TimeToLeave
+																sx={{
+																	fontSize: { xs: 30, md: 36 },
+																	color: Colors.info4,
+																	ml: 3 
+																}}
+															/>
+															<Typography
+																variant='body1'
+																sx={{ fontWeight: 'bold', ml: 2 }}
+															>
+																Parqueadero
+															</Typography>
+														</Box>
+													</Grid>
+												
+												</Grid>
+											</Grid>
+
+											{/* Sección de Imagen */}
+											<Grid
+												item
+												xs={12}
+												md={6}
+												display='flex'
+												justifyContent='center'
+											>
+												<img
+													src={miArray.Prueba[id - 1].imagenad}
+													alt='Imagen Zona recreativa'
+													style={{
+														borderRadius: '8px',
+														maxWidth: '100%',
+														height: 'auto',
+														maxHeight: '250px',
+														objectFit: 'cover',
+													}}
+												/>
+											</Grid>
+										</Grid>
+									</Card>
+								</Grid>
+							</Grid>
+						</Box>
+				
+					</>
 	);
 }

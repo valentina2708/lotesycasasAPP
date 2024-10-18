@@ -414,18 +414,7 @@ export default function PaginaProyectos(props) {
 					//////////////////////////////////
 
 					<Grid container='true'>
-						<Card
-							sx={{
-								//border: 2,
-								width: '100%',
-								height: '100%',
-								marginLeft: 'auto',
-								marginRight: 'auto',
-								marginBottom: '20vh',
-								marginTop: '10vh',
-								borderRadius: 10,
-							}}
-						>
+					
 							<Grid
 								data-aos='fade-up'
 								data-aos-duration='1000'
@@ -466,7 +455,7 @@ export default function PaginaProyectos(props) {
 											display: 'flex',
 											justifyContent: 'left',
 											// alignItems: 'center',
-											width: '90%',
+											width: '70%',
 											height: '100%',
 										}}
 									>
@@ -489,10 +478,8 @@ export default function PaginaProyectos(props) {
 										//border: 2,
 										display: 'flex',
 										justifyContent: 'center',
-										alignItems: 'center',
-										marginLeft: 'auto',
-										marginRight: 'auto',
-										marginBottom: '5rem',
+										flexDirection:'column',
+									    
 									}}
 								>
 									<Box
@@ -500,22 +487,23 @@ export default function PaginaProyectos(props) {
 										data-aos-duration='1000'
 										sx={{
 											display: 'flex',
-											justifyContent: 'right',
+											justifyContent: 'center',
 											width: '500px',
 										}}
 									>
 										<Typography
 											variant='h5'
 											sx={{
-												color: '#A15600',
-
+												color: Colors.fondo,
 												textAlign: 'center',
 											}}
 										>
 											{/*  ######### Subtitulo 2 proyecto ########### */}
 
-											{miArray.Prueba[id - 1].descripcionad}
-											<Divider sx={{ my: '2rem' }} />
+											{miArray.Prueba[id - 1].descripcion2}
+											<Divider
+												sx={{ my: '2rem', backgroundColor: Colors.body_bg }}
+											/>
 
 											<Typography variant='h6'>
 												{miArray.Prueba[id - 1].areaDelLote}
@@ -524,108 +512,106 @@ export default function PaginaProyectos(props) {
 									</Box>
 								</Grid>
 							</Grid>
-						</Card>
+						
 					</Grid>
 				) : (
 					////////////////////////////////////////////
-					<h1></h1>
-				)}
-			</Grid>
-
-			<Grid item xs={12} sm={12} md={12} lg={12}>
-				<Parallax
-					style={{
-						width: '100%',
-						height: '100%',
-					}}
-					bgImage={miArray.Prueba[id - 1].pagar}
-					strength={400}
-				>
-					<Box
-						container
-						data-aos='zoom-in-down'
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-							width: '100%',
-							height: '65vh',
-						}}
-					>
-						<Box
-							sx={{
-								display: 'flex',
+					<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Parallax
+							style={{
+								width: '100%',
+								height: '100%',
 							}}
+							bgImage={miArray.Prueba[id - 1].pagar}
+							strength={400}
 						>
-							<Card
-								elevation={12}
+							<Box
+								container
+								data-aos='zoom-in-down'
 								sx={{
-									padding: '10px',
-									color: 'gray',
-									opacity: [0.8, 0.6, 0.8],
-									width: '80%',
-									height: '10%',
-									borderRadius: 3,
-									marginTop: '2rem',
-									mb: '2rem',
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+									width: '100%',
+									height: '65vh',
 								}}
 							>
-								<Avatar
-									alt='logo rincon del lago'
-									src='/src/assets/logo2em.png'
+								<Box
 									sx={{
-										width: 200,
-										height: 130,
-										position: 'relative',
-										marginLeft: 'auto',
-										marginRight: 'auto',
-										opacity: [0.8, 0.6, 0.8],
+										display: 'flex',
 									}}
-								/>
-
-								<CardContent sx={{}}>
-									<Typography
-										variant='h5'
+								>
+									<Card
+										elevation={12}
 										sx={{
-											color: 'black',
-											fontWeight: 500,
-											mb: '1.5rem',
-
-											textAlign: 'center',
+											padding: '10px',
+											color: 'gray',
+											opacity: [0.8, 0.6, 0.8],
+											width: '80%',
+											height: '10%',
+											borderRadius: 3,
+											marginTop: '2rem',
+											mb: '2rem',
 										}}
 									>
-										Separa tu lote:
-										<br />
-										Inicial 10% plazo hasta 5 años
-									</Typography>
+										<Avatar
+											alt='logo rincon del lago'
+											src='/src/assets/logo2em.png'
+											sx={{
+												width: 200,
+												height: 130,
+												position: 'relative',
+												marginLeft: 'auto',
+												marginRight: 'auto',
+												opacity: [0.8, 0.6, 0.8],
+											}}
+										/>
 
-									<Box
-										sx={{
-											justifyContent: 'center',
-											alignItems: 'center',
-											//border:2
-										}}
-									>
-										<Link to='https://api.whatsapp.com/send?'>
-											<Button
+										<CardContent sx={{}}>
+											<Typography
+												variant='h5'
 												sx={{
-													width: '100%',
-													padding: '10px',
-													marginTop: '10px',
-													backgroundColor: Colors.info3,
+													color: 'black',
+													fontWeight: 500,
+													mb: '1.5rem',
+
+													textAlign: 'center',
 												}}
-												variant='contained'
-												endIcon={<WhatsAppIcon />}
 											>
-												Contactanos
-											</Button>
-										</Link>
-									</Box>
-								</CardContent>
-							</Card>
-						</Box>
-					</Box>
-				</Parallax>
+												Separa tu lote:
+												<br />
+												Inicial 10% plazo hasta 5 años
+											</Typography>
+
+											<Box
+												sx={{
+													justifyContent: 'center',
+													alignItems: 'center',
+													//border:2
+												}}
+											>
+												<Link to='https://api.whatsapp.com/send?'>
+													<Button
+														sx={{
+															width: '100%',
+															padding: '10px',
+															marginTop: '10px',
+															backgroundColor: Colors.info3,
+														}}
+														variant='contained'
+														endIcon={<WhatsAppIcon />}
+													>
+														Contactanos
+													</Button>
+												</Link>
+											</Box>
+										</CardContent>
+									</Card>
+								</Box>
+							</Box>
+						</Parallax>
+					</Grid>
+				)}
 			</Grid>
 
 			<Typography
@@ -635,7 +621,7 @@ export default function PaginaProyectos(props) {
 				data-aos-offset='0'
 				variant='h2'
 				sx={{
-					color: Colors.info4,
+					color: Colors.info3,
 					fontWeight: 'bold',
 					textAlign: 'center',
 					paddingTop: '10rem',
@@ -719,13 +705,10 @@ export default function PaginaProyectos(props) {
 			</Box> */}
 
 			<Box
-			
 				sx={{
 					marginTop: '6rem',
 					marginLeft: '3rem',
 					marginRight: '3rem',
-			
-		
 				}}
 			>
 				<Link to='https://api.whatsapp.com/send?phone=3147456473'>
